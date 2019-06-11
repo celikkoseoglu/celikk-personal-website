@@ -1,21 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import Experience from './components/experience.jsx'
-import './index.css';
+import Skill from './components/skill.jsx'
+import './index.sass';
 import 'bootstrap/dist/css/bootstrap.css'
 
 const experiences = require('./data/experiences');
+const skills = require('./data/skills');
 
 ReactDOM.render(
-    <div>
-        <App/>
+    <div className="container">
+        <div className="row">
 
-        {experiences.map(experience => <Experience companyName={experience.companyName}
-                                                   description={experience.description}
-                                                   bulletPoints={experience.bulletPoints}
-        />)}
+            <div className="col-md-4">
+                {skills.map(skill => <Skill header={skill.header} content={skill.content}/>)}
+            </div>
 
+            <div className="col-md-8">
+                {experiences.map(experience => <Experience companyName={experience.companyName}
+                                                           description={experience.description}
+                                                           bulletPoints={experience.bulletPoints}
+                />)}
+            </div>
+
+        </div>
     </div>,
     document.getElementById('root')
 );

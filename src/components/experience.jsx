@@ -5,7 +5,7 @@ class Experience extends Component {
     render() {
         return (
             <div>
-                <h4> {this.props.companyName} </h4>
+                <h5> {this.props.companyName} </h5>
                 <p> {this.props.description} </p>
                 {this.props.bulletPoints.map(bulletPoint => <BulletPoint bulletPoint={bulletPoint}/>)}
             </div>
