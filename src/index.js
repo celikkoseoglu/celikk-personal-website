@@ -5,9 +5,11 @@ import Skill from './components/skill.jsx';
 import Button from 'react-bootstrap/Button';
 import './index.sass';
 import 'bootstrap/dist/css/bootstrap.css';
+import TitleAndText from "./components/titleAndText";
 
 const experiences = require('./data/experiences');
 const skills = require('./data/skills');
+const content = require('./data/content');
 
 ReactDOM.render(
     <div className="container">
@@ -27,16 +29,7 @@ ReactDOM.render(
             </div>
         </div>
 
-        <div className="row text-center">
-            <div className="col-md-4"/>
-            <div className="col-md-4">
-                <h3>Why a Developer?</h3>
-                <p>Computers have always fascinated me. I was always on the curious side and wanted to learn how they
-                    operated. One day I went to the bookstore and walked out with a programming language book. Now I am
-                    studying computer science and doing internships in cool companies.</p>
-            </div>
-            <div className="col-md-4"/>
-        </div>
+        <TitleAndText title={ content.heroTitle } text={ content.heroText }/>
 
         <div>
             <h3 className="text-center">Skills</h3>
