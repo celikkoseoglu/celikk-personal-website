@@ -1,11 +1,16 @@
-import React, {Component} from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-class BulletPoint extends Component {
-    render() {
-        return (
-            <li>{ this.props.bulletPoint }</li>
-        )
-    }
-}
+const BulletPoint = ({ bulletPoint }) => {
+  return <li>{bulletPoint}</li>;
+};
+
+BulletPoint.propTypes = {
+  bulletPoint: PropTypes.string
+};
+
+BulletPoint.defaultProps = {
+  bulletPoint: null
+};
 
 export default BulletPoint;
