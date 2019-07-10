@@ -1,11 +1,16 @@
-import React, {Component} from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-class Heading extends Component {
-    render() {
-        return (
-            <h3 className="text-center">{ this.props.text }</h3>
-        )
-    }
-}
+const Heading = ({ text }) => {
+  return <h3 className="text-center">{text}</h3>;
+};
+
+Heading.propTypes = {
+  text: PropTypes.string
+};
+
+Heading.defaultProps = {
+  text: null
+};
 
 export default Heading;

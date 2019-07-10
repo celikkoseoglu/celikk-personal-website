@@ -1,19 +1,28 @@
-import React, {Component} from 'react';
-import './titleAndText.sass';
+import React from "react";
+import PropTypes from "prop-types";
+import "./titleAndText.sass";
 
-class TitleAndText extends Component {
-    render() {
-        return (
-            <div className="row text-center">
-                <div className="col-md-3"/>
-                <div className="col-md-6">
-                    <h3>{ this.props.title }</h3>
-                    <p>{ this.props.text }</p>
-                </div>
-                <div className="col-md-3"/>
-            </div>
-        )
-    }
-}
+const TitleAndText = ({ title, text }) => {
+  return (
+    <div className="row text-center">
+      <div className="col-md-3" />
+      <div className="col-md-6">
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </div>
+      <div className="col-md-3" />
+    </div>
+  );
+};
+
+TitleAndText.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string
+};
+
+TitleAndText.defaultProps = {
+  title: null,
+  text: null
+};
 
 export default TitleAndText;

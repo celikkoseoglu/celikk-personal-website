@@ -1,14 +1,23 @@
-import React, {Component} from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-class Skill extends Component {
-    render() {
-        return (
-            <div>
-                <h5> {this.props.header} </h5>
-                <p> {this.props.content} </p>
-            </div>
-        )
-    }
-}
+const Skill = ({ header, content }) => {
+  return (
+    <div>
+      <h5> {header} </h5>
+      <p> {content} </p>
+    </div>
+  );
+};
+
+Skill.propTypes = {
+  header: PropTypes.string,
+  content: PropTypes.string
+};
+
+Skill.defaultProps = {
+  header: null,
+  content: null
+};
 
 export default Skill;
