@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Button from "react-bootstrap/Button";
-import Experience from "./components/experience.jsx";
-import Skill from "./components/skill.jsx";
+import Experience from "./components/experience";
+import Skill from "./components/skill";
 import "./index.sass";
 import "bootstrap/dist/css/bootstrap.css";
 import TitleAndText from "./components/titleAndText";
@@ -44,9 +44,18 @@ ReactDOM.render(
         title="PROGRAMMING LANGUAGES"
         subtitle="JAVA, C++, OBJECTIVE-C & MORE..."
         text={
-          "At the age of 13, I started coding with Microsoft SmallBasic. Then, I walked out of a bookstore\n" +
-          "                        with a C# book in my hand. Then, started making Windows Desktop apps. Mobile technologies were rapidly developing at that time so I made some progress with Mobile Technologies. With the little C#" +
-          "                        knowledge I had, I made QNote and PhotoSec for Windows Phone. Then continued on with other platforms and other technologies. Now I am comfortable to work with several programming languages and frameworks. Make sure to go through my CV for more details!"
+          "At the age of 13, I started coding with Microsoft SmallBasic." +
+          " Then, I walked out of a bookstore\n" +
+          " with a C# book in my hand. Then, started" +
+          " making Windows Desktop apps. Mobile" +
+          " technologies were rapidly developing at that time so I made some" +
+          " progress with Mobile Technologies. With the little C#" +
+          " knowledge I had, I made QNote and PhotoSec" +
+          " for Windows Phone. Then continued" +
+          " on with other platforms and other technologies. Now I am" +
+          "comfortable to work with several programming" +
+          " languages and frameworks. Make sure to go through my " +
+          "CV for more details!"
         }
       />
     </div>
