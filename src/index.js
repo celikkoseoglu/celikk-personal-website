@@ -6,12 +6,12 @@ import Skill from "./components/skill";
 import "./index.sass";
 import "bootstrap/dist/css/bootstrap.css";
 import TitleAndText from "./components/titleAndText";
-import Heading from "./components/heading";
 import ImageExperience from "./components/imageExperience";
 
-const experiences = require("./data/experiences");
-const skills = require("./data/skills");
+const experiences = require("./data/resume/experiences");
+const resumeSkills = require("./data/resume/skills");
 const content = require("./data/content");
+const personalSkills = require("./data/personalSkills");
 
 ReactDOM.render(
   <div className="container">
@@ -36,33 +36,19 @@ ReactDOM.render(
 
     <TitleAndText title={content.heroTitle} text={content.heroText} />
 
-    <div>
-      <Heading text="Skills" />
+    {personalSkills.map(personalSkill => (
       <ImageExperience
-        imageLink="https://celikk.me/images/MacBook-Pro-mockup.png"
-        imageAlt="github profile"
-        title="PROGRAMMING LANGUAGES"
-        subtitle="JAVA, C++, OBJECTIVE-C & MORE..."
-        text={
-          "At the age of 13, I started coding with Microsoft SmallBasic." +
-          " Then, I walked out of a bookstore\n" +
-          " with a C# book in my hand. Then, started" +
-          " making Windows Desktop apps. Mobile" +
-          " technologies were rapidly developing at that time so I made some" +
-          " progress with Mobile Technologies. With the little C#" +
-          " knowledge I had, I made QNote and PhotoSec" +
-          " for Windows Phone. Then continued" +
-          " on with other platforms and other technologies. Now I am" +
-          "comfortable to work with several programming" +
-          " languages and frameworks. Make sure to go through my " +
-          "CV for more details!"
-        }
+        imageLink={personalSkill.imageLink}
+        imageAlt={personalSkill.imageAlt}
+        title={personalSkill.title}
+        subtitle={personalSkill.subtitle}
+        text={personalSkill.text}
       />
-    </div>
+    ))}
 
     <div className="row">
       <div className="col-md-4">
-        {skills.map(skill => (
+        {resumeSkills.map(skill => (
           <Skill header={skill.header} content={skill.content} />
         ))}
       </div>
