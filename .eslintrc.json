@@ -20,7 +20,7 @@
     ],
     "prettier/prettier": "warn",
     "max-len": [
-      "error",
+      "warn",
       80
     ]
   },

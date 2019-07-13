@@ -1,6 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "react-bootstrap/Button";
+import { makeStyles } from "@material-ui/core/styles";
+
+import Button from "@material-ui/core/Button";
+
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1)
+  },
+  input: {
+    display: "none"
+  }
+}));
 
 const Hero = ({
   imageLink,
@@ -12,6 +23,8 @@ const Hero = ({
   button2Text,
   button2Link
 }) => {
+  const classes = useStyles();
+
   return (
     <div className="row">
       <div className="col-md-2" />
@@ -27,10 +40,20 @@ const Hero = ({
         <h4>{title}</h4>
         <h5>{subtitle}</h5>
         <div className="" />
-        <Button href={button1Link} variant="outline-dark" size="lg">
+        <Button
+          className={classes.button}
+          variant="contained"
+          color="primary"
+          href={button1Link}
+        >
           {button1Text}
         </Button>
-        <Button href={button2Link} variant="outline-dark" size="lg">
+        <Button
+          className={classes.button}
+          variant="contained"
+          color="primary"
+          href={button2Link}
+        >
           {button2Text}
         </Button>
       </div>
