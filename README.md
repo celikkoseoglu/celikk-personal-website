@@ -2,7 +2,8 @@ I am making a new personal website to replace https://celikk.me
 
 Things I'm working on: 
 
-* Separate CV page from the homepage
+* Add spacing between buttons in hero component
+* Separate Interactive CV page from the homepage and link with hero button
 * Transfer image assets from original website into this one
 * Where should we fit the new hero image? (Design something new with Sketch maybe?)
 * Fonts! Make sure the fonts are right

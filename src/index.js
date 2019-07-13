@@ -19,8 +19,10 @@ ReactDOM.render(
     <Hero
       imageLink={hero.imageLink}
       imageAlt={hero.imageAlt}
-      buttonLink={hero.buttonLink}
-      buttonText={hero.buttonText}
+      button1Link={hero.button1Link}
+      button1Text={hero.button1Text}
+      button2Link={hero.button2Link}
+      button2Text={hero.button2Text}
       subtitle={hero.subtitle}
       title={hero.title}
     />

@@ -7,8 +7,10 @@ const Hero = ({
   imageAlt,
   title,
   subtitle,
-  buttonText,
-  buttonLink
+  button1Text,
+  button1Link,
+  button2Text,
+  button2Link
 }) => {
   return (
     <div className="row">
@@ -24,8 +26,12 @@ const Hero = ({
       <div className="col-md-5 align-self-center">
         <h4>{title}</h4>
         <h5>{subtitle}</h5>
-        <Button href={buttonLink} variant="outline-dark" size="lg">
-          {buttonText}
+        <div className="" />
+        <Button href={button1Link} variant="outline-dark" size="lg">
+          {button1Text}
+        </Button>
+        <Button href={button2Link} variant="outline-dark" size="lg">
+          {button2Text}
         </Button>
       </div>
     </div>
@@ -37,8 +43,10 @@ Hero.propTypes = {
   imageAlt: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  buttonText: PropTypes.string,
-  buttonLink: PropTypes.string
+  button1Text: PropTypes.string,
+  button1Link: PropTypes.string,
+  button2Text: PropTypes.string,
+  button2Link: PropTypes.string
 };
 
 Hero.defaultProps = {
@@ -46,8 +54,10 @@ Hero.defaultProps = {
   imageAlt: null,
   title: null,
   subtitle: null,
-  buttonText: null,
-  buttonLink: null
+  button1Text: null,
+  button1Link: null,
+  button2Text: null,
+  button2Link: null
 };
 
 export default Hero;
