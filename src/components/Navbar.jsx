@@ -27,8 +27,8 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             Celik Koseoglu
           </Typography>
-          <Button color="inherit">HOME</Button>
-          <Button color="inherit">INTERACTIVE RESUME</Button>
+          <Button href="/" color="inherit">HOME</Button>
+          <Button href="/cv" color="inherit">INTERACTIVE RESUME</Button>
         </Toolbar>
       </AppBar>
     </div>
