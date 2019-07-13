@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./titleAndText.sass";
 
 const TitleAndText = ({ title, text }) => {
   return (

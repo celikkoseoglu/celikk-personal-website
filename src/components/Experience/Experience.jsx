@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BulletPoint from "./bulletpoint";
+import Bulletpoint from "./Bulletpoint";
 
 const Experience = ({ companyName, description, bulletPoints }) => {
   return (
@@ -8,7 +8,7 @@ const Experience = ({ companyName, description, bulletPoints }) => {
       <h5> {companyName} </h5>
       <p> {description} </p>
       {bulletPoints.map(bulletPoint => (
-        <BulletPoint bulletPoint={bulletPoint} />
+        <Bulletpoint bulletPoint={bulletPoint} />
       ))}
     </div>
   );
