@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import TitleAndText from "../components/TitleAndText";
 import ImageExperience from "../components/ImageExperience";
 import ProjectCard from "../components/ProjectCard";
+import Container from "../components/Container";
 import "bootstrap/dist/css/bootstrap.css";
 import {
   skillsBackground,
@@ -34,53 +35,41 @@ const Home = () => {
 
       <TitleAndText title={content.heroTitle} text={content.heroText} />
 
-      <div className={`${projectsBackground}`}>
-        <div className="container">
-          <div className="row">
-            {projects.map(project => (
-              <ProjectCard
-                imageLink={project.imageLink}
-                imageAlt={project.imageAlt}
-                title={project.title}
-                subtitle={project.subtitle}
-                text={project.text}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <Container backgroundColor={projectsBackground}>
+        {projects.map(project => (
+          <ProjectCard
+            imageLink={project.imageLink}
+            imageAlt={project.imageAlt}
+            title={project.title}
+            subtitle={project.subtitle}
+            text={project.text}
+          />
+        ))}
+      </Container>
 
-      <div className={`${skillsBackground}`}>
-        <div className="container">
-          <div className="row">
-            {personalSkills.map(personalSkill => (
-              <ImageExperience
-                imageLink={personalSkill.imageLink}
-                imageAlt={personalSkill.imageAlt}
-                title={personalSkill.title}
-                subtitle={personalSkill.subtitle}
-                text={personalSkill.text}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <Container backgroundColor={skillsBackground}>
+        {personalSkills.map(personalSkill => (
+          <ImageExperience
+            imageLink={personalSkill.imageLink}
+            imageAlt={personalSkill.imageAlt}
+            title={personalSkill.title}
+            subtitle={personalSkill.subtitle}
+            text={personalSkill.text}
+          />
+        ))}
+      </Container>
 
-      <div className={`${ongoingProjectsBackground}`}>
-        <div className="container">
-          <div className="row">
-            {ongoingProjects.map(project => (
-              <ProjectCard
-                imageLink={project.imageLink}
-                imageAlt={project.imageAlt}
-                title={project.title}
-                subtitle={project.subtitle}
-                text={project.text}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <Container backgroundColor={ongoingProjectsBackground}>
+        {ongoingProjects.map(project => (
+          <ProjectCard
+            imageLink={project.imageLink}
+            imageAlt={project.imageAlt}
+            title={project.title}
+            subtitle={project.subtitle}
+            text={project.text}
+          />
+        ))}
+      </Container>
     </React.Fragment>
   );
 };

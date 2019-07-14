@@ -4,7 +4,8 @@ CONTENT IS VERY OLD AND WILL BE REPLACED...
 
 Things I'm working on: 
 
-* Add spacing between buttons in hero component
+* ~~Add component to automatically adjust background color and container properties~~
+* ~~Add spacing between buttons in hero component~~
 * Separate Interactive CV page from the homepage and link with hero button
 * Transfer image assets from original website into this one
 * Where should we fit the new hero image? (Design something new with Sketch maybe?)
