@@ -1,5 +1,7 @@
 I am making a new personal website to replace https://celikk.me
 
+CONTENT IS VERY OLD AND WILL BE REPLACED...
+
 Things I'm working on: 
 
 * Add spacing between buttons in hero component
@@ -12,3 +14,5 @@ Things I'm working on:
 * After effects and react together -> how?
 * Add tests???? (never done react tests before :shrug:)
 * Keep master as the MVP branch after it looks ready to ship. (currently committing directly into master)
+
+Current State: https://personalwebsitereact-celikk.firebaseapp.com/
