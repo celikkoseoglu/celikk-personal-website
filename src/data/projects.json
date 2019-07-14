@@ -1,23 +1,23 @@
 [
   {
-    "imageLink": "https://celikk.me/images/notReady.png",
-    "imageAlt": "content not ready",
-    "title": "Today's Meal in Marmara",
-    "subtitle": "MEAL IN A DIFFERENT FORM",
-    "text": "I wonder if today's meal is delicious or not. I have to check the school's website and... I wish it came as a notification."
+    "imageLink": "https://celikk.me/images/QNote.png",
+    "imageAlt": "QNote app logo",
+    "title": "QNote",
+    "subtitle": "BLAZING FAST NOTE TAKING",
+    "text": "It opens in milliseconds and closes when you lock your phone. Perfect for noting homeworks without getting the teacher's attention."
   },
   {
-    "imageLink": "https://celikk.me/images/rockyJourney.png",
-    "imageAlt": "a ship sailing on the sea",
-    "title": "Rocky Journey",
-    "subtitle": "AN FPGA GAME",
-    "text": "We know how to FPGA, so why not FPGA. A dull but fun to make game. Not fun to play just yet..."
+    "imageLink": "https://celikk.me/images/IPManager.png",
+    "imageAlt": "IPManager app logo",
+    "title": "IPManager",
+    "subtitle": "DHCP MADE EASY",
+    "text": "If a workplace uses static IP and the employees carry their computers between their homes and offices everyday, it changes DHCP settings automatically."
   },
   {
-    "imageLink": "https://celikk.me/images/personalWebsite.png",
-    "imageAlt": "iMac showing the source code of this website",
-    "title": "A Website",
-    "subtitle": "A TRULY PERSONAL ONE",
-    "text": "A lot of effort has been made for this website. Much paperwork & design. I'll make a seperate section telling how I made this."
+    "imageLink": "https://celikk.me/images/PhotoSec.png",
+    "imageAlt": "PhotoSec app logo",
+    "title": "PhotoSec",
+    "subtitle": "SECURE YOUR PHOTOS!",
+    "text": "Select some photos from the phone’s gallery and password protect them. Oh, and there is a fake password feature!"
   }
 ]
