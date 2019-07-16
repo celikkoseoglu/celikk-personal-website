@@ -6,5 +6,5 @@
   "button1Text": "PDF CV",
   "button1Link": "https://celikk.me/celikresume.pdf",
   "button2Text": "Interactive CV",
-  "button2Link": "#"
+  "button2Link": "/cv"
 }
