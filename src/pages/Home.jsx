@@ -8,8 +8,10 @@ import "bootstrap/dist/css/bootstrap.css";
 import {
   skillsBackground,
   projectsBackground,
-  ongoingProjectsBackground
+  ongoingProjectsBackground,
+  footerBackground
 } from "../stylesheets/Home.module.sass";
+import Footer from "../components/Footer";
 
 const content = require("../data/content");
 const hero = require("../data/hero");
@@ -69,6 +71,10 @@ const Home = () => {
             text={project.text}
           />
         ))}
+      </Container>
+
+      <Container backgroundColor={footerBackground}>
+        <Footer />
       </Container>
     </React.Fragment>
   );

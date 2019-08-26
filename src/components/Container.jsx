@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { paddingDefault } from "../stylesheets/components/Container.module.sass";
 
 const Container = ({ children, backgroundColor }) => {
   return (
-    <div className={backgroundColor}>
+    <div className={`${backgroundColor} ${paddingDefault}`}>
       <div className="container">
         <div className="row">{children}</div>
       </div>
