@@ -12,6 +12,7 @@ import {
   footerBackground
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer";
+import Heading from "../components/Heading";
 
 const content = require("../data/content");
 const hero = require("../data/hero");
@@ -37,7 +38,10 @@ const Home = () => {
 
       <TitleAndText title={content.heroTitle} text={content.heroText} />
 
-      <Container backgroundColor={projectsBackground}>
+      <Container
+        backgroundColor={projectsBackground}
+        title={content.projectsTitle}
+      >
         {projects.map(project => (
           <ProjectCard
             imageLink={project.imageLink}
@@ -49,7 +53,7 @@ const Home = () => {
         ))}
       </Container>
 
-      <Container backgroundColor={skillsBackground}>
+      <Container backgroundColor={skillsBackground} title={content.skillsTitle}>
         {personalSkills.map(personalSkill => (
           <ImageExperience
             imageLink={personalSkill.imageLink}
@@ -61,7 +65,10 @@ const Home = () => {
         ))}
       </Container>
 
-      <Container backgroundColor={ongoingProjectsBackground}>
+      <Container
+        backgroundColor={ongoingProjectsBackground}
+        title={content.ongoingProjectsTitle}
+      >
         {ongoingProjects.map(project => (
           <ProjectCard
             imageLink={project.imageLink}

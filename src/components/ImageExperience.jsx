@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { background } from "../stylesheets/components/ImageExperience.module.sass";
 
 const ImageExperience = ({ imageLink, imageAlt, title, subtitle, text }) => {
   return (
-    <div className={`${background} row`}>
+    <div className="row">
       <div className="col-md-4 align-self-center">
         <img className="col-md-12" src={imageLink} alt={imageAlt} />
       </div>

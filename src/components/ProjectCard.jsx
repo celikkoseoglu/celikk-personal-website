@@ -7,18 +7,24 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
 const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text }) => {
+  const backgroundColor = "rgb(255, 255, 255)";
 
-  const backgroundColor = 'rgba(255, 255, 255, 0.0)';
+  const styles = {
+    media: {
+      padding: "0 10px"
+    }
+  };
 
   return (
     <div className="col-md-4">
-      <Card raised={true} style={{backgroundColor}}>
+      <Card raised style={{ backgroundColor }}>
         <CardActionArea>
           <CardMedia
             component="img"
             alt={imageAlt}
             image={imageLink}
             title={title}
+            style={styles.media}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">

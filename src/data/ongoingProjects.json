@@ -11,13 +11,13 @@
     "imageAlt": "a ship sailing on the sea",
     "title": "Rocky Journey",
     "subtitle": "AN FPGA GAME",
-    "text": "We know how to FPGA, so why not FPGA. A dull but fun to make game. Not fun to play just yet..."
+    "text": "A game written in Verilog HDL that runs on an FPGA. Drives an LED matrix and uses several hardware buttons for inputs."
   },
   {
     "imageLink": "https://celikk.me/images/personalWebsite.png",
     "imageAlt": "iMac showing the source code of this website",
-    "title": "A Website",
-    "subtitle": "A TRULY PERSONAL ONE",
-    "text": "A lot of effort has been made for this website. Much paperwork & design. I'll make a seperate section telling how I made this."
+    "title": "Personal Website",
+    "subtitle": "BUILT USING LATEST TECH",
+    "text": "Open source website built using React. A lot of design work and an interactive CV built into it! I also streamed myself building it!"
   }
 ]
