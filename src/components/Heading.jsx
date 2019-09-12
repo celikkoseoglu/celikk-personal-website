@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Heading = ({ text }) => {
-  return <h3 className="text-center">{text}</h3>;
+  return <h2 className="text-center">{text}</h2>;
 };
 
 Heading.propTypes = {
