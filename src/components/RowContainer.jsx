@@ -6,7 +6,7 @@ const Container = ({ children, backgroundColor }) => {
   return (
     <div className={`${backgroundColor} ${paddingDefault}`}>
       <div className="container">
-        <div className="row">{children}</div>
+        <div>{children}</div>
       </div>
     </div>
   );

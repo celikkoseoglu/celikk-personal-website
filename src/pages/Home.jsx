@@ -38,47 +38,50 @@ const Home = () => {
 
       <TitleAndText title={content.heroTitle} text={content.heroText} />
 
-      <Container
-        backgroundColor={projectsBackground}
-        title={content.projectsTitle}
-      >
-        {projects.map(project => (
-          <ProjectCard
-            imageLink={project.imageLink}
-            imageAlt={project.imageAlt}
-            title={project.title}
-            subtitle={project.subtitle}
-            text={project.text}
-          />
-        ))}
-      </Container>
+      <div className={projectsBackground}>
+        <Heading text={content.projectsTitle} />
+        <Container title={content.projectsTitle}>
+          {projects.map(project => (
+            <ProjectCard
+              imageLink={project.imageLink}
+              imageAlt={project.imageAlt}
+              title={project.title}
+              subtitle={project.subtitle}
+              text={project.text}
+            />
+          ))}
+        </Container>
+      </div>
 
-      <Container backgroundColor={skillsBackground} title={content.skillsTitle}>
-        {personalSkills.map(personalSkill => (
-          <ImageExperience
-            imageLink={personalSkill.imageLink}
-            imageAlt={personalSkill.imageAlt}
-            title={personalSkill.title}
-            subtitle={personalSkill.subtitle}
-            text={personalSkill.text}
-          />
-        ))}
-      </Container>
+      <div className={skillsBackground}>
+        <Heading text={content.skillsTitle} />
+        <Container>
+          {personalSkills.map(personalSkill => (
+            <ImageExperience
+              imageLink={personalSkill.imageLink}
+              imageAlt={personalSkill.imageAlt}
+              title={personalSkill.title}
+              subtitle={personalSkill.subtitle}
+              text={personalSkill.text}
+            />
+          ))}
+        </Container>
+      </div>
 
-      <Container
-        backgroundColor={ongoingProjectsBackground}
-        title={content.ongoingProjectsTitle}
-      >
-        {ongoingProjects.map(project => (
-          <ProjectCard
-            imageLink={project.imageLink}
-            imageAlt={project.imageAlt}
-            title={project.title}
-            subtitle={project.subtitle}
-            text={project.text}
-          />
-        ))}
-      </Container>
+      <div className={ongoingProjectsBackground}>
+        <Heading text={content.ongoingProjectsTitle} />
+        <Container>
+          {ongoingProjects.map(project => (
+            <ProjectCard
+              imageLink={project.imageLink}
+              imageAlt={project.imageAlt}
+              title={project.title}
+              subtitle={project.subtitle}
+              text={project.text}
+            />
+          ))}
+        </Container>
+      </div>
 
       <Container backgroundColor={footerBackground}>
         <Footer />
