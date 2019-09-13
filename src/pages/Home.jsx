@@ -1,18 +1,22 @@
 import React from "react";
 import Hero from "../components/Hero";
-import TitleAndText from "../components/TitleAndText";
+import CenteredText from "../components/CenteredText";
 import ImageExperience from "../components/ImageExperience";
 import ProjectCard from "../components/ProjectCard";
 import Container from "../components/Container";
 import "bootstrap/dist/css/bootstrap.css";
 import {
+  whyDeveloperBackground,
   skillsBackground,
   projectsBackground,
   ongoingProjectsBackground,
-  footerBackground
+  footerBackground,
+  paddingDefault,
+  paddingBottom
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer";
 import Heading from "../components/Heading";
+import { titleFontSize } from "../stylesheets/components/Heading.module.sass";
 
 const content = require("../data/content");
 const hero = require("../data/hero");
@@ -36,10 +40,15 @@ const Home = () => {
         />
       </div>
 
-      <TitleAndText title={content.heroTitle} text={content.heroText} />
+      <div className={`${whyDeveloperBackground} ${paddingDefault}`}>
+        <Heading className={paddingBottom} text={content.heroTitle} />
+        <Container title={content.projectsTitle}>
+          <CenteredText title={content.heroTitle} text={content.heroText} />
+        </Container>
+      </div>
 
-      <div className={projectsBackground}>
-        <Heading text={content.projectsTitle} />
+      <div className={`${projectsBackground} ${paddingDefault}`}>
+        <Heading className={paddingBottom} text={content.projectsTitle} />
         <Container title={content.projectsTitle}>
           {projects.map(project => (
             <ProjectCard
@@ -53,8 +62,8 @@ const Home = () => {
         </Container>
       </div>
 
-      <div className={skillsBackground}>
-        <Heading text={content.skillsTitle} />
+      <div className={`${skillsBackground} ${paddingDefault}`}>
+        <Heading className={paddingBottom} text={content.skillsTitle} />
         <Container>
           {personalSkills.map(personalSkill => (
             <ImageExperience
@@ -68,8 +77,11 @@ const Home = () => {
         </Container>
       </div>
 
-      <div className={ongoingProjectsBackground}>
-        <Heading text={content.ongoingProjectsTitle} />
+      <div className={`${ongoingProjectsBackground} ${paddingDefault}`}>
+        <Heading
+          className={paddingBottom}
+          text={content.ongoingProjectsTitle}
+        />
         <Container>
           {ongoingProjects.map(project => (
             <ProjectCard
@@ -83,9 +95,11 @@ const Home = () => {
         </Container>
       </div>
 
-      <Container backgroundColor={footerBackground}>
-        <Footer />
-      </Container>
+      <div className={`${footerBackground} ${paddingDefault}`}>
+        <Container>
+          <Footer />
+        </Container>
+      </div>
     </React.Fragment>
   );
 };
