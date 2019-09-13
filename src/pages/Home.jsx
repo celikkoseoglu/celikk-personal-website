@@ -16,7 +16,7 @@ import {
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer";
 import Heading from "../components/Heading";
-import { titleFontSize } from "../stylesheets/components/Heading.module.sass";
+import Resume from "../data/resume/celikresume.pdf";
 
 const content = require("../data/content");
 const hero = require("../data/hero");
@@ -31,7 +31,7 @@ const Home = () => {
         <Hero
           imageLink={hero.imageLink}
           imageAlt={hero.imageAlt}
-          button1Link={hero.button1Link}
+          button1Link={Resume}
           button1Text={hero.button1Text}
           button2Link={hero.button2Link}
           button2Text={hero.button2Text}
