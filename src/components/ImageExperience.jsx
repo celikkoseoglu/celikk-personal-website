@@ -1,9 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Paper from "@material-ui/core/Paper";
 
-const ImageExperience = ({ imageLink, imageAlt, title, subtitle, text }) => {
+const ImageExperience = ({
+  imageLink,
+  imageAlt,
+  title,
+  subtitle,
+  text,
+  className
+}) => {
   return (
-    <div className="row">
+    <Paper className={`row ${className}`}>
       <div className="col-md-4 align-self-center">
         <img className="col-md-12" src={imageLink} alt={imageAlt} />
       </div>
@@ -12,7 +20,7 @@ const ImageExperience = ({ imageLink, imageAlt, title, subtitle, text }) => {
         <h5>{subtitle}</h5>
         <p>{text}</p>
       </div>
-    </div>
+    </Paper>
   );
 };
 
@@ -21,7 +29,8 @@ ImageExperience.propTypes = {
   imageAlt: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  text: PropTypes.string
+  text: PropTypes.string,
+  className: PropTypes.string
 };
 
 ImageExperience.defaultProps = {
@@ -29,7 +38,8 @@ ImageExperience.defaultProps = {
   imageAlt: null,
   title: null,
   subtitle: null,
-  text: null
+  text: null,
+  className: null
 };
 
 export default ImageExperience;

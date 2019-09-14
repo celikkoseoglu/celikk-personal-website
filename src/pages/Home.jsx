@@ -12,11 +12,15 @@ import {
   ongoingProjectsBackground,
   footerBackground,
   paddingDefault,
-  paddingBottom
+  paddingBottom,
+  marginBottomLarge,
+  heroBackground,
+  spanView
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer";
 import Heading from "../components/Heading";
 import Resume from "../data/resume/celikresume.pdf";
+import Wall from "../data/images/wall.jpg";
 
 const content = require("../data/content");
 const hero = require("../data/hero");
@@ -27,17 +31,22 @@ const projects = require("../data/projects");
 const Home = () => {
   return (
     <React.Fragment>
-      <div className="container">
-        <Hero
-          imageLink={hero.imageLink}
-          imageAlt={hero.imageAlt}
-          button1Link={Resume}
-          button1Text={hero.button1Text}
-          button2Link={hero.button2Link}
-          button2Text={hero.button2Text}
-          subtitle={hero.subtitle}
-          title={hero.title}
-        />
+      <div
+        style={{ backgroundImage: `url(${Wall})` }}
+        className={`${heroBackground} ${spanView}`}
+      >
+        <div className="container">
+          <Hero
+            imageLink={hero.imageLink}
+            imageAlt={hero.imageAlt}
+            button1Link={Resume}
+            button1Text={hero.button1Text}
+            button2Link={hero.button2Link}
+            button2Text={hero.button2Text}
+            subtitle={hero.subtitle}
+            title={hero.title}
+          />
+        </div>
       </div>
 
       <div className={`${whyDeveloperBackground} ${paddingDefault}`}>
@@ -67,6 +76,7 @@ const Home = () => {
         <Container>
           {personalSkills.map(personalSkill => (
             <ImageExperience
+              className={`${paddingDefault} ${marginBottomLarge}`}
               imageLink={personalSkill.imageLink}
               imageAlt={personalSkill.imageAlt}
               title={personalSkill.title}
