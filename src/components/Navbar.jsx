@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { customNavbar, topNavExpand, topNavCollapse } from "../stylesheets/components/Navbar.module.sass";
 
+/*
+  - CHANGE TEXT COLOUR TO WHITE
+  - CUSTOM FONTS??? THAT IS PROBABLY GOING TO BE A DIFFERENT BRANCH
+  - PAGE AUTO SCROLL WHEN ELEMENT IS CLICKED
+  - ADD LINK FOR INTERACTIVE RESUME
+  - MOBILE MODE? HAMBURGER MENU
+  - MAKE IT EFFICIENT!
+ */
+
 export default function Navbar() {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
 
