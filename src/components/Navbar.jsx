@@ -1,65 +1,68 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
+import { customNavbar, topNavExpand, topNavCollapse } from "../stylesheets/components/Navbar.module.sass";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginRight: theme.spacing(2)
-  },
-  title: {
-    flexGrow: 1
+export default function Navbar() {
+  const [navbarExpanded, setNavbarExpanded] = useState(true);
+
+  function handleScroll() {
+    if (window.pageYOffset > 50) {
+      console.log("Collapse Navbar");
+      setNavbarExpanded(false);
+    } else {
+      console.log("Expand Navbar");
+      setNavbarExpanded(true);
+    }
   }
-}));
 
-function ElevationScroll(props) {
-  const { children } = props;
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0
-  });
-}
-
-ElevationScroll.propTypes = {
-  children: PropTypes.node.isRequired
-};
-
-export default function Navbar(props) {
-  const classes = useStyles();
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className={classes.root}>
-      <React.Fragment>
-        <CssBaseline />
-        <ElevationScroll {...props}>
-          <AppBar>
-            <Toolbar>
-              <Typography variant="h6" className={classes.title}>
-                Celik Koseoglu
-              </Typography>
-              <Button href="/" color="inherit">
-                HOME
-              </Button>
-              <Button href="/cv" color="inherit">
-                INTERACTIVE RESUME
-              </Button>
-            </Toolbar>
-          </AppBar>
-        </ElevationScroll>
-        <Toolbar />
-      </React.Fragment>
-    </div>
+    <nav
+      className={`navbar fixed-top navbar-expand-md ${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}
+    >
+      <div className="container">
+        <button
+          type="button"
+          className="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbar-collapse"
+        >
+          <span className="sr-only">Toggle navigation</span>
+          &#x2630;
+        </button>
+        <a className="navbar-brand page-scroll" href="#page-top">
+          CELIK KOSEOGLU
+        </a>
+        <div className="collapse navbar-collapse" id="navbar-collapse">
+          <ul className="nav navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="page-scroll nav-link" href="#projects">
+                Projects
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="page-scroll nav-link" href="#skills">
+                Skills
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="page-scroll nav-link" href="#ongoingProjects">
+                Ongoing Projects
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="page-scroll nav-link" href="#contact">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 }
