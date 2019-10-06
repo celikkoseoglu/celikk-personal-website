@@ -6,11 +6,13 @@ import CV from "./pages/CV";
 
 import "./index.sass";
 import "bootstrap/dist/css/bootstrap.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
+
+const navbar = require("./data/navbar");
 
 ReactDOM.render(
   <BrowserRouter>
-    <Navbar />
+    <Navbar content={navbar} />
     <Route exact path="/" component={Home} />
     <Route path="/cv" component={CV} />
   </BrowserRouter>,

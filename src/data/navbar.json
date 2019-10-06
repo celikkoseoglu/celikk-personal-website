@@ -1,0 +1,21 @@
+{
+  "heroTitle": "Celik Koseoglu",
+  "items": [
+    {
+      "title":"Projects",
+      "reference": "projects"
+    },
+    {
+      "title":"Skills",
+      "reference": "skills"
+    },
+    {
+      "title":"Ongoing Projects",
+      "reference": "ongoingProjects"
+    },
+    {
+      "title":"Contact",
+      "reference": "contact"
+    }
+  ]
+}
