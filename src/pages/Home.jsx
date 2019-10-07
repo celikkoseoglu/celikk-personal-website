@@ -32,6 +32,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <div
+        id={content.heroReference}
         style={{ backgroundImage: `url(${Wall})` }}
         className={`${heroBackground} ${spanView}`}
       >
@@ -50,13 +51,16 @@ const Home = () => {
       </div>
 
       <div className={`${whyDeveloperBackground} ${paddingDefault}`}>
-        <Heading className={paddingBottom} text={content.heroTitle} />
+        <Heading className={paddingBottom} text={content.introTitle} />
         <Container title={content.projectsTitle}>
-          <CenteredText title={content.heroTitle} text={content.heroText} />
+          <CenteredText title={content.introTitle} text={content.introText} />
         </Container>
       </div>
 
-      <div className={`${projectsBackground} ${paddingDefault}`}>
+      <div
+        id={content.projectsReference}
+        className={`${projectsBackground} ${paddingDefault}`}
+      >
         <Heading className={paddingBottom} text={content.projectsTitle} />
         <Container title={content.projectsTitle}>
           {projects.map(project => (
@@ -71,7 +75,10 @@ const Home = () => {
         </Container>
       </div>
 
-      <div className={`${skillsBackground} ${paddingDefault}`}>
+      <div
+        id={content.skillsReference}
+        className={`${skillsBackground} ${paddingDefault}`}
+      >
         <Heading className={paddingBottom} text={content.skillsTitle} />
         <Container>
           {personalSkills.map(personalSkill => (
@@ -87,7 +94,10 @@ const Home = () => {
         </Container>
       </div>
 
-      <div className={`${ongoingProjectsBackground} ${paddingDefault}`}>
+      <div
+        id={content.ongoingProjectsReference}
+        className={`${ongoingProjectsBackground} ${paddingDefault}`}
+      >
         <Heading
           className={paddingBottom}
           text={content.ongoingProjectsTitle}

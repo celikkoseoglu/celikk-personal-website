@@ -1,13 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { whiteLink } from "../../stylesheets/components/Navbar.module.sass";
+import { Link } from "react-scroll";
+import { whiteLink, active } from "../../stylesheets/components/Navbar.module.sass";
 
 const NavbarItem = ({ title, reference }) => {
   return (
     <li className="nav-item">
-      <a className={`${whiteLink} page-scroll nav-link`} href={`#${reference}`}>
+      <Link
+        className={`${whiteLink} page-scroll nav-link`}
+        activeClass={active}
+        to={reference}
+        spy
+        smooth
+        offset={-50}
+        duration={500}
+        ignoreCancelEvents={false}
+      >
         {title}
-      </a>
+      </Link>
     </li>
   );
 };

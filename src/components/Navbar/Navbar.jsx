@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-scroll";
 import {
   customNavbar,
   topNavExpand,
@@ -10,7 +11,6 @@ import NavbarItem from "./NavbarItem";
 
 /*
   - CUSTOM FONTS??? THAT IS PROBABLY GOING TO BE A DIFFERENT BRANCH
-  - PAGE AUTO SCROLL WHEN ELEMENT IS CLICKED
   - ADD LINK FOR INTERACTIVE RESUME
   - MOBILE MODE? HAMBURGER MENU
   - MAKE IT EFFICIENT!
@@ -49,12 +49,19 @@ const Navbar = ({ content }) => {
         >
           <span className="sr-only">Toggle navigation</span>&#x2630;
         </button>
-        <a
+
+        <Link
           className={`${coloredLink} navbar-brand page-scroll`}
           href="#page-top"
+          to={content.heroReference}
+          spy
+          smooth
+          duration={500}
+          ignoreCancelEvents={false}
         >
           {content.heroTitle}
-        </a>
+        </Link>
+
         <div className="collapse navbar-collapse" id="navbar-collapse">
           <ul className="nav navbar-nav ml-auto">
             {content.items.map(item => (
