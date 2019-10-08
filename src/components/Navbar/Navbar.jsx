@@ -5,7 +5,8 @@ import {
   customNavbar,
   topNavExpand,
   topNavCollapse,
-  coloredLink
+  coloredLink,
+  whiteLink
 } from "../../stylesheets/components/Navbar.module.sass";
 import NavbarItem from "./NavbarItem";
 
@@ -20,9 +21,9 @@ const Navbar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
 
   function handleScroll() {
-    if (window.pageYOffset > 50) {
+    if (window.pageYOffset > 50 && navbarExpanded) {
       setNavbarExpanded(false);
-    } else {
+    } else if (window.pageYOffset < 50 && !navbarExpanded) {
       setNavbarExpanded(true);
     }
   }
@@ -32,7 +33,7 @@ const Navbar = ({ content }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  });
 
   return (
     <nav
@@ -67,6 +68,9 @@ const Navbar = ({ content }) => {
             {content.items.map(item => (
               <NavbarItem title={item.title} reference={item.reference} />
             ))}
+            <a className={`${whiteLink} page-scroll nav-link`} href="/cv">
+              Interactive Resume
+            </a>
           </ul>
         </div>
       </div>
