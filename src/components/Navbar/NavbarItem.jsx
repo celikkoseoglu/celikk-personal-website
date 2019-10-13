@@ -2,21 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll";
 import {
-  whiteLink,
-  active
-} from "../../stylesheets/components/Navbar.module.sass";
+  customPadding
+} from "../../stylesheets/components/NavigationBarItem.module.sass";
 
-const NavbarItem = ({ title, reference }) => {
+const NavbarItem = ({ title, reference, className }) => {
   return (
     <Link
-      className={`${whiteLink} page-scroll nav-link`}
-      activeClass={active}
+      className={`${className} ${customPadding} page-scroll nav-link`}
       to={reference}
-      spy
       smooth
       offset={-50}
       duration={500}
       ignoreCancelEvents={false}
+      href="/"
     >
       {title}
     </Link>
@@ -25,7 +23,12 @@ const NavbarItem = ({ title, reference }) => {
 
 NavbarItem.propTypes = {
   title: PropTypes.string.isRequired,
-  reference: PropTypes.string.isRequired
+  reference: PropTypes.string.isRequired,
+  className: PropTypes.string
+};
+
+NavbarItem.defaultProps = {
+  className: PropTypes.null
 };
 
 export default NavbarItem;

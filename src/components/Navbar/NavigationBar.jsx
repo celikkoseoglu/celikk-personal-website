@@ -6,15 +6,11 @@ import {
   customNavbar,
   topNavExpand,
   topNavCollapse,
-  coloredLink,
+  brand,
   whiteLink
-} from "../../stylesheets/components/Navbar.module.sass";
+} from "../../stylesheets/components/NavigationBar.module.sass";
 import NavbarItem from "./NavbarItem";
-
-/*
-  - CUSTOM FONTS??? THAT IS PROBABLY GOING TO BE A DIFFERENT BRANCH
-  - MOBILE MODE? HAMBURGER MENU
- */
+import Container from "react-bootstrap/Container";
 
 const NavigationBar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
@@ -42,23 +38,27 @@ const NavigationBar = ({ content }) => {
       fixed="top"
       expand="md"
     >
-      <div className="container">
+      <Container>
         <NavbarItem
           title={content.heroTitle}
           reference={content.heroReference}
+          className={brand}
         />
-
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" />
           {content.items.map(item => (
-            <NavbarItem title={item.title} reference={item.reference} />
+            <NavbarItem
+              title={item.title}
+              reference={item.reference}
+              className={whiteLink}
+            />
           ))}
           <Nav.Link className={`${whiteLink} page-scroll nav-link`} href="/cv">
-            Interactive Resume
+            {content.interactiveResume}
           </Nav.Link>
         </Navbar.Collapse>
-      </div>
+      </Container>
     </Navbar>
   );
 };

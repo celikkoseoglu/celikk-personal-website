@@ -1,8 +1,12 @@
 .topNavExpand
-  padding: 20px 0
+  @media (min-width: 768px)
+    padding: 10px 0
+  @media (max-width: 767px)
+    background: rgba(63, 79, 109, 0.9)
 
 .topNavCollapse
-  padding: 3px 0
+  @media (min-width: 768px)
+    padding: 0
   background: rgba(63, 79, 109, 0.9)
 
 .customNavbar
@@ -13,9 +17,15 @@
 
 .whiteLink
   color: #fff
+  font-family: 'Montserrat-Regular', sans-serif
+  font-weight: 100
 
-.coloredLink
+.brand
   color: #fed136
+  font-family: 'KaushanScript-Regular', sans-serif
+  font-size: 1.5em
+  @media (min-width: 768px)
+    font-size: 2em
 
 .active
   border-bottom-style: solid
