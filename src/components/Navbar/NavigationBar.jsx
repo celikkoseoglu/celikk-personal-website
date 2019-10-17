@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
 import {
   customNavbar,
   topNavExpand,
   topNavCollapse,
   brand,
-  whiteLink
+  whiteLink,
+  navbarToggle,
+  navbarButton
 } from "../../stylesheets/components/NavigationBar.module.sass";
 import NavbarItem from "./NavbarItem";
-import Container from "react-bootstrap/Container";
 
 const NavigationBar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
@@ -44,7 +46,12 @@ const NavigationBar = ({ content }) => {
           reference={content.heroReference}
           className={brand}
         />
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          className={navbarToggle}
+          aria-controls="basic-navbar-nav"
+        >
+          <span className={navbarButton} />
+        </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" />
           {content.items.map(item => (

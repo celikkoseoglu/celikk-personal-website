@@ -1,14 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll";
-import {
-  customPadding
-} from "../../stylesheets/components/NavigationBarItem.module.sass";
 
 const NavbarItem = ({ title, reference, className }) => {
   return (
     <Link
-      className={`${className} ${customPadding} page-scroll nav-link`}
+      className={`${className} page-scroll nav-link`}
       to={reference}
       smooth
       offset={-50}
