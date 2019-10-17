@@ -1,0 +1,23 @@
+{
+  "heroTitle": "Çelik Köseoğlu",
+  "heroReference": "hero",
+  "items": [
+    {
+      "title":"PROJECTS",
+      "reference": "projects"
+    },
+    {
+      "title":"SKILLS",
+      "reference": "skills"
+    },
+    {
+      "title":"ONGOING PROJECTS",
+      "reference": "ongoingProjects"
+    },
+    {
+      "title":"CONTACT",
+      "reference": "contact"
+    }
+  ],
+  "interactiveResume": "INTERACTIVE RESUME"
+}

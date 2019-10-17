@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
-import Box from "@material-ui/core/Box";
 import Home from "./pages/Home";
 import CV from "./pages/CV";
 
 import "./index.sass";
 import "bootstrap/dist/css/bootstrap.css";
-import Navbar from "./components/Navbar";
+import NavigationBar from "./components/Navbar/NavigationBar";
+
+const navbar = require("./data/navbar");
 
 ReactDOM.render(
   <BrowserRouter>
-    <Navbar />
-    <Box m={2} />
+    <NavigationBar content={navbar} />
     <Route exact path="/" component={Home} />
     <Route path="/cv" component={CV} />
   </BrowserRouter>,

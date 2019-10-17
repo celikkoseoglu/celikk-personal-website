@@ -1,0 +1,55 @@
+$transparency: 0.95
+$brandColor: #fed136
+
+.topNavExpand
+  @media (min-width: 768px)
+    padding: 10px 0
+  @media (max-width: 767px)
+    background: rgba(63, 79, 109, $transparency)
+
+.topNavCollapse
+  @media (min-width: 768px)
+    padding: 0
+  background: rgba(63, 79, 109, $transparency)
+
+.customNavbar
+  color: #fff
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out
+  transition: background .5s ease-in-out, padding .5s ease-in-out
+
+.whiteLink
+  color: #fff
+  font-family: 'Montserrat-Regular', sans-serif
+  font-weight: 100
+  &:hover
+    color: $brandColor
+    -webkit-transition: color .3s ease-in-out
+    -moz-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+.brand
+  color: $brandColor
+  font-family: 'KaushanScript-Regular', sans-serif
+  font-size: 1.5em
+  &:hover
+    color: #fe9b00
+    -webkit-transition: color .3s ease-in-out
+    -moz-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+  @media (min-width: 768px)
+    font-size: 2em
+
+.active
+  border-bottom-style: solid
+
+.navbarToggle
+  background: $brandColor
+
+.navbarButton
+  background-image: url("../../data/images/hamburger.svg")
+  display: inline-block
+  width: 1.3em
+  height: 1.3em
+  vertical-align: middle
+  background-size: 100% 100%
