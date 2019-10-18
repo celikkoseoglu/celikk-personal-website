@@ -10,6 +10,7 @@ import {
   skillsBackground,
   projectsBackground,
   ongoingProjectsBackground,
+  contactBackground,
   footerBackground,
   paddingDefault,
   paddingBottom,
@@ -21,12 +22,14 @@ import Footer from "../components/Footer";
 import Heading from "../components/Heading";
 import Resume from "../data/resume/celikresume.pdf";
 import Wall from "../data/images/wall.jpg";
+import Contact from "../components/Contact";
 
 const content = require("../data/content");
 const hero = require("../data/hero");
 const personalSkills = require("../data/personalSkills");
 const ongoingProjects = require("../data/ongoingProjects");
 const projects = require("../data/projects");
+const contact = require("../data/contact");
 
 const Home = () => {
   return (
@@ -112,6 +115,24 @@ const Home = () => {
               text={project.text}
             />
           ))}
+        </Container>
+      </div>
+
+      <div
+        id={content.contactReference}
+        className={`${contactBackground} ${paddingDefault}`}
+      >
+        <Container>
+          <Contact
+            name={contact.name}
+            title={contact.title}
+            contactTitle={contact.contactTitle}
+            addressLine1={contact.addressLine1}
+            addressLine2={contact.addressLine2}
+            addressLine3={contact.addressLine3}
+            imageLink={contact.imageLink}
+            imageAlt={contact.imageAlt}
+          />
         </Container>
       </div>
 
