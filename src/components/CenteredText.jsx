@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const CenteredText = ({ text }) => {
   return (
-    <div className="row text-center">
-      <div className="col-md-6 offset-3">
+    <div className="d-flex justify-content-center">
+      <div className="col-md-6 text-center">
         <p>{text}</p>
       </div>
     </div>

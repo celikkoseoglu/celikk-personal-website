@@ -52,7 +52,7 @@ const Home = () => {
 
       <div className={`${whyDeveloperBackground} ${paddingDefault}`}>
         <Heading className={paddingBottom} text={content.introTitle} />
-        <Container title={content.projectsTitle}>
+        <Container>
           <CenteredText title={content.introTitle} text={content.introText} />
         </Container>
       </div>
