@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-  contactImage,
-  contactTitleHeader,
+  image,
+  imageDescription,
 } from "../stylesheets/components/Contact.module.sass";
 
 const Contact = ({
@@ -22,10 +22,10 @@ const Contact = ({
         <div>
           <img
             src={imageLink}
-            className={`img-fluid rounded-circle ${contactImage}`}
+            className={`img-fluid rounded-circle ${image}`}
             alt={imageAlt}
           />
-          <h4>{name}</h4>
+          <h4 className={imageDescription}>{name}</h4>
           <p className="text-muted">{title}</p>
         </div>
       </div>
