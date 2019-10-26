@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import {
   image,
-  imageDescription,
+  imageDescription
 } from "../stylesheets/components/Contact.module.sass";
 
 const Contact = ({

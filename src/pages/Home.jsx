@@ -14,7 +14,6 @@ import {
   footerBackground,
   paddingDefault,
   paddingBottom,
-  marginBottomLarge,
   heroBackground,
   spanView
 } from "../stylesheets/Home.module.sass";
@@ -86,7 +85,8 @@ const Home = () => {
         <Container>
           {personalSkills.map(personalSkill => (
             <ImageExperience
-              className={`${paddingDefault} ${marginBottomLarge}`}
+              rightAlign={personalSkill.rightAlign}
+              className={`${paddingDefault}`}
               imageLink={personalSkill.imageLink}
               imageAlt={personalSkill.imageAlt}
               title={personalSkill.title}
