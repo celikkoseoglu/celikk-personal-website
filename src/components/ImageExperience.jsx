@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Paper from "@material-ui/core/Paper";
 
 const ImageExperience = ({
+  rightAlign,
   imageLink,
   imageAlt,
   title,
@@ -10,8 +10,23 @@ const ImageExperience = ({
   text,
   className
 }) => {
+  if (rightAlign) {
+    return (
+      <div className={`row ${className}`}>
+        <div className="col-md-8 align-self-center">
+          <h4>{title}</h4>
+          <h5>{subtitle}</h5>
+          <p>{text}</p>
+        </div>
+        <div className="col-md-4 align-self-center">
+          <img className="col-md-12" src={imageLink} alt={imageAlt} />
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <Paper className={`row ${className}`}>
+    <div className={`row ${className}`}>
       <div className="col-md-4 align-self-center">
         <img className="col-md-12" src={imageLink} alt={imageAlt} />
       </div>
@@ -20,26 +35,22 @@ const ImageExperience = ({
         <h5>{subtitle}</h5>
         <p>{text}</p>
       </div>
-    </Paper>
+    </div>
   );
 };
 
 ImageExperience.propTypes = {
-  imageLink: PropTypes.string,
-  imageAlt: PropTypes.string,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  text: PropTypes.string,
-  className: PropTypes.string
+  rightAlign: PropTypes.bool,
+  imageLink: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired
 };
 
 ImageExperience.defaultProps = {
-  imageLink: null,
-  imageAlt: null,
-  title: null,
-  subtitle: null,
-  text: null,
-  className: null
+  rightAlign: false
 };
 
 export default ImageExperience;
