@@ -12,6 +12,7 @@
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.8.6",
+    "react-pose": "^4.0.9",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
     "react-scroll": "1.7.14"
