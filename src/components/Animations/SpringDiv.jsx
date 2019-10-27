@@ -8,7 +8,6 @@ const SpringDiv = posed.div({
   },
   hover: {
     scale: 1.02,
-
     transition: {
       type: "spring",
       stiffness: 500,
