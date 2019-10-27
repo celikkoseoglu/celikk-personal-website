@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Row from "react-bootstrap/Row";
 import {
   image,
   imageDescription
@@ -17,8 +18,8 @@ const Contact = ({
   imageAlt
 }) => {
   return (
-    <React.Fragment>
-      <div className="col-md-3 text-center">
+    <Row>
+      <div className="col-md-3 text-center mr-auto">
         <div>
           <img
             src={imageLink}
@@ -29,7 +30,7 @@ const Contact = ({
           <p className="text-muted">{title}</p>
         </div>
       </div>
-      <div className="col-sm-4 offset-4">
+      <div className="col-md-5">
         <div className="contact-form">
           <h3>{contactTitle}</h3>
           <address>
@@ -42,7 +43,7 @@ const Contact = ({
           </address>
         </div>
       </div>
-    </React.Fragment>
+    </Row>
   );
 };
 

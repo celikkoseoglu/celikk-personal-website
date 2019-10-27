@@ -3,7 +3,6 @@ import Hero from "../components/Hero";
 import CenteredText from "../components/CenteredText";
 import ImageExperience from "../components/ImageExperience";
 import ProjectCard from "../components/ProjectCard";
-import Container from "../components/Container";
 import "bootstrap/dist/css/bootstrap.css";
 import {
   whyDeveloperBackground,
@@ -22,6 +21,8 @@ import Heading from "../components/Heading";
 import Resume from "../data/resume/celikresume.pdf";
 import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
+import Container from "react-bootstrap/Container";
+import { Row } from "react-bootstrap";
 
 const content = require("../data/content");
 const hero = require("../data/hero");
@@ -65,15 +66,17 @@ const Home = () => {
       >
         <Heading className={paddingBottom} text={content.projectsTitle} />
         <Container title={content.projectsTitle}>
-          {projects.map(project => (
-            <ProjectCard
-              imageLink={project.imageLink}
-              imageAlt={project.imageAlt}
-              title={project.title}
-              subtitle={project.subtitle}
-              text={project.text}
-            />
-          ))}
+          <Row>
+            {projects.map(project => (
+              <ProjectCard
+                imageLink={project.imageLink}
+                imageAlt={project.imageAlt}
+                title={project.title}
+                subtitle={project.subtitle}
+                text={project.text}
+              />
+            ))}
+          </Row>
         </Container>
       </div>
 
@@ -106,15 +109,17 @@ const Home = () => {
           text={content.ongoingProjectsTitle}
         />
         <Container>
-          {ongoingProjects.map(project => (
-            <ProjectCard
-              imageLink={project.imageLink}
-              imageAlt={project.imageAlt}
-              title={project.title}
-              subtitle={project.subtitle}
-              text={project.text}
-            />
-          ))}
+          <Row>
+            {ongoingProjects.map(project => (
+              <ProjectCard
+                imageLink={project.imageLink}
+                imageAlt={project.imageAlt}
+                title={project.title}
+                subtitle={project.subtitle}
+                text={project.text}
+              />
+            ))}
+          </Row>
         </Container>
       </div>
 
