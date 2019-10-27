@@ -16,7 +16,7 @@ import {
   heroBackground,
   spanView
 } from "../stylesheets/Home.module.sass";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
 import Resume from "../data/resume/celikresume.pdf";
 import Wall from "../data/images/wall.jpg";

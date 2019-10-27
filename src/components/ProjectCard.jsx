@@ -5,7 +5,7 @@ import {
   titleMargin,
   subtitleMargin
 } from "../stylesheets/components/ProjectCard.module.sass";
-import SpringDiv from "./SpringDiv";
+import SpringDiv from "./Animations/SpringDiv";
 
 const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text }) => {
   return (
