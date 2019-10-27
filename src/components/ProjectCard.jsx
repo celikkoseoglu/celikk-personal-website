@@ -1,47 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
+
+import {
+  titleMargin,
+  subtitleMargin
+} from "../stylesheets/components/ProjectCard.module.sass";
+import SpringDiv from "./SpringDiv";
 
 const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text }) => {
-  const backgroundColor = "rgb(255, 255, 255)";
-
-  const styles = {
-    media: {
-      padding: "0 10px"
-    }
-  };
-
   return (
-    <div className="col-md-4">
-      <Card raised style={{ backgroundColor }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            alt={imageAlt}
-            image={imageLink}
-            title={title}
-            style={styles.media}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {title}
-            </Typography>
-
-            <Typography gutterBottom variant="h6" component="h2">
-              {subtitle}
-            </Typography>
-
-            <Typography variant="body2" color="textSecondary" component="p">
-              {text}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </div>
+    <SpringDiv className="col-md-4 text-center">
+      <img src={imageLink} className="img-fluid" alt={imageAlt} />
+      <h4 className={titleMargin}>{title}</h4>
+      <h6 className={subtitleMargin}>{subtitle}</h6>
+      <p>{text}</p>
+    </SpringDiv>
   );
 };
 
