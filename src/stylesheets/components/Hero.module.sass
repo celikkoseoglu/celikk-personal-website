@@ -1,14 +1,22 @@
+$transparency: 0.98
+
 .introHeadingStyle
   font-weight: 700
   font-size: 75px
   line-height: 50px
   margin-bottom: 70px
   text-transform: uppercase
+  @media (max-width: 768px)
+    font-size: 50px
+    margin-bottom: 20px
 
 .introLeadInStyle
   font-size: 40px
   line-height: 40px
   margin-bottom: 25px
+  @media (max-width: 768px)
+    font-size: 22px
+    line-height: 22px
 
 .intro
   font-family: 'Montserrat-Regular', sans-serif
@@ -16,6 +24,9 @@
 .introMargin
   padding-top: 250px
   padding-bottom: 230px
+  @media (max-width: 768px)
+    padding-top: 100px
+    padding-bottom: 50px
 
 .box
   display: inline-block
@@ -28,7 +39,10 @@
   line-height: 1.4em
   color: #F5F5F5
   transition: color 0.3s, border 0.3s
+  @media (max-width: 768px)
+    background: rgba(63, 79, 109, $transparency)
   &:hover
     border: 2px solid #FED136
     text-decoration: none
     color: #FED136
+

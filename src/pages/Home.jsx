@@ -44,7 +44,7 @@ const Home = () => {
             introHeading={hero.introHeading}
             introLeadIn={hero.introLeadIn}
             resumeButtonText={hero.resumeButtonText}
-            resumeLink={hero.resumeLink}
+            resumeLink={Resume}
           />
         </Container>
       </div>
