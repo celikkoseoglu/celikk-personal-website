@@ -39,18 +39,14 @@ const Home = () => {
         style={{ backgroundImage: `url(${Wall})` }}
         className={`${heroBackground} ${spanView}`}
       >
-        <div className="container">
+        <Container>
           <Hero
-            imageLink={hero.imageLink}
-            imageAlt={hero.imageAlt}
-            button1Link={Resume}
-            button1Text={hero.button1Text}
-            button2Link={hero.button2Link}
-            button2Text={hero.button2Text}
-            subtitle={hero.subtitle}
-            title={hero.title}
+            introHeading={hero.introHeading}
+            introLeadIn={hero.introLeadIn}
+            resumeButtonText={hero.resumeButtonText}
+            resumeLink={Resume}
           />
-        </div>
+        </Container>
       </div>
 
       <div className={`${whyDeveloperBackground} ${paddingDefault}`}>

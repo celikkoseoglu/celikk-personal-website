@@ -1,9 +1,5 @@
 {
-  "imageLink": "https://avatars3.githubusercontent.com/u/5185809?s=460&v=4",
-  "imageAlt": "github profile",
-  "title": "Celik Koseoglu",
-  "subtitle": "Full Stack Developer",
-  "button1Text": "PDF CV",
-  "button2Text": "Interactive CV",
-  "button2Link": "/cv"
+  "introHeading": "I MAKE THINGS",
+  "introLeadIn": "Web Design, App Development, Big Data, Parkour, Snowboarding, FPGA, HDL",
+  "resumeButtonText": "Resume"
 }
