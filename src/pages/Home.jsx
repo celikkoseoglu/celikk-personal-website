@@ -20,7 +20,6 @@ import {
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
-import Resume from "../data/resume/celikresume.pdf";
 import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
 
@@ -44,7 +43,7 @@ const Home = () => {
             introHeading={hero.introHeading}
             introLeadIn={hero.introLeadIn}
             resumeButtonText={hero.resumeButtonText}
-            resumeLink={Resume}
+            resumeLink={hero.resumeButtonLink}
           />
         </Container>
       </header>
