@@ -13,7 +13,8 @@ import {
   ongoingProjectsBackground,
   contactBackground,
   footerBackground,
-  paddingDefault,
+  sectionPadding,
+  footerPadding,
   paddingBottom,
   heroBackground
 } from "../stylesheets/Home.module.sass";
@@ -48,7 +49,7 @@ const Home = () => {
         </Container>
       </div>
 
-      <div className={`${whyDeveloperBackground} ${paddingDefault}`}>
+      <div className={`${whyDeveloperBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.introTitle} />
         <Container>
           <CenteredText title={content.introTitle} text={content.introText} />
@@ -57,7 +58,7 @@ const Home = () => {
 
       <div
         id={content.projectsReference}
-        className={`${projectsBackground} ${paddingDefault}`}
+        className={`${projectsBackground} ${sectionPadding}`}
       >
         <Heading className={paddingBottom} text={content.projectsTitle} />
         <Container title={content.projectsTitle}>
@@ -77,14 +78,13 @@ const Home = () => {
 
       <div
         id={content.skillsReference}
-        className={`${skillsBackground} ${paddingDefault}`}
+        className={`${skillsBackground} ${sectionPadding}`}
       >
         <Heading className={paddingBottom} text={content.skillsTitle} />
         <Container>
           {personalSkills.map(personalSkill => (
             <ImageExperience
               rightAlign={personalSkill.rightAlign}
-              className={`${paddingDefault}`}
               imageLink={personalSkill.imageLink}
               imageAlt={personalSkill.imageAlt}
               title={personalSkill.title}
@@ -97,7 +97,7 @@ const Home = () => {
 
       <div
         id={content.ongoingProjectsReference}
-        className={`${ongoingProjectsBackground} ${paddingDefault}`}
+        className={`${ongoingProjectsBackground} ${sectionPadding}`}
       >
         <Heading
           className={paddingBottom}
@@ -120,7 +120,7 @@ const Home = () => {
 
       <div
         id={content.contactReference}
-        className={`${contactBackground} ${paddingDefault}`}
+        className={`${contactBackground} ${sectionPadding}`}
       >
         <Container>
           <Contact
@@ -136,7 +136,7 @@ const Home = () => {
         </Container>
       </div>
 
-      <div className={`${footerBackground} ${paddingDefault}`}>
+      <div className={`${footerBackground} ${footerPadding}`}>
         <Container>
           <Footer />
         </Container>
