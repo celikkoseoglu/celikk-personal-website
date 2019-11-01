@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-  intro,
+  introFont,
   introMargin,
   introHeadingStyle,
   introLeadInStyle,
@@ -13,9 +13,11 @@ const Hero = ({ introHeading, introLeadIn, resumeButtonText, resumeLink }) => {
   return (
     <header>
       <div className={`${introMargin}`}>
-        <div className={`${introHeadingStyle} ${intro}`}>{introHeading}</div>
-        <div className={`${introLeadInStyle} ${intro}`}>{introLeadIn}</div>
-        <a href={resumeLink} className={box}>
+        <div className={`${introHeadingStyle} ${introFont}`}>
+          {introHeading}
+        </div>
+        <div className={`${introLeadInStyle} ${introFont}`}>{introLeadIn}</div>
+        <a href={resumeLink} className={`${box} ${introFont}`}>
           {resumeButtonText}
         </a>
       </div>

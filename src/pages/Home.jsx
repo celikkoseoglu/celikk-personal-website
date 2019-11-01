@@ -1,4 +1,6 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
+import { Row } from "react-bootstrap";
 import Hero from "../components/Hero";
 import CenteredText from "../components/CenteredText";
 import ImageExperience from "../components/ImageExperience";
@@ -13,16 +15,13 @@ import {
   footerBackground,
   paddingDefault,
   paddingBottom,
-  heroBackground,
-  spanView
+  heroBackground
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
 import Resume from "../data/resume/celikresume.pdf";
 import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
-import Container from "react-bootstrap/Container";
-import { Row } from "react-bootstrap";
 
 const content = require("../data/content");
 const hero = require("../data/hero");
@@ -37,7 +36,7 @@ const Home = () => {
       <div
         id={content.heroReference}
         style={{ backgroundImage: `url(${Wall})` }}
-        className={`${heroBackground} ${spanView}`}
+        className={heroBackground}
       >
         <Container>
           <Hero
