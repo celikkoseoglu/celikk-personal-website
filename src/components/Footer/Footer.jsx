@@ -19,8 +19,8 @@ const Footer = () => {
           <span>Çelik Köseoğlu</span>
           <p className="text-muted">Designed in co-op with Morvaksu</p>
         </div>
-        <div className="col-md-4">
-          <ul className="list-inline">
+        <div className="col-md-4 my-auto">
+          <ul className="list-inline my-auto">
             <SocialMediaIcon
               className={twitter}
               faClassName="fa-twitter"
