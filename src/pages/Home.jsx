@@ -34,7 +34,7 @@ const contact = require("../data/contact");
 const Home = () => {
   return (
     <React.Fragment>
-      <div
+      <header
         id={content.heroReference}
         style={{ backgroundImage: `url(${Wall})` }}
         className={heroBackground}
@@ -47,16 +47,16 @@ const Home = () => {
             resumeLink={Resume}
           />
         </Container>
-      </div>
+      </header>
 
-      <div className={`${whyDeveloperBackground} ${sectionPadding}`}>
+      <section className={`${whyDeveloperBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.introTitle} />
         <Container>
           <CenteredText title={content.introTitle} text={content.introText} />
         </Container>
-      </div>
+      </section>
 
-      <div
+      <section
         id={content.projectsReference}
         className={`${projectsBackground} ${sectionPadding}`}
       >
@@ -74,9 +74,9 @@ const Home = () => {
             ))}
           </Row>
         </Container>
-      </div>
+      </section>
 
-      <div
+      <section
         id={content.skillsReference}
         className={`${skillsBackground} ${sectionPadding}`}
       >
@@ -93,9 +93,9 @@ const Home = () => {
             />
           ))}
         </Container>
-      </div>
+      </section>
 
-      <div
+      <section
         id={content.ongoingProjectsReference}
         className={`${ongoingProjectsBackground} ${sectionPadding}`}
       >
@@ -116,9 +116,9 @@ const Home = () => {
             ))}
           </Row>
         </Container>
-      </div>
+      </section>
 
-      <div
+      <section
         id={content.contactReference}
         className={`${contactBackground} ${sectionPadding}`}
       >
@@ -134,7 +134,7 @@ const Home = () => {
             imageAlt={contact.imageAlt}
           />
         </Container>
-      </div>
+      </section>
 
       <div className={`${footerBackground} ${footerPadding}`}>
         <Container>
