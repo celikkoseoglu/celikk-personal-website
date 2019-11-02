@@ -22,7 +22,9 @@ import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
 import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
+import NavigationBar from "../components/Navbar/NavigationBar";
 
+const navbar = require("../data/navbar");
 const content = require("../data/content");
 const hero = require("../data/hero");
 const personalSkills = require("../data/personalSkills");
@@ -33,6 +35,7 @@ const contact = require("../data/contact");
 const Home = () => {
   return (
     <React.Fragment>
+      <NavigationBar content={navbar} />
       <header
         id={content.heroReference}
         style={{ backgroundImage: `url(${Wall})` }}
