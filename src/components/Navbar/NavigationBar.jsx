@@ -61,8 +61,8 @@ const NavigationBar = ({ content }) => {
               className={whiteLink}
             />
           ))}
-          <Nav.Link className={`${whiteLink} page-scroll nav-link`} href="/cv">
-            {content.interactiveResume}
+          <Nav.Link className={`${whiteLink} page-scroll nav-link`} href="/blog">
+            {content.blog}
           </Nav.Link>
         </Navbar.Collapse>
       </Container>

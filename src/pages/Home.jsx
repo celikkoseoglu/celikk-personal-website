@@ -22,7 +22,9 @@ import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
 import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
+import NavigationBar from "../components/Navbar/NavigationBar";
 
+const navbar = require("../data/navbar");
 const content = require("../data/content");
 const hero = require("../data/hero");
 const personalSkills = require("../data/personalSkills");
@@ -31,8 +33,23 @@ const projects = require("../data/projects");
 const contact = require("../data/contact");
 
 const Home = () => {
+  const importAll = r => r.keys().map(r);
+  const markdownFiles = importAll(require.context("../blog", false, /\.md$/));
+
+  function mapFileNameToId(fileName) {
+    for (let i = 0; i < markdownFiles.length; i += 1) {
+      if (markdownFiles[i].indexOf(fileName) !== -1) {
+        return markdownFiles[i].substring(
+          markdownFiles[i].lastIndexOf("/") + 1
+        );
+      }
+    }
+    return null;
+  }
+
   return (
     <React.Fragment>
+      <NavigationBar content={navbar} />
       <header
         id={content.heroReference}
         style={{ backgroundImage: `url(${Wall})` }}
@@ -69,6 +86,7 @@ const Home = () => {
                 title={project.title}
                 subtitle={project.subtitle}
                 text={project.text}
+                blogPost={mapFileNameToId(project.blogPost)}
               />
             ))}
           </Row>
@@ -111,6 +129,7 @@ const Home = () => {
                 title={project.title}
                 subtitle={project.subtitle}
                 text={project.text}
+                blogPost={mapFileNameToId(project.blogPost)}
               />
             ))}
           </Row>

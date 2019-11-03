@@ -1,29 +1,41 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { withRouter } from "react-router-dom";
 import {
   titleMargin,
-  subtitleMargin
+  subtitleMargin,
+  point
 } from "../stylesheets/components/ProjectCard.module.sass";
 import SpringDiv from "./Animations/SpringDiv";
 
-const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text }) => {
-  return (
-    <SpringDiv className="col-md-4 text-center">
-      <img src={imageLink} className="img-fluid" alt={imageAlt} />
-      <h4 className={titleMargin}>{title}</h4>
-      <h6 className={subtitleMargin}>{subtitle}</h6>
-      <p>{text}</p>
-    </SpringDiv>
-  );
-};
+// withRouter is a higher-order component that allows this component to be clickable and it navigates to another page!
+// https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router
+
+const ProjectCard = withRouter(
+  ({ history, imageLink, imageAlt, title, subtitle, text, blogPost }) => {
+    return (
+      <SpringDiv
+        onClick={() => {
+          history.push(`/blog/${blogPost}`);
+        }}
+        className={`col-md-4 text-center ${point}`}
+      >
+        <img src={imageLink} className="img-fluid" alt={imageAlt} />
+        <h4 className={titleMargin}>{title}</h4>
+        <h6 className={subtitleMargin}>{subtitle}</h6>
+        <p>{text}</p>
+      </SpringDiv>
+    );
+  }
+);
 
 ProjectCard.propTypes = {
   imageLink: PropTypes.string,
   imageAlt: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  text: PropTypes.string
+  text: PropTypes.string,
+  blogPost: PropTypes.string
 };
 
 ProjectCard.defaultProps = {
@@ -31,7 +43,8 @@ ProjectCard.defaultProps = {
   imageAlt: null,
   title: null,
   subtitle: null,
-  text: null
+  text: null,
+  blogPost: null
 };
 
 export default ProjectCard;
