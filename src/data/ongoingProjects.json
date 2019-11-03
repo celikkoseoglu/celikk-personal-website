@@ -5,7 +5,7 @@
     "title": "Today's Meal in Marmara",
     "subtitle": "MEAL IN A DIFFERENT FORM",
     "text": "I wonder if today's meal is delicious or not. I have to check the school's website and... I wish it came as a notification.",
-    "blogPost": "foo"
+    "blogPost": "marmara"
   },
   {
     "imageLink": "https://celikk.me/images/rockyJourney.png",
@@ -13,7 +13,7 @@
     "title": "Rocky Journey",
     "subtitle": "AN FPGA GAME",
     "text": "A game written in Verilog HDL that runs on an FPGA. Drives an LED matrix and uses several hardware buttons for inputs.",
-    "blogPost": "foo"
+    "blogPost": "rockyJourney"
   },
   {
     "imageLink": "https://celikk.me/images/personalWebsite.png",
@@ -21,6 +21,6 @@
     "title": "Personal Website",
     "subtitle": "BUILT USING LATEST TECH",
     "text": "Open source website built using React. A lot of design work and an interactive CV built into it! I also streamed myself building it!",
-    "blogPost": "foo"
+    "blogPost": "personalWebsite"
   }
 ]
