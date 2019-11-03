@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { mobileSize } from "../stylesheets/components/ImageExperience.module.sass";
+
 const ImageExperience = ({
   rightAlign,
   imageLink,
@@ -10,24 +12,13 @@ const ImageExperience = ({
   text,
   className
 }) => {
-  if (rightAlign) {
-    return (
-      <div className={`row ${className}`}>
-        <div className="col-md-8 align-self-center">
-          <h4>{title}</h4>
-          <h5>{subtitle}</h5>
-          <p>{text}</p>
-        </div>
-        <div className="col-md-4 align-self-center">
-          <img className="col-md-12" src={imageLink} alt={imageAlt} />
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className={`row ${className}`}>
-      <div className="col-md-4 align-self-center">
+    <div
+      className={`mx-auto row ${mobileSize} ${className} ${rightAlign ? "flex-column-reverse flex-md-row" : ""}`}
+    >
+      <div
+        className={`col-md-4 align-self-center ${rightAlign ? "order-2" : ""}`}
+      >
         <img className="col-md-12" src={imageLink} alt={imageAlt} />
       </div>
       <div className="col-md-8 align-self-center">

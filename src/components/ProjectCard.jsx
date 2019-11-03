@@ -4,7 +4,8 @@ import { withRouter } from "react-router-dom";
 import {
   titleMargin,
   subtitleMargin,
-  point
+  point,
+  mobileSize
 } from "../stylesheets/components/ProjectCard.module.sass";
 import SpringDiv from "./Animations/SpringDiv";
 
@@ -18,7 +19,7 @@ const ProjectCard = withRouter(
         onClick={() => {
           history.push(`/blog/${blogPost}`);
         }}
-        className={`col-md-4 text-center ${point}`}
+        className={`col-md-4 text-center ${point} ${mobileSize}`}
       >
         <img src={imageLink} className="img-fluid" alt={imageAlt} />
         <h4 className={titleMargin}>{title}</h4>
