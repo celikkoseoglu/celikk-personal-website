@@ -12,7 +12,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Route exact path="/" component={Home} />
     <Route path="/cv" component={CV} />
-    <Route path="/blog" component={BlogPost} />
+    <Route path="/blog/:blogPost" component={BlogPost} />
   </BrowserRouter>,
   document.getElementById("root")
 );

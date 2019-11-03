@@ -4,18 +4,17 @@ import "bootstrap/dist/css/bootstrap.css";
 import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
 
+import PropTypes from "prop-types";
 import {
   blogPostImage,
   blogPostBackground
 } from "../stylesheets/BlogPost.module.sass";
 
-const fooBlog = require("../blog/foo.md");
-
-const BlogPost = () => {
+const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
 
   useEffect(() => {
-    fetch(fooBlog)
+    fetch(`/static/media/${match.params.blogPost}`)
       .then(res => res.text())
       .then(response => setPost(response))
       .catch(err => setPost(err));
@@ -29,6 +28,10 @@ const BlogPost = () => {
       </Container>
     </React.Fragment>
   );
+};
+
+BlogPost.propTypes = {
+  match: PropTypes.node.isRequired
 };
 
 export default BlogPost;

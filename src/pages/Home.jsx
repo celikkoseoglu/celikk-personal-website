@@ -33,6 +33,20 @@ const projects = require("../data/projects");
 const contact = require("../data/contact");
 
 const Home = () => {
+  const importAll = r => r.keys().map(r);
+  const markdownFiles = importAll(require.context("../blog", false, /\.md$/));
+
+  function mapFileNameToId(fileName) {
+    for (let i = 0; i < markdownFiles.length; i += 1) {
+      if (markdownFiles[i].indexOf(fileName) !== -1) {
+        return markdownFiles[i].substring(
+          markdownFiles[i].lastIndexOf("/") + 1
+        );
+      }
+    }
+    return null;
+  }
+
   return (
     <React.Fragment>
       <NavigationBar content={navbar} />
@@ -72,6 +86,7 @@ const Home = () => {
                 title={project.title}
                 subtitle={project.subtitle}
                 text={project.text}
+                blogPost={mapFileNameToId(project.blogPost)}
               />
             ))}
           </Row>
@@ -114,6 +129,7 @@ const Home = () => {
                 title={project.title}
                 subtitle={project.subtitle}
                 text={project.text}
+                blogPost={mapFileNameToId(project.blogPost)}
               />
             ))}
           </Row>

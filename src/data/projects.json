@@ -4,20 +4,23 @@
     "imageAlt": "QNote app logo",
     "title": "QNote",
     "subtitle": "BLAZING FAST NOTE TAKING",
-    "text": "It opens in milliseconds and closes when you lock your phone. Perfect for noting homeworks without getting the teacher's attention."
+    "text": "It opens in milliseconds and closes when you lock your phone. Perfect for noting homeworks without getting the teacher's attention.",
+    "blogPost": "foo"
   },
   {
     "imageLink": "https://celikk.me/images/IPManager.png",
     "imageAlt": "IPManager app logo",
     "title": "IPManager",
     "subtitle": "DHCP MADE EASY",
-    "text": "If a workplace uses static IP and the employees carry their computers between their homes and offices everyday, it changes DHCP settings automatically."
+    "text": "If a workplace uses static IP and the employees carry their computers between their homes and offices everyday, it changes DHCP settings automatically.",
+    "blogPost": "bar"
   },
   {
     "imageLink": "https://celikk.me/images/PhotoSec.png",
     "imageAlt": "PhotoSec app logo",
     "title": "PhotoSec",
     "subtitle": "SECURE YOUR PHOTOS!",
-    "text": "Select some photos from the phone’s gallery and password protect them. Oh, and there is a fake password feature!"
+    "text": "Select some photos from the phone’s gallery and password protect them. Oh, and there is a fake password feature!",
+    "blogPost": "foo"
   }
 ]
