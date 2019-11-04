@@ -18,7 +18,7 @@ const BlogPost = ({ match }) => {
       .then(res => res.text())
       .then(response => setPost(response))
       .catch(err => setPost(err));
-  });
+  }, [match.params.blogPost]);
 
   return (
     <React.Fragment>
