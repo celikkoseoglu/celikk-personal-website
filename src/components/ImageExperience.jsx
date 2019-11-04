@@ -37,11 +37,12 @@ ImageExperience.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired
+  className: PropTypes.string
 };
 
 ImageExperience.defaultProps = {
-  rightAlign: false
+  rightAlign: false,
+  className: null
 };
 
 export default ImageExperience;

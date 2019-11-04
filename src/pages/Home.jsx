@@ -87,6 +87,7 @@ const Home = () => {
                 subtitle={project.subtitle}
                 text={project.text}
                 blogPost={mapFileNameToId(project.blogPost)}
+                key={project.title}
               />
             ))}
           </Row>
@@ -107,6 +108,7 @@ const Home = () => {
               title={personalSkill.title}
               subtitle={personalSkill.subtitle}
               text={personalSkill.text}
+              key={personalSkill.title}
             />
           ))}
         </Container>
@@ -130,6 +132,7 @@ const Home = () => {
                 subtitle={project.subtitle}
                 text={project.text}
                 blogPost={mapFileNameToId(project.blogPost)}
+                key={project.title}
               />
             ))}
           </Row>

@@ -31,7 +31,11 @@ const BlogPost = ({ match }) => {
 };
 
 BlogPost.propTypes = {
-  match: PropTypes.node.isRequired
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      blogPost: PropTypes.string.isRequired
+    })
+  }).isRequired
 };
 
 export default BlogPost;
