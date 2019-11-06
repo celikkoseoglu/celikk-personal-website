@@ -78,7 +78,12 @@ NavigationBar.propTypes = {
   content: PropTypes.shape({
     heroTitle: PropTypes.string.isRequired,
     heroReference: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        reference: PropTypes.string.isRequired
+      })
+    ),
     blog: PropTypes.string.isRequired
   }).isRequired
 };
