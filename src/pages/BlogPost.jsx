@@ -14,6 +14,9 @@ import {
   footerPadding
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
+import BlogNavigationBar from "../components/Navbar/BlogNavigationBar";
+
+const blogNavbar = require("../data/blogNavbar");
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
@@ -28,6 +31,8 @@ const BlogPost = ({ match }) => {
 
   return (
     <React.Fragment>
+      <BlogNavigationBar content={blogNavbar} />
+
       <div className={blogPostImage} />
       <Container className={`p-4 ${blogPostBackground}`}>
         <Markdown>{post}</Markdown>
