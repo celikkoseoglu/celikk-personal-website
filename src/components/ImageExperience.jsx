@@ -21,7 +21,7 @@ const ImageExperience = ({
       >
         <img className="col-md-12" src={imageLink} alt={imageAlt} />
       </div>
-      <div className="col-md-8 align-self-center">
+      <div className="col-md-8 align-self-center py-4">
         <h4>{title}</h4>
         <h5>{subtitle}</h5>
         <p>{text}</p>

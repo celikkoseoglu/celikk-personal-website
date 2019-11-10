@@ -1,6 +1,7 @@
 import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 import {
+  socialMediaButton,
   twitter,
   facebook,
   linkedin,
@@ -17,37 +18,44 @@ const Footer = () => {
       <div className="row">
         <div className="col-md-4">
           <span>Çelik Köseoğlu</span>
-          <p className="text-muted">Designed in co-op with Morvaksu</p>
+          <div className="pt-3">
+            <a
+              href="https://www.youtube.com/watch?v=2sxI11_lxSg&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=39"
+              className="text-muted"
+            >
+              Want to see how this website is made?
+            </a>
+          </div>
         </div>
         <div className="col-md-4 my-auto">
           <ul className="list-inline my-auto">
             <SocialMediaIcon
-              className={twitter}
+              className={`${twitter} ${socialMediaButton}`}
               faClassName="fa-twitter"
               link="https://twitter.com/celikkoseoglu"
             />
             <SocialMediaIcon
-              className={facebook}
+              className={`${facebook} ${socialMediaButton}`}
               faClassName="fa-facebook"
               link="https://www.facebook.com/celikkoseoglu"
             />
             <SocialMediaIcon
-              className={linkedin}
+              className={`${linkedin} ${socialMediaButton}`}
               faClassName="fa-linkedin"
               link="https://linkedin.com/in/celikk"
             />
             <SocialMediaIcon
-              className={github}
+              className={`${github} ${socialMediaButton}`}
               faClassName="fa-github"
               link="https://github.com/celikkoseoglu"
             />
             <SocialMediaIcon
-              className={instagram}
+              className={`${instagram} ${socialMediaButton}`}
               faClassName="fa-instagram"
               link="https://instagram.com/celikkoseoglu"
             />
             <SocialMediaIcon
-              className={mail}
+              className={`${mail} ${socialMediaButton}`}
               faClassName="fa-envelope"
               link="mailto:celikkoseoglu@yahoo.com"
             />
