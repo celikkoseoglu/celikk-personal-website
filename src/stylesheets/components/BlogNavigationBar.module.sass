@@ -4,8 +4,8 @@ $transparency: 0.95
 $brandColor: #fed136
 
 .topNavExpand
+  background: rgba(63, 79, 109, $transparency)
   +screen(small)
-    background: rgba(63, 79, 109, $transparency)
     padding-top: 5px
     padding-bottom: 5px
 
@@ -23,35 +23,15 @@ $brandColor: #fed136
   -moz-transition: background .3s ease .1s, padding .5s ease
   transition: background .3s ease .1s, padding .5s ease
 
-.whiteLink
-  color: #fff
-  font-family: 'Montserrat-Regular', sans-serif
-  font-weight: 100
-  &:hover
-    color: $brandColor
-    -webkit-transition: color .3s ease-in-out
-    -moz-transition: color .3s ease-in-out
-    transition: color .3s ease-in-out
-
 .brand
   color: $brandColor
   font-family: 'KaushanScript-Regular', sans-serif
   font-size: 1.5em
   &:hover
+    text-decoration: none
     color: #fe9b00
     -webkit-transition: color .3s ease-in-out
     -moz-transition: color .3s ease-in-out
     transition: color .3s ease-in-out
   +screen(large)
     font-size: 2em
-
-.navbarToggle
-  background: $brandColor
-
-.navbarButton
-  background-image: url("../../data/images/hamburger.svg")
-  display: inline-block
-  width: 1.3em
-  height: 1.3em
-  vertical-align: middle
-  background-size: 100% 100%

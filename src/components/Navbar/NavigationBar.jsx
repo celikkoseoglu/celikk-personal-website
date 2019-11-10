@@ -52,7 +52,7 @@ const NavigationBar = ({ content }) => {
         >
           <span className={navbarButton} />
         </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse>
           <Nav className="mr-auto" />
           {content.items.map(item => (
             <NavbarItem
