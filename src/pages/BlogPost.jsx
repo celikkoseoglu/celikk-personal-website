@@ -9,6 +9,8 @@ import {
   blogPostImage,
   blogPostBackground
 } from "../stylesheets/BlogPost.module.sass";
+import {footerBackground, footerPadding} from "../stylesheets/Home.module.sass";
+import Footer from "../components/Footer/Footer";
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
@@ -23,9 +25,16 @@ const BlogPost = ({ match }) => {
   return (
     <React.Fragment>
       <div className={blogPostImage} />
-      <Container className={blogPostBackground}>
+      <Container className={`p-4 ${blogPostBackground}`}>
         <Markdown>{post}</Markdown>
       </Container>
+
+
+      <div className={`${footerBackground} ${footerPadding}`}>
+        <Container>
+          <Footer />
+        </Container>
+      </div>
     </React.Fragment>
   );
 };
