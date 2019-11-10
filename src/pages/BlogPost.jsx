@@ -9,13 +9,17 @@ import {
   blogPostImage,
   blogPostBackground
 } from "../stylesheets/BlogPost.module.sass";
-import {footerBackground, footerPadding} from "../stylesheets/Home.module.sass";
+import {
+  footerBackground,
+  footerPadding
+} from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetch(`/static/media/${match.params.blogPost}`)
       .then(res => res.text())
       .then(response => setPost(response))
@@ -28,7 +32,6 @@ const BlogPost = ({ match }) => {
       <Container className={`p-4 ${blogPostBackground}`}>
         <Markdown>{post}</Markdown>
       </Container>
-
 
       <div className={`${footerBackground} ${footerPadding}`}>
         <Container>
