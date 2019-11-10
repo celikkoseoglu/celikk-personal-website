@@ -23,6 +23,7 @@ import Heading from "../components/Heading";
 import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
 import NavigationBar from "../components/Navbar/NavigationBar";
+import { mapFileNameToId } from "./Home.utils";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -33,20 +34,6 @@ const projects = require("../data/projects");
 const contact = require("../data/contact");
 
 const Home = () => {
-  const importAll = r => r.keys().map(r);
-  const markdownFiles = importAll(require.context("../blog", false, /\.md$/));
-
-  function mapFileNameToId(fileName) {
-    for (let i = 0; i < markdownFiles.length; i += 1) {
-      if (markdownFiles[i].indexOf(fileName) !== -1) {
-        return markdownFiles[i].substring(
-          markdownFiles[i].lastIndexOf("/") + 1
-        );
-      }
-    }
-    return null;
-  }
-
   return (
     <React.Fragment>
       <NavigationBar content={navbar} />
