@@ -4,13 +4,17 @@ $transparency: 0.95
 $brandColor: #fed136
 
 .topNavExpand
-  padding: 10px 0
   +screen(small)
     background: rgba(63, 79, 109, $transparency)
+    padding-top: 5px
+    padding-bottom: 5px
 
 .topNavCollapse
   +screen(large)
     padding: 0
+  +screen(small)
+    padding-top: 3px
+    padding-bottom: 3px
   background: rgba(63, 79, 109, $transparency)
 
 .customNavbar
