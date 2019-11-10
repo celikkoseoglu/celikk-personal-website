@@ -1,8 +1,11 @@
 $breakpoint-small: 768px
 
-=screen($size, $type: max, $pixels: $breakpoint-small)
+=screen($size, $pixels: $breakpoint-small)
   @if $size == "small"
-    @media screen and ($type + -width: $breakpoint-small)
+    @media screen and (max-width: $breakpoint-small)
+      @content
+  @else if $size == "large"
+    @media screen and (min-width: $breakpoint-small)
       @content
   @else
     @content
