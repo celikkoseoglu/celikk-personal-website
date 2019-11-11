@@ -62,12 +62,12 @@ const NavigationBar = ({ content }) => {
               key={item.title}
             />
           ))}
-          <Nav.Link
-            className={`${whiteLink} page-scroll nav-link`}
-            href="/blog"
-          >
-            {content.blog}
-          </Nav.Link>
+          {/* <Nav.Link */}
+          {/*  className={`${whiteLink} page-scroll nav-link`} */}
+          {/*  href="/blog" */}
+          {/* > */}
+          {/*  {content.blog} */}
+          {/* </Nav.Link> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
