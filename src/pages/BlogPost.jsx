@@ -34,7 +34,7 @@ const BlogPost = ({ match }) => {
       <BlogNavigationBar content={blogNavbar} />
 
       <div className={blogPostImage} />
-      <Container className={`p-4 ${blogPostBackground}`}>
+      <Container className={`p-4 rounded-top ${blogPostBackground}`}>
         <Markdown>{post}</Markdown>
       </Container>
 

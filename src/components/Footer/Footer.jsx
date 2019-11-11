@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="row">
         <div className="col-md-4">
           <span>Çelik Köseoğlu</span>
-          <div className="pt-3">
+          <div className="pt-md-3 pb-md-0 py-2">
             <a
               href="https://www.youtube.com/watch?v=2sxI11_lxSg&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=39"
               className="text-muted"
