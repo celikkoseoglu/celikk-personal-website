@@ -1,6 +1,6 @@
 [
   {
-    "imageLink": "https://celikk.me/images/notReady.png",
+    "imageLink": "https://personalwebsite-celikk.web.app/images/notReady.png",
     "imageAlt": "content not ready",
     "title": "Today's Meal in Marmara",
     "subtitle": "MEAL IN A DIFFERENT FORM",
@@ -8,7 +8,7 @@
     "blogPost": "marmara"
   },
   {
-    "imageLink": "https://celikk.me/images/rockyJourney.png",
+    "imageLink": "https://personalwebsite-celikk.web.app/images/rockyJourney.png",
     "imageAlt": "a ship sailing on the sea",
     "title": "Rocky Journey",
     "subtitle": "AN FPGA GAME",
@@ -16,7 +16,7 @@
     "blogPost": "rockyJourney"
   },
   {
-    "imageLink": "https://celikk.me/images/personalWebsite.png",
+    "imageLink": "https://personalwebsite-celikk.web.app/images/personalWebsite.png",
     "imageAlt": "iMac showing the source code of this website",
     "title": "Personal Website",
     "subtitle": "BUILT USING LATEST TECH",

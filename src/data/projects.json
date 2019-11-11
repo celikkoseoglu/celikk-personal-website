@@ -1,6 +1,6 @@
 [
   {
-    "imageLink": "https://celikk.me/images/QNote.png",
+    "imageLink": "https://personalwebsite-celikk.web.app/images/QNote.png",
     "imageAlt": "QNote app logo",
     "title": "QNote",
     "subtitle": "BLAZING FAST NOTE TAKING",
@@ -8,7 +8,7 @@
     "blogPost": "qnote"
   },
   {
-    "imageLink": "https://celikk.me/images/IPManager.png",
+    "imageLink": "https://personalwebsite-celikk.web.app/images/IPManager.png",
     "imageAlt": "IPManager app logo",
     "title": "IPManager",
     "subtitle": "DHCP MADE EASY",
@@ -16,7 +16,7 @@
     "blogPost": "ipmanager"
   },
   {
-    "imageLink": "https://celikk.me/images/PhotoSec.png",
+    "imageLink": "https://personalwebsite-celikk.web.app/images/PhotoSec.png",
     "imageAlt": "PhotoSec app logo",
     "title": "PhotoSec",
     "subtitle": "SECURE YOUR PHOTOS!",
