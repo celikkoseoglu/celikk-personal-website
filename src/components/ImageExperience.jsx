@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { mobileSize } from "../stylesheets/components/ImageExperience.module.sass";
 
 const ImageExperience = ({
@@ -14,12 +13,18 @@ const ImageExperience = ({
 }) => {
   return (
     <div
-      className={`mx-auto row ${mobileSize} ${className} ${rightAlign ? "flex-column-reverse flex-md-row" : ""}`}
+      className={`mx-auto row ${mobileSize} ${className} ${
+        rightAlign ? "flex-column-reverse flex-md-row" : ""
+      }`}
     >
       <div
         className={`col-md-4 align-self-center ${rightAlign ? "order-2" : ""}`}
       >
-        <img className="col-md-12" src={imageLink} alt={imageAlt} />
+        <img
+          className="col-md-12"
+          src={`/static/media/${imageLink}`}
+          alt={imageAlt}
+        />
       </div>
       <div className="col-md-8 align-self-center py-4">
         <h4>{title}</h4>
