@@ -1,6 +1,6 @@
 [
   {
-    "imageLink": "https://personalwebsite-celikk.web.app/images/MacBook-Pro-mockup.png",
+    "imageLink": "ProgrammingLanguages",
     "imageAlt": "github profile",
     "title": "PROGRAMMING LANGUAGES",
     "subtitle": "JAVA, C++, OBJECTIVE-C & MORE...",
@@ -8,7 +8,7 @@
     "rightAlign": false
   },
   {
-    "imageLink": "https://personalwebsite-celikk.web.app/images/design.png",
+    "imageLink": "Design",
     "imageAlt": "brain storming and design",
     "title": "DESIGN",
     "subtitle": "PHOTOSHOP, ILLUSTRATOR & A PENCIL",
@@ -16,7 +16,7 @@
     "rightAlign": true
   },
   {
-    "imageLink": "https://personalwebsite-celikk.web.app/images/parkour.png",
+    "imageLink": "Sports",
     "imageAlt": "parkour moves",
     "title": "SPORTS",
     "subtitle": "PARKOUR & FREERUNNING",
