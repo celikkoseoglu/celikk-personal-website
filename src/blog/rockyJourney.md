@@ -1,6 +1,6 @@
-# TODAY'S MEAL IN MARMARA
+# ROCKY JOURNEY
 
-#### What's in lunch today? Ah, here is my notification!
+#### Flappy bird in an 8x8 LED Matrix
 
 Technologies Used: `XILinx ISE Design Suite`, `Verilog`, `Spantan 3E FPGA Board`
 
