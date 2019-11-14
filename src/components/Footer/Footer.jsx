@@ -9,7 +9,7 @@ import {
   instagram,
   mail
 } from "../../stylesheets/components/Footer.module.sass";
-import Signature from "../../data/images/signature.png";
+import Signature from "../../data/images/signature.svg";
 import SocialMediaIcon from "./SocialMediaIcon";
 
 const Footer = () => {
