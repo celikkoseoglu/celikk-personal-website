@@ -21,7 +21,7 @@
     "prettier/prettier": "warn",
     "max-len": [
       "warn",
-      80
+      100
     ]
   },
   "env": {

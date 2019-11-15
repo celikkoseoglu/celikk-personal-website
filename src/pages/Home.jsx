@@ -59,19 +59,13 @@ const Home = () => {
         </Container>
       </section>
 
-      <section
-        id={content.projectsReference}
-        className={`${projectsBackground} ${sectionPadding}`}
-      >
+      <section id={content.projectsReference} className={`${projectsBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.projectsTitle} />
         <Container title={content.projectsTitle}>
           <Row>
             {projects.map(project => (
               <ProjectCard
-                imageLink={mapFileNameToId(
-                  project.imageLink,
-                  imageFolders.projectImages
-                )}
+                imageLink={mapFileNameToId(project.imageLink, imageFolders.projectImages)}
                 imageAlt={project.imageAlt}
                 title={project.title}
                 subtitle={project.subtitle}
@@ -84,19 +78,13 @@ const Home = () => {
         </Container>
       </section>
 
-      <section
-        id={content.skillsReference}
-        className={`${skillsBackground} ${sectionPadding}`}
-      >
+      <section id={content.skillsReference} className={`${skillsBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.skillsTitle} />
         <Container>
           {personalSkills.map(personalSkill => (
             <ImageExperience
               rightAlign={personalSkill.rightAlign}
-              imageLink={mapFileNameToId(
-                personalSkill.imageLink,
-                imageFolders.personalSkillImages
-              )}
+              imageLink={mapFileNameToId(personalSkill.imageLink, imageFolders.personalSkillImages)}
               imageAlt={personalSkill.imageAlt}
               title={personalSkill.title}
               subtitle={personalSkill.subtitle}
@@ -111,18 +99,12 @@ const Home = () => {
         id={content.ongoingProjectsReference}
         className={`${ongoingProjectsBackground} ${sectionPadding}`}
       >
-        <Heading
-          className={paddingBottom}
-          text={content.ongoingProjectsTitle}
-        />
+        <Heading className={paddingBottom} text={content.ongoingProjectsTitle} />
         <Container>
           <Row>
             {ongoingProjects.map(project => (
               <ProjectCard
-                imageLink={mapFileNameToId(
-                  project.imageLink,
-                  imageFolders.ongoingProjectImages
-                )}
+                imageLink={mapFileNameToId(project.imageLink, imageFolders.ongoingProjectImages)}
                 imageAlt={project.imageAlt}
                 title={project.title}
                 subtitle={project.subtitle}
@@ -135,10 +117,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <section
-        id={content.contactReference}
-        className={`${contactBackground} ${sectionPadding}`}
-      >
+      <section id={content.contactReference} className={`${contactBackground} ${sectionPadding}`}>
         <Container>
           <Contact
             name={contact.name}
