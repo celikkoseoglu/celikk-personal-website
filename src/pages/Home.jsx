@@ -23,7 +23,7 @@ import Heading from "../components/Heading";
 import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
 import NavigationBar from "../components/Navbar/NavigationBar";
-import { folders, mapFileNameToId } from "./FileManager.utils";
+import { folders, mapFileNameToId } from "../utils/FileManager.utils";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");

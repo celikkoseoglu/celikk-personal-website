@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Container, Row } from "react-bootstrap";
 import BlogItem from "../components/BlogItem";
-import { folders, mapFileNameToId } from "./FileManager.utils";
+import { folders, mapFileNameToId } from "../utils/FileManager.utils";
 
 const blog = require("../data/blog");
 

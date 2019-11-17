@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { blogPostImage, blogPostBackground } from "../stylesheets/BlogPost.module.sass";
 import { footerBackground, footerPadding } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
-import BlogNavigationBar from "../components/Navbar/BlogNavigationBar";
+import NavigationBar from "../components/Navbar/NavigationBar";
 
 const blogNavbar = require("../data/blogNavbar");
 
@@ -24,8 +24,7 @@ const BlogPost = ({ match }) => {
 
   return (
     <React.Fragment>
-      <BlogNavigationBar content={blogNavbar} />
-
+      <NavigationBar content={blogNavbar} />
       <div className={blogPostImage} />
       <Container className={`p-4 rounded-top ${blogPostBackground}`}>
         <Markdown>{post}</Markdown>

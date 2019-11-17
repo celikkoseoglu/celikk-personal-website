@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll";
 import Nav from "react-bootstrap/Nav";
-import { whiteLink } from "../../stylesheets/components/NavigationBar.module.sass";
 
 const NavbarItem = ({ title, reference, href, className }) => {
   if (reference != null) {
@@ -21,7 +20,7 @@ const NavbarItem = ({ title, reference, href, className }) => {
     );
   }
   return (
-    <Nav.Link className={whiteLink} href={href}>
+    <Nav.Link className={className} href={href}>
       {title}
     </Nav.Link>
   );
