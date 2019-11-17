@@ -1,30 +1,42 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll";
+import Nav from "react-bootstrap/Nav";
+import { whiteLink } from "../../stylesheets/components/NavigationBar.module.sass";
 
-const NavbarItem = ({ title, reference, className }) => {
+const NavbarItem = ({ title, reference, href, className }) => {
+  if (reference != null) {
+    return (
+      <Link
+        className={`${className} page-scroll nav-link`}
+        to={reference}
+        smooth
+        offset={-50}
+        duration={500}
+        ignoreCancelEvents={false}
+        href="/"
+      >
+        {title}
+      </Link>
+    );
+  }
   return (
-    <Link
-      className={`${className} page-scroll nav-link`}
-      to={reference}
-      smooth
-      offset={-50}
-      duration={500}
-      ignoreCancelEvents={false}
-      href="/"
-    >
+    <Nav.Link className={whiteLink} href={href}>
       {title}
-    </Link>
+    </Nav.Link>
   );
 };
 
 NavbarItem.propTypes = {
   title: PropTypes.string.isRequired,
-  reference: PropTypes.string.isRequired,
+  reference: PropTypes.string,
+  href: PropTypes.string,
   className: PropTypes.string
 };
 
 NavbarItem.defaultProps = {
+  reference: PropTypes.null,
+  href: PropTypes.null,
   className: PropTypes.null
 };
 

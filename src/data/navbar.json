@@ -17,7 +17,10 @@
     {
       "title":"CONTACT",
       "reference": "contact"
+    },
+    {
+      "title": "BLOG",
+      "href": "/blog"
     }
-  ],
-  "blog": "BLOG"
+  ]
 }

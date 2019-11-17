@@ -51,13 +51,11 @@ const NavigationBar = ({ content }) => {
             <NavbarItem
               title={item.title}
               reference={item.reference}
+              href={item.href}
               className={whiteLink}
               key={item.title}
             />
           ))}
-          <Nav.Link className={`${whiteLink} page-scroll nav-link`} href="/blog">
-            {content.blog}
-          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
@@ -71,10 +69,10 @@ NavigationBar.propTypes = {
     items: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        reference: PropTypes.string.isRequired
+        reference: PropTypes.string,
+        href: PropTypes.string
       })
     ),
-    blog: PropTypes.string.isRequired
   }).isRequired
 };
 
