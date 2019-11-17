@@ -25,6 +25,27 @@
       "readingLength": "15min",
       "subtitle": "One of the first apps to be in the Windows Phone Store that allows you to hide pictures from your phone's gallery",
       "blogPost": "photosec"
+    },
+    {
+      "title": "Today's Meal in Marmara - Food as Notification",
+      "date": "10.10.2010",
+      "readingLength": "15min",
+      "subtitle": "As a student in Bilkent, I sometimes wondered what was available in the school's cafeteria. There should be an app for this",
+      "blogPost": "marmara"
+    },
+    {
+      "title": "Rocky Journey - FPGAs and Verilog",
+      "date": "10.10.2010",
+      "readingLength": "15min",
+      "subtitle": "This was our term project for CS223 Digital Design in Bilkent University. We've recreated something like Flappy Bird using an 8x8 LED Matrix",
+      "blogPost": "rockyJourney"
+    },
+    {
+      "title": "Personal Website - This Time with React",
+      "date": "10.10.2010",
+      "readingLength": "15min",
+      "subtitle": "I wanted to learn React and also I wanted to make my personal website somewhat better. This was a great opportunity. This is the story how this website is made.",
+      "blogPost": "personalWebsite"
     }
   ]
 }
