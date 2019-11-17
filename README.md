@@ -14,3 +14,7 @@ I have been doing streams while I work on this project. If you want to see my le
 
 - [YouTube Playlist](https://www.youtube.com/watch?v=2sxI11_lxSg&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=39)
 - [Twitch](https://www.twitch.tv/celikkoseoglu)
+
+#### Current Status of Kanban Board
+
+![Kanban Board](https://i.ibb.co/NnxYqVF/kanban-board.jpg)
