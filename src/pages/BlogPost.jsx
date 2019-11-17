@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "../index.sass";
 import "bootstrap/dist/css/bootstrap.css";
 import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
 
 import PropTypes from "prop-types";
-import {
-  blogPostImage,
-  blogPostBackground
-} from "../stylesheets/BlogPost.module.sass";
-import {
-  footerBackground,
-  footerPadding
-} from "../stylesheets/Home.module.sass";
+import { blogPostImage, blogPostBackground } from "../stylesheets/BlogPost.module.sass";
+import { footerBackground, footerPadding } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import BlogNavigationBar from "../components/Navbar/BlogNavigationBar";
 

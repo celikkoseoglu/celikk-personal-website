@@ -41,15 +41,8 @@ const NavigationBar = ({ content }) => {
       expand="md"
     >
       <Container>
-        <NavbarItem
-          title={content.heroTitle}
-          reference={content.heroReference}
-          className={brand}
-        />
-        <Navbar.Toggle
-          className={navbarToggle}
-          aria-controls="basic-navbar-nav"
-        >
+        <NavbarItem title={content.heroTitle} reference={content.heroReference} className={brand} />
+        <Navbar.Toggle className={navbarToggle} aria-controls="basic-navbar-nav">
           <span className={navbarButton} />
         </Navbar.Toggle>
         <Navbar.Collapse>
@@ -62,12 +55,9 @@ const NavigationBar = ({ content }) => {
               key={item.title}
             />
           ))}
-          {/* <Nav.Link */}
-          {/*  className={`${whiteLink} page-scroll nav-link`} */}
-          {/*  href="/blog" */}
-          {/* > */}
-          {/*  {content.blog} */}
-          {/* </Nav.Link> */}
+          <Nav.Link className={`${whiteLink} page-scroll nav-link`} href="/blog">
+            {content.blog}
+          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
