@@ -13,8 +13,10 @@ import {
   navbarButton
 } from "../../stylesheets/components/NavigationBar.module.sass";
 import NavbarItem from "./NavbarItem";
+import mapNotNull from "../../utils/Map.utils";
 
 const NavigationBar = ({ content }) => {
+
   const [navbarExpanded, setNavbarExpanded] = useState(true);
 
   function handleScroll() {
@@ -44,30 +46,23 @@ const NavigationBar = ({ content }) => {
         <NavbarItem
           title={content.heroTitle}
           reference={content.heroReference}
+          href={content.heroLink}
           className={brand}
         />
-        <Navbar.Toggle
-          className={navbarToggle}
-          aria-controls="basic-navbar-nav"
-        >
+        <Navbar.Toggle className={navbarToggle} aria-controls="basic-navbar-nav">
           <span className={navbarButton} />
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="mr-auto" />
-          {content.items.map(item => (
+          {mapNotNull(content.items).map(item => (
             <NavbarItem
               title={item.title}
               reference={item.reference}
+              href={item.href}
               className={whiteLink}
               key={item.title}
             />
           ))}
-          {/* <Nav.Link */}
-          {/*  className={`${whiteLink} page-scroll nav-link`} */}
-          {/*  href="/blog" */}
-          {/* > */}
-          {/*  {content.blog} */}
-          {/* </Nav.Link> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
@@ -77,14 +72,15 @@ const NavigationBar = ({ content }) => {
 NavigationBar.propTypes = {
   content: PropTypes.shape({
     heroTitle: PropTypes.string.isRequired,
-    heroReference: PropTypes.string.isRequired,
+    heroReference: PropTypes.string,
+    heroLink: PropTypes.string,
     items: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
-        reference: PropTypes.string.isRequired
+        reference: PropTypes.string,
+        href: PropTypes.string
       })
-    ),
-    blog: PropTypes.string.isRequired
+    )
   }).isRequired
 };
 

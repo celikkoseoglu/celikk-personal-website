@@ -23,7 +23,7 @@ import Heading from "../components/Heading";
 import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
 import NavigationBar from "../components/Navbar/NavigationBar";
-import { blogFiles, imageFolders, mapFileNameToId } from "./Home.utils";
+import { folders, mapFileNameToId } from "../utils/FileManager.utils";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -65,12 +65,12 @@ const Home = () => {
           <Row>
             {projects.map(project => (
               <ProjectCard
-                imageLink={mapFileNameToId(project.imageLink, imageFolders.projectImages)}
+                imageLink={mapFileNameToId(project.imageLink, folders.projectImages)}
                 imageAlt={project.imageAlt}
                 title={project.title}
                 subtitle={project.subtitle}
                 text={project.text}
-                blogPost={mapFileNameToId(project.blogPost, blogFiles)}
+                blogPost={mapFileNameToId(project.blogPost, folders.blogFiles)}
                 key={project.title}
               />
             ))}
@@ -84,7 +84,7 @@ const Home = () => {
           {personalSkills.map(personalSkill => (
             <ImageExperience
               rightAlign={personalSkill.rightAlign}
-              imageLink={mapFileNameToId(personalSkill.imageLink, imageFolders.personalSkillImages)}
+              imageLink={mapFileNameToId(personalSkill.imageLink, folders.personalSkillImages)}
               imageAlt={personalSkill.imageAlt}
               title={personalSkill.title}
               subtitle={personalSkill.subtitle}
@@ -104,12 +104,12 @@ const Home = () => {
           <Row>
             {ongoingProjects.map(project => (
               <ProjectCard
-                imageLink={mapFileNameToId(project.imageLink, imageFolders.ongoingProjectImages)}
+                imageLink={mapFileNameToId(project.imageLink, folders.ongoingProjectImages)}
                 imageAlt={project.imageAlt}
                 title={project.title}
                 subtitle={project.subtitle}
                 text={project.text}
-                blogPost={mapFileNameToId(project.blogPost, blogFiles)}
+                blogPost={mapFileNameToId(project.blogPost, folders.blogFiles)}
                 key={project.title}
               />
             ))}

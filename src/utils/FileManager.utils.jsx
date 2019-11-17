@@ -1,6 +1,6 @@
 const importAll = r => r.keys().map(r);
 
-export const imageFolders = Object.freeze({
+export const folders = Object.freeze({
   ongoingProjectImages: importAll(
     require.context(`../data/images/ongoingProjects`, false, /\.png$/)
   ),
@@ -9,9 +9,9 @@ export const imageFolders = Object.freeze({
   ),
   projectImages: importAll(
     require.context(`../data/images/projects`, false, /\.png$/)
-  )
+  ),
+  blogFiles: importAll(require.context("../blog", false, /\.md$/))
 });
-export const blogFiles = importAll(require.context("../blog", false, /\.md$/));
 
 export const mapFileNameToId = (fileName, fileArray) => {
   for (let i = 0; i < fileArray.length; i += 1) {
