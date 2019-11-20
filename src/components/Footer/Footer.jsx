@@ -64,11 +64,7 @@ const Footer = () => {
         <div className="col-md-4">
           <span>August 2019</span>
           <br />
-          <img
-            src={Signature}
-            alt="signature"
-            className="img-responsive img-centered"
-          />
+          <img src={Signature} alt="signature" className="img-responsive img-centered" />
         </div>
       </div>
     </footer>

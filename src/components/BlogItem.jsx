@@ -1,15 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-
-import { noDecoration } from "../stylesheets/components/BlogItem.module.sass";
+import UnstyledLink from "./Util/UnstyledLink";
 
 const BlogItem = ({ className, title, date, readingLength, subtitle, blogPost }) => {
   return (
     <div className={className}>
-      <Link className={noDecoration} to={`/blog/${blogPost}`}>
+      <UnstyledLink to={`/blog/${blogPost}`}>
         <h4>{title}</h4>
-      </Link>
+      </UnstyledLink>
       <h6>
         {date} - {readingLength}
       </h6>

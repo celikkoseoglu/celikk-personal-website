@@ -1,24 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import {
   titleMargin,
   subtitleMargin,
   point,
-  mobileSize,
-  noDecoration
+  mobileSize
 } from "../stylesheets/components/ProjectCard.module.sass";
 import SpringDiv from "./Animations/SpringDiv";
+import UnstyledLink from "./Util/UnstyledLink";
 
 const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text, blogPost }) => {
   return (
     <SpringDiv className={`col-md-4 text-center ${point} ${mobileSize}`}>
-      <Link className={noDecoration} to={`/blog/${blogPost}`}>
+      <UnstyledLink to={`/blog/${blogPost}`}>
         <img src={`/static/media/${imageLink}`} className="img-fluid" alt={imageAlt} />
         <h4 className={titleMargin}>{title}</h4>
         <h6 className={subtitleMargin}>{subtitle}</h6>
         <p>{text}</p>
-      </Link>
+      </UnstyledLink>
     </SpringDiv>
   );
 };
