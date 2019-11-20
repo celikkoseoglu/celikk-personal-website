@@ -25,6 +25,8 @@ import Contact from "../components/Contact";
 import NavigationBar from "../components/Navbar/NavigationBar";
 import { folders, mapFileNameToId } from "../utils/FileManager.utils";
 
+import Signature from "../data/images/signature.svg";
+
 const navbar = require("../data/navbar");
 const content = require("../data/content");
 const hero = require("../data/hero");
@@ -32,6 +34,7 @@ const personalSkills = require("../data/personalSkills");
 const ongoingProjects = require("../data/ongoingProjects");
 const projects = require("../data/projects");
 const contact = require("../data/contact");
+const footer = require("../data/footer");
 
 const Home = () => {
   return (
@@ -134,7 +137,7 @@ const Home = () => {
 
       <div className={`${footerBackground} ${footerPadding}`}>
         <Container>
-          <Footer />
+          <Footer content={footer} signatureImage={Signature} />
         </Container>
       </div>
     </React.Fragment>

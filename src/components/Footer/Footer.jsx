@@ -1,5 +1,6 @@
 import React from "react";
 import "font-awesome/css/font-awesome.min.css";
+import PropTypes from "prop-types";
 import {
   socialMediaButton,
   twitter,
@@ -9,21 +10,17 @@ import {
   instagram,
   mail
 } from "../../stylesheets/components/Footer.module.sass";
-import Signature from "../../data/images/signature.svg";
 import SocialMediaIcon from "./SocialMediaIcon";
 
-const Footer = () => {
+const Footer = ({ content, signatureImage }) => {
   return (
     <footer className="text-center col-md-12">
       <div className="row">
         <div className="col-md-4">
-          <span>Çelik Köseoğlu</span>
+          <span>{content.title}</span>
           <div className="pt-md-3 pb-md-0 py-2">
-            <a
-              href="https://www.youtube.com/watch?v=2sxI11_lxSg&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=39"
-              className="text-muted"
-            >
-              Want to see how this website is made?
+            <a href={content.link} className="text-muted">
+              {content.linkText}
             </a>
           </div>
         </div>
@@ -32,43 +29,59 @@ const Footer = () => {
             <SocialMediaIcon
               className={`${twitter} ${socialMediaButton}`}
               faClassName="fa-twitter"
-              link="https://twitter.com/celikkoseoglu"
+              link={content.twitterLink}
             />
             <SocialMediaIcon
               className={`${facebook} ${socialMediaButton}`}
               faClassName="fa-facebook"
-              link="https://www.facebook.com/celikkoseoglu"
+              link={content.facebookLink}
             />
             <SocialMediaIcon
               className={`${linkedin} ${socialMediaButton}`}
               faClassName="fa-linkedin"
-              link="https://linkedin.com/in/celikk"
+              link={content.linkedinLink}
             />
             <SocialMediaIcon
               className={`${github} ${socialMediaButton}`}
               faClassName="fa-github"
-              link="https://github.com/celikkoseoglu"
+              link={content.githubLink}
             />
             <SocialMediaIcon
               className={`${instagram} ${socialMediaButton}`}
               faClassName="fa-instagram"
-              link="https://instagram.com/celikkoseoglu"
+              link={content.instagramLink}
             />
             <SocialMediaIcon
               className={`${mail} ${socialMediaButton}`}
               faClassName="fa-envelope"
-              link="mailto:celikkoseoglu@yahoo.com"
+              link={content.emailLink}
             />
           </ul>
         </div>
         <div className="col-md-4">
-          <span>August 2019</span>
+          <span>{content.date}</span>
           <br />
-          <img src={Signature} alt="signature" className="img-responsive img-centered" />
+          <img src={signatureImage} alt="signature" className="img-responsive img-centered" />
         </div>
       </div>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  content: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    linkText: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    twitterLink: PropTypes.string.isRequired,
+    facebookLink: PropTypes.string.isRequired,
+    linkedinLink: PropTypes.string.isRequired,
+    githubLink: PropTypes.string.isRequired,
+    instagramLink: PropTypes.string.isRequired,
+    emailLink: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired
+  }).isRequired,
+  signatureImage: PropTypes.string.isRequired
 };
 
 export default Footer;
