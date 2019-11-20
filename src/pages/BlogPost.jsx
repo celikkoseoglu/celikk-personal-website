@@ -8,8 +8,10 @@ import { blogPostImage, blogPostBackground } from "../stylesheets/BlogPost.modul
 import { footerBackground, footerPadding } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import NavigationBar from "../components/Navbar/NavigationBar";
+import Signature from "../data/images/signature.svg";
 
 const blogNavbar = require("../data/blogNavbar");
+const footer = require("../data/footer");
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
@@ -32,7 +34,7 @@ const BlogPost = ({ match }) => {
 
       <div className={`${footerBackground} ${footerPadding}`}>
         <Container>
-          <Footer />
+          <Footer content={footer} signatureImage={Signature} />
         </Container>
       </div>
     </React.Fragment>
