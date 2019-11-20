@@ -2,6 +2,7 @@ import React from "react";
 import "font-awesome/css/font-awesome.min.css";
 import PropTypes from "prop-types";
 import {
+  linkColor,
   socialMediaButton,
   twitter,
   facebook,
@@ -19,7 +20,7 @@ const Footer = ({ content, signatureImage }) => {
         <div className="col-md-4">
           <span>{content.title}</span>
           <div className="pt-md-3 pb-md-0 py-2">
-            <a href={content.link} className="text-muted">
+            <a href={content.link} className={linkColor}>
               {content.linkText}
             </a>
           </div>
