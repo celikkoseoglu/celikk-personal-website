@@ -4,12 +4,8 @@ export const folders = Object.freeze({
   ongoingProjectImages: importAll(
     require.context(`../data/images/ongoingProjects`, false, /\.png$/)
   ),
-  personalSkillImages: importAll(
-    require.context(`../data/images/personalSkills`, false, /\.png$/)
-  ),
-  projectImages: importAll(
-    require.context(`../data/images/projects`, false, /\.png$/)
-  ),
+  personalSkillImages: importAll(require.context(`../data/images/personalSkills`, false, /\.png$/)),
+  projectImages: importAll(require.context(`../data/images/projects`, false, /\.png$/)),
   blogFiles: importAll(require.context("../blog", false, /\.md$/))
 });
 

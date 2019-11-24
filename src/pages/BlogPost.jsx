@@ -6,7 +6,8 @@ import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { blogPostBackground, box } from "../stylesheets/BlogPost.module.sass";
+import { blogPost, blogPostBackground, box } from "../stylesheets/BlogPost.module.sass";
+import HelloWorldBlog from "../components/HelloWorldBlog";
 
 const blogNavbar = require("../data/blogNavbar");
 
@@ -28,10 +29,13 @@ const BlogPost = ({ match, history }) => {
 
   return (
     <React.Fragment>
-      <Container className={`col-lg-4 py-4 rounded-top ${blogPostBackground}`}>
+      <Container className={`col-lg-4 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
         <div className="py-5">
           {hasHistory ? (
-            <Button className={box} onClick={() => (history.goBack() ? undefined : history.goForward())}>
+            <Button
+              className={box}
+              onClick={() => (history.goBack() ? undefined : history.goForward())}
+            >
               {blogNavbar.goBackLabel}
             </Button>
           ) : (
@@ -39,7 +43,17 @@ const BlogPost = ({ match, history }) => {
           )}
         </div>
 
-        <Markdown>{post}</Markdown>
+        <Markdown
+          options={{
+            overrides: {
+              HelloWorldBlog: {
+                component: HelloWorldBlog
+              }
+            }
+          }}
+        >
+          {post}
+        </Markdown>
       </Container>
     </React.Fragment>
   );

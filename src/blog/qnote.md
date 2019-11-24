@@ -4,6 +4,8 @@
 
 ######November 24, 2019 - 15 min read
 
+<HelloWorldBlog header={`Hello World from Custom Component!`}}/>
+
 Technologies Used: `Microsoft Visual Studio`, `C# .NET`, `WPF`
 
 Was Available For: `Windows Desktop`, `Windows Phone`
