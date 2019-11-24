@@ -13,10 +13,8 @@ import {
   navbarButton
 } from "../../stylesheets/components/NavigationBar.module.sass";
 import NavbarItem from "./NavbarItem";
-import mapNotNull from "../../utils/Map.utils";
 
 const NavigationBar = ({ content }) => {
-
   const [navbarExpanded, setNavbarExpanded] = useState(true);
 
   function handleScroll() {
@@ -54,7 +52,7 @@ const NavigationBar = ({ content }) => {
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="mr-auto" />
-          {mapNotNull(content.items).map(item => (
+          {content.items.map(item => (
             <NavbarItem
               title={item.title}
               reference={item.reference}
