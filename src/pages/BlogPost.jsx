@@ -6,13 +6,9 @@ import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { blogPostBackground } from "../stylesheets/BlogPost.module.sass";
-import { footerBackground, footerPadding } from "../stylesheets/Home.module.sass";
-import Footer from "../components/Footer/Footer";
-import Signature from "../data/images/signature.svg";
+import { blogPostBackground, box } from "../stylesheets/BlogPost.module.sass";
 
 const blogNavbar = require("../data/blogNavbar");
-const footer = require("../data/footer");
 
 const BlogPost = ({ match, history }) => {
   const [post, setPost] = useState("");
@@ -32,23 +28,19 @@ const BlogPost = ({ match, history }) => {
 
   return (
     <React.Fragment>
-      <Container className={`p-4 rounded-top ${blogPostBackground}`}>
-        {hasHistory ? (
-          <Button onClick={() => (history.goBack() ? undefined : history.goForward())}>
-            {blogNavbar.goBackLabel}
-          </Button>
-        ) : (
-          <Link to={blogNavbar.homeLink}>{blogNavbar.blogLabel}</Link>
-        )}
+      <Container className={`col-lg-4 py-4 rounded-top ${blogPostBackground}`}>
+        <div className="py-5">
+          {hasHistory ? (
+            <Button className={box} onClick={() => (history.goBack() ? undefined : history.goForward())}>
+              {blogNavbar.goBackLabel}
+            </Button>
+          ) : (
+            <Link to={blogNavbar.homeLink}>{blogNavbar.blogLabel}</Link>
+          )}
+        </div>
 
         <Markdown>{post}</Markdown>
       </Container>
-
-      <div className={`${footerBackground} ${footerPadding}`}>
-        <Container>
-          <Footer content={footer} signatureImage={Signature} />
-        </Container>
-      </div>
     </React.Fragment>
   );
 };

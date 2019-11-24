@@ -1,10 +1,58 @@
 body
-  background: lightgray
+  background: white
   font-size: 16px
+
+h1
+  margin-bottom: 30px
+  font-weight: bolder
+
+h6
+  margin-bottom: 30px
+  color: darkgrey
+
+code
+  color: navy
+
+blockquote
+  background: #f9f9f9
+  border-left: 10px solid #ccc
+  margin: 1.5em 0
+  padding: 0.5em 10px
+
+blockquote:before
+  color: #ccc
+  content: open-quote
+  font-size: 4em
+  line-height: 0.1em
+  margin-right: 0.25em
+  vertical-align: -0.28em
+
+blockquote:after
+  color: #ccc
+  content: close-quote
+  font-size: 4em
+  line-height: 0.8em
+  float: right
 
 .blogPostBackground
   background: white
   min-height: 100vh
-  -webkit-box-shadow: 4px 6px 22px -5px rgba(0,0,0,0.8)
-  -moz-box-shadow: 4px 6px 22px -5px rgba(0,0,0,0.8)
-  box-shadow: 4px 6px 22px -5px rgba(0,0,0,0.8)
+
+.box
+  display: inline-block
+  font-size: 20px
+  padding: 10px
+  border: 2px solid navy
+  width: 140px
+  font-weight: 700
+  text-shadow: 0 0 30px #969696
+  line-height: 1.4em
+  color: navy
+  transition: color 0.3s, border 0.3s
+  background: transparent
+  &:hover
+    border: 2px solid #5c8afe
+    background: transparent
+    text-decoration: none
+    color: #5c8afe
+

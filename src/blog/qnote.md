@@ -1,6 +1,8 @@
-# QNote
+# QNote - The most lightweight note taking app
 
-#### The most lightweight note taking app
+### The first app I've ever published
+
+######November 24, 2019 - 15 min read
 
 Technologies Used: `Microsoft Visual Studio`, `C# .NET`, `WPF`
 
@@ -11,12 +13,13 @@ This blog is special to me. Because QNote is the first ever application that I p
 The story of QNote begins in 2011. I was fifteen years old and still in high school. I was reading some random programming books since I was twelve, 
 and experimenting with stuff on the side but I had no solid understanding of the big picture.
 
-One day, I went to the nearest book store and asked for a programming book for iOS because iPhone was getting really popular.
-The teenager version of me wanted to get an iPhone, jailbreak it, install cool homebrew stuff etc. At the same time, I wanted to start
+One day, I went to the nearest book store and asked for a programming book for iOS because the iPhone was getting really popular.
+The fifteen year old version of me wanted to get an iPhone, jailbreak it, install cool homebrew stuff etc. At the same time, I wanted to start
 learning how people actually made apps for this device. However, the bookstore had no books on Objective-C. I walked out the
-bookshop with a book called Step By Step C# 2011 by John Sharp. That was how I never learnt Objective-C.
+bookshop with a book called Step By Step C# 2011 by John Sharp. (That was how I never learnt Objective-C. Now, the year is 2019 and I'm up for the
+challenge if need be)
 
-So while reading this book, I started making some experimental Windows Desktop applications using C# .NET. At first, everything looked 
+So while reading this C# book, I started making some experimental Windows Desktop applications using C# .NET. At first, everything looked 
 weird compared to my previous adventures because you had this .XAML file to define a layout and C# code to implement UI behaviour.
 This was the first time I was introduced to GUI programming.
 
@@ -32,6 +35,10 @@ planning to get many developers on-board. I was one of them, so I got myself a n
 it was ready to publish to Windows Phone store.
 
 It looked like this:
+
+<img src="/blogImages/qnote/screenshot1.png" alt="screenshot1" width="200"/>
+<img src="/blogImages/qnote/screenshot2.png" alt="screenshot2" width="200"/>
+<img src="/blogImages/qnote/screenshot3.png" alt="screenshot3" width="200"/>
 
 And had the following description in the store:
 
