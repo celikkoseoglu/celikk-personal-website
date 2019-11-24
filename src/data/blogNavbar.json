@@ -1,4 +1,5 @@
 {
-  "heroTitle": "← Go Back",
-  "heroLink": "/"
+  "goBackLabel": "← Go Back",
+  "blogLabel": "Celik's Personal Blog",
+  "homeLink": "/"
 }
