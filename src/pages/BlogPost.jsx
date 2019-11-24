@@ -4,10 +4,10 @@ import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
 
 import PropTypes from "prop-types";
-import { blogPostImage, blogPostBackground } from "../stylesheets/BlogPost.module.sass";
+import { Link } from "react-router-dom";
+import { blogPostBackground } from "../stylesheets/BlogPost.module.sass";
 import { footerBackground, footerPadding } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
-import NavigationBar from "../components/Navbar/NavigationBar";
 import Signature from "../data/images/signature.svg";
 
 const blogNavbar = require("../data/blogNavbar");
@@ -26,9 +26,8 @@ const BlogPost = ({ match }) => {
 
   return (
     <React.Fragment>
-      <NavigationBar content={blogNavbar} />
-      <div className={blogPostImage} />
       <Container className={`p-4 rounded-top ${blogPostBackground}`}>
+        <Link to={blogNavbar.heroLink}>{blogNavbar.heroTitle}</Link>
         <Markdown>{post}</Markdown>
       </Container>
 
