@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { blogPost, blogPostBackground, box } from "../stylesheets/BlogPost.module.sass";
-import HelloWorldBlog from "../components/HelloWorldBlog";
+import ImageCarousel from "../components/ImageCarousel";
 
 const blogNavbar = require("../data/blogNavbar");
 
@@ -46,8 +46,8 @@ const BlogPost = ({ match, history }) => {
         <Markdown
           options={{
             overrides: {
-              HelloWorldBlog: {
-                component: HelloWorldBlog
+              ImageCarousel: {
+                component: ImageCarousel
               }
             }
           }}

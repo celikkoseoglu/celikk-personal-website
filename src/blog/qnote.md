@@ -4,8 +4,6 @@
 
 ######November 24, 2019 - 15 min read
 
-<HelloWorldBlog header={`Hello World from Custom Component!`}}/>
-
 Technologies Used: `Microsoft Visual Studio`, `C# .NET`, `WPF`
 
 Was Available For: `Windows Desktop`, `Windows Phone`
@@ -38,9 +36,7 @@ it was ready to publish to Windows Phone store.
 
 It looked like this:
 
-<img src="/blogImages/qnote/screenshot1.png" alt="screenshot1" width="200"/>
-<img src="/blogImages/qnote/screenshot2.png" alt="screenshot2" width="200"/>
-<img src="/blogImages/qnote/screenshot3.png" alt="screenshot3" width="200"/>
+<ImageCarousel folder="qnote" images="appIcon,screenshot1,screenshot2,screenshot3"/>
 
 And had the following description in the store:
 
