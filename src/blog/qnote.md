@@ -1,3 +1,5 @@
+<ImageCarousel folder="qnote" images="appIcon"/>
+
 # QNote - The most lightweight note taking app
 
 ### The first app I've ever published
@@ -36,7 +38,7 @@ it was ready to publish to Windows Phone store.
 
 It looked like this:
 
-<ImageCarousel folder="qnote" images="appIcon,screenshot1,screenshot2,screenshot3"/>
+<ImageCarousel folder="qnote" images="screenshot1,screenshot2,screenshot3"/>
 
 And had the following description in the store:
 

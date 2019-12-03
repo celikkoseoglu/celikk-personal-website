@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { horizontalOverflow, flex } from "../stylesheets/components/ImageCarousel.module.sass";
+import {
+  imageCarousel,
+  horizontalOverflow,
+  autoSizeImage
+} from "../stylesheets/components/ImageCarousel.module.sass";
 
 const ImageCarousel = ({ folder, images }) => {
   const imageRelativeLinkArray = [];
@@ -20,10 +24,10 @@ const ImageCarousel = ({ folder, images }) => {
   }, []);
 
   return (
-    <div className={`${horizontalOverflow} ${flex}`}>
+    <div align="center" className={`${horizontalOverflow} ${imageCarousel} pb-3 my-3`}>
       {imageLoaded
         ? imageLoaded.map(imageRelativeLink => (
-            <img src={imageRelativeLink} alt="screenshot1" height="400" />
+            <img src={imageRelativeLink} className={`${autoSizeImage} mx-1`} alt="screenshot1" />
           ))
         : null}
     </div>

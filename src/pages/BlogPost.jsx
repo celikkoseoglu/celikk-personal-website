@@ -28,9 +28,9 @@ const BlogPost = ({ match, history }) => {
   }, [match.params.blogPost, history.length]);
 
   return (
-    <React.Fragment>
+    <>
       <Container className={`col-lg-4 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
-        <div className="py-5">
+        <div className="py-3">
           {hasHistory ? (
             <Button
               className={box}
@@ -55,7 +55,7 @@ const BlogPost = ({ match, history }) => {
           {post}
         </Markdown>
       </Container>
-    </React.Fragment>
+    </>
   );
 };
 
