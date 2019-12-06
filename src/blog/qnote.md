@@ -25,6 +25,8 @@ This was the first time I was doing GUI programming.
 
 Anyway, a short while later, I had something that looked like this:
 
+<ImageCarousel folder="qnote" images="qnoteStartupScreen,qnoteOptionsMenu,qnoteAfterCustomised,qnoteOptionsMenuStandalone"/>
+
 Since it was  a Windows Desktop app, it also required an app icon. I used to play Minecraft at the time. 
 I could say it influenced my design choices:
 
@@ -52,7 +54,7 @@ And this was the description in the Windows Phone Store:
 > Makes note taking fast, simple and easy on Windows Phone devices.
  Unlike other note taking apps, QNote does not require the user to
   wait for a few seconds to get ready for note taking. It starts up
-   in milliseconds, the user takes some notes and just lock the
+   in milliseconds, the user takes some notes and then locks the
     phone to close the application. Perfect for taking quick notes
      on the go!
 
@@ -64,7 +66,7 @@ I've kept updating it with small optimizations and a more polished user interfac
 <ImageCarousel folder="qnote" images="tweet"/>
 
 In its two years on the Windows Phone Store, QNote got around 1200 downloads. It was always free. Always will be free. And as of the publication
-date of this blog post, the Windows Desktop version is open source. You can all see how bad my coding skills were when I first started. It's all about
+date of this blog post, the Windows Desktop version is [open source](https://github.com/celikkoseoglu/QNote). You can all see how bad my coding skills were when I first started. It's all about
 progress. 
 
 Moral of the story is: 

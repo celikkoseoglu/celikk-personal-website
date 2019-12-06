@@ -29,8 +29,8 @@ const BlogPost = ({ match, history }) => {
 
   return (
     <>
-      <Container className={`col-lg-4 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
-        <div className="py-3">
+      <Container className={`col-xl-4 col-lg-6 col-md-8 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
+        <div className="py-lg-5 py-4">
           {hasHistory ? (
             <Button
               className={box}

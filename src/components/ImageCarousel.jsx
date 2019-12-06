@@ -23,11 +23,21 @@ const ImageCarousel = ({ folder, images }) => {
     );
   }, []);
 
+  const imageSpacer = (index, length) => {
+    if (index === 0) {
+      return "mr-1";
+    }
+    if (index === length - 1) {
+      return "ml-1";
+    }
+    return "mx-1";
+  };
+
   return (
-    <div align="center" className={`${horizontalOverflow} ${imageCarousel} pb-3 my-3`}>
+    <div align="center" className={`${horizontalOverflow} ${imageCarousel} py-3 my-3`}>
       {imageLoaded
-        ? imageLoaded.map(imageRelativeLink => (
-            <img src={imageRelativeLink} className={`${autoSizeImage} mx-1`} alt="screenshot1" />
+        ? imageLoaded.map((imageRelativeLink, index) => (
+            <img src={imageRelativeLink} className={`${autoSizeImage} ${imageSpacer(index, imageLoaded.length)}`} alt="screenshot1" />
           ))
         : null}
     </div>

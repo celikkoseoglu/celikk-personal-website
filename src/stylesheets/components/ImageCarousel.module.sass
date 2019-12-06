@@ -7,15 +7,22 @@
   height: 100%
   max-height: 400px
 
+.imageCarousel
+  color: #000080
+  transition: color 0.3s ease
+  &:hover
+    color: #5c8afe
+
+.imageCarousel::-webkit-scrollbar-button
+  display: none
+
+.imageCarousel::-webkit-scrollbar-thumb
+  border: 8px solid
+  border-radius: 10px
+
 .imageCarousel::-webkit-scrollbar
-  height: 10px
+  height: 8px
 
 .imageCarousel::-webkit-scrollbar-track
   border-radius: 5px
 
-.imageCarousel::-webkit-scrollbar-thumb
-  background: #5e7980
-  border-radius: 10px
-
-.imageCarousel::-webkit-scrollbar-thumb:hover
-  background: #5c8afe
