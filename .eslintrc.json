@@ -28,5 +28,10 @@
     "browser": true
   },
   "settings": {
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   }
 }

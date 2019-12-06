@@ -1,10 +1,56 @@
-body
-  background: lightgray
+.blogPost p
   font-size: 16px
+
+.blogPost h1
+  margin-bottom: 30px
+  font-weight: bolder
+
+.blogPost h6
+  margin-bottom: 30px
+  color: darkgrey
+
+.blogPost code
+  color: #000080
+
+.blogPost blockquote
+  background: #f9f9f9
+  border-left: 10px solid #ccc
+  margin: 1.5em 0
+  padding: 0.5em 10px
+
+.blogPost blockquote:before
+  color: #ccc
+  content: open-quote
+  font-size: 4em
+  line-height: 0.1em
+  margin-right: 0.25em
+  vertical-align: -0.28em
+
+.blogPost blockquote:after
+  color: #ccc
+  content: close-quote
+  font-size: 4em
+  line-height: 0.8em
+  float: right
 
 .blogPostBackground
   background: white
   min-height: 100vh
-  -webkit-box-shadow: 4px 6px 22px -5px rgba(0,0,0,0.8)
-  -moz-box-shadow: 4px 6px 22px -5px rgba(0,0,0,0.8)
-  box-shadow: 4px 6px 22px -5px rgba(0,0,0,0.8)
+
+.box
+  display: inline-block
+  font-size: 20px
+  padding: 8px
+  border: 2px solid #000080
+  width: 140px
+  font-weight: 700
+  line-height: 1.4em
+  color: #000080
+  transition: color 0.3s, border 0.3s
+  background: transparent
+  &:hover
+    border: 2px solid #5c8afe
+    background: transparent
+    text-decoration: none
+    color: #5c8afe
+
