@@ -2,7 +2,7 @@
 
 ### This is how my story begins.
 
-######November 24, 2019 - 15 min read
+######November 24, 2019 - 8 min read
 
 Technologies Used: `Microsoft Visual Studio`, `C# .NET`, `WPF`
 
