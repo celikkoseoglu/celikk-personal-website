@@ -6,7 +6,8 @@ export const folders = Object.freeze({
   ),
   personalSkillImages: importAll(require.context(`../data/images/personalSkills`, false, /\.png$/)),
   projectImages: importAll(require.context(`../data/images/projects`, false, /\.png$/)),
-  blogFiles: importAll(require.context("../blog", false, /\.md$/))
+  blogFiles: importAll(require.context("../blog", false, /\.md$/)),
+  heroImages: importAll(require.context("../data/images/hero", false, /\.jpg$/))
 });
 
 export const mapFileNameToId = (fileName, fileArray) => {
