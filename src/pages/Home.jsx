@@ -38,7 +38,7 @@ const footer = require("../data/footer");
 
 const Home = () => {
   return (
-    <React.Fragment>
+    <>
       <NavigationBar content={navbar} />
       <header
         id={content.heroReference}
@@ -73,7 +73,7 @@ const Home = () => {
                 title={project.title}
                 subtitle={project.subtitle}
                 text={project.text}
-                blogPost={mapFileNameToId(project.blogPost, folders.blogFiles)}
+                blogPost={project.blogPost}
                 key={project.title}
               />
             ))}
@@ -112,7 +112,7 @@ const Home = () => {
                 title={project.title}
                 subtitle={project.subtitle}
                 text={project.text}
-                blogPost={mapFileNameToId(project.blogPost, folders.blogFiles)}
+                blogPost={project.blogPost}
                 key={project.title}
               />
             ))}
@@ -140,7 +140,7 @@ const Home = () => {
           <Footer content={footer} signatureImage={Signature} />
         </Container>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
