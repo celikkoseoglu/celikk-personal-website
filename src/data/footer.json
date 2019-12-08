@@ -2,11 +2,13 @@
   "title": "Çelik Köseoğlu",
   "linkText": "Want to see how this website is made?",
   "link": "https://www.youtube.com/watch?v=2sxI11_lxSg&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=39",
-  "twitterLink": "https://twitter.com/celikkoseoglu",
-  "facebookLink": "https://www.facebook.com/celikkoseoglu",
-  "linkedinLink": "https://linkedin.com/in/celikk",
-  "githubLink": "https://github.com/celikkoseoglu",
-  "instagramLink": "https://instagram.com/celikkoseoglu",
-  "emailLink": "mailto:celikkoseoglu@yahoo.com",
+  "socialMediaLinks": {
+    "twitterLink": "https://twitter.com/celikkoseoglu",
+    "facebookLink": "https://www.facebook.com/celikkoseoglu",
+    "linkedinLink": "https://linkedin.com/in/celikk",
+    "githubLink": "https://github.com/celikkoseoglu",
+    "instagramLink": "https://instagram.com/celikkoseoglu",
+    "emailLink": "mailto:celikkoseoglu@yahoo.com"
+  },
   "date": "August 2019"
 }

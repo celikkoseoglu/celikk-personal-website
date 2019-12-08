@@ -6,10 +6,22 @@ import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import { blogPost, blogPostBackground, box } from "../stylesheets/BlogPost.module.sass";
+import Row from "react-bootstrap/Row";
+import {
+  blogPost,
+  blogPostBackground,
+  box,
+  socialMediaButtonBackground
+} from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
+import { folders, mapFileNameToId } from "../utils/FileManager.utils";
+import SocialMediaBar from "../components/Footer/SocialMediaBar";
+
+import Signature from "../data/images/signature.svg";
+import { signature } from "../stylesheets/components/Footer.module.sass";
 
 const blogNavbar = require("../data/blogNavbar");
+const footer = require("../data/footer");
 
 const BlogPost = ({ match, history }) => {
   const [post, setPost] = useState("");
@@ -21,7 +33,7 @@ const BlogPost = ({ match, history }) => {
     }
 
     window.scrollTo(0, 0);
-    fetch(`/static/media/${match.params.blogPost}`)
+    fetch(`/static/media/${mapFileNameToId(match.params.blogPost, folders.blogFiles)}`)
       .then(res => res.text())
       .then(response => setPost(response))
       .catch(err => setPost(err));
@@ -29,7 +41,9 @@ const BlogPost = ({ match, history }) => {
 
   return (
     <>
-      <Container className={`col-xl-4 col-lg-6 col-md-8 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
+      <Container
+        className={`col-xl-4 col-lg-6 col-md-8 py-4 rounded-top ${blogPostBackground} ${blogPost}`}
+      >
         <div className="py-lg-5 py-4">
           {hasHistory ? (
             <Button
@@ -54,6 +68,24 @@ const BlogPost = ({ match, history }) => {
         >
           {post}
         </Markdown>
+        <hr />
+        <Row className="text-center">
+          <div className="col-md-4 pb-sm-3">
+            <span>{footer.title}</span>
+            <br />
+            <img
+              src={Signature}
+              alt="signature"
+              className={`img-responsive img-centered ${signature}`}
+            />
+          </div>
+          <div className="col-md-8 my-auto">
+            <SocialMediaBar
+              socialMediaLinks={footer.socialMediaLinks}
+              buttonBackground={socialMediaButtonBackground}
+            />
+          </div>
+        </Row>
       </Container>
     </>
   );
