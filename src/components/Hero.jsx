@@ -11,17 +11,13 @@ import {
 
 const Hero = ({ introHeading, introLeadIn, resumeButtonText, resumeLink }) => {
   return (
-    <header>
-      <div className={`${introMargin}`}>
-        <div className={`${introHeadingStyle} ${introFont}`}>
-          {introHeading}
-        </div>
-        <div className={`${introLeadInStyle} ${introFont}`}>{introLeadIn}</div>
-        <a href={resumeLink} className={`${box} ${introFont}`}>
-          {resumeButtonText}
-        </a>
-      </div>
-    </header>
+    <div className={`${introMargin}`}>
+      <div className={`${introHeadingStyle} ${introFont}`}>{introHeading}</div>
+      <div className={`${introLeadInStyle} ${introFont}`}>{introLeadIn}</div>
+      <a href={resumeLink} className={`${box} ${introFont}`}>
+        {resumeButtonText}
+      </a>
+    </div>
   );
 };
 

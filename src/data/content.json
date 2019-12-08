@@ -1,5 +1,6 @@
 {
   "heroReference": "hero",
+  "whyADeveloperReference": "whyADeveloper",
   "projectsReference": "projects",
   "ongoingProjectsReference": "ongoingProjects",
   "skillsReference": "skills",

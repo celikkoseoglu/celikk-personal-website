@@ -16,16 +16,17 @@ import {
   sectionPadding,
   footerPadding,
   paddingBottom,
+  arrowMargin,
   heroBackground
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
-import Wall from "../data/images/wall.jpg";
 import Contact from "../components/Contact";
 import NavigationBar from "../components/Navbar/NavigationBar";
 import { folders, mapFileNameToId } from "../utils/FileManager.utils";
 
 import Signature from "../data/images/signature.svg";
+import ArrowAnimation from "../components/Animations/ArrowAnimation";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -42,10 +43,14 @@ const Home = () => {
       <NavigationBar content={navbar} />
       <header
         id={content.heroReference}
-        style={{ backgroundImage: `url(${Wall})` }}
-        className={heroBackground}
+        style={{
+          backgroundImage: `url(${
+            folders.heroImages[Math.floor(Math.random() * Math.floor(folders.heroImages.length))]
+          })`
+        }}
+        className={`${heroBackground}`}
       >
-        <Container>
+        <Container className="h-100 d-flex justify-content-center flex-column">
           <Hero
             introHeading={hero.introHeading}
             introLeadIn={hero.introLeadIn}
@@ -53,9 +58,17 @@ const Home = () => {
             resumeLink={hero.resumeButtonLink}
           />
         </Container>
+
+        <ArrowAnimation
+          className={`fixed-relative ${arrowMargin} d-none d-md-block`}
+          reference={content.whyADeveloperReference}
+        />
       </header>
 
-      <section className={`${whyDeveloperBackground} ${sectionPadding}`}>
+      <section
+        id={content.whyADeveloperReference}
+        className={`${whyDeveloperBackground} ${sectionPadding}`}
+      >
         <Heading className={paddingBottom} text={content.introTitle} />
         <Container>
           <CenteredText title={content.introTitle} text={content.introText} />
