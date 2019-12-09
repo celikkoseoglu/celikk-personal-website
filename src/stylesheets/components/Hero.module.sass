@@ -1,4 +1,5 @@
 $transparency: 0.98
+$box-color: rgba(29, 61, 119, $transparency)
 
 .introHeadingStyle
   font-weight: 700
@@ -25,7 +26,7 @@ $transparency: 0.98
 .introMargin
   @media (max-width: 768px)
     padding-top: 100px
-    padding-bottom: 50px
+    padding-bottom: 200px
 
 .box
   display: inline-block
@@ -39,7 +40,7 @@ $transparency: 0.98
   color: #F5F5F5
   transition: color 0.3s, border 0.3s
   @media (max-width: 768px)
-    background: rgba(63, 79, 109, $transparency)
+    background: $box-color
   &:hover
     border: 2px solid #FED136
     text-decoration: none

@@ -70,7 +70,7 @@ const BlogPost = ({ match, history }) => {
         </Markdown>
         <hr />
         <Row className="text-center">
-          <div className="col-md-4 pb-sm-3">
+          <div className="col-md-4 pb-md-0 pb-3">
             <span>{footer.title}</span>
             <br />
             <img

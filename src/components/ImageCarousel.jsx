@@ -37,7 +37,12 @@ const ImageCarousel = ({ folder, images }) => {
     <div align="center" className={`${horizontalOverflow} ${imageCarousel} py-3 my-3`}>
       {imageLoaded
         ? imageLoaded.map((imageRelativeLink, index) => (
-            <img src={imageRelativeLink} className={`${autoSizeImage} ${imageSpacer(index, imageLoaded.length)}`} alt="screenshot1" />
+            <img
+              src={imageRelativeLink}
+              className={`${autoSizeImage} ${imageSpacer(index, imageLoaded.length)}`}
+              alt={imageRelativeLink}
+              key={imageRelativeLink}
+            />
           ))
         : null}
     </div>

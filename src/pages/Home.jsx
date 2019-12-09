@@ -17,6 +17,7 @@ import {
   footerPadding,
   paddingBottom,
   arrowMargin,
+  arrowSize,
   heroBackground
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
@@ -27,6 +28,7 @@ import { folders, mapFileNameToId } from "../utils/FileManager.utils";
 
 import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
+import getRandomInt from "../utils/RandomNumber.utils";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -44,9 +46,7 @@ const Home = () => {
       <header
         id={content.heroReference}
         style={{
-          backgroundImage: `url(${
-            folders.heroImages[Math.floor(Math.random() * Math.floor(folders.heroImages.length))]
-          })`
+          backgroundImage: `url(${folders.heroImages[getRandomInt(folders.heroImages.length)]})`
         }}
         className={`${heroBackground}`}
       >
@@ -60,7 +60,7 @@ const Home = () => {
         </Container>
 
         <ArrowAnimation
-          className={`fixed-relative ${arrowMargin} d-none d-md-block`}
+          className={`fixed-relative ${arrowMargin} ${arrowSize} mx-auto`}
           reference={content.whyADeveloperReference}
         />
       </header>

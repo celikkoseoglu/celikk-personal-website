@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Container, Row } from "react-bootstrap";
 import BlogItem from "../components/BlogItem";
-import { folders, mapFileNameToId } from "../utils/FileManager.utils";
 
 const blog = require("../data/blog");
 
@@ -32,7 +31,8 @@ const Blog = () => {
             date={blogItem.date}
             readingLength={blogItem.readingLength}
             subtitle={blogItem.subtitle}
-            blogPost={mapFileNameToId(blogItem.blogPost, folders.blogFiles)}
+            blogPost={blogItem.blogPost}
+            key={blogItem.title}
           />
         ))}
       </div>

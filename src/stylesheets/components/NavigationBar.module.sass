@@ -2,10 +2,11 @@
 
 $transparency: 0.95
 $brandColor: #fed136
+$navbar-color: rgba(29, 61, 119, $transparency)
 
 .topNavExpand
   +screen(small)
-    background: rgba(63, 79, 109, $transparency)
+    background: $navbar-color
     padding-top: 5px
     padding-bottom: 5px
 
@@ -15,7 +16,7 @@ $brandColor: #fed136
   +screen(small)
     padding-top: 3px
     padding-bottom: 3px
-  background: rgba(29, 61, 119, $transparency)
+  background: $navbar-color
 
 .customNavbar
   color: #fff

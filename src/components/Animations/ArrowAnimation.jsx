@@ -16,15 +16,8 @@ const defaultOptions = {
 const ArrowAnimation = ({ className, reference }) => {
   return (
     <div className={className}>
-      <Link
-        to={reference}
-        smooth
-        offset={-90}
-        duration={500}
-        ignoreCancelEvents={false}
-        href="/"
-      >
-        <Lottie options={defaultOptions} height={150} width={150} />
+      <Link to={reference} smooth offset={-90} duration={500} ignoreCancelEvents={false} href="/">
+        <Lottie options={defaultOptions} />
       </Link>
     </div>
   );
