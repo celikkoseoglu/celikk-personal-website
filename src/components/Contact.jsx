@@ -2,10 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Row from "react-bootstrap/Row";
-import {
-  image,
-  imageDescription
-} from "../stylesheets/components/Contact.module.sass";
+import { image, imageDescription } from "../stylesheets/components/Contact.module.sass";
 
 const Contact = ({
   name,
@@ -21,16 +18,12 @@ const Contact = ({
     <Row>
       <div className="col-md-3 text-center mr-auto">
         <div>
-          <img
-            src={imageLink}
-            className={`img-fluid rounded-circle ${image}`}
-            alt={imageAlt}
-          />
+          <img src={imageLink} className={`img-fluid rounded-circle ${image}`} alt={imageAlt} />
           <h4 className={imageDescription}>{name}</h4>
           <p className="text-muted">{title}</p>
         </div>
       </div>
-      <div className="col-md-5">
+      <div className="col-md-3">
         <div className="contact-form">
           <h3>{contactTitle}</h3>
           <address>

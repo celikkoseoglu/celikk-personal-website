@@ -8,7 +8,7 @@ import SocialMediaBar from "./SocialMediaBar";
 
 const Footer = ({ content, signatureImage }) => {
   return (
-    <footer className="text-center col-md-12">
+    <footer className="text-center col-md-12 px-0">
       <Row>
         <div className="col-md-3 col-lg-4">
           <span>{content.title}</span>
