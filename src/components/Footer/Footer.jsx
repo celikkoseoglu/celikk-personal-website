@@ -19,7 +19,7 @@ const Footer = ({ content, signatureImage }) => {
           </div>
         </div>
 
-        <div className="col-md-6 col-lg-4 my-auto">
+        <div className="col-md-6 col-lg-4 my-auto px-0">
           <SocialMediaBar socialMediaLinks={content.socialMediaLinks} />
         </div>
 
