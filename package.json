@@ -36,6 +36,11 @@
     "lint": "eslint src -c .eslintrc.json --ext js,jsx"
   },
   "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
