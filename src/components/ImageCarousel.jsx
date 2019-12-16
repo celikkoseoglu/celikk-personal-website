@@ -14,7 +14,7 @@ const ImageCarousel = ({ folder, images }) => {
   useEffect(() => {
     const imageArray = images.split(",");
     imageArray.map(imageFileName =>
-      import(`../data/images/blog/${folder}/${imageFileName}.png`).then(imageLink => {
+      import(`../data/images/blog/${folder}/${imageFileName}.webp`).then(imageLink => {
         imageRelativeLinkArray.push(imageLink.default);
         if (imageRelativeLinkArray.length === imageArray.length) {
           setImageLoaded(imageRelativeLinkArray);

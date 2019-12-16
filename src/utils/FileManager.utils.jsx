@@ -2,10 +2,12 @@ const importAll = r => r.keys().map(r);
 
 export const folders = Object.freeze({
   ongoingProjectImages: importAll(
-    require.context(`../data/images/ongoingProjects`, false, /\.(png|svg)$/)
+    require.context(`../data/images/ongoingProjects`, false, /\.(webp|svg)$/)
   ),
-  personalSkillImages: importAll(require.context(`../data/images/personalSkills`, false, /\.png$/)),
-  projectImages: importAll(require.context(`../data/images/projects`, false, /\.png$/)),
+  personalSkillImages: importAll(
+    require.context(`../data/images/personalSkills`, false, /\.webp$/)
+  ),
+  projectImages: importAll(require.context(`../data/images/projects`, false, /\.webp$/)),
   blogFiles: importAll(require.context("../blog", false, /\.md$/)),
   heroImages: importAll(require.context("../data/images/hero", false, /\.jpg$/))
 });
