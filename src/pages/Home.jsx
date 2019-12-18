@@ -24,11 +24,10 @@ import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
 import Contact from "../components/Contact";
 import NavigationBar from "../components/Navbar/NavigationBar";
-import { folders, mapFileNameToId } from "../utils/FileManager.utils";
-
 import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
 import getRandomInt from "../utils/RandomNumber.utils";
+import { folders } from "../utils/FileManager.utils";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -81,7 +80,7 @@ const Home = () => {
           <Row>
             {projects.map(project => (
               <ProjectCard
-                imageLink={mapFileNameToId(project.imageLink, folders.projectImages)}
+                imageLink={project.imageLink}
                 imageAlt={project.imageAlt}
                 title={project.title}
                 subtitle={project.subtitle}
@@ -100,7 +99,7 @@ const Home = () => {
           {personalSkills.map(personalSkill => (
             <ImageExperience
               rightAlign={personalSkill.rightAlign}
-              imageLink={mapFileNameToId(personalSkill.imageLink, folders.personalSkillImages)}
+              imageLink={personalSkill.imageLink}
               imageAlt={personalSkill.imageAlt}
               title={personalSkill.title}
               subtitle={personalSkill.subtitle}
@@ -120,7 +119,7 @@ const Home = () => {
           <Row>
             {ongoingProjects.map(project => (
               <ProjectCard
-                imageLink={mapFileNameToId(project.imageLink, folders.ongoingProjectImages)}
+                imageLink={project.imageLink}
                 imageAlt={project.imageAlt}
                 title={project.title}
                 subtitle={project.subtitle}

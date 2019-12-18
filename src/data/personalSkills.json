@@ -1,6 +1,6 @@
 [
   {
-    "imageLink": "ProgrammingLanguages",
+    "imageLink": "data/images/personalSkills/ProgrammingLanguages",
     "imageAlt": "github profile",
     "title": "PROGRAMMING LANGUAGES",
     "subtitle": "JAVA, C++, OBJECTIVE-C & MORE...",
@@ -8,7 +8,7 @@
     "rightAlign": false
   },
   {
-    "imageLink": "Design",
+    "imageLink": "data/images/personalSkills/Design",
     "imageAlt": "brain storming and design",
     "title": "DESIGN",
     "subtitle": "PHOTOSHOP, ILLUSTRATOR & A PENCIL",
@@ -16,7 +16,7 @@
     "rightAlign": true
   },
   {
-    "imageLink": "Sports",
+    "imageLink": "data/images/personalSkills/Sports",
     "imageAlt": "parkour moves",
     "title": "SPORTS",
     "subtitle": "PARKOUR & FREERUNNING",

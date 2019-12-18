@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from "react";
+
 import PropTypes from "prop-types";
 import {
-  imageCarousel,
+  autoSizeImage,
   horizontalOverflow,
-  autoSizeImage
+  imageCarousel
 } from "../stylesheets/components/ImageCarousel.module.sass";
+import { IMAGE_EXTENSION } from "../utils/FileManager.utils";
 
 const ImageCarousel = ({ folder, images }) => {
-  const imageRelativeLinkArray = [];
-
   const [imageLoaded, setImageLoaded] = useState([]);
-
   useEffect(() => {
-    const imageArray = images.split(",");
-    imageArray.map(imageFileName =>
-      import(`../data/images/blog/${folder}/${imageFileName}.webp`).then(imageLink => {
-        imageRelativeLinkArray.push(imageLink.default);
-        if (imageRelativeLinkArray.length === imageArray.length) {
-          setImageLoaded(imageRelativeLinkArray);
-        }
+    images.split(",").map(imageFileName =>
+      import(`../data/images/blog/${folder}/${imageFileName}${IMAGE_EXTENSION}`).then(imageLink => {
+        setImageLoaded(oldArray => [...oldArray, imageLink.default]);
       })
     );
-  }, []);
+  }, [folder, images]);
 
   const imageSpacer = (index, length) => {
     if (index === 0) {

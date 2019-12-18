@@ -1,6 +1,6 @@
 [
   {
-    "imageLink": "QNote",
+    "imageLink": "data/images/projects/QNote",
     "imageAlt": "QNote app logo",
     "title": "QNote",
     "subtitle": "BLAZING FAST NOTE TAKING",
@@ -8,7 +8,7 @@
     "blogPost": "qnote"
   },
   {
-    "imageLink": "IPManager",
+    "imageLink": "data/images/projects/IPManager",
     "imageAlt": "IPManager app logo",
     "title": "IPManager",
     "subtitle": "DHCP MADE EASY",
@@ -16,7 +16,7 @@
     "blogPost": "ipmanager"
   },
   {
-    "imageLink": "PhotoSec",
+    "imageLink": "data/images/projects/PhotoSec",
     "imageAlt": "PhotoSec app logo",
     "title": "PhotoSec",
     "subtitle": "SECURE YOUR PHOTOS!",
