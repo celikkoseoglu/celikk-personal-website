@@ -1,6 +1,6 @@
 [
   {
-    "imageLink": "Marmara",
+    "imageLink": "data/images/ongoingProjects/Marmara.svg",
     "imageAlt": "content not ready",
     "title": "Today's Meal in Marmara",
     "subtitle": "MEAL IN A DIFFERENT FORM",
@@ -8,7 +8,7 @@
     "blogPost": "marmara"
   },
   {
-    "imageLink": "RockyJourney",
+    "imageLink": "data/images/ongoingProjects/RockyJourney",
     "imageAlt": "a ship sailing on the sea",
     "title": "Rocky Journey",
     "subtitle": "AN FPGA GAME",
@@ -16,7 +16,7 @@
     "blogPost": "rockyJourney"
   },
   {
-    "imageLink": "PersonalWebsite",
+    "imageLink": "data/images/ongoingProjects/PersonalWebsite",
     "imageAlt": "iMac showing the source code of this website",
     "title": "Personal Website",
     "subtitle": "BUILT USING LATEST TECH",
