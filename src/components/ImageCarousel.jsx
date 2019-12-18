@@ -6,15 +6,20 @@ import {
   horizontalOverflow,
   imageCarousel
 } from "../stylesheets/components/ImageCarousel.module.sass";
-import { IMAGE_EXTENSION } from "../utils/FileManager.utils";
+import { getImageLinkWithExtension } from "../utils/FileManager.utils";
 
 const ImageCarousel = ({ folder, images }) => {
   const [imageLoaded, setImageLoaded] = useState([]);
   useEffect(() => {
+    const imageLinkWithExtension = imageFileName => {
+      return getImageLinkWithExtension(imageFileName);
+    };
     images.split(",").map(imageFileName =>
-      import(`../data/images/blog/${folder}/${imageFileName}${IMAGE_EXTENSION}`).then(imageLink => {
-        setImageLoaded(oldArray => [...oldArray, imageLink.default]);
-      })
+      import(`../data/images/blog/${folder}/${imageLinkWithExtension(imageFileName)}`).then(
+        imageLink => {
+          setImageLoaded(oldArray => [...oldArray, imageLink.default]);
+        }
+      )
     );
   }, [folder, images]);
 
