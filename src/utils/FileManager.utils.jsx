@@ -5,7 +5,6 @@ const importAll = r => r.keys().map(r);
 export const IMAGE_EXTENSION = isWebpSupported() ? ".webp" : ".png";
 
 export const folders = Object.freeze({
-  personalSkillImages: importAll(require.context(`../data/images/personalSkills`, false, /\.png$/)),
   blogFiles: importAll(require.context("../blog", false, /\.md$/)),
   heroImages: importAll(require.context("../data/images/hero", false, /\.jpg$/))
 });
