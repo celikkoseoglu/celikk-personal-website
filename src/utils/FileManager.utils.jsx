@@ -1,4 +1,8 @@
+import { isWebpSupported } from "react-image-webp/dist/utils";
+
 const importAll = r => r.keys().map(r);
+
+export const IMAGE_EXTENSION = isWebpSupported() ? ".webp" : ".png";
 
 export const folders = Object.freeze({
   ongoingProjectImages: importAll(
