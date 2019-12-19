@@ -12,14 +12,12 @@ const ImageCarousel = ({ folder, images }) => {
   const [imageLoaded, setImageLoaded] = useState([]);
   useEffect(() => {
     const imageLinkWithExtension = imageFileName => {
-      return getImageLinkWithExtension(imageFileName);
+      return `data/images/blog/${folder}/${getImageLinkWithExtension(imageFileName)}`;
     };
     images.split(",").map(imageFileName =>
-      import(`../data/images/blog/${folder}/${imageLinkWithExtension(imageFileName)}`).then(
-        imageLink => {
-          setImageLoaded(oldArray => [...oldArray, imageLink.default]);
-        }
-      )
+      import(`../${imageLinkWithExtension(imageFileName)}`).then(imageLink => {
+        setImageLoaded(oldArray => [...oldArray, imageLink.default]);
+      })
     );
   }, [folder, images]);
 
