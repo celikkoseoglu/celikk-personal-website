@@ -1,5 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {
+  FaTwitter,
+  FaEnvelope,
+  FaFacebookF,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn
+} from "react-icons/fa";
 import SocialMediaIcon from "./SocialMediaIcon";
 import {
   facebook,
@@ -17,34 +25,40 @@ const SocialMediaBar = ({ socialMediaLinks, buttonBackground }) => {
       <ul className="list-inline my-auto">
         <SocialMediaIcon
           className={`${twitter} ${socialMediaButton} ${buttonBackground}`}
-          faClassName="fa-twitter"
           link={socialMediaLinks.twitterLink}
-        />
+        >
+          <FaTwitter />
+        </SocialMediaIcon>
         <SocialMediaIcon
           className={`${facebook} ${socialMediaButton} ${buttonBackground}`}
-          faClassName="fa-facebook"
           link={socialMediaLinks.facebookLink}
-        />
+        >
+          <FaFacebookF />
+        </SocialMediaIcon>
         <SocialMediaIcon
           className={`${linkedin} ${socialMediaButton} ${buttonBackground}`}
-          faClassName="fa-linkedin"
           link={socialMediaLinks.linkedinLink}
-        />
+        >
+          <FaLinkedinIn />
+        </SocialMediaIcon>
         <SocialMediaIcon
           className={`${github} ${socialMediaButton} ${buttonBackground}`}
-          faClassName="fa-github"
           link={socialMediaLinks.githubLink}
-        />
+        >
+          <FaGithub />
+        </SocialMediaIcon>
         <SocialMediaIcon
           className={`${instagram} ${socialMediaButton} ${buttonBackground}`}
-          faClassName="fa-instagram"
           link={socialMediaLinks.instagramLink}
-        />
+        >
+          <FaInstagram />
+        </SocialMediaIcon>
         <SocialMediaIcon
           className={`${mail} ${socialMediaButton} ${buttonBackground}`}
-          faClassName="fa-envelope"
           link={socialMediaLinks.emailLink}
-        />
+        >
+          <FaEnvelope />
+        </SocialMediaIcon>
       </ul>
     </>
   );
