@@ -14,7 +14,7 @@ const footer = require("../data/footer");
 
 const Blog = () => {
   return (
-    <body className={background}>
+    <div className={background}>
       <Container className="pt-md-5 py-4">
         <div className="col-md-8 mx-auto px-0">
           <h1 className="pb-md-5 py-4 pt-md-0">{blog.name}</h1>
@@ -64,7 +64,7 @@ const Blog = () => {
           </Row>
         </div>
       </Container>
-    </body>
+    </div>
   );
 };
 

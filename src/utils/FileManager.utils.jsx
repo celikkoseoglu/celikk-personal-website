@@ -24,3 +24,7 @@ export const getImageLinkWithExtension = imageLink => {
   }
   return imageLink;
 };
+
+export const getRandomInt = range => {
+  return Math.floor(Math.random() * Math.floor(range));
+};

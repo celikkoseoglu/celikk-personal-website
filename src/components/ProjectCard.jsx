@@ -22,7 +22,9 @@ const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text, blogPost }) =
   return (
     <SpringDiv className={`col-md-4 text-center ${point} ${mobileSize}`}>
       <UnstyledLink to={`/blog/${blogPost}`}>
-        {relativeImageLink ? <img src={relativeImageLink} className="img-fluid" alt={imageAlt} /> : null}
+        {relativeImageLink ? (
+          <img src={relativeImageLink} className="img-fluid" alt={imageAlt} />
+        ) : null}
         <h4 className={titleMargin}>{title}</h4>
         <h6 className={subtitleMargin}>{subtitle}</h6>
         <p>{text}</p>

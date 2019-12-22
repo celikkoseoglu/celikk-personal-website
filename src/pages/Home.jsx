@@ -26,8 +26,7 @@ import Contact from "../components/Contact";
 import NavigationBar from "../components/Navbar/NavigationBar";
 import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
-import getRandomInt from "../utils/RandomNumber.utils";
-import { folders } from "../utils/FileManager.utils";
+import { folders, getRandomInt } from "../utils/FileManager.utils";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");

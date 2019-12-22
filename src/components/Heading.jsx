@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 import { titleFontSize } from "../stylesheets/components/Heading.module.sass";
 
 const Heading = ({ text, className }) => {
-  return (
-    <h2 className={`text-center ${titleFontSize} ${className}`}>
-      {text}
-    </h2>
-  );
+  return <h2 className={`text-center ${titleFontSize} ${className}`}>{text}</h2>;
 };
 
 Heading.propTypes = {
