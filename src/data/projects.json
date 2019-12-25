@@ -1,6 +1,6 @@
 [
   {
-    "imageLink": "data/images/projects/QNote",
+    "imageLink": "data/images/projects/QNote.svg",
     "imageAlt": "QNote app logo",
     "title": "QNote",
     "subtitle": "BLAZING FAST NOTE TAKING",
@@ -16,7 +16,7 @@
     "blogPost": "ipmanager"
   },
   {
-    "imageLink": "data/images/projects/PhotoSec",
+    "imageLink": "data/images/projects/PhotoSec.svg",
     "imageAlt": "PhotoSec app logo",
     "title": "PhotoSec",
     "subtitle": "SECURE YOUR PHOTOS!",
