@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll";
-import Nav from "react-bootstrap/Nav";
+import UnstyledLink from "../Util/UnstyledLink";
 
 const NavbarItem = ({ title, reference, href, className }) => {
   if (reference != null) {
@@ -20,9 +20,9 @@ const NavbarItem = ({ title, reference, href, className }) => {
     );
   }
   return (
-    <Nav.Link className={className} href={href}>
+    <UnstyledLink className={`${className} nav-link`} to={href}>
       {title}
-    </Nav.Link>
+    </UnstyledLink>
   );
 };
 
