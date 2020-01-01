@@ -7,7 +7,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 
 import "./index.sass";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 ReactDOM.render(
   <BrowserRouter>
