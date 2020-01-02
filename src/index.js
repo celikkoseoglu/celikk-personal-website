@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import "./index.sass";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const CV = lazy(() => import("./pages/CV"));
 
