@@ -2,7 +2,6 @@ import React from "react";
 import Experience from "../components/Experience/Experience";
 import Skill from "../components/Skill";
 import "../index.sass";
-import "bootstrap/dist/css/bootstrap.css";
 
 const experiences = require("../data/resume/experiences");
 const resumeSkills = require("../data/resume/skills");

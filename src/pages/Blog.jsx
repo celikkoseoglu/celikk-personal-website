@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import { Container, Row } from "react-bootstrap";
 import BlogItem from "../components/BlogItem";
 

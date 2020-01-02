@@ -5,7 +5,6 @@ import Hero from "../components/Hero";
 import CenteredText from "../components/CenteredText";
 import ImageExperience from "../components/ImageExperience";
 import ProjectCard from "../components/ProjectCard";
-import "bootstrap/dist/css/bootstrap.css";
 import {
   whyDeveloperBackground,
   skillsBackground,

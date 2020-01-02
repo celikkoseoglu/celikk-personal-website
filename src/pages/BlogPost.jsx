@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
 
