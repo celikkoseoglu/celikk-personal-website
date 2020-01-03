@@ -6,6 +6,13 @@
   "subtitle": "I write some stuff in here",
   "blogItems": [
     {
+      "title": "React Icons - Import Only the Required Favicons",
+      "date": "03.01.2020",
+      "readingLength": "5min",
+      "subtitle": "Reduce your React Bundle Size by only importing the icons that you need. Not the whole favicon css",
+      "blogPost": "reactIcons"
+    },
+    {
       "title": "QNote - Blazing Fast Note Taking App",
       "date": "06.12.2019",
       "readingLength": "8min",
