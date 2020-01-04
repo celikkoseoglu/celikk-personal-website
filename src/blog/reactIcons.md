@@ -6,8 +6,7 @@
 
 Technologies Used: `React`, `Favicon`, `React-Icons`
 
-After a certain point, reducing the size of your react website gets more and more challenging. After a certain point, 
-you find yourself in the micro-optimization territory where each KB starts to matter. This is where 
+After a certain point, reducing the size of your react website gets more and more challenging. You find yourself in the micro-optimization territory where each KB starts to matter. This is where 
 [React-Icons](https://www.npmjs.com/package/react-icons) comes into play. I was able to decrease my bundle
 size about 30KBs without doing any major work at all.
 
