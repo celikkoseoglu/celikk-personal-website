@@ -1,5 +1,6 @@
 {
-  "goBackLabel": "← Go Back",
-  "blogLabel": "Celik's Personal Blog",
+  "goBackLabel": "← Blog",
+  "blogLink": "/blog",
+  "homeLabel": "Home",
   "homeLink": "/"
 }

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
-
 import PropTypes from "prop-types";
-import { Link, withRouter } from "react-router-dom";
-import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
+import { Link } from "react-router-dom";
 import {
   blogPost,
   blogPostBackground,
@@ -22,36 +20,27 @@ import { signature } from "../stylesheets/components/Footer.module.sass";
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
 
-const BlogPost = ({ match, history }) => {
+const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
-  const [hasHistory, setHasHistory] = useState(false);
 
   useEffect(() => {
-    if (history.length > 1) {
-      setHasHistory(true);
-    }
-
     window.scrollTo(0, 0);
     fetch(`/static/media/${mapFileNameToId(match.params.blogPost, folders.blogFiles)}`)
       .then(res => res.text())
       .then(response => setPost(response))
       .catch(err => setPost(err));
-  }, [match.params.blogPost, history.length]);
+  }, [match.params.blogPost]);
 
   return (
     <>
       <Container className={`col-lg-6 col-md-8 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
-        <div className="py-lg-5 py-4">
-          {hasHistory ? (
-            <Button
-              className={box}
-              onClick={() => (history.goBack() ? undefined : history.goForward())}
-            >
-              {blogNavbar.goBackLabel}
-            </Button>
-          ) : (
-            <Link to={blogNavbar.homeLink}>{blogNavbar.blogLabel}</Link>
-          )}
+        <div className="py-lg-5 pb-3 pt-1 row justify-content-between">
+          <Link to={blogNavbar.blogLink} className={box}>
+            {blogNavbar.goBackLabel}
+          </Link>
+          <Link to={blogNavbar.homeLink} className={box}>
+            {blogNavbar.homeLabel}
+          </Link>
         </div>
 
         <Markdown
@@ -76,7 +65,7 @@ const BlogPost = ({ match, history }) => {
               className={`img-responsive img-centered ${signature}`}
             />
           </div>
-          <div className="col-md-8 my-auto">
+          <div className="col-md-8 my-auto px-0">
             <SocialMediaBar
               socialMediaLinks={footer.socialMediaLinks}
               buttonBackground={socialMediaButtonBackground}
@@ -93,12 +82,7 @@ BlogPost.propTypes = {
     params: PropTypes.shape({
       blogPost: PropTypes.string.isRequired
     })
-  }).isRequired,
-  history: PropTypes.shape({
-    goBack: PropTypes.func.isRequired,
-    goForward: PropTypes.func.isRequired,
-    length: PropTypes.number.isRequired
   }).isRequired
 };
 
-export default withRouter(BlogPost);
+export default BlogPost;
