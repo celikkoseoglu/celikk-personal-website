@@ -34,7 +34,7 @@ const BlogPost = ({ match }) => {
   return (
     <>
       <Container className={`col-lg-6 col-md-8 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
-        <div className="py-lg-5 pb-3 pt-1 row justify-content-between">
+        <div className="py-lg-5 pb-4 pt-2 row justify-content-between">
           <Link to={blogNavbar.blogLink} className={box}>
             {blogNavbar.goBackLabel}
           </Link>
