@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
@@ -8,7 +9,9 @@ import {
   blogPost,
   blogPostBackground,
   box,
-  socialMediaButtonBackground
+  socialMediaButtonBackground,
+  socialMediaButtonBackgroundDark,
+  blogPostDark
 } from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
 import { folders, mapFileNameToId } from "../utils/FileManager.utils";
@@ -20,24 +23,34 @@ import { signature } from "../stylesheets/components/Footer.module.sass";
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
 
+const getInitialTheme = () => {
+  const savedTheme = storage.getItem("theme");
+  return savedTheme === 'true';
+};
+
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
+  const [isDark, setIsDark] = useState(getInitialTheme);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    storage.setItem("theme", isDark.toString());
+
     fetch(`/static/media/${mapFileNameToId(match.params.blogPost, folders.blogFiles)}`)
       .then(res => res.text())
       .then(response => setPost(response))
       .catch(err => setPost(err));
-  }, [match.params.blogPost]);
+  }, [match.params.blogPost, isDark]);
 
   return (
-    <>
-      <Container className={`col-lg-6 col-md-8 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
+    <div className={`${isDark ? blogPostDark : null} ${blogPost}`}>
+      <Container className={`col-lg-6 col-md-8 py-4 rounded-top  ${blogPostBackground}`}>
         <div className="py-lg-5 pb-4 pt-2 row justify-content-between">
           <Link to={blogNavbar.blogLink} className={box}>
             {blogNavbar.goBackLabel}
           </Link>
+          <button onClick={_ => setIsDark(!isDark)}>{isDark ? "Dark" : "Light"}</button>
           <Link to={blogNavbar.homeLink} className={box}>
             {blogNavbar.homeLabel}
           </Link>
@@ -68,12 +81,12 @@ const BlogPost = ({ match }) => {
           <div className="col-md-8 my-auto px-0">
             <SocialMediaBar
               socialMediaLinks={footer.socialMediaLinks}
-              buttonBackground={socialMediaButtonBackground}
+              buttonBackground={isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground}
             />
           </div>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 

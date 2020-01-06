@@ -1,51 +1,55 @@
-.blogPost p
-  font-size: 16px
+$colorTransitionDuration: 0.5s
+$backgroundTransitionDuration: 1s
 
-.blogPost h1
-  margin-bottom: 30px
-  font-weight: bolder
-
-.blogPost h6
-  margin-bottom: 30px
-  color: #A9A9A9
-
-.blogPost code
-  color: #000080
-
-.blogPost pre
-  background: #dfdfdf
-  padding: 10px
-
-.blogPost blockquote
-  background: #f9f9f9
-  border-left: 10px solid #ccc
-  margin: 1.5em 0
-  padding: 0.5em 10px
-
-.blogPost div
-  max-width: 640px
-  margin-left: auto
-  margin-right: auto
-
-.blogPost blockquote:before
-  color: #ccc
-  content: open-quote
-  font-size: 4em
-  line-height: 0.1em
-  margin-right: 0.25em
-  vertical-align: -0.28em
-
-.blogPost blockquote:after
-  color: #ccc
-  content: close-quote
-  font-size: 4em
-  line-height: 0.8em
-  float: right
+.blogPost
+  background-size: 100% 200%
+  background-image: linear-gradient(to bottom, #fff 50%, #111 50%)
+  -webkit-transition: background-position $backgroundTransitionDuration linear, background $backgroundTransitionDuration linear, color $colorTransitionDuration linear
+  -moz-transition: background-position $backgroundTransitionDuration linear, background $backgroundTransitionDuration linear, color $colorTransitionDuration linear
+  transition: background-position $backgroundTransitionDuration linear, background $backgroundTransitionDuration linear, color $colorTransitionDuration linear
+  p
+    font-size: 16px
+  h1
+    margin-bottom: 30px
+    font-weight: bolder
+  h6
+    margin-bottom: 30px
+    color: #A9A9A9
+  code
+    color: #000080
+    -webkit-transition: color $colorTransitionDuration linear
+    -moz-transition: color $colorTransitionDuration linear
+    transition: color $colorTransitionDuration linear
+  pre
+    background: #dfdfdf
+    padding: 10px
+  blockquote
+    background: #f9f9f9
+    border-left: 10px solid #ccc
+    margin: 1.5em 0
+    padding: 0.5em 10px
+  div
+    max-width: 640px
+    margin-left: auto
+    margin-right: auto
+  blockquote:before
+    color: #ccc
+    content: open-quote
+    font-size: 4em
+    line-height: 0.1em
+    margin-right: 0.25em
+    vertical-align: -0.28em
+  blockquote:after
+    color: #ccc
+    content: close-quote
+    font-size: 4em
+    line-height: 0.8em
+    float: right
 
 .blogPostBackground
   min-height: 100vh
 
-.box
+.blogPost .box
   display: inline-block
   font-size: 20px
   padding: 8px
@@ -65,6 +69,29 @@
 .signature
   max-height: 30px
   margin-top: 10px
+  fill: white
 
 .socialMediaButtonBackground
   background: #a3a3a3
+
+//////////
+
+.blogPostDark
+  color: #FFF
+  background-position: 0 -100%
+  code
+    color: #87a5cf
+  pre
+    background: #222
+  blockquote
+    background: #333
+    border-left: 10px solid #222
+  .box
+    border: 2px solid #87a5cf
+    color: #87a5cf
+    &:hover
+      border: 2px solid #B7C8CF
+      color: #B7C8CF
+
+.socialMediaButtonBackgroundDark
+  background: #444
