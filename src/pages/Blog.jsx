@@ -1,22 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
+import storage from "local-storage-fallback";
 import BlogItem from "../components/BlogItem";
 
-import { profilePicture, background, blogTitleFont } from "../stylesheets/Blog.module.sass";
+import {
+  profilePicture,
+  background,
+  blogTitleFont,
+  blogDark
+} from "../stylesheets/Blog.module.sass";
 import Signature from "../data/images/signature.svg";
 import { signature } from "../stylesheets/components/Footer.module.sass";
 import SocialMediaBar from "../components/Footer/SocialMediaBar";
-import { socialMediaButtonBackground } from "../stylesheets/BlogPost.module.sass";
+import {
+  darkSignature,
+  socialMediaButtonBackground,
+  socialMediaButtonBackgroundDark
+} from "../stylesheets/BlogPost.module.sass";
+import { getInitialTheme } from "../utils/FileManager.utils";
+import DarkModeToggle from "../components/DarkModeToggle";
+import {Link} from "react-router-dom";
 
 const blog = require("../data/blog");
 const footer = require("../data/footer");
 
 const Blog = () => {
+  const [isDark, setIsDark] = useState(getInitialTheme());
+
+  useEffect(() => {
+    storage.setItem("theme", isDark.toString());
+  }, [isDark]);
+
   return (
-    <div className={background}>
+    <div className={`${background} ${isDark ? blogDark : null}`}>
       <Container className="pt-md-5 py-4">
         <div className="col-md-8 mx-auto px-0">
-          <h1 className="pb-md-5 py-4 pt-md-0">{blog.name}</h1>
+          <Row className="justify-content-between">
+            <h1 className="pb-md-5 py-4 pt-md-0">{blog.name}</h1>
+            <Link onClick={_ => setIsDark(!isDark)}>
+              <DarkModeToggle isDark={isDark} />
+            </Link>
+          </Row>
           <Row className="pb-md-5 pb-5 col-12 pr-0">
             <div className="my-auto">
               <img
@@ -51,13 +75,17 @@ const Blog = () => {
               <img
                 src={Signature}
                 alt="signature"
-                className={`img-responsive img-centered ${signature}`}
+                className={`img-responsive img-centered ${signature} ${
+                  isDark ? darkSignature : null
+                }`}
               />
             </div>
             <div className="col-md-8 my-auto px-0">
               <SocialMediaBar
                 socialMediaLinks={footer.socialMediaLinks}
-                buttonBackground={socialMediaButtonBackground}
+                buttonBackground={
+                  isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground
+                }
               />
             </div>
           </Row>

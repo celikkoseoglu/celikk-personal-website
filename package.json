@@ -17,7 +17,8 @@
     "react-pose": "4.0.10",
     "react-router-dom": "5.1.2",
     "react-scripts": "3.3.0",
-    "react-scroll": "1.7.14"
+    "react-scroll": "1.7.14",
+    "local-storage-fallback": "4.1.1"
   },
   "devDependencies": {
     "eslint": "6.7.2",

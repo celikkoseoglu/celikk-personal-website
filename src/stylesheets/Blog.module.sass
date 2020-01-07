@@ -1,10 +1,24 @@
+$backgroundTransitionDuration: 1s
+$backgroundTransition: background $backgroundTransitionDuration linear
+$colorTransitionDuration: 0.5s
+
 .profilePicture
   width: 3.5rem
   height: 3.5rem
   margin-right: 0.5rem
 
 .background
-  background: #fcfcfc
+  background-size: 100% 200%
+  background-image: linear-gradient(to bottom, #fff 50%, #111 50%)
+  -webkit-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
+  -moz-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
+  transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
 
 .blogTitleFont
   font-size: 16px
+
+.blogDark
+  color: #FFF
+  background-position: 0 -100%
+  h1, h4, h6
+    color: #fff

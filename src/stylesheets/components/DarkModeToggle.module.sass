@@ -1,0 +1,17 @@
+$transitionDuration: .5s
+$boxShadowTransition: box-shadow $transitionDuration linear
+
+.darkModeToggle
+  width: 2rem
+  height: 2rem
+  background: transparent
+  border-radius: 50%
+  -webkit-transition: $boxShadowTransition
+  -moz-transition: $boxShadowTransition
+  transition: $boxShadowTransition
+
+.sun
+  box-shadow: inset 19px -12px 0 -5px #000
+
+.moon
+  box-shadow: inset -7px -3px 0 20px #fff

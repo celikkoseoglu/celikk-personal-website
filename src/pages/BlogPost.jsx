@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
@@ -8,40 +9,52 @@ import {
   blogPost,
   blogPostBackground,
   box,
-  socialMediaButtonBackground
+  socialMediaButtonBackground,
+  socialMediaButtonBackgroundDark,
+  blogPostDark,
+  darkSignature
 } from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
-import { folders, mapFileNameToId } from "../utils/FileManager.utils";
+import {folders, getInitialTheme, mapFileNameToId} from "../utils/FileManager.utils";
 import SocialMediaBar from "../components/Footer/SocialMediaBar";
 
 import Signature from "../data/images/signature.svg";
 import { signature } from "../stylesheets/components/Footer.module.sass";
+import DarkModeToggle from "../components/DarkModeToggle";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
 
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
+  const [isDark, setIsDark] = useState(getInitialTheme());
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    storage.setItem("theme", isDark.toString());
+
     fetch(`/static/media/${mapFileNameToId(match.params.blogPost, folders.blogFiles)}`)
       .then(res => res.text())
       .then(response => setPost(response))
       .catch(err => setPost(err));
-  }, [match.params.blogPost]);
+  }, [match.params.blogPost, isDark]);
 
   return (
-    <>
-      <Container className={`col-lg-6 col-md-8 py-4 rounded-top ${blogPostBackground} ${blogPost}`}>
-        <div className="py-lg-5 pb-4 pt-2 row justify-content-between">
+    <div className={`${isDark ? blogPostDark : null} ${blogPost}`}>
+      <Container className={`col-lg-6 col-md-8 py-4 rounded-top  ${blogPostBackground}`}>
+        <Row className="py-lg-5 pb-4 pt-2 justify-content-between">
           <Link to={blogNavbar.blogLink} className={box}>
             {blogNavbar.goBackLabel}
           </Link>
+          <Link className="my-auto" onClick={_ => setIsDark(!isDark)}>
+            <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
+          </Link>
+
           <Link to={blogNavbar.homeLink} className={box}>
             {blogNavbar.homeLabel}
           </Link>
-        </div>
+        </Row>
 
         <Markdown
           options={{
@@ -62,18 +75,22 @@ const BlogPost = ({ match }) => {
             <img
               src={Signature}
               alt="signature"
-              className={`img-responsive img-centered ${signature}`}
+              className={`img-responsive img-centered ${signature} ${
+                isDark ? darkSignature : null
+              }`}
             />
           </div>
           <div className="col-md-8 my-auto px-0">
             <SocialMediaBar
               socialMediaLinks={footer.socialMediaLinks}
-              buttonBackground={socialMediaButtonBackground}
+              buttonBackground={
+                isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground
+              }
             />
           </div>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 

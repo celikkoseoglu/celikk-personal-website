@@ -1,4 +1,5 @@
 import { isWebpSupported } from "react-image-webp/dist/utils";
+import storage from "local-storage-fallback";
 
 const importAll = r => r.keys().map(r);
 
@@ -27,4 +28,9 @@ export const getImageLinkWithExtension = imageLink => {
 
 export const getRandomInt = range => {
   return Math.floor(Math.random() * Math.floor(range));
+};
+
+export const getInitialTheme = () => {
+  const savedTheme = storage.getItem("theme");
+  return savedTheme === "true";
 };
