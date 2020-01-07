@@ -1,12 +1,14 @@
 $colorTransitionDuration: 0.5s
 $backgroundTransitionDuration: 1s
+$backgroundTransition: background $backgroundTransitionDuration linear
+$transitionDelay: 0.2s
 
 .blogPost
   background-size: 100% 200%
   background-image: linear-gradient(to bottom, #fff 50%, #111 50%)
-  -webkit-transition: background-position $backgroundTransitionDuration linear, background $backgroundTransitionDuration linear, color $colorTransitionDuration linear
-  -moz-transition: background-position $backgroundTransitionDuration linear, background $backgroundTransitionDuration linear, color $colorTransitionDuration linear
-  transition: background-position $backgroundTransitionDuration linear, background $backgroundTransitionDuration linear, color $colorTransitionDuration linear
+  -webkit-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
+  -moz-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
+  transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
   p
     font-size: 16px
   h1
@@ -20,9 +22,14 @@ $backgroundTransitionDuration: 1s
     -webkit-transition: color $colorTransitionDuration linear
     -moz-transition: color $colorTransitionDuration linear
     transition: color $colorTransitionDuration linear
+    transition-delay: $transitionDelay
   pre
     background: #dfdfdf
     padding: 10px
+    -webkit-transition: $backgroundTransition
+    -moz-transition: $backgroundTransition
+    transition: $backgroundTransition
+    transition-delay: $transitionDelay
   blockquote
     background: #f9f9f9
     border-left: 10px solid #ccc
@@ -74,8 +81,6 @@ $backgroundTransitionDuration: 1s
 .socialMediaButtonBackground
   background: #a3a3a3
 
-//////////
-
 .blogPostDark
   color: #FFF
   background-position: 0 -100%
@@ -95,3 +100,7 @@ $backgroundTransitionDuration: 1s
 
 .socialMediaButtonBackgroundDark
   background: #444
+
+.darkSignature
+  -webkit-filter: invert(100%)
+  filter: invert(100%)

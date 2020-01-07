@@ -11,26 +11,23 @@ import {
   box,
   socialMediaButtonBackground,
   socialMediaButtonBackgroundDark,
-  blogPostDark
+  blogPostDark,
+  darkSignature
 } from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
-import { folders, mapFileNameToId } from "../utils/FileManager.utils";
+import {folders, getInitialTheme, mapFileNameToId} from "../utils/FileManager.utils";
 import SocialMediaBar from "../components/Footer/SocialMediaBar";
 
 import Signature from "../data/images/signature.svg";
 import { signature } from "../stylesheets/components/Footer.module.sass";
+import DarkModeToggle from "../components/DarkModeToggle";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
 
-const getInitialTheme = () => {
-  const savedTheme = storage.getItem("theme");
-  return savedTheme === 'true';
-};
-
 const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
-  const [isDark, setIsDark] = useState(getInitialTheme);
+  const [isDark, setIsDark] = useState(getInitialTheme());
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,15 +43,18 @@ const BlogPost = ({ match }) => {
   return (
     <div className={`${isDark ? blogPostDark : null} ${blogPost}`}>
       <Container className={`col-lg-6 col-md-8 py-4 rounded-top  ${blogPostBackground}`}>
-        <div className="py-lg-5 pb-4 pt-2 row justify-content-between">
+        <Row className="py-lg-5 pb-4 pt-2 justify-content-between">
           <Link to={blogNavbar.blogLink} className={box}>
             {blogNavbar.goBackLabel}
           </Link>
-          <button onClick={_ => setIsDark(!isDark)}>{isDark ? "Dark" : "Light"}</button>
+          <Link className="my-auto" onClick={_ => setIsDark(!isDark)}>
+            <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
+          </Link>
+
           <Link to={blogNavbar.homeLink} className={box}>
             {blogNavbar.homeLabel}
           </Link>
-        </div>
+        </Row>
 
         <Markdown
           options={{
@@ -75,13 +75,17 @@ const BlogPost = ({ match }) => {
             <img
               src={Signature}
               alt="signature"
-              className={`img-responsive img-centered ${signature}`}
+              className={`img-responsive img-centered ${signature} ${
+                isDark ? darkSignature : null
+              }`}
             />
           </div>
           <div className="col-md-8 my-auto px-0">
             <SocialMediaBar
               socialMediaLinks={footer.socialMediaLinks}
-              buttonBackground={isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground}
+              buttonBackground={
+                isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground
+              }
             />
           </div>
         </Row>
