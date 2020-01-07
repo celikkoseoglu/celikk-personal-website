@@ -35,12 +35,12 @@ const Blog = () => {
     <div className={`${background} ${isDark ? blogDark : null}`}>
       <Container className="pt-md-5 py-4">
         <div className="col-md-8 mx-auto px-0">
-          <Row className="justify-content-between">
-            <h1 className="pb-md-5 py-4 pt-md-0">{blog.name}</h1>
-            <Link onClick={_ => setIsDark(!isDark)}>
+          <div className="d-flex justify-content-between">
+            <h1 className="pb-md-5 my-0 py-4 pt-md-0">{blog.name}</h1>
+            <Link className="my-auto" onClick={_ => setIsDark(!isDark)}>
               <DarkModeToggle isDark={isDark} />
             </Link>
-          </Row>
+          </div>
           <Row className="pb-md-5 pb-5 col-12 pr-0">
             <div className="my-auto">
               <img
