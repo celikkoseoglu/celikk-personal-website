@@ -9,9 +9,19 @@ $boxShadowTransition: box-shadow $transitionDuration linear
   -webkit-transition: $boxShadowTransition
   -moz-transition: $boxShadowTransition
   transition: $boxShadowTransition
+  overflow: hidden
+  border-color: transparent
+  box-shadow: none
+  color: transparent
+
+.darkModeToggle:focus
+  outline: 0
 
 .sun
   box-shadow: inset 19px -10px 0 -5px #000
+
+.sun:focus
+  box-shadow: inset 19px -10px 0 -5px #555
 
 .moon
   box-shadow: inset -7px -3px 0 20px #fff

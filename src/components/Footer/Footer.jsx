@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
-import { linkColor, signature } from "../../stylesheets/components/Footer.module.sass";
+import { linkColor } from "../../stylesheets/components/Footer.module.sass";
 
 import SocialMediaBar from "./SocialMediaBar";
+import Signature from "../Signature";
 
 const Footer = ({ content, signatureImage }) => {
   return (
@@ -24,11 +25,7 @@ const Footer = ({ content, signatureImage }) => {
 
         <div className="col-md-3 col-lg-4">
           <span>{content.date}</span>
-          <img
-            src={signatureImage}
-            alt="signature"
-            className={`img-responsive img-centered ${signature}`}
-          />
+          <Signature signatureImage={signatureImage} />
         </div>
       </Row>
     </footer>

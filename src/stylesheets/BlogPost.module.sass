@@ -1,7 +1,4 @@
-$colorTransitionDuration: 0.5s
-$backgroundTransitionDuration: 1s
-$backgroundTransition: background $backgroundTransitionDuration linear
-$transitionDelay: 0.2s
+@import "../utils/animationTimer"
 
 .blogPost
   background-size: 100% 200%
@@ -73,11 +70,6 @@ $transitionDelay: 0.2s
     text-decoration: none
     color: #5c8afe
 
-.signature
-  max-height: 30px
-  margin-top: 10px
-  fill: white
-
 .socialMediaButtonBackground
   background: #a3a3a3
 
@@ -100,7 +92,3 @@ $transitionDelay: 0.2s
 
 .socialMediaButtonBackgroundDark
   background: #444
-
-.darkSignature
-  -webkit-filter: invert(100%)
-  filter: invert(100%)

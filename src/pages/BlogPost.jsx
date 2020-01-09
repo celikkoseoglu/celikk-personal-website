@@ -11,16 +11,15 @@ import {
   box,
   socialMediaButtonBackground,
   socialMediaButtonBackgroundDark,
-  blogPostDark,
-  darkSignature
+  blogPostDark
 } from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
-import {folders, getInitialTheme, mapFileNameToId} from "../utils/FileManager.utils";
+import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
 import SocialMediaBar from "../components/Footer/SocialMediaBar";
 
-import Signature from "../data/images/signature.svg";
-import { signature } from "../stylesheets/components/Footer.module.sass";
+import signatureImage from "../data/images/signature.svg";
 import DarkModeToggle from "../components/DarkModeToggle";
+import Signature from "../components/Signature";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
@@ -47,10 +46,7 @@ const BlogPost = ({ match }) => {
           <Link to={blogNavbar.blogLink} className={box}>
             {blogNavbar.goBackLabel}
           </Link>
-          <Link className="my-auto" onClick={_ => setIsDark(!isDark)}>
-            <DarkModeToggle isDark={isDark} setIsDark={setIsDark} />
-          </Link>
-
+          <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
           <Link to={blogNavbar.homeLink} className={box}>
             {blogNavbar.homeLabel}
           </Link>
@@ -71,14 +67,7 @@ const BlogPost = ({ match }) => {
         <Row className="text-center">
           <div className="col-md-4 pb-md-0 pb-3">
             <span>{footer.title}</span>
-            <br />
-            <img
-              src={Signature}
-              alt="signature"
-              className={`img-responsive img-centered ${signature} ${
-                isDark ? darkSignature : null
-              }`}
-            />
+            <Signature signatureImage={signatureImage} isDark={isDark}/>
           </div>
           <div className="col-md-8 my-auto px-0">
             <SocialMediaBar
