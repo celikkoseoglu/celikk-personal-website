@@ -56,7 +56,10 @@ const BlogPost = ({ match }) => {
           options={{
             overrides: {
               ImageCarousel: {
-                component: ImageCarousel
+                component: ImageCarousel,
+                props: {
+                  isDark
+                }
               }
             }
           }}
@@ -67,7 +70,7 @@ const BlogPost = ({ match }) => {
         <Row className="text-center">
           <div className="col-md-4 pb-md-0 pb-3">
             <span>{footer.title}</span>
-            <Signature signatureImage={signatureImage} isDark={isDark}/>
+            <Signature signatureImage={signatureImage} isDark={isDark} />
           </div>
           <div className="col-md-8 my-auto px-0">
             <SocialMediaBar

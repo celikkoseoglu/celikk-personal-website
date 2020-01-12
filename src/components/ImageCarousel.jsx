@@ -4,12 +4,15 @@ import PropTypes from "prop-types";
 import {
   autoSizeImage,
   horizontalOverflow,
+  showHelpText,
   imageCarousel,
-  showHelpText
+  darkImageCarousel
 } from "../stylesheets/components/ImageCarousel.module.sass";
 import { getImageLinkWithExtension } from "../utils/FileManager.utils";
 
-const ImageCarousel = ({ folder, images }) => {
+const imageCarouselText = require("../data/imageCarousel");
+
+const ImageCarousel = ({ folder, images, isDark }) => {
   // detect if the user is coming from an iOS device and show help text instead of scroll bar
   // because mobile safari doesn't show scroll bars
   const iOS =
@@ -18,7 +21,7 @@ const ImageCarousel = ({ folder, images }) => {
   const [imageLoaded, setImageLoaded] = useState([]);
 
   const hasMultipleImagesAndiOS = () => {
-    return (iOS && imageLoaded.length > 1);
+    return iOS && imageLoaded.length > 1;
   };
   useEffect(() => {
     const imageLinkWithExtension = imageFileName => {
@@ -45,7 +48,7 @@ const ImageCarousel = ({ folder, images }) => {
     <>
       <div
         align="center"
-        className={`${horizontalOverflow} ${imageCarousel} ${
+        className={`${horizontalOverflow} ${isDark ? darkImageCarousel : null} ${imageCarousel} ${
           hasMultipleImagesAndiOS() ? "pt-3 pb-0 mt-3 mb-1" : "py-3 my-3"
         }`}
       >
@@ -62,7 +65,7 @@ const ImageCarousel = ({ folder, images }) => {
       </div>
       {hasMultipleImagesAndiOS() ? (
         <span className={`d-flex justify-content-center pb-3 ${showHelpText}`}>
-          Swipe to see all images
+          {imageCarouselText.imageCarouselHelpText}
         </span>
       ) : null}
     </>
@@ -71,7 +74,12 @@ const ImageCarousel = ({ folder, images }) => {
 
 ImageCarousel.propTypes = {
   folder: PropTypes.string.isRequired,
-  images: PropTypes.string.isRequired
+  images: PropTypes.string.isRequired,
+  isDark: PropTypes.bool
+};
+
+ImageCarousel.defaultProps = {
+  isDark: false
 };
 
 export default ImageCarousel;
