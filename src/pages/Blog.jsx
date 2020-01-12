@@ -7,15 +7,13 @@ import {
   profilePicture,
   background,
   blogTitleFont,
-  blogDark,
-  socialMediaButtonBackground,
-  socialMediaButtonBackgroundDark
+  blogDark
 } from "../stylesheets/Blog.module.sass";
 import signatureImage from "../data/images/signature.svg";
-import SocialMediaBar from "../components/Footer/SocialMediaBar";
 import { getInitialTheme } from "../utils/FileManager.utils";
 import DarkModeToggle from "../components/DarkModeToggle";
-import Signature from "../components/Signature";
+import BlogFooter from "../components/Footer/BlogFooter";
+import HorizontalRuler from "../components/Footer/HorizontalRuler";
 
 const blog = require("../data/blog");
 const footer = require("../data/footer");
@@ -62,22 +60,8 @@ const Blog = () => {
               key={blogItem.title}
             />
           ))}
-
-          <hr />
-          <Row className="text-center">
-            <div className="col-md-4 pb-md-0 pb-3">
-              <span>{footer.title}</span>
-              <Signature signatureImage={signatureImage} isDark={isDark} />
-            </div>
-            <div className="col-md-8 my-auto px-0">
-              <SocialMediaBar
-                socialMediaLinks={footer.socialMediaLinks}
-                buttonBackground={
-                  isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground
-                }
-              />
-            </div>
-          </Row>
+          <HorizontalRuler isDark={isDark} />
+          <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
         </div>
       </Container>
     </div>

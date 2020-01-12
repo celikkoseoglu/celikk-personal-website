@@ -17,7 +17,7 @@ import {
   mail,
   socialMediaButton,
   twitter
-} from "../../stylesheets/components/Footer.module.sass";
+} from "../../stylesheets/components/Footer/Footer.module.sass";
 
 const SocialMediaBar = ({ socialMediaLinks, buttonBackground }) => {
   return (

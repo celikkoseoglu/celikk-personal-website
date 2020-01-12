@@ -1,6 +1,12 @@
+@import "../../utils/animationTimer"
+
 .signature
   max-height: 30px
   margin-top: 10px
+  -webkit-transition: filter $colorTransitionDuration linear
+  -moz-transition: filter $colorTransitionDuration linear
+  transition: filter $colorTransitionDuration linear
+  animation-delay: $transitionDelay
 
 .darkSignature
   -webkit-filter: invert(100%)

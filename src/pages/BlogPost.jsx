@@ -9,17 +9,15 @@ import {
   blogPost,
   blogPostBackground,
   box,
-  socialMediaButtonBackground,
-  socialMediaButtonBackgroundDark,
   blogPostDark
 } from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
-import SocialMediaBar from "../components/Footer/SocialMediaBar";
 
 import signatureImage from "../data/images/signature.svg";
 import DarkModeToggle from "../components/DarkModeToggle";
-import Signature from "../components/Signature";
+import BlogFooter from "../components/Footer/BlogFooter";
+import HorizontalRuler from "../components/Footer/HorizontalRuler";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
@@ -66,21 +64,8 @@ const BlogPost = ({ match }) => {
         >
           {post}
         </Markdown>
-        <hr />
-        <Row className="text-center">
-          <div className="col-md-4 pb-md-0 pb-3">
-            <span>{footer.title}</span>
-            <Signature signatureImage={signatureImage} isDark={isDark} />
-          </div>
-          <div className="col-md-8 my-auto px-0">
-            <SocialMediaBar
-              socialMediaLinks={footer.socialMediaLinks}
-              buttonBackground={
-                isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground
-              }
-            />
-          </div>
-        </Row>
+        <HorizontalRuler isDark={isDark}/>
+        <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
       </Container>
     </div>
   );

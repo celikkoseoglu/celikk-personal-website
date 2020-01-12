@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
-import { linkColor } from "../../stylesheets/components/Footer.module.sass";
+import { linkColor } from "../../stylesheets/components/Footer/Footer.module.sass";
 
 import SocialMediaBar from "./SocialMediaBar";
 import Signature from "../Signature";
