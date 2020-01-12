@@ -41,7 +41,7 @@ BlogFooter.propTypes = {
       githubLink: PropTypes.string.isRequired,
       instagramLink: PropTypes.string.isRequired,
       emailLink: PropTypes.string.isRequired
-    }),
+    })
   }).isRequired,
   signatureImage: PropTypes.string.isRequired,
   isDark: PropTypes.bool

@@ -4,11 +4,10 @@ import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
-import { Link } from "react-router-dom";
 import {
   blogPost,
   blogPostBackground,
-  box,
+  button,
   blogPostDark
 } from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
@@ -18,6 +17,7 @@ import signatureImage from "../data/images/signature.svg";
 import DarkModeToggle from "../components/DarkModeToggle";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Footer/HorizontalRuler";
+import CustomButton from "../components/CustomButton";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
@@ -41,13 +41,9 @@ const BlogPost = ({ match }) => {
     <div className={`${isDark ? blogPostDark : null} ${blogPost}`}>
       <Container className={`col-lg-6 col-md-8 py-4 rounded-top  ${blogPostBackground}`}>
         <Row className="py-lg-5 pb-4 pt-2 justify-content-between">
-          <Link to={blogNavbar.blogLink} className={box}>
-            {blogNavbar.goBackLabel}
-          </Link>
+          <CustomButton text={blogNavbar.goBackLabel} to={blogNavbar.blogLink} className={button} />
           <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
-          <Link to={blogNavbar.homeLink} className={box}>
-            {blogNavbar.homeLabel}
-          </Link>
+          <CustomButton text={blogNavbar.homeLabel} to={blogNavbar.homeLink} className={button} />
         </Row>
 
         <Markdown
@@ -64,7 +60,7 @@ const BlogPost = ({ match }) => {
         >
           {post}
         </Markdown>
-        <HorizontalRuler isDark={isDark}/>
+        <HorizontalRuler isDark={isDark} />
         <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
       </Container>
     </div>
