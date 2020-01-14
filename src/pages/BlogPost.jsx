@@ -4,12 +4,7 @@ import Markdown from "markdown-to-jsx";
 import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
-import {
-  blogPost,
-  blogPostBackground,
-  button,
-  blogPostDark
-} from "../stylesheets/BlogPost.module.sass";
+import { blogPost, blogPostBackground, blogPostDark } from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
 
@@ -41,9 +36,9 @@ const BlogPost = ({ match }) => {
     <div className={`${isDark ? blogPostDark : null} ${blogPost}`}>
       <Container className={`col-lg-6 col-md-8 py-4 rounded-top  ${blogPostBackground}`}>
         <Row className="py-lg-5 pb-4 pt-2 justify-content-between">
-          <CustomButton text={blogNavbar.goBackLabel} to={blogNavbar.blogLink} className={button} />
+          <CustomButton isDark={isDark} text={blogNavbar.goBackLabel} to={blogNavbar.blogLink} />
           <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
-          <CustomButton text={blogNavbar.homeLabel} to={blogNavbar.homeLink} className={button} />
+          <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
         </Row>
 
         <Markdown

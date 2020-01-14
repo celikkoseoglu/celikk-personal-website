@@ -14,9 +14,11 @@ import { getInitialTheme } from "../utils/FileManager.utils";
 import DarkModeToggle from "../components/DarkModeToggle";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Footer/HorizontalRuler";
+import CustomButton from "../components/CustomButton";
 
 const blog = require("../data/blog");
 const footer = require("../data/footer");
+const blogNavbar = require("../data/blogNavbar");
 
 const Blog = () => {
   window.scrollTo(0, 0);
@@ -31,11 +33,12 @@ const Blog = () => {
     <div className={`${background} ${isDark ? blogDark : null}`}>
       <Container className="pt-md-5 py-4">
         <div className="col-md-8 mx-auto px-0">
-          <div className="d-flex justify-content-between">
-            <h1 className="pb-md-5 my-0 py-4 pt-md-0">{blog.name}</h1>
+          <div className="d-flex justify-content-between pb-md-5 pt-md-4 pt-3 pb-4">
+            <h1 className="my-auto">{blog.name}</h1>
             <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} />
+            <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
           </div>
-          <Row className="pb-md-5 pb-5 col-12 pr-0">
+          <Row className="pb-md-5 pb-4 col-12 pr-0">
             <div className="my-auto">
               <img
                 className={`img-fluid rounded-circle ${profilePicture}`}
