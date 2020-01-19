@@ -1,7 +1,13 @@
 {
   "title": "Çelik Köseoğlu",
-  "linkText": "Want to see how this website is made?",
-  "link": "https://www.youtube.com/watch?v=2sxI11_lxSg&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=39",
+  "leftText": "LET'S MEET",
+  "linkText": "Wondering how this website is made?",
+  "link1": "https://www.youtube.com/watch?v=v64p5L3-dZ4&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=9",
+  "link2": "https://www.youtube.com/watch?v=axbcvBCTTLQ&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=85",
+  "link3": "https://www.youtube.com/watch?v=qLRfBrFXPc0&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=77",
+  "text1": "Making The Navbar",
+  "text2": "Creating the Footer",
+  "text3": "Dark Mode for Blog",
   "socialMediaLinks": {
     "twitterLink": "https://twitter.com/celikkoseoglu",
     "facebookLink": "https://www.facebook.com/celikkoseoglu",
@@ -10,5 +16,5 @@
     "instagramLink": "https://instagram.com/celikkoseoglu",
     "emailLink": "mailto:celikkoseoglu@yahoo.com"
   },
-  "date": "August 2019"
+  "date": "Jan 2020"
 }
