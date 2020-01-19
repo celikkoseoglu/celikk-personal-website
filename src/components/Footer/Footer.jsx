@@ -45,7 +45,7 @@ const Footer = ({ content, signatureImage }) => {
               </li>
               <li>
                 <a href={content.link3} className={footerDarkText}>
-                  {content.text2}
+                  {content.text3}
                 </a>
               </li>
             </ul>
