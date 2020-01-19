@@ -128,7 +128,7 @@ const Home = () => {
         </Container>
       </section>
 
-      <div className={`${footerBackground} ${footerPadding}`}>
+      <div id={content.contactReference} className={`${footerBackground} ${footerPadding}`}>
         <Container>
           <Footer content={footer} signatureImage={Signature} />
         </Container>

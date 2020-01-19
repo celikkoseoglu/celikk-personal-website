@@ -7,9 +7,7 @@ const Signature = ({ signatureImage, isDark, className }) => {
     <img
       src={signatureImage}
       alt="signature"
-      className={`img-responsive img-centered ${signature} ${
-        isDark ? darkSignature : null
-      } ${className}`}
+      className={`w-100 ${signature} ${isDark ? darkSignature : null} ${className}`}
     />
   );
 };
