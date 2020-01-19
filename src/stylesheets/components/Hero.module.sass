@@ -1,3 +1,5 @@
+@import "../../utils/widthPicker"
+
 $transparency: 0.98
 $box-color: rgba(29, 61, 119, $transparency)
 
@@ -7,7 +9,7 @@ $box-color: rgba(29, 61, 119, $transparency)
   line-height: 50px
   margin-bottom: 70px
   text-transform: uppercase
-  @media (max-width: 768px)
+  +screen(small)
     font-size: 50px
     margin-bottom: 20px
 
@@ -24,7 +26,7 @@ $box-color: rgba(29, 61, 119, $transparency)
   font-family: 'Montserrat-Regular', sans-serif
 
 .introMargin
-  @media (max-width: 768px)
+  +screen(small)
     padding-top: 100px
     padding-bottom: 200px
 
@@ -39,7 +41,7 @@ $box-color: rgba(29, 61, 119, $transparency)
   line-height: 1.4em
   color: #F5F5F5
   transition: color 0.3s, border 0.3s
-  @media (max-width: 768px)
+  +screen(small)
     background: $box-color
   &:hover
     border: 2px solid #FED136

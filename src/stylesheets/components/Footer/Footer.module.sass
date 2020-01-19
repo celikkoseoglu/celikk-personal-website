@@ -1,20 +1,35 @@
-.linkColor
-  color: #eee
+@import "../../../utils/widthPicker"
+
+.footerDarkText
+  color: #A6A6A6
+
+.footerLightText
+  color: #C9C9C9
+
+.footerName
+  font-weight: 700
+  font-size: 1.1rem
 
 .leftText
-  font-size: 9.5rem
-  line-height: 8.5rem
   font-family: 'Montserrat-Regular', sans-serif
-  color: #eee
+  +screen(large)
+    font-size: 8.5rem
+    line-height: 8.5rem
+  +screen(medium)
+    font-size: 6.5rem
+    line-height: 6.5rem
+  +screen(small)
+    font-size: 2.4rem
+    line-height: 1rem
 
-.name
-  color: white
-  font-size: 1.2rem
-  font-weight: 900
+.lineSeparator
+  +screen(medium)
+    border-right: 1px solid rgba(255,255,255,.2)
+  +screen(small)
+    border-bottom: 1px solid rgba(255,255,255,.2)
 
-
-.borderRight
-  border-right: 1px solid rgba(255,255,255,.1)
+.footerList
+  list-style-position: inside
 
 .socialMediaButton
   text-align: center
@@ -28,6 +43,7 @@
   outline: 0
   transition: all .3s
   margin: 0
+  background: #444
   &:hover
     color: #fff
 
