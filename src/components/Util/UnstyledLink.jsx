@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { noDecoration } from "../../stylesheets/components/UnstyledLink.module.sass";
+import { noDecoration } from "../../stylesheets/components/Utils/UnstyledLink.module.sass";
 
 const UnstyledLink = ({ className, to, children }) => {
   return (

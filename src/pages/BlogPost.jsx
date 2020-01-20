@@ -13,6 +13,7 @@ import DarkModeToggle from "../components/DarkModeToggle";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Footer/HorizontalRuler";
 import CustomButton from "../components/CustomButton";
+import LoadingIndicator from "../components/Util/LoadingIndicator";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
@@ -41,20 +42,25 @@ const BlogPost = ({ match }) => {
           <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
         </Row>
 
-        <Markdown
-          options={{
-            overrides: {
-              ImageCarousel: {
-                component: ImageCarousel,
-                props: {
-                  isDark
+        {post === "" ? (
+          <LoadingIndicator isDark={isDark}/>
+        ) : (
+          <Markdown
+            options={{
+              overrides: {
+                ImageCarousel: {
+                  component: ImageCarousel,
+                  props: {
+                    isDark
+                  }
                 }
               }
-            }
-          }}
-        >
-          {post}
-        </Markdown>
+            }}
+          >
+            {post}
+          </Markdown>
+        )}
+
         <HorizontalRuler isDark={isDark} />
         <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
       </Container>
