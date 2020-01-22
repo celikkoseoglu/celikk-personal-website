@@ -1,4 +1,5 @@
 import React from "react";
+import ProgressiveImage from "react-progressive-image";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import Hero from "../components/Hero";
@@ -35,30 +36,39 @@ const projects = require("../data/projects");
 const footer = require("../data/footer");
 
 const Home = () => {
+  const randomHeroImageNumber = getRandomInt(folders.heroImages.length);
+  const heroImageUrl = folders.heroImages[randomHeroImageNumber];
+  const tinyHeroImageUrl = folders.tinyHeroImages[randomHeroImageNumber];
+
   return (
     <>
       <NavigationBar content={navbar} />
-      <header
-        id={content.heroReference}
-        style={{
-          backgroundImage: `url(${folders.heroImages[getRandomInt(folders.heroImages.length)]})`
-        }}
-        className={`${heroBackground}`}
-      >
-        <Container className="h-100 d-flex justify-content-center flex-column">
-          <Hero
-            introHeading={hero.introHeading}
-            introLeadIn={hero.introLeadIn}
-            resumeButtonText={hero.resumeButtonText}
-            resumeLink={hero.resumeButtonLink}
-          />
-        </Container>
 
-        <ArrowAnimation
-          className={`fixed-relative ${arrowMargin} ${arrowSize} mx-auto`}
-          reference={content.whyADeveloperReference}
-        />
-      </header>
+      <ProgressiveImage src={heroImageUrl} placeholder={tinyHeroImageUrl}>
+        {src => (
+          <header
+            id={content.heroReference}
+            style={{
+              backgroundImage: `url(${src})`
+            }}
+            className={`${heroBackground}`}
+          >
+            <Container className="h-100 d-flex justify-content-center flex-column">
+              <Hero
+                introHeading={hero.introHeading}
+                introLeadIn={hero.introLeadIn}
+                resumeButtonText={hero.resumeButtonText}
+                resumeLink={hero.resumeButtonLink}
+              />
+            </Container>
+
+            <ArrowAnimation
+              className={`fixed-relative ${arrowMargin} ${arrowSize} mx-auto`}
+              reference={content.whyADeveloperReference}
+            />
+          </header>
+        )}
+      </ProgressiveImage>
 
       <section
         id={content.whyADeveloperReference}

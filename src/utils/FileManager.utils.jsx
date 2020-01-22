@@ -7,7 +7,8 @@ export const IMAGE_EXTENSION = isWebpSupported() ? ".webp" : ".png";
 
 export const folders = Object.freeze({
   blogFiles: importAll(require.context("../blog", false, /\.md$/)),
-  heroImages: importAll(require.context("../data/images/hero", false, /\.jpg$/))
+  heroImages: importAll(require.context("../data/images/hero", false, /\.jpg$/)),
+  tinyHeroImages: importAll(require.context("../data/images/hero/tiny", false, /\.jpg$/))
 });
 
 export const mapFileNameToId = (fileName, fileArray) => {
