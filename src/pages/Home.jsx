@@ -45,7 +45,7 @@ const Home = () => {
       <NavigationBar content={navbar} />
 
       <ProgressiveImage src={heroImageUrl} placeholder={tinyHeroImageUrl}>
-        {(src, loading) => (
+        {src => (
           <header
             id={content.heroReference}
             style={{
