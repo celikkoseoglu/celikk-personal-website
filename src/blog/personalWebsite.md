@@ -22,16 +22,17 @@ knowledge but to call it `tribal` would be an overstatement.
 
 It wasn't until university (2014) that I learnt about making a website. Don't get me wrong,
 it wasn't uni that taught me how to make a website. It was a friend of mine that
-goes by the name Oguz Bilgener. He was one year older than me. We met during the
+goes by the name [Oguz Bilgener](https://github.com/oguzbilgener). He was one year older than me. We met during the
 first day of uni. I can easily say he was one of the very few self-motivated people
 out there that taught himself how all this stuff works. I've asked him how to get
-started with web stuff. He showed me a few pointers like nginx and
-digitalocean. About a week later, I had a very basic HTML and CSS only website
+started with web stuff. He showed me a few pointers like [Nginx and
+DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04-quickstart).
+About a week later, I had a very basic HTML and CSS only website
 running. It stayed like that for a long while.
 
 Here is a screenshot from the first ever website that I made:
 
-~~INSERT SCREENSHOT HERE~~
+ <ImageCarousel folder="personalWebsite" images="personalWebsite1"/>
 
 A year later, I started noticing more and more people in my Twitter feed talking
 about Bootstrap. This was around the time where companies started going `mobile first`.
@@ -48,13 +49,13 @@ templates off from a website that I don't remember right now, and modified it
 enough that it would look like it's actually mine. Then I published it, and it became
 the foundation for the design that I have, even today.
 
-~~INSERT SCREENSHOT HERE~~
+ <ImageCarousel folder="personalWebsite" images="personalWebsite2"/>
 
 It looked much better than what I had before for sure. I spent quite a lot of time
 working on this. I worked on it on and off depending on the workload the uni gave me.
 It took me one more year, but I was able to get it to this state:
 
-~~INSERT SCREENSHOT HERE~~
+ <ImageCarousel folder="personalWebsite" images="personalWebsite3"/>
 
 I didn't provide any major updates to this website for the next 3 years.
 Not until I graduated uni at least. I only updated my CV.
