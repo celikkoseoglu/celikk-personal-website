@@ -6,6 +6,13 @@
   "subtitle": "I write some stuff in here",
   "blogItems": [
     {
+      "title": "Personal Website - This Time with React",
+      "date": "31.01.2020",
+      "readingLength": "10min",
+      "subtitle": "There is no programming pill. It takes time. This is the story how this website is made. I also talk about how I taught myself HTML, CSS, JS and React.",
+      "blogPost": "personalWebsite"
+    },
+    {
       "title": "React Icons - Import Only the Required Favicons",
       "date": "03.01.2020",
       "readingLength": "5min",
@@ -46,13 +53,6 @@
       "readingLength": "15min",
       "subtitle": "This was our term project for CS223 Digital Design in Bilkent University. We've recreated something like Flappy Bird using an 8x8 LED Matrix",
       "blogPost": "rockyJourney"
-    },
-    {
-      "title": "Personal Website - This Time with React",
-      "date": "10.10.2010",
-      "readingLength": "15min",
-      "subtitle": "I wanted to learn React and also I wanted to make my personal website somewhat better. This was a great opportunity. This is the story how this website is made.",
-      "blogPost": "personalWebsite"
     }
   ]
 }
