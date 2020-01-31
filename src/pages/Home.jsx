@@ -12,6 +12,7 @@ import {
   skillsBackground,
   projectsBackground,
   ongoingProjectsBackground,
+  latestBlogPostsBackground,
   footerBackground,
   sectionPadding,
   footerPadding,
@@ -34,6 +35,7 @@ const personalSkills = require("../data/personalSkills");
 const ongoingProjects = require("../data/ongoingProjects");
 const projects = require("../data/projects");
 const footer = require("../data/footer");
+const blog = require("../data/blog");
 
 const Home = () => {
   const randomHeroImageNumber = getRandomInt(folders.heroImages.length);
@@ -135,6 +137,16 @@ const Home = () => {
               />
             ))}
           </Row>
+        </Container>
+      </section>
+
+      <section
+        id={content.latestBlogPostsReference}
+        className={`${latestBlogPostsBackground} ${sectionPadding}`}
+      >
+        <Heading className={paddingBottom} text={content.latestBlogPostsTitle} />
+        <Container>
+          <Row>{blog.blogItems.map(blogItem => console.log(blogItem))}</Row>
         </Container>
       </section>
 
