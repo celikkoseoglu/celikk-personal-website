@@ -6,6 +6,13 @@
   "subtitle": "I write some stuff in here",
   "blogItems": [
     {
+      "title": "Today's Meal in Marmara - Food as Notification",
+      "date": "02.02.2020",
+      "readingLength": "5min",
+      "subtitle": "As a student in Bilkent, I sometimes wondered what was available in the school's cafeteria. There should be an app for this",
+      "blogPost": "marmara"
+    },
+    {
       "title": "Personal Website - This Time with React",
       "date": "31.01.2020",
       "readingLength": "10min",
@@ -39,13 +46,6 @@
       "readingLength": "10min",
       "subtitle": "One of the first apps to be in the Windows Phone Store that allows you to hide pictures from your phone's gallery",
       "blogPost": "photosec"
-    },
-    {
-      "title": "Today's Meal in Marmara - Food as Notification",
-      "date": "10.10.2010",
-      "readingLength": "15min",
-      "subtitle": "As a student in Bilkent, I sometimes wondered what was available in the school's cafeteria. There should be an app for this",
-      "blogPost": "marmara"
     },
     {
       "title": "Rocky Journey - FPGAs and Verilog",
