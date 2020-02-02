@@ -2,6 +2,8 @@
 
 #### There is no programming pill. It takes time.
 
+######January 31, 2020 - 10 min read
+
 Technologies Used: `React`, `Bootstrap`, `markdown-to-jsx`
 
 Available for: `All devices with an internet browser`

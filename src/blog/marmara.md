@@ -2,6 +2,8 @@
 
 #### What's in lunch today? Ah, here is my notification!
 
+######February 02, 2020 - 5 min read
+
 Technologies Used: `Xcode`, `Android Studio`
 
 Was Planned For: `Windows Phone?`, `iOS`, `Android`
