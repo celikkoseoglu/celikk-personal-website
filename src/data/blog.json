@@ -6,6 +6,13 @@
   "subtitle": "I write some stuff in here",
   "blogItems": [
     {
+      "title": "Rocky Journey - FPGAs and Verilog",
+      "date": "02.02.2020",
+      "readingLength": "4min",
+      "subtitle": "This was our term project for CS223 Digital Design in Bilkent University. We've recreated something like Flappy Bird using an 8x8 LED Matrix",
+      "blogPost": "rockyJourney"
+    },
+    {
       "title": "Today's Meal in Marmara - Food as Notification",
       "date": "02.02.2020",
       "readingLength": "5min",
@@ -27,13 +34,6 @@
       "blogPost": "reactIcons"
     },
     {
-      "title": "QNote - Blazing Fast Note Taking App",
-      "date": "06.12.2019",
-      "readingLength": "8min",
-      "subtitle": "Creating one of the first Windows Phone Store Apps",
-      "blogPost": "qnote"
-    },
-    {
       "title": "IPManager - Switch Between DHCP and Static IP Easily",
       "date": "07.12.2019",
       "readingLength": "5min",
@@ -48,11 +48,11 @@
       "blogPost": "photosec"
     },
     {
-      "title": "Rocky Journey - FPGAs and Verilog",
-      "date": "10.10.2010",
-      "readingLength": "15min",
-      "subtitle": "This was our term project for CS223 Digital Design in Bilkent University. We've recreated something like Flappy Bird using an 8x8 LED Matrix",
-      "blogPost": "rockyJourney"
+      "title": "QNote - Blazing Fast Note Taking App",
+      "date": "24.11.2019",
+      "readingLength": "8min",
+      "subtitle": "Creating one of the first Windows Phone Store Apps",
+      "blogPost": "qnote"
     }
   ]
 }
