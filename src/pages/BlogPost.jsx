@@ -43,7 +43,7 @@ const BlogPost = ({ match }) => {
         </Row>
 
         {post === "" ? (
-          <LoadingIndicator isDark={isDark}/>
+          <LoadingIndicator isDark={isDark} />
         ) : (
           <Markdown
             options={{
