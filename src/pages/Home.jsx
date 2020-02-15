@@ -27,6 +27,7 @@ import NavigationBar from "../components/Navbar/NavigationBar";
 import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../utils/FileManager.utils";
+import BlogShowcaseCard from "../components/BlogShowcaseCard";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -36,6 +37,14 @@ const ongoingProjects = require("../data/ongoingProjects");
 const projects = require("../data/projects");
 const footer = require("../data/footer");
 const blog = require("../data/blog");
+
+const retrieveLatestBlogPosts = () => {
+  const latestBlogsList = [];
+  for (let i = 0; i < 6; i += 1) {
+    latestBlogsList.push(blog.blogItems[i]);
+  }
+  return latestBlogsList;
+};
 
 const Home = () => {
   const randomHeroImageNumber = getRandomInt(folders.heroImages.length);
@@ -146,7 +155,11 @@ const Home = () => {
       >
         <Heading className={paddingBottom} text={content.latestBlogPostsTitle} />
         <Container>
-          <Row>{blog.blogItems.map(blogItem => console.log(blogItem))}</Row>
+          <Row className="d-flex justify-content-center">
+            {retrieveLatestBlogPosts().map(blogItem => (
+              <BlogShowcaseCard timestamp={null} link={null} title={null} subtitle={null} />
+            ))}
+          </Row>
         </Container>
       </section>
 
