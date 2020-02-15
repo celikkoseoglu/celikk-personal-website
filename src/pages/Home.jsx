@@ -19,7 +19,8 @@ import {
   paddingBottom,
   arrowMargin,
   arrowSize,
-  heroBackground
+  heroBackground,
+  blogShowcaseContainer
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
@@ -154,10 +155,16 @@ const Home = () => {
         className={`${latestBlogPostsBackground} ${sectionPadding}`}
       >
         <Heading className={paddingBottom} text={content.latestBlogPostsTitle} />
-        <Container>
+        <Container className={blogShowcaseContainer}>
           <Row className="d-flex justify-content-center">
             {retrieveLatestBlogPosts().map(blogItem => (
-              <BlogShowcaseCard timestamp={null} link={null} title={null} subtitle={null} />
+              <BlogShowcaseCard
+                timestamp={blogItem.date}
+                minutes={blogItem.minutes}
+                blogPost={blogItem.blogPost}
+                title={blogItem.title}
+                subtitle={blogItem.subtitle}
+              />
             ))}
           </Row>
         </Container>
