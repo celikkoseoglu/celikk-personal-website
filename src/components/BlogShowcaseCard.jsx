@@ -1,18 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { square, montserrat, timestampStyle } from "../stylesheets/components/BlogShowcaseCard.module.sass";
+import {
+  square,
+  montserrat,
+  timestampStyle,
+  titleStyle,
+  description
+} from "../stylesheets/components/BlogShowcaseCard.module.sass";
 import UnstyledLink from "./Util/UnstyledLink";
 import { BLOG_LINK } from "../utils/Constants.utils";
+import SpringDiv from "./Animations/SpringDiv";
 
 const BlogShowcaseCard = ({ title, subtitle, timestamp, minutes, blogPost }) => {
   return (
-    <UnstyledLink to={`${BLOG_LINK}${blogPost}`} className={square}>
-      <h6 className={montserrat}>{title}</h6>
-      <p>{subtitle}</p>
-      <p className={`${timestampStyle} align-bottom`}>
-        {timestamp} - {minutes} read
-      </p>
-    </UnstyledLink>
+    <SpringDiv className={square}>
+      <UnstyledLink to={`${BLOG_LINK}${blogPost}`}>
+        <div className={description}>
+          <h6 className={`${montserrat} ${titleStyle} pb-1`}>{title}</h6>
+          <p>{subtitle}</p>
+        </div>
+        <p className={`${timestampStyle} ${montserrat}`}>
+          {timestamp} - {minutes} read
+        </p>
+      </UnstyledLink>
+    </SpringDiv>
   );
 };
 

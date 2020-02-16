@@ -29,6 +29,8 @@ import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../utils/FileManager.utils";
 import BlogShowcaseCard from "../components/BlogShowcaseCard";
+import UnstyledLink from "../components/Util/UnstyledLink";
+import {BLOG_LINK} from "../utils/Constants.utils";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -167,6 +169,9 @@ const Home = () => {
               />
             ))}
           </Row>
+          <UnstyledLink to={BLOG_LINK} className="d-flex justify-content-center pt-3">
+            <p>View All Blog Posts</p>
+          </UnstyledLink>
         </Container>
       </section>
 

@@ -1,16 +1,27 @@
 .square
-  height: 220px
-  width: 220px
+  height: 230px
+  width: 230px
   margin: 30px
-  border: 1px solid #000
+  border: 1px solid #979797
   border-radius: 5px
-  padding: 10px
+  padding: 15px
   -webkit-box-shadow: 6px 6px 0 0 #C8C8C8
   box-shadow: 6px 6px 0 0 #C8C8C8
+  transition: box-shadow 0.3s
+  &:hover
+    -webkit-box-shadow: 8px 8px 0 0 #d0d0d0
+    box-shadow: 8px 8px 0 0 #d0d0d0
 
 .montserrat
   font-family: 'Montserrat-Regular', sans-serif
 
+.titleStyle
+  font-weight: 500
+
 .timestampStyle
   font-size: 13px
   color: #696969
+
+.description
+  height: 180px
+  overflow: hidden
