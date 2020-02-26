@@ -12,13 +12,15 @@ import {
   skillsBackground,
   projectsBackground,
   ongoingProjectsBackground,
+  latestBlogPostsBackground,
   footerBackground,
   sectionPadding,
   footerPadding,
   paddingBottom,
   arrowMargin,
   arrowSize,
-  heroBackground
+  heroBackground,
+  blogShowcaseContainer
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
@@ -26,6 +28,9 @@ import NavigationBar from "../components/Navbar/NavigationBar";
 import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../utils/FileManager.utils";
+import BlogShowcaseCard from "../components/BlogShowcase/BlogShowcaseCard";
+import { BLOG_LINK } from "../utils/Constants.utils";
+import BlogShowcaseButton from "../components/BlogShowcase/BlogShowcaseButton";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -34,6 +39,15 @@ const personalSkills = require("../data/personalSkills");
 const ongoingProjects = require("../data/ongoingProjects");
 const projects = require("../data/projects");
 const footer = require("../data/footer");
+const blog = require("../data/blog");
+
+const retrieveLatestBlogPosts = () => {
+  const latestBlogsList = [];
+  for (let i = 0; i < 6; i += 1) {
+    latestBlogsList.push(blog.blogItems[i]);
+  }
+  return latestBlogsList;
+};
 
 const Home = () => {
   const randomHeroImageNumber = getRandomInt(folders.heroImages.length);
@@ -135,6 +149,33 @@ const Home = () => {
               />
             ))}
           </Row>
+        </Container>
+      </section>
+
+      <section
+        id={content.latestBlogPostsReference}
+        className={`${latestBlogPostsBackground} ${sectionPadding}`}
+      >
+        <Heading className={paddingBottom} text={content.latestBlogPostsTitle} />
+        <Container className={blogShowcaseContainer}>
+          <Row className="d-flex justify-content-center">
+            {retrieveLatestBlogPosts().map(blogItem => (
+              <BlogShowcaseCard
+                timestamp={blogItem.date}
+                minutes={blogItem.minutes}
+                blogPost={blogItem.blogPost}
+                title={blogItem.title}
+                subtitle={blogItem.subtitle}
+                key={blogItem.title}
+              />
+            ))}
+          </Row>
+
+          <BlogShowcaseButton
+            className="mx-auto mt-4"
+            link={BLOG_LINK}
+            text="View All Blog Posts"
+          />
         </Container>
       </section>
 

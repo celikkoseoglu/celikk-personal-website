@@ -8,49 +8,49 @@
     {
       "title": "Rocky Journey - FPGAs and Verilog",
       "date": "02.02.2020",
-      "readingLength": "4min",
-      "subtitle": "This was our term project for CS223 Digital Design in Bilkent University. We've recreated something like Flappy Bird using an 8x8 LED Matrix",
+      "minutes": "4 min",
+      "subtitle": "This was our term project for CS223 Digital Design in Bilkent University. We've recreated something like Flappy Bird using an 8x8 LED Matrix.",
       "blogPost": "rockyJourney"
     },
     {
       "title": "Today's Meal in Marmara - Food as Notification",
       "date": "02.02.2020",
-      "readingLength": "5min",
-      "subtitle": "As a student in Bilkent, I sometimes wondered what was available in the school's cafeteria. There should be an app for this",
+      "minutes": "5 min",
+      "subtitle": "As a student in Bilkent, I sometimes wondered what was available in the school's cafeteria. There should be an app for this.",
       "blogPost": "marmara"
     },
     {
       "title": "Personal Website - This Time with React",
       "date": "31.01.2020",
-      "readingLength": "10min",
+      "minutes": "10 min",
       "subtitle": "There is no programming pill. It takes time. This is the story how this website is made. I also talk about how I taught myself HTML, CSS, JS and React.",
       "blogPost": "personalWebsite"
     },
     {
       "title": "React Icons - Import Only the Required Favicons",
       "date": "03.01.2020",
-      "readingLength": "5min",
-      "subtitle": "Reduce your React Bundle Size by only importing the icons that you need. Not the whole favicon css",
+      "minutes": "5 min",
+      "subtitle": "Reduce your React Bundle Size by only importing the icons that you need. Not the whole favicon css.",
       "blogPost": "reactIcons"
     },
     {
       "title": "IPManager - Switch Between DHCP and Static IP Easily",
       "date": "07.12.2019",
-      "readingLength": "5min",
-      "subtitle": "There is an app for your Windows Laptop that allows you to change between DHCP and static IP easily",
+      "minutes": "5 min",
+      "subtitle": "There is an app for your Windows Laptop that allows you to change between DHCP and static IP easily.",
       "blogPost": "ipmanager"
     },
     {
       "title": "PhotoSec - First app that allows you to hide pictures on Windows Phone",
       "date": "06.12.2019",
-      "readingLength": "10min",
-      "subtitle": "One of the first apps to be in the Windows Phone Store that allows you to hide pictures from your phone's gallery",
+      "minutes": "10 min",
+      "subtitle": "One of the first apps to be in the Windows Phone Store that allows you to hide pictures from your phone's gallery.",
       "blogPost": "photosec"
     },
     {
       "title": "QNote - Blazing Fast Note Taking App",
       "date": "24.11.2019",
-      "readingLength": "8min",
+      "minutes": "8 min",
       "subtitle": "Creating one of the first Windows Phone Store Apps",
       "blogPost": "qnote"
     }

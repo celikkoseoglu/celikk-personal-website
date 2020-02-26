@@ -2,14 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import UnstyledLink from "./Util/UnstyledLink";
 import { blogTitle, blogSubtitle } from "../stylesheets/components/BlogItem.module.sass";
+import { BLOG_LINK } from "../utils/Constants.utils";
 
-const BlogItem = ({ className, title, date, readingLength, subtitle, blogPost }) => {
+const BlogItem = ({ className, title, date, minutes, subtitle, blogPost }) => {
   return (
     <div className={className}>
-      <UnstyledLink to={`/blog/${blogPost}`} className={`${blogTitle} ${blogSubtitle}`}>
+      <UnstyledLink to={`${BLOG_LINK}${blogPost}`} className={`${blogTitle} ${blogSubtitle}`}>
         <h4>{title}</h4>
         <h6>
-          {date} - {readingLength}
+          {date} - {minutes}
         </h6>
       </UnstyledLink>
       <p>{subtitle}</p>
@@ -21,7 +22,7 @@ BlogItem.propTypes = {
   className: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  readingLength: PropTypes.string.isRequired,
+  minutes: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   blogPost: PropTypes.string.isRequired
 };

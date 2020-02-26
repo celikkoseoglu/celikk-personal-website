@@ -57,7 +57,7 @@ const Blog = () => {
               className="pb-md-4 pb-3"
               title={blogItem.title}
               date={blogItem.date}
-              readingLength={blogItem.readingLength}
+              minutes={blogItem.minutes}
               subtitle={blogItem.subtitle}
               blogPost={blogItem.blogPost}
               key={blogItem.title}

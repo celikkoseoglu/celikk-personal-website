@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import "./index.sass";
+import {BLOG_LINK} from "./utils/Constants.utils";
 
 const CV = lazy(() => import("./pages/CV"));
 
@@ -14,8 +15,8 @@ ReactDOM.render(
     <Suspense fallback={<div>Loading...</div>}>
       <Route path="/cv" component={CV} />
     </Suspense>
-    <Route exact path="/blog/" component={Blog} />
-    <Route path="/blog/:blogPost" component={BlogPost} />
+    <Route exact path={BLOG_LINK} component={Blog} />
+    <Route path={`${BLOG_LINK}:blogPost`} component={BlogPost} />
   </BrowserRouter>,
   document.getElementById("root")
 );
