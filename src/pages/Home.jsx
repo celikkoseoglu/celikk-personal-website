@@ -28,9 +28,9 @@ import NavigationBar from "../components/Navbar/NavigationBar";
 import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../utils/FileManager.utils";
-import BlogShowcaseCard from "../components/BlogShowcaseCard";
-import UnstyledLink from "../components/Util/UnstyledLink";
-import {BLOG_LINK} from "../utils/Constants.utils";
+import BlogShowcaseCard from "../components/BlogShowcase/BlogShowcaseCard";
+import { BLOG_LINK } from "../utils/Constants.utils";
+import BlogShowcaseButton from "../components/BlogShowcase/BlogShowcaseButton";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -166,12 +166,16 @@ const Home = () => {
                 blogPost={blogItem.blogPost}
                 title={blogItem.title}
                 subtitle={blogItem.subtitle}
+                key={blogItem.title}
               />
             ))}
           </Row>
-          <UnstyledLink to={BLOG_LINK} className="d-flex justify-content-center pt-3">
-            <p>View All Blog Posts</p>
-          </UnstyledLink>
+
+          <BlogShowcaseButton
+            className="mx-auto mt-4"
+            link={BLOG_LINK}
+            text="View All Blog Posts"
+          />
         </Container>
       </section>
 

@@ -6,10 +6,10 @@ import {
   timestampStyle,
   titleStyle,
   description
-} from "../stylesheets/components/BlogShowcaseCard.module.sass";
-import UnstyledLink from "./Util/UnstyledLink";
-import { BLOG_LINK } from "../utils/Constants.utils";
-import SpringDiv from "./Animations/SpringDiv";
+} from "../../stylesheets/components/BlogShowcase/BlogShowcaseCard.module.sass";
+import UnstyledLink from "../Util/UnstyledLink";
+import { BLOG_LINK } from "../../utils/Constants.utils";
+import SpringDiv from "../Animations/SpringDiv";
 
 const BlogShowcaseCard = ({ title, subtitle, timestamp, minutes, blogPost }) => {
   return (
