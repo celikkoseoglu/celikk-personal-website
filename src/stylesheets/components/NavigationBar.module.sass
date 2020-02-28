@@ -5,17 +5,14 @@ $brandColor: #fed136
 $navbar-color: rgba(29, 61, 119, $transparency)
 
 .topNavExpand
-  +screen(small)
-    background: $navbar-color
+  +screen(lessThanMedium)
     padding-top: 5px
     padding-bottom: 5px
+    background: $navbar-color
 
 .topNavCollapse
-  +screen(large)
-    padding: 0
-  +screen(small)
-    padding-top: 3px
-    padding-bottom: 3px
+  padding-top: 3px
+  padding-bottom: 3px
   background: $navbar-color
 
 .customNavbar
@@ -44,6 +41,8 @@ $navbar-color: rgba(29, 61, 119, $transparency)
     -moz-transition: color .3s ease-in-out
     transition: color .3s ease-in-out
   +screen(large)
+    font-size: 1.4em
+  +screen(greaterThanLarge)
     font-size: 2em
 
 .navbarToggle

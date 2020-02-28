@@ -12,20 +12,19 @@
 
 .leftText
   font-family: 'Montserrat-Regular', sans-serif
+  font-size: 8.5rem
+  line-height: 8.5rem
   +screen(large)
-    font-size: 8.5rem
-    line-height: 8.5rem
-  +screen(medium)
     font-size: 6.5rem
     line-height: 6.5rem
-  +screen(small)
+  +screen(lessThanMedium)
     font-size: 2.4rem
     line-height: 1rem
 
 .lineSeparator
-  +screen(medium)
+  +screen(greaterThanMedium)
     border-right: 1px solid rgba(255,255,255,.2)
-  +screen(small)
+  +screen(lessThanMedium)
     border-bottom: 1px solid rgba(255,255,255,.2)
 
 .footerList

@@ -1,20 +1,26 @@
-$breakpoint-extraSmall: 595px
-$breakpoint-small: 767px
-$breakpoint-medium: 768px
-$breakpoint-large: 992px
+$small: 594px
+$medium: 768px
+$large: 991px
+$lessThanMedium: 767px
 
-=screen($size, $pixels: $breakpoint-extraSmall)
-  @if $size == "extraSmall"
-    @media screen and (max-width: $breakpoint-extraSmall)
-      @content
-  @else if $size == "small"
-    @media screen and (max-width: $breakpoint-small)
+=screen($size)
+  @if $size == "small"
+    @media screen and (max-width: $small)
       @content
   @else if $size == "medium"
-    @media screen and (min-width: $breakpoint-medium)
+    @media screen and (min-width: $small) and (max-width: $medium)
       @content
   @else if $size == "large"
-    @media screen and (min-width: $breakpoint-large)
+    @media screen and (min-width: $medium) and (max-width: $large)
+      @content
+  @else if $size == "lessThanMedium"
+    @media screen and (max-width: $lessThanMedium)
+      @content
+  @else if $size == "greaterThanMedium"
+    @media screen and (min-width: $medium)
+      @content
+  @else if $size == "greaterThanLarge"
+    @media screen and (min-width: $large)
       @content
   @else
     @content

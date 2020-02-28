@@ -9,7 +9,7 @@ $box-color: rgba(29, 61, 119, $transparency)
   line-height: 50px
   margin-bottom: 70px
   text-transform: uppercase
-  +screen(small)
+  +screen(lessThanMedium)
     font-size: 50px
     margin-bottom: 20px
 
@@ -17,7 +17,7 @@ $box-color: rgba(29, 61, 119, $transparency)
   font-size: 40px
   line-height: 50px
   margin-bottom: 70px
-  @media (max-width: 768px)
+  +screen(lessThanMedium)
     font-size: 22px
     line-height: 22px
     margin-bottom: 20px
@@ -26,7 +26,7 @@ $box-color: rgba(29, 61, 119, $transparency)
   font-family: 'Montserrat-Regular', sans-serif
 
 .introMargin
-  +screen(small)
+  +screen(lessThanMedium)
     padding-top: 100px
     padding-bottom: 200px
 
@@ -41,7 +41,7 @@ $box-color: rgba(29, 61, 119, $transparency)
   line-height: 1.4em
   color: #F5F5F5
   transition: color 0.3s, border 0.3s
-  +screen(small)
+  +screen(lessThanMedium)
     background: $box-color
   &:hover
     border: 2px solid #FED136

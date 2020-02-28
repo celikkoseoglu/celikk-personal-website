@@ -9,11 +9,14 @@
   border-radius: 5px
   -webkit-box-shadow: 6px 6px 0 0 #C8C8C8
   box-shadow: 6px 6px 0 0 #C8C8C8
-  +screen(extraSmall)
+  +screen(small)
     height: auto
     width: auto
     margin: 10px
-    padding: 15px
+  +screen(medium)
+    margin: 20px
+  +screen(large)
+    margin: 10px
 
 .montserrat
   font-family: 'Montserrat-Regular', sans-serif
@@ -29,5 +32,5 @@
 .description
   height: 180px
   overflow: hidden
-  +screen(extraSmall)
+  +screen(small)
     height: auto
