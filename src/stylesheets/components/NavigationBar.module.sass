@@ -32,6 +32,9 @@ $navbar-color: rgba(29, 61, 119, $transparency)
     transition: color .3s ease-in-out
 
 .brand
+  //this allows for more space on the NavBar on a small
+  // screen like portrait iPad so items don't wrap to the next line
+  padding-right: 0
   color: $brandColor
   font-family: 'KaushanScript-Regular', sans-serif
   font-size: 1.5em
@@ -40,6 +43,8 @@ $navbar-color: rgba(29, 61, 119, $transparency)
     -webkit-transition: color .3s ease-in-out
     -moz-transition: color .3s ease-in-out
     transition: color .3s ease-in-out
+  +screen(small)
+    padding-left: 0
   +screen(large)
     font-size: 1.4em
   +screen(greaterThanLarge)
