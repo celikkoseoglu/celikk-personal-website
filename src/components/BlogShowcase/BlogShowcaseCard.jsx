@@ -11,9 +11,9 @@ import UnstyledLink from "../Util/UnstyledLink";
 import { BLOG_LINK } from "../../utils/Constants.utils";
 import SpringDiv from "../Animations/SpringDiv";
 
-const BlogShowcaseCard = ({ title, subtitle, timestamp, minutes, blogPost }) => {
+const BlogShowcaseCard = ({ title, subtitle, timestamp, minutes, blogPost, className }) => {
   return (
-    <SpringDiv className={square}>
+    <SpringDiv className={`${square} ${className}`}>
       <UnstyledLink to={`${BLOG_LINK}${blogPost}`}>
         <div className={description}>
           <h6 className={`${montserrat} ${titleStyle} pb-1`}>{title}</h6>
@@ -32,7 +32,12 @@ BlogShowcaseCard.propTypes = {
   subtitle: PropTypes.string.isRequired,
   timestamp: PropTypes.string.isRequired,
   minutes: PropTypes.string.isRequired,
-  blogPost: PropTypes.string.isRequired
+  blogPost: PropTypes.string.isRequired,
+  className: PropTypes.string
+};
+
+BlogShowcaseCard.defaultProps = {
+  className: null
 };
 
 export default BlogShowcaseCard;

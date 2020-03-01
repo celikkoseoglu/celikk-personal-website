@@ -2,6 +2,7 @@ $small: 594px
 $medium: 768px
 $large: 991px
 $lessThanMedium: 767px
+$extraLarge: 1200px
 
 =screen($size)
   @if $size == "small"
@@ -21,6 +22,9 @@ $lessThanMedium: 767px
       @content
   @else if $size == "greaterThanLarge"
     @media screen and (min-width: $large)
+      @content
+  @else if $size == "greaterThanExtraLarge"
+    @media screen and (min-width: $extraLarge)
       @content
   @else
     @content
