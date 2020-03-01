@@ -1,4 +1,4 @@
-import { isWebpSupported } from "react-image-webp/dist/utils";
+import {isWebpSupported} from "react-image-webp/dist/utils";
 import storage from "local-storage-fallback";
 
 const importAll = r => r.keys().map(r);
@@ -20,8 +20,10 @@ export const mapFileNameToId = (fileName, fileArray) => {
   return null;
 };
 
+// This function checks if the given imageFileName has a custom file extension. If not
+// it is assumed that file is a PNG/WebP and the PNG/WebP image name is returned
 export const getImageLinkWithExtension = imageLink => {
-  if (!imageLink.endsWith(".svg")) {
+  if (!imageLink.includes(".")) {
     return imageLink + IMAGE_EXTENSION;
   }
   return imageLink;

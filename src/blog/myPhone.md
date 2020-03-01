@@ -2,7 +2,7 @@
 
 #### The story of how I was an iPhone, Windows Phone and an Android user at different times.
 
-######February 29, 2020 - 15 min read
+######March 01, 2020 - 15 min read
 
 Technologies Used: `iOS`, `Windows Phone`, `Android`
 
@@ -14,9 +14,9 @@ I've always been interested into electronics. However, there is one device that 
 
  <ImageCarousel folder="myPhone" images="beforeAndAfterIPhone"/>
 
-My mum was the first person in the family to get an iPhone. She had a 3GS. I've
+My mom was the first person in the family to get an iPhone. She had a 3GS. I've
  spent many hours playing with it. The touchscreen felt just right. It responded
-  back to every move of your fingers. Pinch to zoom gesture was something that was
+  back to your every tap and swipe. People thought pinch to zoom gesture was something
    only possible in movies. Being able to roll a ball on the screen by just tilting
     your phone was truly magical. During that time, I had a Nokia XpressMusic 5800.
      It was a good phone yes, but not a smartphone next to the iPhone.
@@ -29,7 +29,7 @@ One year later, I finally convinced my parents to get me an iPhone. My
 The industry was aware of Apple's success. Blackberry and Nokia were trying to catch
  up but they were too far behind. I remember noticing the first Android phones on
   the market in 2010. They were all terrible compared to an iPhone. Using an Android
-   phone back then felt like they asked the engienering team to make a normal phone
+   phone back then felt like they asked the engineering team to make a normal phone
     first, then retrofit a touchscreen. Oh and there was Windows Mobile 6 and the HTC
      HD2 Leo. Let's just not talk about that.
 
@@ -50,6 +50,8 @@ Couple years later Nokia tried very hard for the last time. The Lumia 920. I got
       Microsoft the best hardware on the market and Microsoft murdered it. We don't
        know if it was bad mangement, or the competition being too strong or something
         else. Whatever happened, it made Microsoft shut down the project.
+        
+ <ImageCarousel folder="myPhone" images="noMoreWindowsPhone.jpg"/>
 
 About 10 months later, I switched to a Galaxy S4. "Why not an iPhone?" you're gonna
  ask. I wanted to get a device which was not an iPhone 4. After the iPhone 4, very
@@ -89,8 +91,8 @@ They were essentially selling the same iPhone 6 with different names (6s, 7). Wh
     the Galaxy S8.
 
 After graduating uni, I got a Galaxy S8. I wanted to see how much of an improvement
- Google was able to make to the Android experience. And wow... It was amazing. All
-  google apps were better, the screen was great, proper file management was there and
+ Google was able to make to the Android experience. And wow... It was amazing. The screen was
+  great, proper file management was there and
    email attachments were real. Best part? USB-C. One day, I tried plugging my 2TB 2.5"
     external hard drive to my phone via a USB-C dongle. I wasn't expecting it to work, but
      it showed up in the file manager on the phone. I was able to copy my pictures directly
@@ -98,9 +100,20 @@ After graduating uni, I got a Galaxy S8. I wanted to see how much of an improvem
        realized I could just plug in my GoPro, and move my footage directly onto my phone 
        without setting up a slow and annoying Wi-FI connection. Android was just undoubtedly
         better in many ways. Making a choice between an iPhone vs Android phone was very difficult.
-
+       
+Android was getting better. All of the apps that I've used were in feature parity with their
+iOS counterpart. Companies have started treating Android users the same as iOS users. 
 Then one year later, I got the Galaxy S10. I mainly purchased it because of the Wide-Angle
- camera lens. It is a very good phone, and I would recommend it. I used it for 1 year.
+ camera lens. It is a very good phone, and I would recommend it. I've used it until I've published this
+ blog post. Read more below.
+
+During my time with the S8 and the S10 some of my friends/colleagues have asked me why I prefer
+ Android.
+I wasn't able to give them a definitive answer about why I prefer one over the other. Some people say
+they don't like Apple as a company, some people say they're used to Android, some others say
+they don't like paying too much money for a phone, and the list goes on. I don't care about any of
+those. It is time to decide once more: Will I choose **a pocket computer with a proper file manager** or
+ **a nice user experience**. And I want to find a definitive answer: **Why one over the other?**
 
 Today, I got an iPhone XS Max. I know, it's the last year's model but just like the iPhone 6,
  Apple's packaging the same device and selling it as an iPhone 11 Pro. Yes I would like to have
