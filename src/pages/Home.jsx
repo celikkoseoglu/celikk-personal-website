@@ -172,11 +172,7 @@ const Home = () => {
             ))}
           </Row>
 
-          <BlogShowcaseButton
-            className="mx-auto mt-4"
-            link={BLOG_LINK}
-            text="View All Blog Posts"
-          />
+          <BlogShowcaseButton link={BLOG_LINK} text="View All Blog Posts" />
         </Container>
       </section>
 

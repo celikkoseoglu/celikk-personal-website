@@ -9,12 +9,8 @@ import UnstyledLink from "../Util/UnstyledLink";
 
 const BlogShowcaseButton = ({ link, text, className }) => {
   return (
-    <UnstyledLink
-      to={link}
-      className={`${className} ${montserrat} ${square} ${textColor}
-                  d-flex justify-content-center align-items-center`}
-    >
-      {text}
+    <UnstyledLink to={link}>
+      <p className={`${className} ${montserrat} ${square} ${textColor}`}>{text}</p>
     </UnstyledLink>
   );
 };

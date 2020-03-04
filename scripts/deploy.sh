@@ -1,2 +1,2 @@
-npm run-script build
+npm run-script craco-build
 firebase deploy
