@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
-import Container from "react-bootstrap/Container";
 import PropTypes from "prop-types";
 import Row from "react-bootstrap/Row";
 import { blogPost, blogPostBackground, blogPostDark } from "../stylesheets/BlogPost.module.sass";
@@ -34,36 +33,34 @@ const BlogPost = ({ match }) => {
   }, [match.params.blogPost, isDark]);
 
   return (
-    <div className={`${isDark ? blogPostDark : null} ${blogPost}`}>
-      <Container className={`col-lg-6 col-md-8 py-4 rounded-top  ${blogPostBackground}`}>
-        <Row className="py-lg-5 pb-4 pt-2 justify-content-between">
-          <CustomButton isDark={isDark} text={blogNavbar.goBackLabel} to={blogNavbar.blogLink} />
-          <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
-          <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
-        </Row>
+    <div className={`${isDark ? blogPostDark : null} ${blogPost} py-4 ${blogPostBackground}`}>
+      <Row className="py-lg-5 pb-4 pt-2 justify-content-between">
+        <CustomButton isDark={isDark} text={blogNavbar.goBackLabel} to={blogNavbar.blogLink} />
+        <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
+        <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
+      </Row>
 
-        {post === "" ? (
-          <LoadingIndicator isDark={isDark} />
-        ) : (
-          <Markdown
-            options={{
-              overrides: {
-                ImageCarousel: {
-                  component: ImageCarousel,
-                  props: {
-                    isDark
-                  }
+      {post === "" ? (
+        <LoadingIndicator isDark={isDark} />
+      ) : (
+        <Markdown
+          options={{
+            overrides: {
+              ImageCarousel: {
+                component: ImageCarousel,
+                props: {
+                  isDark
                 }
               }
-            }}
-          >
-            {post}
-          </Markdown>
-        )}
+            }
+          }}
+        >
+          {post}
+        </Markdown>
+      )}
 
-        <HorizontalRuler isDark={isDark} />
-        <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
-      </Container>
+      <HorizontalRuler isDark={isDark} />
+      <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
     </div>
   );
 };

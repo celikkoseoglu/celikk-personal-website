@@ -1,4 +1,5 @@
 @import "../utils/animationTimer"
+@import "../utils/variables"
 
 .blogPost
   background-size: 100% 200%
@@ -33,9 +34,11 @@
     margin: 1.5em 0
     padding: 0.5em 10px
   div
-    max-width: 640px
+    max-width: $blog-width
     margin-left: auto
     margin-right: auto
+    padding-left: 20px
+    padding-right: 20px
   blockquote:before
     color: #ccc
     content: open-quote
