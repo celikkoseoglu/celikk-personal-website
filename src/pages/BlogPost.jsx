@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
-import Row from "react-bootstrap/Row";
-import { blogPost, blogPostBackground, blogPostDark } from "../stylesheets/BlogPost.module.sass";
+import {blogPost, blogPostBackground, blogPostDark} from "../stylesheets/BlogPost.module.sass";
 import ImageCarousel from "../components/ImageCarousel";
-import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
+import {folders, getInitialTheme, mapFileNameToId} from "../utils/FileManager.utils";
 
 import signatureImage from "../data/images/signature.svg";
 import DarkModeToggle from "../components/DarkModeToggle";
@@ -33,34 +32,36 @@ const BlogPost = ({ match }) => {
   }, [match.params.blogPost, isDark]);
 
   return (
-    <div className={`${isDark ? blogPostDark : null} ${blogPost} py-4 ${blogPostBackground}`}>
-      <Row className="py-lg-5 pb-4 pt-2 justify-content-between">
-        <CustomButton isDark={isDark} text={blogNavbar.goBackLabel} to={blogNavbar.blogLink} />
-        <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
-        <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
-      </Row>
+    <div className={`${isDark ? blogPostDark : null} py-4 ${blogPostBackground}`}>
+      <div className={blogPost}>
+        <div className="py-lg-5 pb-4 pt-2 d-flex justify-content-between">
+          <CustomButton isDark={isDark} text={blogNavbar.goBackLabel} to={blogNavbar.blogLink} />
+          <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
+          <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
+        </div>
 
-      {post === "" ? (
-        <LoadingIndicator isDark={isDark} />
-      ) : (
-        <Markdown
-          options={{
-            overrides: {
-              ImageCarousel: {
-                component: ImageCarousel,
-                props: {
-                  isDark
+        {post === "" ? (
+          <LoadingIndicator isDark={isDark} />
+        ) : (
+          <Markdown
+            options={{
+              overrides: {
+                ImageCarousel: {
+                  component: ImageCarousel,
+                  props: {
+                    isDark
+                  }
                 }
               }
-            }
-          }}
-        >
-          {post}
-        </Markdown>
-      )}
+            }}
+          >
+            {post}
+          </Markdown>
+        )}
 
-      <HorizontalRuler isDark={isDark} />
-      <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
+        <HorizontalRuler isDark={isDark} />
+        <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
+      </div>
     </div>
   );
 };

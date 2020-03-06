@@ -2,11 +2,11 @@
 @import "../utils/variables"
 
 .blogPost
-  background-size: 100% 200%
-  background-image: linear-gradient(to bottom, #fff 50%, #111 50%)
-  -webkit-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
-  -moz-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
-  transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
+  max-width: $blog-width
+  margin-left: auto
+  margin-right: auto
+  padding-left: 20px
+  padding-right: 20px
   p
     font-size: 16px
   h1
@@ -33,12 +33,6 @@
     border-left: 10px solid #ccc
     margin: 1.5em 0
     padding: 0.5em 10px
-  div
-    max-width: $blog-width
-    margin-left: auto
-    margin-right: auto
-    padding-left: 20px
-    padding-right: 20px
   blockquote:before
     color: #ccc
     content: open-quote
@@ -55,6 +49,11 @@
 
 .blogPostBackground
   min-height: 100vh
+  background-size: 100% 200%
+  background-image: linear-gradient(to bottom, #fff 50%, #111 50%)
+  -webkit-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
+  -moz-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
+  transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
 
 .blogPostDark
   color: #FFF
