@@ -36,7 +36,7 @@ running. No JavaScript. It stayed like that for a long while.
 
 Here is a screenshot from the first ever website that I made:
 
- <ImageCarousel folder="personalWebsite" images="personalWebsite1"/>
+ <MediaCarousel folder="personalWebsite" images="personalWebsite1.png"/>
 
 One year later, I started noticing more and more people in my Twitter feed talking
 about Bootstrap. This was around the time when companies started going `mobile first`.
@@ -53,13 +53,13 @@ templates off from a website that I don't remember right now, and modified it
 so that it would look like it's actually mine. Then I published it, and it became
 the foundation for the design that I have, even today.
 
- <ImageCarousel folder="personalWebsite" images="personalWebsite2"/>
+ <MediaCarousel folder="personalWebsite" images="personalWebsite2.png"/>
 
 It looked much better than what I had before for sure. I spent quite a lot of time
 working on this. I worked on it on and off depending on the workload the uni gave me.
 It took me one more year, but I was able to get it to this state:
 
- <ImageCarousel folder="personalWebsite" images="personalWebsite3"/>
+ <MediaCarousel folder="personalWebsite" images="personalWebsite3.png"/>
 
 I didn't provide any major updates to this website for the next 3 years.
 Not until I graduated uni at least. I only updated my CV.

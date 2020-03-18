@@ -20,13 +20,13 @@ after years of reading programming books and making apps.
 In about two weeks, I've finished it. Instead of opening the IPv4 settings menu under Network and Sharing Center, you could
 enter the details here and click apply. Here is a tweet of mine from years ago with a screenshot:
 
- <ImageCarousel folder="ipmanager" images="ipmanagerRelease"/>
+ <MediaCarousel folder="ipmanager" images="ipmanagerRelease.png"/>
 
 My dad started using it together with some of his colleagues. Several months later, I received some feedback saying I should
 add a `save current config` functionality so instead of entering the same ip addresses every time, the app would remember
 settings for individual networks. Here is how it looked after the `save` functionality.
 
- <ImageCarousel folder="ipmanager" images="ipmanagerUpdate"/>
+ <MediaCarousel folder="ipmanager" images="ipmanagerUpdate.png"/>
 
 People liked it but I've never published this app in a major store. I wasn't sure if this was a widespread problem. It is
 still available for download on my [google site](https://sites.google.com/site/celikkoseoglu/). I don't know if it would work with Windows 10 or not, but you can go ahead and try.

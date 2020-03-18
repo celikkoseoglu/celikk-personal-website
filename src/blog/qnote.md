@@ -25,12 +25,12 @@ This was the first time I was doing GUI programming.
 
 Anyway, a short while later, I had something that looked like this:
 
-<ImageCarousel folder="qnote" images="qnoteStartupScreen,qnoteOptionsMenu,qnoteAfterCustomised,qnoteOptionsMenuStandalone"/>
+<MediaCarousel folder="qnote" images="qnoteStartupScreen.png,qnoteOptionsMenu.png,qnoteAfterCustomised.png,qnoteOptionsMenuStandalone.png"/>
 
 Since it was  a Windows Desktop app, it also required an app icon. I used to play Minecraft at the time. 
 I could say it influenced my design choices:
 
-<ImageCarousel folder="qnote" images="desktopAppIcon"/>
+<MediaCarousel folder="qnote" images="desktopAppIcon.png"/>
 
 It was cool (to me anyway). I uploaded it to [sites.google.com](https://sites.google.com/site/celikkoseoglu/) and asked my friends to check it out.
  About 2 weeks later, I saw some people in my class using it. They were writing phone numbers, GTA cheat codes, homework tasks
@@ -43,11 +43,11 @@ it was ready to publish to Windows Phone store.
 
 It looked like this:
 
-<ImageCarousel folder="qnote" images="screenshot1,screenshot2,screenshot3"/>
+<MediaCarousel folder="qnote" images="screenshot1.png,screenshot2.png,screenshot3.png"/>
 
 I had to be a bit more serious with the app icon this time, so I made this:
 
-<ImageCarousel folder="qnote" images="appIcon"/>
+<MediaCarousel folder="qnote" images="appIcon.png"/>
 
 And this was the description in the Windows Phone Store:
 
@@ -63,7 +63,7 @@ inside a view. But that's what some people wanted. A dead simple note taking app
 
 I've kept updating it with small optimizations and a more polished user interface. Here is one of my tweets from that time:
 
-<ImageCarousel folder="qnote" images="tweet"/>
+<MediaCarousel folder="qnote" images="tweet.png"/>
 
 In its two years on the Windows Phone Store, QNote got around 1200 downloads. It was always free. Always will be free. And as of the publication
 date of this blog post, the Windows Desktop version is [open source](https://github.com/celikkoseoglu/QNote). You can all see how bad my coding skills were when I first started. It's all about

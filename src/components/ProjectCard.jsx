@@ -8,13 +8,11 @@ import {
 } from "../stylesheets/components/ProjectCard.module.sass";
 import SpringDiv from "./Animations/SpringDiv";
 import UnstyledLink from "./Util/UnstyledLink";
-import { getImageLinkWithExtension } from "../utils/FileManager.utils";
 
 const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text, blogPost }) => {
   const [relativeImageLink, setRelativeImageLink] = useState(null);
   useEffect(() => {
-    const imageLinkWithExtension = getImageLinkWithExtension(imageLink);
-    import(`../${imageLinkWithExtension}`).then(loadedLink => {
+    import(`../${imageLink}`).then(loadedLink => {
       setRelativeImageLink(loadedLink.default);
     });
   }, [relativeImageLink, imageLink]);

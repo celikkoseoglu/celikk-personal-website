@@ -6,6 +6,13 @@
   "subtitle": "I write some stuff in here",
   "blogItems": [
     {
+      "title": "iOS vs Android - Why I Choose One Over the Other",
+      "date": "17.03.2020",
+      "minutes": "20 min",
+      "subtitle": "I've used one generation of devices from each platform in order. Let's compare them and decide which one is better for me..",
+      "blogPost": "iOSvsAndroid"
+    },
+    {
       "title": "The Era of SmartPhones - Which Phones I've Used and Why",
       "date": "01.03.2020",
       "minutes": "15 min",

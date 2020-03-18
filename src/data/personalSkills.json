@@ -1,6 +1,6 @@
 [
   {
-    "imageLink": "data/images/personalSkills/ProgrammingLanguages",
+    "imageLink": "data/images/personalSkills/ProgrammingLanguages.png",
     "imageAlt": "github profile",
     "title": "PROGRAMMING LANGUAGES",
     "subtitle": "JAVA, C++, OBJECTIVE-C & MORE...",
@@ -8,7 +8,7 @@
     "rightAlign": false
   },
   {
-    "imageLink": "data/images/personalSkills/Design",
+    "imageLink": "data/images/personalSkills/Design.png",
     "imageAlt": "brain storming and design",
     "title": "DESIGN",
     "subtitle": "PHOTOSHOP, ILLUSTRATOR & A PENCIL",

@@ -21,7 +21,7 @@ using an 8x8 LED Matrix. The obstacles were going to move right to left, one col
 As a player, your job was to evade them by pressing the up and down buttons that were attached to
 the FPGA board. Figures below should give you an idea.
 
- <ImageCarousel folder="rockyJourney" images="rockyJourneyObstacles"/>
+ <MediaCarousel folder="rockyJourney" images="rockyJourneyObstacles.png"/>
 
 Of course, since it was a uni project, it involved lots of academic reports. That sounds very
 boring though, so we had to add a bit of creativity to keep awake during the whole process.
@@ -35,7 +35,7 @@ I've designed the logo and my friend wrote the following project description:
 > Guide your ship through the reckless waves of the unforgiving ocean, and try to survive the
 > endless wreckage of spines of stones, and maybe, the dreams of those you care might be seen fulfilled.
 
- <ImageCarousel folder="rockyJourney" images="RockyJourney.svg"/>
+ <MediaCarousel folder="rockyJourney" images="RockyJourney.svg"/>
 
 I'm not going to say we've done everything properly, but we managed to provide a solution that
 works. Given tight deadlines, we had to make some trade-offs. Most of the code
