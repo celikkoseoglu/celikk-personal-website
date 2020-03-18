@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import SpringLi from "../Animations/SpringLi";
 
-const SocialMediaIcon = ({ className, children, link }) => {
+const SocialMediaIcon = ({ className, children, link, ariaLabel }) => {
   return (
     <SpringLi className="list-inline-item">
-      <a className={className} href={link}>
+      <a className={className} href={link} aria-label={ariaLabel}>
         {children}
       </a>
     </SpringLi>
@@ -15,7 +15,8 @@ const SocialMediaIcon = ({ className, children, link }) => {
 SocialMediaIcon.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  link: PropTypes.string.isRequired
+  link: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string.isRequired
 };
 
 SocialMediaIcon.defaultProps = {

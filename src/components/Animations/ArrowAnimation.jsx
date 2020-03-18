@@ -21,7 +21,15 @@ const ArrowAnimation = ({ className, reference }) => {
 
   return (
     clicked === false && (
-      <Link to={reference} smooth offset={SCROLL_OFFSET} duration={SCROLL_DURATION} ignoreCancelEvents={false} href="/">
+      <Link
+        aria-label="Scroll Down Prompt"
+        to={reference}
+        smooth
+        offset={SCROLL_OFFSET}
+        duration={SCROLL_DURATION}
+        ignoreCancelEvents={false}
+        href="/"
+      >
         <svg
           id="trigger"
           className={className}

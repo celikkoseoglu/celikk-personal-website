@@ -10,11 +10,17 @@
   "text3": "Dark Mode for Blog",
   "socialMediaLinks": {
     "twitterLink": "https://twitter.com/celikkoseoglu",
+    "twitterAriaLabel": "Twitter Profile",
     "facebookLink": "https://www.facebook.com/celikkoseoglu",
+    "facebookAriaLabel": "Facebook Profile",
     "linkedinLink": "https://linkedin.com/in/celikk",
+    "linkedinAriaLabel": "LinkedIn Profile",
     "githubLink": "https://github.com/celikkoseoglu",
+    "githubAriaLabel": "GitHub Profile",
     "instagramLink": "https://instagram.com/celikkoseoglu",
-    "emailLink": "mailto:celikkoseoglu@yahoo.com"
+    "instagramAriaLabel": "Instagram Profile",
+    "emailLink": "mailto:celikkoseoglu@yahoo.com",
+    "emailAriaLabel": "Email Address"
   },
   "date": "Jan 2020"
 }

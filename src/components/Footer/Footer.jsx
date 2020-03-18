@@ -31,19 +31,19 @@ const Footer = ({ content, signatureImage }) => {
           <p className={`${footerLightText} mb-3`}>London, UK</p>
           <SocialMediaBar socialMediaLinks={content.socialMediaLinks} />
           <div className="pt-4">
-            <p className={`mb-1 ${footerLightText}`}>{content.linkText}</p>
+            <p className={`mb-2 ${footerLightText}`}>{content.linkText}</p>
             <ul className={`pl-md-2 pl-0 ${footerLightText} ${footerList} mb-0`}>
-              <li>
-                <a href={content.link1} className={footerDarkText}>
+              <li className="my-1">
+                <a href={content.link1} className={`${footerDarkText} my-0`}>
                   {content.text1}
                 </a>
               </li>
-              <li>
+              <li className="my-1">
                 <a href={content.link2} className={footerDarkText}>
                   {content.text2}
                 </a>
               </li>
-              <li>
+              <li className="my-1">
                 <a href={content.link3} className={footerDarkText}>
                   {content.text3}
                 </a>
@@ -72,11 +72,17 @@ Footer.propTypes = {
     text3: PropTypes.string.isRequired,
     socialMediaLinks: PropTypes.shape({
       twitterLink: PropTypes.string.isRequired,
+      twitterAriaLabel: PropTypes.string.isRequired,
       facebookLink: PropTypes.string.isRequired,
+      facebookAriaLabel: PropTypes.string.isRequired,
       linkedinLink: PropTypes.string.isRequired,
+      linkedinAriaLabel: PropTypes.string.isRequired,
       githubLink: PropTypes.string.isRequired,
+      githubAriaLabel: PropTypes.string.isRequired,
       instagramLink: PropTypes.string.isRequired,
-      emailLink: PropTypes.string.isRequired
+      instagramAriaLabel: PropTypes.string.isRequired,
+      emailLink: PropTypes.string.isRequired,
+      emailAriaLabel: PropTypes.string.isRequired
     }),
     date: PropTypes.string.isRequired
   }).isRequired,
