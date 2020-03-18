@@ -2,7 +2,7 @@
 
 ### I've used one generation of devices from each platform in order. Let's compare them and decide which one is better for me.
 
-######March 15, 2020 - 20 min read
+######March 17, 2020 - 20 min read
 
 This blog post is not your regular Galaxy S10 vs iPhone XS Max specs race. It’s about comparing iOS and Android
  platforms. I'm not going to talk about how many megapixels the cameras have, or how much of a GeekBench score
@@ -165,7 +165,7 @@ The Android platform wins here.
 
 Portrait Mode was launched with the iPhone 7 Plus. It used the dual-camera system to create this artificial bokeh
  effect on pictures. Google and Samsung quickly followed with their own implementations. Here are the results for
-  the same picture taken by Galaxy S10 and iPhone XS, and a [my flatmate's](https://github.com/xdrop) Sony A7III camera:
+  the same picture taken by Galaxy S10 and iPhone XS, and [my flatmate's](https://github.com/xdrop) Sony A7III camera:
 
  <MediaCarousel folder="iOSvsAndroid" images="portraitMirrorless.jpg,portraitGalaxy.jpg,portraitiPhone.jpg,portraitGalaxyStageLightMono.jpg,portraitiPhoneStageLightMono.jpg"/>
 
@@ -264,7 +264,8 @@ Where they differ is what they allow me to download on my phone. On the PlayStor
 
 Having too many options is both good and bad. One of the reasons why there are so many apps on the Play Store is the
  low barrier of entry. When you submit an app to the AppStore as a developer, it has to meet [certain criteria that
-  Apple specifies](https://developer.apple.com/app-store/review/guidelines/). Those criteria are very strict compared
+  Apple specifies](https://developer.apple.com/app-store/review/guidelines/). Those criteria are stricter and more restrictive
+   compared
    to [Google Play's criteria](https://developer.android.com/distribute/best-practices/launch/launch-checklist).
 
 Because Google Play provides so many options, very often you feel lost while looking through all of those apps that
