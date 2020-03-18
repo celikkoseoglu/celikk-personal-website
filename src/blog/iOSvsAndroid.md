@@ -222,7 +222,8 @@ When it comes to keyboards, I’m one of the most basic users. I just use my two
     I need is a fast and accurate keyboard.
 
 I'm not sure how I can prove this to you, but I am able to type faster on an iPhone keyboard. I think this is because
- of the iPhone’s [120Hz Touch Polling rate](). If I use my two thumbs to write very quickly on the S10, some of my
+ of the iPhone’s [120Hz Touch Polling rate](https://forums.macrumors.com/threads/what-is-the-120hz-touch-sensing-feature.2137406/).
+  If I use my two thumbs to write very quickly on the S10, some of my
   taps go unregistered. I’ve tried using different keyboards on Android but I think this is a hardware limitation
    rather than a software limitation. The Galaxy S10’s screen cannot catch up with my fingers, but the iPhone is able
     to register my taps no matter how fast I type, so the iPhone wins this one for me.
