@@ -3,7 +3,7 @@ import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
 import {blogPost, blogPostBackground, blogPostDark} from "../stylesheets/BlogPost.module.sass";
-import ImageCarousel from "../components/ImageCarousel";
+import MediaCarousel from "../components/MediaCarousel";
 import {folders, getInitialTheme, mapFileNameToId} from "../utils/FileManager.utils";
 
 import signatureImage from "../data/images/signature.svg";
@@ -46,8 +46,8 @@ const BlogPost = ({ match }) => {
           <Markdown
             options={{
               overrides: {
-                ImageCarousel: {
-                  component: ImageCarousel,
+                MediaCarousel: {
+                  component: MediaCarousel,
                   props: {
                     isDark
                   }

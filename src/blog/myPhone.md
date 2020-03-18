@@ -12,7 +12,7 @@ I've always been interested into electronics. However, there is one device that 
   Just by looking at the image below (credit: [Josh Helfferich](https://twitter.com/joshhelfferich)),
    we can see what before and after the iPhone looks like:
 
- <ImageCarousel folder="myPhone" images="beforeAndAfterIPhone"/>
+ <MediaCarousel folder="myPhone" images="beforeAndAfterIPhone.png"/>
 
 My mom was the first person in the family to get an iPhone. She had a 3GS. I've
  spent many hours playing with it. The touchscreen felt just right. It responded
@@ -51,7 +51,7 @@ Couple years later Nokia tried very hard for the last time. The Lumia 920. I got
        know if it was bad mangement, or the competition being too strong or something
         else. Whatever happened, it made Microsoft shut down the project.
         
- <ImageCarousel folder="myPhone" images="noMoreWindowsPhone.jpg"/>
+ <MediaCarousel folder="myPhone" images="noMoreWindowsPhone.jpg"/>
 
 About 10 months later, I switched to a Galaxy S4. "Why not an iPhone?" you're gonna
  ask. I wanted to get a device which was not an iPhone 4. After the iPhone 4, very

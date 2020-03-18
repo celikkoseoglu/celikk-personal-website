@@ -28,7 +28,7 @@ I made the initial mockups and started prototyping, but uni was taking too much 
 to complete this project. Then I got very busy in my senior year with [LodeStar](lodestarapp.com).
 This project got swept under the carpet, and never became a reality. Here is what I planned it to look like:
 
- <ImageCarousel folder="marmara" images="marmaraMockup"/>
+ <MediaCarousel folder="marmara" images="marmaraMockup.png"/>
  
 I initially imagined it would have the same design as Apple Wallet (called PassBook before). You
 would have cards for each day of the week and you could swipe up and down to see your other meal cards.

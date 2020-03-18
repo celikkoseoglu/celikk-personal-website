@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import { isWebpSupported } from "react-image-webp/dist/utils";
 import { mobileSize } from "../stylesheets/components/ImageExperience.module.sass";
-import { getImageLinkWithExtension } from "../utils/FileManager.utils";
+
+const IS_WEBP_SUPPORTED = isWebpSupported();
+const getImageLinkWithExtension = imageLink => {
+  if (IS_WEBP_SUPPORTED && imageLink.endsWith(".png")) {
+    return `${imageLink.substring(0, imageLink.length - 4)}.webp`;
+  }
+  return imageLink;
+};
 
 const ImageExperience = ({ rightAlign, imageLink, imageAlt, title, subtitle, text, className }) => {
   const [relativeImageLink, setRelativeImageLink] = useState(null);
