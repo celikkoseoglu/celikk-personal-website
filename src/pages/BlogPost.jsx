@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
-import PropTypes from "prop-types";
-import { Redirect } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { blogPost, blogPostBackground, blogPostDark } from "../stylesheets/BlogPost.module.sass";
 import MediaCarousel from "../components/MediaCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
@@ -17,15 +16,17 @@ import LoadingIndicator from "../components/Util/LoadingIndicator";
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
 
-const BlogPost = ({ match }) => {
+const BlogPost = () => {
   const [post, setPost] = useState("");
   const [isDark, setIsDark] = useState(getInitialTheme());
+
+  const { blogPostFileName } = useParams();
 
   let redirect = false;
 
   let hashedBlogFileLink;
   try {
-    hashedBlogFileLink = mapFileNameToId(match.params.blogPost, folders.blogFiles);
+    hashedBlogFileLink = mapFileNameToId(blogPostFileName, folders.blogFiles);
   } catch {
     redirect = true;
   }
@@ -75,14 +76,6 @@ const BlogPost = ({ match }) => {
       </div>
     </div>
   );
-};
-
-BlogPost.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      blogPost: PropTypes.string.isRequired
-    })
-  }).isRequired
 };
 
 export default BlogPost;

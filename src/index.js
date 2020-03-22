@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
-import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -15,12 +15,12 @@ ReactDOM.render(
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path={BLOG_LINK} component={Blog} />
-      <Route exact path={`${BLOG_LINK}:blogPost`} component={BlogPost} />
+      <Route exact path={`${BLOG_LINK}:blogPostFileName`} component={BlogPost} />
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route exact path="/cv" component={CV} />
           <Route exact path="/404" component={NotFound} />
-          <Redirect to="/404"/>
+          <Redirect to="/404" />
         </Switch>
       </Suspense>
     </Switch>
