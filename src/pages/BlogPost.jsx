@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
 import PropTypes from "prop-types";
-import {blogPost, blogPostBackground, blogPostDark} from "../stylesheets/BlogPost.module.sass";
+import { Redirect } from "react-router-dom";
+import { blogPost, blogPostBackground, blogPostDark } from "../stylesheets/BlogPost.module.sass";
 import MediaCarousel from "../components/MediaCarousel";
-import {folders, getInitialTheme, mapFileNameToId} from "../utils/FileManager.utils";
+import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
 
 import signatureImage from "../data/images/signature.svg";
 import DarkModeToggle from "../components/DarkModeToggle";
@@ -20,18 +21,28 @@ const BlogPost = ({ match }) => {
   const [post, setPost] = useState("");
   const [isDark, setIsDark] = useState(getInitialTheme());
 
+  let redirect = false;
+
+  let hashedBlogFileLink;
+  try {
+    hashedBlogFileLink = mapFileNameToId(match.params.blogPost, folders.blogFiles);
+  } catch {
+    redirect = true;
+  }
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!redirect) {
+      window.scrollTo(0, 0);
+      storage.setItem("theme", isDark.toString());
 
-    storage.setItem("theme", isDark.toString());
+      fetch(`/static/media/${hashedBlogFileLink}`)
+        .then(res => res.text())
+        .then(response => setPost(response))
+        .catch(err => setPost(err));
+    }
+  }, [isDark, hashedBlogFileLink, redirect]);
 
-    fetch(`/static/media/${mapFileNameToId(match.params.blogPost, folders.blogFiles)}`)
-      .then(res => res.text())
-      .then(response => setPost(response))
-      .catch(err => setPost(err));
-  }, [match.params.blogPost, isDark]);
-
-  return (
+  return redirect ? <Redirect to="/404"/> : (
     <div className={`${isDark ? blogPostDark : null} py-4 ${blogPostBackground}`}>
       <div className={blogPost}>
         <div className="py-lg-5 pb-4 pt-2 d-flex justify-content-between">

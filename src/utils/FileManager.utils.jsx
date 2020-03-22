@@ -14,7 +14,7 @@ export const mapFileNameToId = (fileName, fileArray) => {
       return fileArray[i].substring(fileArray[i].lastIndexOf("/") + 1);
     }
   }
-  return null;
+  throw Error(`File ${fileName} is not found`);
 };
 
 export const getRandomInt = range => {
