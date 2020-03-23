@@ -1,0 +1,38 @@
+@import "../utils/widthPicker"
+
+.notFound
+  height: 100%
+  width: 100%
+  position: absolute
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+  font-family: Avenir-Roman, sans-serif
+
+  @supports (-webkit-text-stroke: 2px black)
+    h1
+      -webkit-text-stroke: 2px black
+      -webkit-text-fill-color: white
+  h1
+    font-size: 130px
+    margin-bottom: 0
+    +screen(small)
+      font-size: 90px
+  p
+    font-size: 20px
+    padding-left: 10px
+    padding-right: 10px
+    +screen(small)
+      font-size: 16px
+
+.customButton
+  border: 1px solid #000
+  width: 100px
+  color: #000
+  margin-left: 20px
+  margin-right: 20px
+  margin-top: 20px
+  &:hover
+    border: 1px solid #ff5b00
+    color: #ff5b00
