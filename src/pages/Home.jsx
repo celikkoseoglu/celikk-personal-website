@@ -114,13 +114,10 @@ const Home = () => {
         <Container>
           {personalSkills.map(personalSkill => (
             <ImageExperience
-              rightAlign={personalSkill.rightAlign}
               imageLink={personalSkill.imageLink}
               imageAlt={personalSkill.imageAlt}
-              title={personalSkill.title}
-              subtitle={personalSkill.subtitle}
               text={personalSkill.text}
-              key={personalSkill.title}
+              key={personalSkill.imageAlt}
             />
           ))}
         </Container>
