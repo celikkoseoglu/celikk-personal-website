@@ -17,10 +17,10 @@ const ImageExperience = ({ imageLink, imageAlt, text }) => {
 
   return (
     <div className={contentDiv}>
-      <p className={description}>{text}</p>
       <div className={`${imageDiv}`}>
         {relativeImageLink && <img className={image} src={relativeImageLink} alt={imageAlt} />}
       </div>
+      <p className={description}>{text}</p>
     </div>
   );
 };

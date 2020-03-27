@@ -111,7 +111,7 @@ const Home = () => {
 
       <section id={content.skillsReference} className={`${skillsBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.skillsTitle} />
-        <Container>
+        <div>
           {personalSkills.map(personalSkill => (
             <ImageExperience
               imageLink={personalSkill.imageLink}
@@ -120,7 +120,7 @@ const Home = () => {
               key={personalSkill.imageAlt}
             />
           ))}
-        </Container>
+        </div>
       </section>
 
       <section
