@@ -1,6 +1,51 @@
-/* the following style is here to fix the horizontal scroll issue when you animate elements using pose (scale 1.02)*/
-.mobileSize
-  @media (max-width: 768px)
-    width: 97% !important
-    margin-left: auto
-    margin-right: auto
+@import "../../utils/widthPicker"
+
+.imageDiv
+  display: flex
+  width: 400px
+  flex-direction: row-reverse
+  margin-right: 40px
+  align-items: center
+  +screen(small)
+    margin-left: 15px
+    margin-right: 0
+    margin-bottom: 10px
+    width: 100%
+  +screen(lessThanMedium)
+    flex-direction: row
+  +screen(medium)
+    width: 450px
+    margin-bottom: 3px
+    margin-right: 0
+  +screen(large)
+    width: 260px
+    margin-right: 25px
+
+.image
+  height: 90px
+  +screen(small)
+    height: 50px
+  +screen(medium)
+    height: 60px
+  +screen(large)
+    height: 55px
+
+.description
+  width: 450px
+  margin-bottom: 0
+  +screen(small)
+    margin-left: 15px
+    margin-right: 15px
+    width: 100%
+  +screen(medium)
+    width: 450px
+  +screen(large)
+    width: 400px
+
+.contentDiv
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  margin-bottom: 40px
+  +screen(small)
+    margin-bottom: 20px

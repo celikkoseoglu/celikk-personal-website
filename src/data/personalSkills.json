@@ -1,26 +1,22 @@
 [
   {
-    "imageLink": "data/images/personalSkills/ProgrammingLanguages.png",
+    "imageLink": "data/images/personalSkills/design.svg",
     "imageAlt": "github profile",
-    "title": "PROGRAMMING LANGUAGES",
-    "subtitle": "JAVA, C++, OBJECTIVE-C & MORE...",
-    "text": "At the age of 12, I started coding with Microsoft SmallBasic. Next year, I walked out of a bookstore with a C# book in my hand. Then, started making Windows Desktop apps. Mobile technologies were rapidly developing at that time so I kept learning about mobile technologies. With the little C# knowledge I had, I made QNote and PhotoSec for Windows Phone. Then continued on with other platforms and other technologies. Now I am comfortable working with many programming languages and frameworks. We all start from somewhere!",
-    "rightAlign": false
+    "text": "Design is as equally important as the engineering behind the product. When I work on design, I constantly ask myself about how the user is going to interact with it. I prefer prototyping with a pen and paper because it allows you to draw everything freely, rather than thinking about limitations."
   },
   {
-    "imageLink": "data/images/personalSkills/Design.png",
+    "imageLink": "data/images/personalSkills/frontEnd.svg",
     "imageAlt": "brain storming and design",
-    "title": "DESIGN",
-    "subtitle": "PHOTOSHOP, ILLUSTRATOR & A PENCIL",
-    "text": "Design is as equally important as the engineering behind the product. Each time I'm working on something new, I constantly ask myself about how the user is going to interact with it. I like prototyping with a pen and paper helps a lot because it forces you to draw the most essential components first, rather than thinking about limitations. This way, you understand your requirements better. Once you understand this relationship between your product and its user, everything just gets magical.",
-    "rightAlign": true
+    "text": "Turning the design mockup into a reality is another form of art. This part of coding requires a lot of attention to detail. No matter how good the rest of your stack is, the front end defines your interaction with the customer. In the front end space, I mainly worked on native Android, iOS and Windows Phone applications, and websites"
   },
   {
-    "imageLink": "data/images/personalSkills/Sports.svg",
+    "imageLink": "data/images/personalSkills/backEnd.svg",
     "imageAlt": "parkour moves",
-    "title": "SPORTS",
-    "subtitle": "PARKOUR & FREERUNNING",
-    "text": "Sitting in front of a computer screen is not a part of our job, it is a choice. I enjoy physical activities as much as I do programming. I've played tennis some years ago. Now I do parkour. It has been almost 6 years now since I've started. I've started in high school, then went to uni to create my own parkour society. Also, I quite enjoy snowboarding. Check my Instagram and other social media accounts for my parkour and snowboarding videos!",
-    "rightAlign": false
+    "text": "After the customer taps a button on your front end application, all sorts of magic happens here. The code needs to be clean, modular and easy to modify. Every moving piece has should have a single responsibility. I’ve mainly worked with Spring and NodeJS applications in my professional career."
+  },
+  {
+    "imageLink": "data/images/personalSkills/test.svg",
+    "imageAlt": "parkour moves",
+    "text": "Getting something out there is great but what about it’s reliability? In the hands of a customer, every moving piece has to work together in harmony. Throughout my career, I had the opportunity to work with projects over 1m lines of code. In all my professional work, I’ve applied extensive testing strategies for everything I can."
   }
 ]
