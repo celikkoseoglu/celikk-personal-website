@@ -14,6 +14,9 @@ $extraLarge: 1200px
   @else if $size == "large"
     @media screen and (min-width: $medium) and (max-width: $large)
       @content
+  @else if $size == "extraLarge"
+    @media screen and (min-width: $large) and (max-width: $extraLarge)
+      @content
   @else if $size == "lessThanMedium"
     @media screen and (max-width: $lessThanMedium)
       @content

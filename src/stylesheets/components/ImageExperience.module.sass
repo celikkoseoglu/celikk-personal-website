@@ -4,7 +4,6 @@
   display: flex
   width: 400px
   flex-direction: row-reverse
-  margin-right: 40px
   align-items: center
   +screen(small)
     margin-left: 15px
@@ -18,8 +17,13 @@
     margin-bottom: 3px
     margin-right: 0
   +screen(large)
-    width: 260px
-    margin-right: 25px
+    width: 320px
+    margin-right: 12px
+  +screen(extraLarge)
+    margin-right: 20px
+  +screen(greaterThanExtraLarge)
+    margin-right: 40px
+    width: 500px
 
 .image
   height: 90px
@@ -28,7 +32,9 @@
   +screen(medium)
     height: 60px
   +screen(large)
-    height: 55px
+    height: 65px
+  +screen(greaterThanExtraLarge)
+    height: 100px
 
 .description
   width: 450px
@@ -46,6 +52,11 @@
   display: flex
   flex-wrap: wrap
   justify-content: center
-  margin-bottom: 40px
+  margin-top: 20px
+  margin-bottom: 50px
+  +screen(greaterThanExtraLarge)
+    margin-right: 90px
   +screen(small)
     margin-bottom: 20px
+  +screen(entraLarge)
+    margin-right: 40px
