@@ -1,17 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { dark, light } from "../../stylesheets/components/Footer/HorizontalRuler.module.sass";
+import {
+  dark,
+  thickDark,
+  light,
+  thickLight,
+} from "../../stylesheets/components/Footer/HorizontalRuler.module.sass";
 
-const HorizontalRuler = ({ isDark }) => {
-  return <hr className={isDark ? dark : light} />;
+const HorizontalRuler = ({ isDark, isThick, className }) => {
+  return (
+    <hr
+      className={`${className} ${
+        // eslint-disable-next-line no-nested-ternary
+        isDark ? (isThick ? thickDark : dark) : isThick ? thickLight : light
+      }`}
+    />
+  );
 };
 
 HorizontalRuler.propTypes = {
-  isDark: PropTypes.bool
+  isDark: PropTypes.bool,
+  isThick: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 HorizontalRuler.defaultProps = {
-  isDark: false
+  isDark: false,
+  isThick: false,
+  className: null,
 };
 
 export default HorizontalRuler;

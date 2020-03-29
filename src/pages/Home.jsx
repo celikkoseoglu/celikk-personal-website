@@ -1,7 +1,7 @@
 import React from "react";
 import ProgressiveImage from "react-progressive-image";
 import Container from "react-bootstrap/Container";
-import {Row} from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import Hero from "../components/Hero";
 import CenteredText from "../components/CenteredText";
 import ImageExperience from "../components/ImageExperience";
@@ -19,21 +19,23 @@ import {
   projectsBackground,
   sectionPadding,
   skillsBackground,
-  whyDeveloperBackground
+  whyDeveloperBackground,
+  noMargin,
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
 import NavigationBar from "../components/Navbar/NavigationBar";
 import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
-import {folders, getRandomInt} from "../utils/FileManager.utils";
+import { folders, getRandomInt } from "../utils/FileManager.utils";
 import BlogShowcaseCard from "../components/BlogShowcase/BlogShowcaseCard";
-import {BLOG_LINK} from "../utils/Constants.utils";
+import { BLOG_LINK } from "../utils/Constants.utils";
 import BlogShowcaseButton from "../components/BlogShowcase/BlogShowcaseButton";
 import {
   NUMBER_OF_LATEST_BLOG_CARDS_TO_RENDER_ON_MOBILE,
-  retrieveLatestBlogPosts
+  retrieveLatestBlogPosts,
 } from "../utils/LatestBlogsFetcher";
+import HorizontalRuler from "../components/Footer/HorizontalRuler";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -53,11 +55,11 @@ const Home = () => {
       <NavigationBar content={navbar} />
 
       <ProgressiveImage src={heroImageUrl} placeholder={tinyHeroImageUrl}>
-        {src => (
+        {(src) => (
           <header
             id={content.heroReference}
             style={{
-              backgroundImage: `url(${src})`
+              backgroundImage: `url(${src})`,
             }}
             className={`${heroBackground}`}
           >
@@ -92,7 +94,7 @@ const Home = () => {
         <Heading className={paddingBottom} text={content.projectsTitle} />
         <Container title={content.projectsTitle}>
           <Row>
-            {projects.map(project => (
+            {projects.map((project) => (
               <ProjectCard
                 imageLink={project.imageLink}
                 imageAlt={project.imageAlt}
@@ -107,9 +109,15 @@ const Home = () => {
         </Container>
       </section>
 
+      <div className={skillsBackground}>
+        <Container>
+          <HorizontalRuler isThick className={noMargin} />
+        </Container>
+      </div>
+
       <section id={content.skillsReference} className={`${skillsBackground} ${sectionPadding}`}>
-        <Heading className={paddingBottom} text={content.skillsTitle} />
-        {personalSkills.map(personalSkill => (
+        <Heading className={noMargin} text={content.skillsTitle} />
+        {personalSkills.map((personalSkill) => (
           <ImageExperience
             imageLink={personalSkill.imageLink}
             imageAlt={personalSkill.imageAlt}
@@ -118,6 +126,13 @@ const Home = () => {
           />
         ))}
       </section>
+
+      <div className={skillsBackground}>
+        <Container>
+          <HorizontalRuler isThick className={noMargin} />
+        </Container>
+      </div>
+
 
       <section
         id={content.latestBlogPostsReference}

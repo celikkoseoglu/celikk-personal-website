@@ -4,13 +4,13 @@ import {
   image,
   imageDiv,
   description,
-  contentDiv
+  contentDiv,
 } from "../stylesheets/components/ImageExperience.module.sass";
 
 const ImageExperience = ({ imageLink, imageAlt, text }) => {
   const [relativeImageLink, setRelativeImageLink] = useState(null);
   useEffect(() => {
-    import(`../${imageLink}`).then(loadedLink => {
+    import(`../${imageLink}`).then((loadedLink) => {
       setRelativeImageLink(loadedLink.default);
     });
   }, [relativeImageLink, imageLink]);
@@ -28,7 +28,7 @@ const ImageExperience = ({ imageLink, imageAlt, text }) => {
 ImageExperience.propTypes = {
   imageLink: PropTypes.string.isRequired,
   imageAlt: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
 };
 
 export default ImageExperience;
