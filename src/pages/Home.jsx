@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import Hero from "../components/Hero";
 import CenteredText from "../components/CenteredText";
-import ImageExperience from "../components/ImageExperience";
+import SkillCard from "../components/SkillCard";
 import ProjectCard from "../components/ProjectCard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
@@ -118,7 +118,7 @@ const Home = () => {
       <section id={content.skillsReference} className={`${skillsBackground} ${sectionPadding}`}>
         <Heading className={noMargin} text={content.skillsTitle} />
         {personalSkills.map((personalSkill) => (
-          <ImageExperience
+          <SkillCard
             imageLink={personalSkill.imageLink}
             imageAlt={personalSkill.imageAlt}
             text={personalSkill.text}

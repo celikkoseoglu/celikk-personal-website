@@ -5,9 +5,9 @@ import {
   imageDiv,
   description,
   contentDiv,
-} from "../stylesheets/components/ImageExperience.module.sass";
+} from "../stylesheets/components/SkillCard.module.sass";
 
-const ImageExperience = ({ imageLink, imageAlt, text }) => {
+const SkillCard = ({ imageLink, imageAlt, text }) => {
   const [relativeImageLink, setRelativeImageLink] = useState(null);
   useEffect(() => {
     import(`../${imageLink}`).then((loadedLink) => {
@@ -25,10 +25,10 @@ const ImageExperience = ({ imageLink, imageAlt, text }) => {
   );
 };
 
-ImageExperience.propTypes = {
+SkillCard.propTypes = {
   imageLink: PropTypes.string.isRequired,
   imageAlt: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
 };
 
-export default ImageExperience;
+export default SkillCard;
