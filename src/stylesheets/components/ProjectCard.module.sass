@@ -1,15 +1,69 @@
-.titleMargin
-  margin: 15px 0
+@import "../../utils/widthPicker"
 
-.subtitleMargin
-  margin: 10px 0
+.mobileSize
+  +screen(small)
+    width: 97% !important
+    margin-left: auto
+    margin-right: auto
 
 .point
   cursor: pointer
 
-/* the following style is here to fix the horizontal scroll issue when you animate elements using pose (scale 1.02)*/
-.mobileSize
-  @media (max-width: 768px)
-    width: 97% !important
-    margin-left: auto
-    margin-right: auto
+.imageDiv
+  display: flex
+  width: 165px
+  align-items: center
+  margin-right: 25px
+  +screen(large)
+    width: 110px
+    margin-right: 15px
+  +screen(small)
+    width: 60px
+    margin-right: 5px
+
+.mobileDescription
+  display: none
+  +screen(small)
+    display: block
+
+.desktopDescription
+  display: block
+  +screen(small)
+    display: none
+
+.description
+  width: 225px
+  align-items: center
+  +screen(greaterThanLarge)
+    width: 250px
+  +screen(small)
+    width: auto
+  h4
+    margin-bottom: 5px
+    font-size: 20px
+    +screen(greaterThanLarge)
+      font-size: 22px
+  h6
+    margin: 0
+    font-size: 14px
+    +screen(greaterThanLarge)
+      font-size: 16px
+
+.contentDiv
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+  +screen(small)
+    justify-content: normal
+    margin: 10px 0
+  +screen(medium)
+    margin: 10px 0
+  +screen(large)
+    margin: 10px 5px
+  +screen(greaterThanLarge)
+    margin: 10px 15px
+  +screen(greaterThanExtraLarge)
+    margin: 20px 30px
+  +screen(small)
+    margin: 5px 5px 5px 10px

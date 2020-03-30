@@ -92,8 +92,8 @@ const Home = () => {
 
       <section id={content.projectsReference} className={`${projectsBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.projectsTitle} />
-        <Container title={content.projectsTitle}>
-          <Row>
+        <Container>
+          <Row className="d-flex justify-content-center">
             {projects.map((project) => (
               <ProjectCard
                 imageLink={project.imageLink}
@@ -132,7 +132,6 @@ const Home = () => {
           <HorizontalRuler isThick className={noMargin} />
         </Container>
       </div>
-
 
       <section
         id={content.latestBlogPostsReference}

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
-  titleMargin,
-  subtitleMargin,
   point,
-  mobileSize
+  mobileSize,
+  imageDiv,
+  description,
+  contentDiv,
+  mobileDescription,
+  desktopDescription,
 } from "../stylesheets/components/ProjectCard.module.sass";
 import SpringDiv from "./Animations/SpringDiv";
 import UnstyledLink from "./Util/UnstyledLink";
@@ -12,20 +15,23 @@ import UnstyledLink from "./Util/UnstyledLink";
 const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text, blogPost }) => {
   const [relativeImageLink, setRelativeImageLink] = useState(null);
   useEffect(() => {
-    import(`../${imageLink}`).then(loadedLink => {
+    import(`../${imageLink}`).then((loadedLink) => {
       setRelativeImageLink(loadedLink.default);
     });
   }, [relativeImageLink, imageLink]);
 
   return (
-    <SpringDiv className={`col-md-4 text-center ${point} ${mobileSize}`}>
+    <SpringDiv className={`${point} ${mobileSize}`}>
       <UnstyledLink to={`/blog/${blogPost}`}>
-        {relativeImageLink ? (
-          <img src={relativeImageLink} className="img-fluid" alt={imageAlt} />
-        ) : null}
-        <h4 className={titleMargin}>{title}</h4>
-        <h6 className={subtitleMargin}>{subtitle}</h6>
-        <p>{text}</p>
+        <div className={`${contentDiv}`}>
+          {relativeImageLink && <img className={imageDiv} src={relativeImageLink} alt={imageAlt} />}
+          <div className={description}>
+            <h4>{title}</h4>
+            <h6>{subtitle}</h6>
+            <p className={desktopDescription}>{text}</p>
+          </div>
+          <p className={mobileDescription}>{text}</p>
+        </div>
       </UnstyledLink>
     </SpringDiv>
   );
@@ -37,7 +43,7 @@ ProjectCard.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   text: PropTypes.string,
-  blogPost: PropTypes.string
+  blogPost: PropTypes.string,
 };
 
 ProjectCard.defaultProps = {
@@ -46,7 +52,7 @@ ProjectCard.defaultProps = {
   title: null,
   subtitle: null,
   text: null,
-  blogPost: null
+  blogPost: null,
 };
 
 export default ProjectCard;
