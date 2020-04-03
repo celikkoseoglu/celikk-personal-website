@@ -63,9 +63,9 @@ people. Some of them were too ambitious for the current technology. I've never u
 
  --- Fast forward 2 years.
 
- I was in Bilkent University. Studying computer Science. I got accepted into doing an internship in American Express in the
+ I was in Bilkent University. Studying computer science. I got accepted into doing an internship in American Express in the
  UK. The same week, I've received an email from Microsoft telling my apps were being taken down because of end of platform support.
- QNote and PhotoSec were gone. All that's left were some great user reviews.
+ QNote and PhotoSec were gone. All that's left were some great user reviews and [this repo on GitHub.](https://github.com/celikkoseoglu/PhotoSec-WindowsPhone)
 
  Well, PhotoSec may not be in the store anymore but it made me realize what I wanted to do as a career. I'm going to work on
  mobile technologies. At least that's what I'm aiming for. Whatever I do, whatever project I'll work on, I'll do it to get

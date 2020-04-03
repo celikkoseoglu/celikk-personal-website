@@ -65,17 +65,13 @@ I've kept updating it with small optimizations and a more polished user interfac
 
 <MediaCarousel folder="qnote" images="tweet.png"/>
 
-In its two years on the Windows Phone Store, QNote got around 1200 downloads. It was always free. Always will be free. And as of the publication
-date of this blog post, the Windows Desktop version is [open source](https://github.com/celikkoseoglu/QNote). You can all see how bad my coding skills were when I first started. It's all about
-progress. 
+In its two years on the Windows Phone Store, QNote got around 1200 downloads. It was always free. Always will be free. As of the publication
+date of this blog post, both [Windows Phone](https://github.com/celikkoseoglu/QNote-WindowsPhone) and [Windows Desktop](https://github.com/celikkoseoglu/QNote)
+versions are open source. You can all see how bad my coding skills were when I first started. It's all about progress. 
 
 Moral of the story is: 
 
 ####We all start from somewhere.
 
 Now go and chase your dreams.
-
-<br>
-
-// TODO Locate QNote for Windows Phone's source code and make it open source. I can't believe I lost the source code for it...
 
