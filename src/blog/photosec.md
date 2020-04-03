@@ -12,8 +12,8 @@ Was Available For: `Windows Phone`
  hype and bought a Lumia 920. Worst part is, I made my best friend buy one as well. And I've learnt not to get hyped
  about a halo product again. I guess everything happens for a reason though. PhotoSec was very successful for what it was.
  
- After my best friend got a Lumia 920, he started complaining that there is are no apps to
- hide pictures. That wasn't his only complaint about it but it was one I could solve. One day, I went home and
+ After my best friend got a Lumia 920, he started complaining that there are no apps to
+ hide pictures. That wasn't his only complaint but it was one I could solve. One day, I went home and
  started prototyping about this idea. In a week, I managed to get something running. You could select a picture from your
  phone's gallery and the app copied it into its internal storage. It was great for Windows Phone standards, and believe me
  when I say this. The ecosystem was non-existent. Many social media apps were not available for Windows Phone.

@@ -7,7 +7,7 @@ const Container = ({ className, children }) => {
 };
 
 Container.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 

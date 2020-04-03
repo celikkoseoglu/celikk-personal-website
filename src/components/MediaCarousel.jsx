@@ -7,13 +7,13 @@ import {
   horizontalOverflow,
   showHelpText,
   mediaCarousel,
-  darkMediaCarousel
+  darkMediaCarousel,
 } from "../stylesheets/components/MediaCarousel.module.sass";
 
 const mediaCarouselText = require("../data/mediaCarousel");
 
 const IS_WEBP_SUPPORTED = isWebpSupported();
-const getImageLinkWithExtension = imageLink => {
+const getImageLinkWithExtension = (imageLink) => {
   if (IS_WEBP_SUPPORTED && imageLink.endsWith(".png")) {
     return `${imageLink.substring(0, imageLink.length - 4)}.webp`;
   }
@@ -32,12 +32,12 @@ const MediaCarousel = ({ folder, images, isDark }) => {
     return iOS && imageLoaded.length > 1;
   };
   useEffect(() => {
-    const imageLinkWithExtension = imageFileName => {
+    const imageLinkWithExtension = (imageFileName) => {
       return `data/images/blog/${folder}/${getImageLinkWithExtension(imageFileName)}`;
     };
-    images.split(",").map(imageFileName =>
-      import(`../${imageLinkWithExtension(imageFileName)}`).then(imageLink => {
-        setImageLoaded(oldArray => [...oldArray, imageLink.default]);
+    images.split(",").map((imageFileName) =>
+      import(`../${imageLinkWithExtension(imageFileName)}`).then((imageLink) => {
+        setImageLoaded((oldArray) => [...oldArray, imageLink.default]);
       })
     );
   }, [folder, images]);
@@ -58,11 +58,8 @@ const MediaCarousel = ({ folder, images, isDark }) => {
                   className={`${autoSizeImage} ${index > 0 && "ml-1"}`}
                   loop
                   autoPlay
-                  playsinline
+                  playsInline
                   muted
-                  // will enable video controls on iOS devices with mobile
-                  // safari so users can still play videos
-                  controls={iOS}
                   key={imageRelativeLink}
                 >
                   <source src={imageRelativeLink} type="video/mp4" />
@@ -91,11 +88,11 @@ const MediaCarousel = ({ folder, images, isDark }) => {
 MediaCarousel.propTypes = {
   folder: PropTypes.string.isRequired,
   images: PropTypes.string.isRequired,
-  isDark: PropTypes.bool
+  isDark: PropTypes.bool,
 };
 
 MediaCarousel.defaultProps = {
-  isDark: false
+  isDark: false,
 };
 
 export default MediaCarousel;
