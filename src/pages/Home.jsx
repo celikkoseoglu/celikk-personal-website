@@ -1,12 +1,12 @@
 import React from "react";
 import ProgressiveImage from "react-progressive-image";
-import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import Hero from "../components/Hero";
 import CenteredText from "../components/CenteredText";
 import SkillCard from "../components/SkillCard";
 import ProjectCard from "../components/ProjectCard";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Container from "../utils/Container";
 import {
   arrowMargin,
   arrowSize,
