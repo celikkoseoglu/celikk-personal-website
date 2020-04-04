@@ -8,9 +8,8 @@ import {
   background,
   blogTitleFont,
   blogDark,
-  blogStyle
+  blogStyle,
 } from "../stylesheets/Blog.module.sass";
-import signatureImage from "../data/images/signature.svg";
 import { getInitialTheme } from "../utils/FileManager.utils";
 import DarkModeToggle from "../components/DarkModeToggle";
 import BlogFooter from "../components/Footer/BlogFooter";
@@ -52,7 +51,7 @@ const Blog = () => {
           </div>
         </Row>
 
-        {blog.blogItems.map(blogItem => (
+        {blog.blogItems.map((blogItem) => (
           <BlogItem
             className="pb-md-4 pb-3"
             title={blogItem.title}
@@ -64,7 +63,7 @@ const Blog = () => {
           />
         ))}
         <HorizontalRuler isDark={isDark} />
-        <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
+        <BlogFooter content={footer} isDark={isDark} />
       </div>
     </div>
   );

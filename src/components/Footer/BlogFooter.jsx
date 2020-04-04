@@ -7,20 +7,22 @@ import Signature from "../Signature";
 
 import {
   socialMediaButtonBackground,
-  socialMediaButtonBackgroundDark
+  socialMediaButtonBackgroundDark,
 } from "../../stylesheets/components/Footer/BlogFooter.module.sass";
 
-const BlogFooter = ({ content, signatureImage, isDark }) => {
+const footer = require("../../data/footer");
+
+const BlogFooter = ({ isDark }) => {
   return (
     <footer className="text-center">
       <Row>
         <div className="col-md-4 pb-md-0 pb-3">
-          <span>{content.title}</span>
-          <Signature signatureImage={signatureImage} isDark={isDark} />
+          <span>{footer.title}</span>
+          <Signature isDark={isDark} />
         </div>
         <div className="col-md-8 my-auto px-0">
           <SocialMediaBar
-            socialMediaLinks={content.socialMediaLinks}
+            socialMediaLinks={footer.socialMediaLinks}
             buttonBackground={
               isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground
             }
@@ -32,23 +34,11 @@ const BlogFooter = ({ content, signatureImage, isDark }) => {
 };
 
 BlogFooter.propTypes = {
-  content: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    socialMediaLinks: PropTypes.shape({
-      twitterLink: PropTypes.string.isRequired,
-      facebookLink: PropTypes.string.isRequired,
-      linkedinLink: PropTypes.string.isRequired,
-      githubLink: PropTypes.string.isRequired,
-      instagramLink: PropTypes.string.isRequired,
-      emailLink: PropTypes.string.isRequired
-    })
-  }).isRequired,
-  signatureImage: PropTypes.string.isRequired,
-  isDark: PropTypes.bool
+  isDark: PropTypes.bool,
 };
 
 BlogFooter.defaultProps = {
-  isDark: false
+  isDark: false,
 };
 
 export default BlogFooter;

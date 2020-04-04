@@ -25,7 +25,6 @@ import {
 import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
 import NavigationBar from "../components/Navbar/NavigationBar";
-import Signature from "../data/images/signature.svg";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../utils/FileManager.utils";
 import BlogShowcaseCard from "../components/BlogShowcase/BlogShowcaseCard";
@@ -42,7 +41,6 @@ const content = require("../data/content");
 const hero = require("../data/hero");
 const personalSkills = require("../data/personalSkills");
 const projects = require("../data/projects");
-const footer = require("../data/footer");
 const blog = require("../data/blog");
 
 const Home = () => {
@@ -163,7 +161,7 @@ const Home = () => {
 
       <div id={content.contactReference} className={`${footerBackground} ${footerPadding}`}>
         <Container>
-          <Footer content={footer} signatureImage={Signature} />
+          <Footer/>
         </Container>
       </div>
     </>

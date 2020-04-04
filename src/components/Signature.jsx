@@ -2,10 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { signature, darkSignature } from "../stylesheets/components/Signature.module.sass";
 
-const Signature = ({ signatureImage, isDark, className }) => {
+import SignatureImage from "../data/images/signature.svg";
+
+const Signature = ({ isDark, className }) => {
   return (
     <img
-      src={signatureImage}
+      src={SignatureImage}
       alt="signature"
       className={`w-100 ${signature} ${isDark ? darkSignature : null} ${className}`}
     />
@@ -13,14 +15,13 @@ const Signature = ({ signatureImage, isDark, className }) => {
 };
 
 Signature.propTypes = {
-  signatureImage: PropTypes.string.isRequired,
   isDark: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 Signature.defaultProps = {
   isDark: null,
-  className: null
+  className: null,
 };
 
 export default Signature;
