@@ -18,8 +18,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .DS_STORE
-scripts/flow/*/.flowconfig
-scripts/rollup/results.json
+deployScripts/flow/*/.flowconfig
+deployScripts/rollup/results.json
 *~
 *.pyc
 .grunt
