@@ -33,6 +33,9 @@
     border-left: 10px solid #ccc
     margin: 1.5em 0
     padding: 0.5em 10px
+    -webkit-transition: background-color $colorTransitionDuration linear
+    -moz-transition: background-color $colorTransitionDuration linear
+    transition: background-color $colorTransitionDuration linear
   blockquote:before
     color: #ccc
     content: open-quote
@@ -49,15 +52,12 @@
 
 .blogPostBackground
   min-height: 100vh
-  background-size: 100% 200%
-  background-image: linear-gradient(to bottom, #fff 50%, #111 50%)
-  -webkit-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
-  -moz-transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
-  transition: background-position $backgroundTransitionDuration linear, $backgroundTransition, color $colorTransitionDuration linear
+  background-color: #fff
+  transition: background-color $colorTransitionDuration
 
 .blogPostDark
   color: #FFF
-  background-position: 0 -100%
+  background-color: #111
   code
     color: #87a5cf
   pre

@@ -7,6 +7,7 @@ import {
   lineSeparator,
   footerName,
   footerList,
+  footerLinks,
 } from "../../stylesheets/components/Footer/Footer.module.sass";
 
 import SocialMediaBar from "./SocialMediaBar";
@@ -34,21 +35,13 @@ const Footer = () => {
           <div className="pt-4">
             <p className={`mb-2 ${footerLightText}`}>{footer.linkText}</p>
             <ul className={`pl-md-2 pl-0 ${footerLightText} ${footerList} mb-0`}>
-              <li className="my-1">
-                <a href={footer.link1} className={`${footerDarkText} my-0`}>
-                  {footer.text1}
-                </a>
-              </li>
-              <li className="my-1">
-                <a href={footer.link2} className={footerDarkText}>
-                  {footer.text2}
-                </a>
-              </li>
-              <li className="my-1">
-                <a href={footer.link3} className={footerDarkText}>
-                  {footer.text3}
-                </a>
-              </li>
+              {footer.links.map((link, index) => (
+                <li className={footerLinks}>
+                  <a href={link} className={footerDarkText}>
+                    {footer.videos[index]}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

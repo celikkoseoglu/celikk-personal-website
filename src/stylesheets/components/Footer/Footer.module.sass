@@ -1,4 +1,6 @@
 @import "../../../utils/widthPicker"
+@import "../../../utils/variables"
+@import "../../../utils/animationTimer"
 
 .footerDarkText
   color: #A6A6A6
@@ -29,6 +31,12 @@
 
 .footerList
   list-style-position: inside
+
+.footerLinks
+  margin: 6px 0
+  &:hover a
+    text-decoration: none
+    color: $orange
 
 .socialMediaButton
   text-align: center

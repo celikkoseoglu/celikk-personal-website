@@ -3,12 +3,16 @@
   "leftText": "LET'S MEET",
   "location": "London, UK",
   "linkText": "Wondering how this website is made?",
-  "link1": "https://www.youtube.com/watch?v=v64p5L3-dZ4&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=9",
-  "link2": "https://www.youtube.com/watch?v=axbcvBCTTLQ&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=85",
-  "link3": "https://www.youtube.com/watch?v=qLRfBrFXPc0&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=77",
-  "text1": "Making The Navbar",
-  "text2": "Creating the Footer",
-  "text3": "Dark Mode for Blog",
+  "videos" : [
+    "Making The Navbar",
+    "Creating the Footer",
+    "Dark Mode for Blog"
+  ],
+  "links": [
+    "https://www.youtube.com/watch?v=v64p5L3-dZ4&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=9",
+    "https://www.youtube.com/watch?v=axbcvBCTTLQ&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=85",
+    "https://www.youtube.com/watch?v=qLRfBrFXPc0&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=77"
+  ],
   "socialMediaLinks": {
     "twitterLink": "https://twitter.com/celikkoseoglu",
     "twitterAriaLabel": "Twitter Profile",
