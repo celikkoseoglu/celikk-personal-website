@@ -6,28 +6,28 @@ $extraLarge: 1200px
 
 =screen($size)
   @if $size == "small"
-    @media screen and (max-width: $small)
+    @media (max-width: $small)
       @content
   @else if $size == "medium"
-    @media screen and (min-width: $small) and (max-width: $medium)
+    @media (min-width: $small) and (max-width: $medium)
       @content
   @else if $size == "large"
-    @media screen and (min-width: $medium) and (max-width: $large)
+    @media (min-width: $medium) and (max-width: $large)
       @content
   @else if $size == "extraLarge"
-    @media screen and (min-width: $large) and (max-width: $extraLarge)
+    @media (min-width: $large) and (max-width: $extraLarge)
       @content
   @else if $size == "lessThanMedium"
-    @media screen and (max-width: $lessThanMedium)
+    @media (max-width: $lessThanMedium)
       @content
   @else if $size == "greaterThanMedium"
-    @media screen and (min-width: $medium)
+    @media (min-width: $medium)
       @content
   @else if $size == "greaterThanLarge"
-    @media screen and (min-width: $large)
+    @media (min-width: $large)
       @content
   @else if $size == "greaterThanExtraLarge"
-    @media screen and (min-width: $extraLarge)
+    @media (min-width: $extraLarge)
       @content
   @else
     @content

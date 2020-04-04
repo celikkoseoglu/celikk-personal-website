@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const SocialMediaIcon = ({ className, children, link, ariaLabel }) => {
   return (
-    <li className={`list-inline-item`}>
+    <li className="list-inline-item">
       <a className={className} href={link} aria-label={ariaLabel}>
         {children}
       </a>
