@@ -54,6 +54,11 @@
   flex-wrap: wrap
   align-items: center
   justify-content: center
+  transition: transform 0.1s
+  &:hover
+    transform: scale(1.015)
+  &:active
+    transform: scale(1.005)
   +screen(small)
     justify-content: normal
     margin: 10px 0

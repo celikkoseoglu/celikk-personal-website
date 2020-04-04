@@ -9,7 +9,6 @@ import {
   mobileDescription,
   desktopDescription,
 } from "../stylesheets/components/ProjectCard.module.sass";
-import SpringDiv from "./Animations/SpringDiv";
 import UnstyledLink from "./Util/UnstyledLink";
 
 const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text, blogPost }) => {
@@ -21,7 +20,7 @@ const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text, blogPost }) =
   }, [relativeImageLink, imageLink]);
 
   return (
-    <SpringDiv className={`${point} ${mobileSize}`}>
+    <div className={`${point} ${mobileSize}`}>
       <UnstyledLink to={`/blog/${blogPost}`}>
         <div className={`${contentDiv}`}>
           {relativeImageLink && <img className={imageDiv} src={relativeImageLink} alt={imageAlt} />}
@@ -33,7 +32,7 @@ const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text, blogPost }) =
           <p className={mobileDescription}>{text}</p>
         </div>
       </UnstyledLink>
-    </SpringDiv>
+    </div>
   );
 };
 
