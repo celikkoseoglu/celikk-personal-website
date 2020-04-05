@@ -10,8 +10,8 @@ import {
   brand,
   whiteLink,
   navbarToggle,
-  navbarButton
-} from "../../stylesheets/components/NavigationBar.module.sass";
+  navbarButton,
+} from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
 import NavbarItem from "./NavbarItem";
 
 const NavigationBar = ({ content }) => {
@@ -52,7 +52,7 @@ const NavigationBar = ({ content }) => {
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="mr-auto" />
-          {content.items.map(item => (
+          {content.items.map((item) => (
             <NavbarItem
               title={item.title}
               reference={item.reference}
@@ -76,10 +76,10 @@ NavigationBar.propTypes = {
       PropTypes.shape({
         title: PropTypes.string.isRequired,
         reference: PropTypes.string,
-        href: PropTypes.string
+        href: PropTypes.string,
       })
-    )
-  }).isRequired
+    ),
+  }).isRequired,
 };
 
 export default NavigationBar;
