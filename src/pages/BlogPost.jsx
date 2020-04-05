@@ -5,13 +5,11 @@ import { Redirect, useParams } from "react-router-dom";
 import { blogPost, blogPostBackground, blogPostDark } from "../stylesheets/BlogPost.module.sass";
 import MediaCarousel from "../components/MediaCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
-
 import signatureImage from "../data/images/signature.svg";
-import DarkModeToggle from "../components/DarkModeToggle";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Footer/HorizontalRuler";
-import CustomButton from "../components/CustomButton";
 import LoadingIndicator from "../components/Util/LoadingIndicator";
+import BlogNavbar from "../components/Navbar/BlogNavbar";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
@@ -37,20 +35,26 @@ const BlogPost = () => {
       storage.setItem("theme", isDark.toString());
 
       fetch(`/static/media/${hashedBlogFileLink}`)
-        .then(res => res.text())
-        .then(response => setPost(response))
-        .catch(err => setPost(err));
+        .then((res) => res.text())
+        .then((response) => setPost(response))
+        .catch((err) => setPost(err));
     }
   }, [isDark, hashedBlogFileLink, redirect]);
 
-  return redirect ? <Redirect to="/404"/> : (
+  return redirect ? (
+    <Redirect to="/404" />
+  ) : (
     <div className={`${isDark ? blogPostDark : null} py-4 ${blogPostBackground}`}>
       <div className={blogPost}>
-        <div className="py-lg-5 pb-4 pt-2 d-flex justify-content-between">
-          <CustomButton isDark={isDark} text={blogNavbar.goBackLabel} to={blogNavbar.blogLink} />
-          <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
-          <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
-        </div>
+        <BlogNavbar
+          button1Text={blogNavbar.goBackLabel}
+          button1Link={blogNavbar.blogLink}
+          button2Text={blogNavbar.homeLabel}
+          button2Link={blogNavbar.homeLink}
+          className="py-lg-5 pb-4 pt-2"
+          isDark={isDark}
+          setIsDark={setIsDark}
+        />
 
         {post === "" ? (
           <LoadingIndicator isDark={isDark} />
@@ -61,10 +65,10 @@ const BlogPost = () => {
                 MediaCarousel: {
                   component: MediaCarousel,
                   props: {
-                    isDark
-                  }
-                }
-              }
+                    isDark,
+                  },
+                },
+              },
             }}
           >
             {post}

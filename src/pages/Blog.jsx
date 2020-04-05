@@ -11,10 +11,9 @@ import {
   blogStyle,
 } from "../stylesheets/Blog.module.sass";
 import { getInitialTheme } from "../utils/FileManager.utils";
-import DarkModeToggle from "../components/DarkModeToggle";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Footer/HorizontalRuler";
-import CustomButton from "../components/CustomButton";
+import BlogNavbar from "../components/Navbar/BlogNavbar";
 
 const blog = require("../data/blog");
 const footer = require("../data/footer");
@@ -32,11 +31,14 @@ const Blog = () => {
   return (
     <div className={`${background} ${isDark ? blogDark : null}`}>
       <div className={`pt-md-5 py-4 ${blogStyle}`}>
-        <div className="d-flex justify-content-between pb-md-5 pt-md-4 pt-2 pb-4">
-          <h1 className="my-auto">{blog.name}</h1>
-          <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} />
-          <CustomButton isDark={isDark} text={blogNavbar.homeLabel} to={blogNavbar.homeLink} />
-        </div>
+        <BlogNavbar
+          button1Text={blog.name}
+          button2Text={blogNavbar.homeLabel}
+          button2Link={blogNavbar.homeLink}
+          className="pb-md-5 pt-md-4 pt-2 pb-4"
+          isDark={isDark}
+          setIsDark={setIsDark}
+        />
         <Row className="pb-md-5 pb-4 col-12 pr-0">
           <div className="my-auto">
             <img
