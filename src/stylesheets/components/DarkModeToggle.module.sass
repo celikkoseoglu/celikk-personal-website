@@ -1,27 +1,39 @@
 $transitionDuration: .5s
-$boxShadowTransition: box-shadow $transitionDuration linear
 
 .darkModeToggle
   width: 1.8rem
   height: 1.8rem
-  background: transparent
-  border-radius: 50%
-  -webkit-transition: $boxShadowTransition
-  -moz-transition: $boxShadowTransition
-  transition: $boxShadowTransition
-  overflow: hidden
+  border-radius: 100%
   border-color: transparent
-  box-shadow: none
-  color: transparent
+  position: relative
+
+.crescent
+  position: absolute
+  border-radius: 100%
+  left: 10px
+  bottom: 10px
+  width: 1.4rem
+  height: 1.4rem
+  transform: scale(1)
+  transition: transform $transitionDuration, background-color $transitionDuration
 
 .darkModeToggle:focus
   outline: 0
 
 .sun
-  box-shadow: inset 19px -10px 0 -5px #000
+  background: #000
+  .crescent
+    transform: scale(1)
+    background: #fff
 
 .sun:focus
-  box-shadow: inset 19px -10px 0 -5px #555
+  background: #333
 
 .moon
-  box-shadow: inset -7px -3px 0 20px #fff
+  background: #fff
+  .crescent
+    transform: scale(0)
+    background: #111
+
+.moon:focus
+  background: #DDD
