@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
   point,
-  mobileSize,
   imageDiv,
   description,
   contentDiv,
@@ -20,7 +19,7 @@ const ProjectCard = ({ imageLink, imageAlt, title, subtitle, text, blogPost }) =
   }, [relativeImageLink, imageLink]);
 
   return (
-    <div className={`${point} ${mobileSize}`}>
+    <div className={`${point}`}>
       <UnstyledLink to={`/blog/${blogPost}`}>
         <div className={`${contentDiv}`}>
           {relativeImageLink && <img className={imageDiv} src={relativeImageLink} alt={imageAlt} />}

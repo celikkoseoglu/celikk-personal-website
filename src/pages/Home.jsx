@@ -2,7 +2,6 @@ import React from "react";
 import ProgressiveImage from "react-progressive-image";
 import { Row } from "react-bootstrap";
 import Hero from "../components/Hero";
-import CenteredText from "../components/CenteredText";
 import SkillCard from "../components/SkillCard";
 import ProjectCard from "../components/ProjectCard";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -20,6 +19,7 @@ import {
   sectionPadding,
   skillsBackground,
   whyDeveloperBackground,
+  whyADeveloperText,
   noMargin,
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
@@ -83,28 +83,26 @@ const Home = () => {
         className={`${whyDeveloperBackground} ${sectionPadding}`}
       >
         <Heading className={paddingBottom} text={content.introTitle} />
-        <Container>
-          <CenteredText title={content.introTitle} text={content.introText} />
-        </Container>
+        <div className="d-flex justify-content-sm-center">
+          <p className={whyADeveloperText}>{content.introText}</p>
+        </div>
       </section>
 
       <section id={content.projectsReference} className={`${projectsBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.projectsTitle} />
-        <Container>
-          <Row className="d-flex justify-content-center">
-            {projects.map((project) => (
-              <ProjectCard
-                imageLink={project.imageLink}
-                imageAlt={project.imageAlt}
-                title={project.title}
-                subtitle={project.subtitle}
-                text={project.text}
-                blogPost={project.blogPost}
-                key={project.title}
-              />
-            ))}
-          </Row>
-        </Container>
+        <div className="d-flex justify-content-center flex-wrap">
+          {projects.map((project) => (
+            <ProjectCard
+              imageLink={project.imageLink}
+              imageAlt={project.imageAlt}
+              title={project.title}
+              subtitle={project.subtitle}
+              text={project.text}
+              blogPost={project.blogPost}
+              key={project.title}
+            />
+          ))}
+        </div>
       </section>
 
       <div className={skillsBackground}>
@@ -161,7 +159,7 @@ const Home = () => {
 
       <div id={content.contactReference} className={`${footerBackground} ${footerPadding}`}>
         <Container>
-          <Footer/>
+          <Footer />
         </Container>
       </div>
     </>

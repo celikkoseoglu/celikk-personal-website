@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <footer className="col-md-12 px-0 pt-md-2">
       <Row>
-        <div className={`col-md-6 ${lineSeparator} pr-md-5 pb-3 pb-md-0 mx-3 mx-md-0`}>
+        <div className={`col-md-6 ${lineSeparator} pr-md-5 pb-2 pb-md-3 pb-md-0 mx-3 mx-md-0`}>
           <p
             className={`${leftText} ${footerLightText}
              h-100 d-flex justify-content-center flex-column text-center text-md-right`}
@@ -36,7 +36,7 @@ const Footer = () => {
             <p className={`mb-2 ${footerLightText}`}>{footer.linkText}</p>
             <ul className={`pl-md-2 pl-0 ${footerLightText} ${footerList} mb-0`}>
               {footer.links.map((link, index) => (
-                <li className={footerLinks}>
+                <li key={link} className={footerLinks}>
                   <a href={link} className={footerDarkText}>
                     {footer.videos[index]}
                   </a>
