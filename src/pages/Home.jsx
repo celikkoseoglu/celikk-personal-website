@@ -144,7 +144,9 @@ const Home = () => {
                 title={blogItem.title}
                 subtitle={blogItem.subtitle}
                 className={
-                  index >= NUMBER_OF_LATEST_BLOG_CARDS_TO_RENDER_ON_MOBILE && "d-none d-xl-block"
+                  index >= NUMBER_OF_LATEST_BLOG_CARDS_TO_RENDER_ON_MOBILE
+                    ? "d-none d-xl-block"
+                    : null
                 }
                 key={blogItem.title}
               />
