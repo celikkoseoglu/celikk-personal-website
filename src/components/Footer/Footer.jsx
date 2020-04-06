@@ -1,5 +1,5 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
+import Row from "../Util/Row";
 import {
   footerDarkText,
   footerLightText,

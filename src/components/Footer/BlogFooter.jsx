@@ -1,10 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Row from "react-bootstrap/Row";
-
 import SocialMediaBar from "./SocialMediaBar";
 import Signature from "../Signature";
-
+import Row from "../Util/Row";
 import {
   socialMediaButtonBackground,
   socialMediaButtonBackgroundDark,

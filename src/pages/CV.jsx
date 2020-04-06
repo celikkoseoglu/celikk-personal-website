@@ -1,6 +1,6 @@
 import React from "react";
-import Experience from "../components/Experience/Experience";
-import Skill from "../components/Skill";
+import Experience from "../components/CV/Experience/Experience";
+import Skill from "../components/CV/Skill";
 import "../index.sass";
 
 const experiences = require("../data/resume/experiences");

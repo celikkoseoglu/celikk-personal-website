@@ -1,11 +1,11 @@
 import React from "react";
 import ProgressiveImage from "react-progressive-image";
-import { Row } from "react-bootstrap";
 import Hero from "../components/Hero";
 import SkillCard from "../components/SkillCard";
 import ProjectCard from "../components/ProjectCard";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "../utils/Container";
+import Container from "../components/Util/Container";
+import Row from "../components/Util/Row";
 import {
   arrowMargin,
   arrowSize,
@@ -83,14 +83,14 @@ const Home = () => {
         className={`${whyDeveloperBackground} ${sectionPadding}`}
       >
         <Heading className={paddingBottom} text={content.introTitle} />
-        <div className="d-flex justify-content-sm-center">
+        <Row className="justify-content-sm-center">
           <p className={whyADeveloperText}>{content.introText}</p>
-        </div>
+        </Row>
       </section>
 
       <section id={content.projectsReference} className={`${projectsBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.projectsTitle} />
-        <div className="d-flex justify-content-center flex-wrap">
+        <Row className="justify-content-center">
           {projects.map((project) => (
             <ProjectCard
               imageLink={project.imageLink}
@@ -102,7 +102,7 @@ const Home = () => {
               key={project.title}
             />
           ))}
-        </div>
+        </Row>
       </section>
 
       <div className={skillsBackground}>
@@ -135,7 +135,7 @@ const Home = () => {
       >
         <Heading className={paddingBottom} text={content.latestBlogPostsTitle} />
         <Container className={blogShowcaseContainer}>
-          <Row className="d-flex justify-content-center">
+          <Row className="justify-content-center">
             {retrieveLatestBlogPosts(blog).map((blogItem, index) => (
               <BlogShowcaseCard
                 timestamp={blogItem.date}
@@ -144,16 +144,14 @@ const Home = () => {
                 title={blogItem.title}
                 subtitle={blogItem.subtitle}
                 className={
-                  index >= NUMBER_OF_LATEST_BLOG_CARDS_TO_RENDER_ON_MOBILE
-                    ? "d-none d-xl-block"
-                    : null
+                  index >= NUMBER_OF_LATEST_BLOG_CARDS_TO_RENDER_ON_MOBILE && "d-none d-xl-block"
                 }
                 key={blogItem.title}
               />
             ))}
           </Row>
 
-          <BlogShowcaseButton link={BLOG_LINK} text="View All Blog Posts" />
+          <BlogShowcaseButton link={BLOG_LINK} text={content.viewAllBlogPostsButton} />
         </Container>
       </section>
 
