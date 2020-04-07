@@ -1,0 +1,60 @@
+@import "../../../utils/widthPicker"
+
+.description
+  width: 660px
+  margin-right: 30px
+  +screen(extraLarge)
+    width: 550px
+  +screen(large)
+    width: 410px
+  +screen(small)
+    width: 100%
+
+.image
+  width: 250px
+  height: auto
+  border: 7px solid #494949
+  filter: grayscale(85%)
+  border-radius: 100%
+  margin-right: 50px
+  transition: filter .2s
+  +screen(lessThanMedium)
+    display: none
+  +screen(large)
+    margin-right: 0
+  &:hover
+    filter: grayscale(0%)
+
+.ruler
+  flex-grow: 1
+  margin-left: 30px
+  +screen(small)
+    margin-left: 10px
+
+.heading
+  margin-bottom: 0
+  margin-left: 0
+
+.titleRow
+  margin-bottom: 50px
+  align-items: center
+  +screen(small)
+    margin-bottom: 10px
+  +screen(large)
+    margin-bottom: 35px
+
+.descriptionRow
+  justify-content: space-between
+  align-items: center
+
+.listPadding
+  padding: 0
+
+.listItemStyle
+  list-style: none
+
+.listItemStyle::before
+  content: "\003E"
+  display: inline-block
+  font-size: 16px
+  width: 1em

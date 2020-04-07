@@ -18,9 +18,8 @@ import {
   projectsBackground,
   sectionPadding,
   skillsBackground,
-  whyDeveloperBackground,
-  whyADeveloperText,
   noMargin,
+  projectsSection,
 } from "../stylesheets/Home.module.sass";
 import Footer from "../components/Footer/Footer";
 import Heading from "../components/Heading";
@@ -35,6 +34,7 @@ import {
   retrieveLatestBlogPosts,
 } from "../utils/LatestBlogsFetcher";
 import HorizontalRuler from "../components/Footer/HorizontalRuler";
+import AboutMe from "../components/Section/AboutMe";
 
 const navbar = require("../data/navbar");
 const content = require("../data/content");
@@ -78,31 +78,31 @@ const Home = () => {
         )}
       </ProgressiveImage>
 
-      <section
-        id={content.whyADeveloperReference}
-        className={`${whyDeveloperBackground} ${sectionPadding}`}
-      >
-        <Heading className={paddingBottom} text={content.introTitle} />
-        <Row className="justify-content-sm-center">
-          <p className={whyADeveloperText}>{content.introText}</p>
-        </Row>
-      </section>
+      <AboutMe id={content.whyADeveloperReference} />
+
+      <div className={skillsBackground}>
+        <Container>
+          <HorizontalRuler isThick className={noMargin} />
+        </Container>
+      </div>
 
       <section id={content.projectsReference} className={`${projectsBackground} ${sectionPadding}`}>
         <Heading className={paddingBottom} text={content.projectsTitle} />
-        <Row className="justify-content-center">
-          {projects.map((project) => (
-            <ProjectCard
-              imageLink={project.imageLink}
-              imageAlt={project.imageAlt}
-              title={project.title}
-              subtitle={project.subtitle}
-              text={project.text}
-              blogPost={project.blogPost}
-              key={project.title}
-            />
-          ))}
-        </Row>
+        <div className={`${projectsSection} mx-auto`}>
+          <Row className="justify-content-center">
+            {projects.map((project) => (
+              <ProjectCard
+                imageLink={project.imageLink}
+                imageAlt={project.imageAlt}
+                title={project.title}
+                subtitle={project.subtitle}
+                text={project.text}
+                blogPost={project.blogPost}
+                key={project.title}
+              />
+            ))}
+          </Row>
+        </div>
       </section>
 
       <div className={skillsBackground}>

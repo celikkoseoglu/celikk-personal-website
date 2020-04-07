@@ -6,7 +6,7 @@ import {
   introMargin,
   introHeadingStyle,
   introLeadInStyle,
-  box
+  box,
 } from "../stylesheets/components/Hero.module.sass";
 
 const Hero = ({ introHeading, introLeadIn, resumeButtonText, resumeLink }) => {
