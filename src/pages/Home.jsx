@@ -158,7 +158,7 @@ const Home = () => {
       </section>
 
       <div id={content.contactReference} className={`${footerBackground} ${footerPadding}`}>
-        <Container>
+        <Container noPadding>
           <Footer />
         </Container>
       </div>

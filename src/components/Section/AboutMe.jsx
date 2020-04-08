@@ -36,7 +36,7 @@ const AboutMe = ({ id }) => {
             <p>{aboutMe.descriptionHead}</p>
             <ul className={listPadding}>
               {aboutMe.items.map((item) => (
-                <li className={listItemStyle}>{item}</li>
+                <li key={item} className={listItemStyle}>{item}</li>
               ))}
             </ul>
             <p>{aboutMe.descriptionTail}</p>

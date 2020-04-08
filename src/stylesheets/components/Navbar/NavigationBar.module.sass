@@ -9,11 +9,13 @@ $navbar-color: rgba(29, 61, 119, $transparency)
     padding-top: 5px
     padding-bottom: 5px
     background: $navbar-color
+    backdrop-filter: blur(5px)
 
 .topNavCollapse
   padding-top: 3px
   padding-bottom: 3px
   background: $navbar-color
+  backdrop-filter: blur(3px)
 
 .customNavbar
   color: #fff
@@ -37,8 +39,8 @@ $navbar-color: rgba(29, 61, 119, $transparency)
   // this allows for more space on the NavBar on a small
   // screen like portrait iPad so items don't wrap to the next line
   padding-right: 0
-  color: $brandColor
-  font-family: 'KaushanScript-Regular', sans-serif
+  color: #fff
+  font-family: 'Montserrat-Regular', sans-serif
   font-size: 1.5em
   &:hover
     color: #fe9b00

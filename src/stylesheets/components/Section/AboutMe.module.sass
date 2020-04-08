@@ -11,7 +11,7 @@
     width: 100%
 
 .image
-  width: 250px
+  width: 300px
   height: auto
   border: 7px solid #494949
   filter: grayscale(85%)
@@ -21,6 +21,9 @@
   +screen(lessThanMedium)
     display: none
   +screen(large)
+    width: 250px
+    margin-right: 0
+  +screen(extraLarge)
     margin-right: 0
   &:hover
     filter: grayscale(0%)
