@@ -5,7 +5,7 @@ import {
   thickDark,
   light,
   thickLight,
-} from "../../stylesheets/components/Footer/HorizontalRuler.module.sass";
+} from "../../stylesheets/components/Util/HorizontalRuler.module.sass";
 
 const HorizontalRuler = ({ isDark, isThick, className }) => {
   return (

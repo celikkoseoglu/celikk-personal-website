@@ -16,7 +16,7 @@ import {
 import Footer from "../components/Footer/Footer";
 import ArrowAnimation from "../components/Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../utils/FileManager.utils";
-import HorizontalRuler from "../components/Footer/HorizontalRuler";
+import HorizontalRuler from "../components/Util/HorizontalRuler";
 import AboutMe from "../components/Section/AboutMe";
 import Projects from "../components/Section/Projects";
 import Skills from "../components/Section/Skills";

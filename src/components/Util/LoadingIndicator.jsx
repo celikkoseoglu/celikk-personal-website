@@ -4,7 +4,7 @@ import {
   spinner,
   light,
   dark
-} from "../../stylesheets/components/Utils/LoadingIndicator.module.sass";
+} from "../../stylesheets/components/Util/LoadingIndicator.module.sass";
 
 const LoadingIndicator = ({ isDark }) => {
   return <div className={`${spinner} ${isDark ? dark : light}`} />;

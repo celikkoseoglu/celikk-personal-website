@@ -7,7 +7,7 @@ import MediaCarousel from "../components/MediaCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
 import signatureImage from "../data/images/signature.svg";
 import BlogFooter from "../components/Footer/BlogFooter";
-import HorizontalRuler from "../components/Footer/HorizontalRuler";
+import HorizontalRuler from "../components/Util/HorizontalRuler";
 import LoadingIndicator from "../components/Util/LoadingIndicator";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 

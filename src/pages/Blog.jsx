@@ -13,7 +13,7 @@ import {
 } from "../stylesheets/Blog.module.sass";
 import { getInitialTheme } from "../utils/FileManager.utils";
 import BlogFooter from "../components/Footer/BlogFooter";
-import HorizontalRuler from "../components/Footer/HorizontalRuler";
+import HorizontalRuler from "../components/Util/HorizontalRuler";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 
 const blog = require("../data/blog");

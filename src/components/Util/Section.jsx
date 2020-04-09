@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {
   sectionPadding,
   sectionBackground,
-} from "../../stylesheets/components/Utils/Section.module.sass";
+} from "../../stylesheets/components/Util/Section.module.sass";
 
 const Section = ({ id, className, children }) => {
   return (

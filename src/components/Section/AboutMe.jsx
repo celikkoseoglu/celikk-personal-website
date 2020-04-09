@@ -12,7 +12,7 @@ import {
   listItemStyle,
   listPadding,
 } from "../../stylesheets/components/Section/AboutMe.module.sass";
-import HorizontalRuler from "../Footer/HorizontalRuler";
+import HorizontalRuler from "../Util/HorizontalRuler";
 import Section from "../Util/Section";
 import Container from "../Util/Container";
 import Row from "../Util/Row";
