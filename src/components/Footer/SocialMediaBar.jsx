@@ -6,7 +6,7 @@ import {
   FaFacebookF,
   FaGithub,
   FaInstagram,
-  FaLinkedinIn
+  FaLinkedinIn,
 } from "react-icons/fa";
 import SocialMediaIcon from "./SocialMediaIcon";
 import {
@@ -15,14 +15,16 @@ import {
   instagram,
   linkedin,
   mail,
+  twitter,
   socialMediaButton,
-  twitter
-} from "../../stylesheets/components/Footer/Footer.module.sass";
+  noVerticalMargin,
+  inlineList,
+} from "../../stylesheets/components/Footer/SocialMediaBar.module.sass";
 
 const SocialMediaBar = ({ socialMediaLinks, buttonBackground }) => {
   return (
     <>
-      <ul className="list-inline my-auto">
+      <ul className={`${inlineList} ${noVerticalMargin}`}>
         <SocialMediaIcon
           className={`${twitter} ${socialMediaButton} ${buttonBackground}`}
           link={socialMediaLinks.twitterLink}
@@ -83,13 +85,13 @@ SocialMediaBar.propTypes = {
     instagramLink: PropTypes.string.isRequired,
     instagramAriaLabel: PropTypes.string.isRequired,
     emailLink: PropTypes.string.isRequired,
-    emailAriaLabel: PropTypes.string.isRequired
+    emailAriaLabel: PropTypes.string.isRequired,
   }).isRequired,
-  buttonBackground: PropTypes.string
+  buttonBackground: PropTypes.string,
 };
 
 SocialMediaBar.defaultProps = {
-  buttonBackground: null
+  buttonBackground: null,
 };
 
 export default SocialMediaBar;
