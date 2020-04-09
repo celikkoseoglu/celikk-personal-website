@@ -1,0 +1,16 @@
+@import "../../../utils/widthPicker"
+
+.blogShowcaseContainer
+  max-width: 960px
+  +screen(greaterThanMedium)
+    padding: 0
+  +screen(greaterThanExtraLarge)
+    max-width: 1200px
+
+.blogPostCardsRow
+  justify-content: center
+
+.blogShowcaseCard
+  display: none
+  +screen(greaterThanExtraLarge)
+    display: block

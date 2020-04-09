@@ -1,50 +1,53 @@
-[
-  {
-    "imageLink": "data/images/projects/QNote.svg",
-    "imageAlt": "QNote app logo",
-    "title": "QNote",
-    "subtitle": "BLAZING FAST NOTE TAKING",
-    "text": "It opens in milliseconds and closes when you lock your phone. Perfect for noting homeworks without getting the teacher's attention.",
-    "blogPost": "qnote"
-  },
-  {
-    "imageLink": "data/images/projects/IPManager.svg",
-    "imageAlt": "IPManager app logo",
-    "title": "IPManager",
-    "subtitle": "DHCP MADE EASY",
-    "text": "If a workplace uses static IP and the employees carry their computers between their homes and offices everyday, it changes DHCP settings automatically.",
-    "blogPost": "ipmanager"
-  },
-  {
-    "imageLink": "data/images/projects/PhotoSec.svg",
-    "imageAlt": "PhotoSec app logo",
-    "title": "PhotoSec",
-    "subtitle": "SECURE YOUR PHOTOS!",
-    "text": "Select some photos from the phone’s gallery and password protect them. Oh, and there is a fake password feature!",
-    "blogPost": "photosec"
-  },
-  {
-    "imageLink": "data/images/projects/Marmara.svg",
-    "imageAlt": "content not ready",
-    "title": "Today's Meal in Marmara",
-    "subtitle": "MEAL IN A DIFFERENT FORM",
-    "text": "I wonder if today's meal is delicious or not. I have to check the school's website and... I wish it came as a notification.",
-    "blogPost": "marmara"
-  },
-  {
-    "imageLink": "data/images/projects/RockyJourney.svg",
-    "imageAlt": "a ship sailing on the sea",
-    "title": "Rocky Journey",
-    "subtitle": "AN FPGA GAME",
-    "text": "A game written in Verilog HDL that runs on an FPGA. Drives an LED matrix and uses several hardware buttons for inputs.",
-    "blogPost": "rockyJourney"
-  },
-  {
-    "imageLink": "data/images/projects/PersonalWebsite.svg",
-    "imageAlt": "iMac showing the source code of this website",
-    "title": "Personal Website",
-    "subtitle": "BUILT USING LATEST TECH",
-    "text": "Open source website built using React. A lot of design work and an interactive CV built into it! I also streamed myself building it!",
-    "blogPost": "personalWebsite"
-  }
-]
+{
+  "projectsTitle": "PROJECTS",
+  "projectList": [
+    {
+      "imageLink": "data/images/projects/QNote.svg",
+      "imageAlt": "QNote app logo",
+      "title": "QNote",
+      "subtitle": "BLAZING FAST NOTE TAKING",
+      "text": "It opens in milliseconds and closes when you lock your phone. Perfect for noting homeworks without getting the teacher's attention.",
+      "blogPost": "qnote"
+    },
+    {
+      "imageLink": "data/images/projects/IPManager.svg",
+      "imageAlt": "IPManager app logo",
+      "title": "IPManager",
+      "subtitle": "DHCP MADE EASY",
+      "text": "If a workplace uses static IP and the employees carry their computers between their homes and offices everyday, it changes DHCP settings automatically.",
+      "blogPost": "ipmanager"
+    },
+    {
+      "imageLink": "data/images/projects/PhotoSec.svg",
+      "imageAlt": "PhotoSec app logo",
+      "title": "PhotoSec",
+      "subtitle": "SECURE YOUR PHOTOS!",
+      "text": "Select some photos from the phone’s gallery and password protect them. Oh, and there is a fake password feature!",
+      "blogPost": "photosec"
+    },
+    {
+      "imageLink": "data/images/projects/Marmara.svg",
+      "imageAlt": "content not ready",
+      "title": "Today's Meal in Marmara",
+      "subtitle": "MEAL IN A DIFFERENT FORM",
+      "text": "I wonder if today's meal is delicious or not. I have to check the school's website and... I wish it came as a notification.",
+      "blogPost": "marmara"
+    },
+    {
+      "imageLink": "data/images/projects/RockyJourney.svg",
+      "imageAlt": "a ship sailing on the sea",
+      "title": "Rocky Journey",
+      "subtitle": "AN FPGA GAME",
+      "text": "A game written in Verilog HDL that runs on an FPGA. Drives an LED matrix and uses several hardware buttons for inputs.",
+      "blogPost": "rockyJourney"
+    },
+    {
+      "imageLink": "data/images/projects/PersonalWebsite.svg",
+      "imageAlt": "iMac showing the source code of this website",
+      "title": "Personal Website",
+      "subtitle": "BUILT USING LATEST TECH",
+      "text": "Open source website built using React. A lot of design work and an interactive CV built into it! I also streamed myself building it!",
+      "blogPost": "personalWebsite"
+    }
+  ]
+}

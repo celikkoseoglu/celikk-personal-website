@@ -1,22 +1,25 @@
-[
-  {
-    "imageLink": "data/images/personalSkills/design.svg",
-    "imageAlt": "design icon",
-    "text": "Design is as equally important as the engineering behind the product. When I work on design, I constantly ask myself about how the user is going to interact with it. I prefer prototyping with a pen and paper because it allows you to draw everything freely, rather than thinking about limitations."
-  },
-  {
-    "imageLink": "data/images/personalSkills/frontEnd.svg",
-    "imageAlt": "front end code icon",
-    "text": "Turning the design mockup into a reality is another form of art. This part of coding requires a lot of attention to detail. No matter how good the rest of your stack is, the front end defines your interaction with the user. In the front end space, I mainly worked on native Android, iOS and Windows Phone applications, and websites."
-  },
-  {
-    "imageLink": "data/images/personalSkills/backEnd.svg",
-    "imageAlt": "back end code icon",
-    "text": "After the customer taps a button on your front end application, all sorts of magic happens here. The code needs to be clean, modular and easy to modify. Every moving piece has should have a single responsibility. I’ve mainly worked with Spring and NodeJS applications in my professional career."
-  },
-  {
-    "imageLink": "data/images/personalSkills/test.svg",
-    "imageAlt": "testing icon",
-    "text": "Getting something out there is great but what about it’s reliability? In the hands of a customer, every moving piece has to work together in harmony. Throughout my career, I had the opportunity to work with projects over 1m lines of code. In all my professional work, I’ve applied extensive testing strategies for everything I can."
-  }
-]
+{
+  "skillsTitle": "SKILLS",
+  "skillList": [
+    {
+      "imageLink": "data/images/personalSkills/design.svg",
+      "imageAlt": "design icon",
+      "text": "Design is as equally important as the engineering behind the product. When I work on design, I constantly ask myself about how the user is going to interact with it. I prefer prototyping with a pen and paper because it allows you to draw everything freely, rather than thinking about limitations."
+    },
+    {
+      "imageLink": "data/images/personalSkills/frontEnd.svg",
+      "imageAlt": "front end code icon",
+      "text": "Turning the design mockup into a reality is another form of art. This part of coding requires a lot of attention to detail. No matter how good the rest of your stack is, the front end defines your interaction with the user. In the front end space, I mainly worked on native Android, iOS and Windows Phone applications, and websites."
+    },
+    {
+      "imageLink": "data/images/personalSkills/backEnd.svg",
+      "imageAlt": "back end code icon",
+      "text": "After the customer taps a button on your front end application, all sorts of magic happens here. The code needs to be clean, modular and easy to modify. Every moving piece has should have a single responsibility. I’ve mainly worked with Spring and NodeJS applications in my professional career."
+    },
+    {
+      "imageLink": "data/images/personalSkills/test.svg",
+      "imageAlt": "testing icon",
+      "text": "Getting something out there is great but what about it’s reliability? In the hands of a customer, every moving piece has to work together in harmony. Throughout my career, I had the opportunity to work with projects over 1m lines of code. In all my professional work, I’ve applied extensive testing strategies for everything I can."
+    }
+  ]
+}

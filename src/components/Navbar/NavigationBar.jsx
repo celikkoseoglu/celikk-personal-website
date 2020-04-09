@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import NavbarItem from "./NavbarItem";
 import {
   customNavbar,
   topNavExpand,
@@ -12,7 +13,6 @@ import {
   navbarToggle,
   navbarButton,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
-import NavbarItem from "./NavbarItem";
 
 const NavigationBar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);

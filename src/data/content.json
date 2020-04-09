@@ -4,9 +4,5 @@
   "projectsReference": "projects",
   "skillsReference": "skills",
   "contactReference" : "contact",
-  "latestBlogPostsReference": "latestBlogPosts",
-  "skillsTitle": "SKILLS",
-  "projectsTitle": "PROJECTS",
-  "latestBlogPostsTitle": "LATEST BLOG POSTS",
-  "viewAllBlogPostsButton": "View All Blog Posts"
+  "latestBlogPostsReference": "latestBlogPosts"
 }

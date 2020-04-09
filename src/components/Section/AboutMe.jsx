@@ -1,6 +1,7 @@
 import React from "react";
 import ProgressiveImage from "react-progressive-image";
 import PropTypes from "prop-types";
+import Heading from "../Heading";
 import {
   description,
   image,
@@ -11,7 +12,6 @@ import {
   listItemStyle,
   listPadding,
 } from "../../stylesheets/components/Section/AboutMe.module.sass";
-import Heading from "../Heading";
 import HorizontalRuler from "../Footer/HorizontalRuler";
 import Section from "../Util/Section";
 import Container from "../Util/Container";
@@ -36,7 +36,9 @@ const AboutMe = ({ id }) => {
             <p>{aboutMe.descriptionHead}</p>
             <ul className={listPadding}>
               {aboutMe.items.map((item) => (
-                <li key={item} className={listItemStyle}>{item}</li>
+                <li key={item} className={listItemStyle}>
+                  {item}
+                </li>
               ))}
             </ul>
             <p>{aboutMe.descriptionTail}</p>
