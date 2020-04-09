@@ -14,7 +14,7 @@ const DarkModeToggle = ({ isDark, onClickMethod }) => {
       type="button"
       aria-label="Dark Mode Toggle"
       onClick={(_) => onClickMethod(!isDark)}
-      className={`${isDark ? moon : sun} my-auto ${darkModeToggle}`}
+      className={`${isDark ? moon : sun} ${darkModeToggle}`}
     >
       <div className={crescent} />
     </button>
