@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
 import storage from "local-storage-fallback";
 import BlogItem from "../components/BlogItem";
-
 import {
   profilePicture,
   background,
   blogTitleFont,
   blogDark,
   blogStyle,
+  marginVerticalAuto,
+  circularImage,
 } from "../stylesheets/Blog.module.sass";
 import { getInitialTheme } from "../utils/FileManager.utils";
 import BlogFooter from "../components/Footer/BlogFooter";
@@ -40,16 +41,16 @@ const Blog = () => {
           setIsDark={setIsDark}
         />
         <Row className="pb-md-5 pb-4 col-12 pr-0">
-          <div className="my-auto">
+          <div className={marginVerticalAuto}>
             <img
-              className={`img-fluid rounded-circle ${profilePicture}`}
+              className={`${circularImage} ${profilePicture}`}
               src={`${blog.imageLink}`}
               alt={blog.imageAlt}
             />
           </div>
-          <div className="my-auto">
-            <p className={`my-auto py-md-1 ${blogTitleFont}`}>{blog.title}</p>
-            <p className={`my-auto py-md-1 ${blogTitleFont}`}>{blog.subtitle}</p>
+          <div>
+            <p className={`${marginVerticalAuto} py-md-1 ${blogTitleFont}`}>{blog.title}</p>
+            <p className={`${marginVerticalAuto} py-md-1 ${blogTitleFont}`}>{blog.subtitle}</p>
           </div>
         </Row>
 
