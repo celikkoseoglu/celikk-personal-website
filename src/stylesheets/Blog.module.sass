@@ -10,8 +10,6 @@
 .background
   background-color: #fff
   transition: background-color $colorTransitionDuration
-  display: flex
-  justify-content: center
 
 .blogTitleFont
   font-size: 16px
@@ -24,13 +22,18 @@
 
 .blogStyle
   max-width: $blog-width
-  margin-top: 70px
+  padding-top: 70px
+  margin-left: auto
+  margin-right: auto
+  padding-left: 15px
+  padding-right: 15px
   +screen(small)
-    margin-top: 30px
-    margin-left: 20px
-    margin-right: 20px
+    padding-top: 30px
 
 .footerStyle
+  max-width: $blog-width
+  margin-left: auto
+  margin-right: auto
   padding-bottom: 20px
 
 .titleMarginBottom

@@ -35,46 +35,44 @@ const Blog = () => {
 
   return (
     <div className={`${background} ${isDark ? blogDark : null}`}>
-      <div>
-        <div className={`${blogStyle}`}>
-          <BlogNavbar
-            button1Text={blog.name}
-            button2Text={blogNavbar.homeLabel}
-            button2Link={blogNavbar.homeLink}
-            className={blogNavbarMargin}
-            isDark={isDark}
-            setIsDark={setIsDark}
-          />
-          <Row className={`${blogItemMargin} ${vericalCenter}`}>
-            <div>
-              <img
-                className={`${circularImage} ${profilePicture}`}
-                src={`${blog.imageLink}`}
-                alt={blog.imageAlt}
-              />
-            </div>
-            <div>
-              <p className={`${blogTitleFont} ${noMargin}`}>{blog.title}</p>
-              <p className={`${blogTitleFont} ${noMargin}`}>{blog.subtitle}</p>
-            </div>
-          </Row>
-
-          {blog.blogItems.map((blogItem) => (
-            <BlogItem
-              className={blogItemMargin}
-              title={blogItem.title}
-              date={blogItem.date}
-              minutes={blogItem.minutes}
-              subtitle={blogItem.subtitle}
-              blogPost={blogItem.blogPost}
-              key={blogItem.title}
+      <div className={`${blogStyle}`}>
+        <BlogNavbar
+          button1Text={blog.name}
+          button2Text={blogNavbar.homeLabel}
+          button2Link={blogNavbar.homeLink}
+          className={blogNavbarMargin}
+          isDark={isDark}
+          setIsDark={setIsDark}
+        />
+        <Row className={`${blogItemMargin} ${vericalCenter}`}>
+          <div>
+            <img
+              className={`${circularImage} ${profilePicture}`}
+              src={`${blog.imageLink}`}
+              alt={blog.imageAlt}
             />
-          ))}
-          <HorizontalRuler isDark={isDark} />
-        </div>
-        <div className={footerStyle}>
-          <BlogFooter content={footer} isDark={isDark} />
-        </div>
+          </div>
+          <div>
+            <p className={`${blogTitleFont} ${noMargin}`}>{blog.title}</p>
+            <p className={`${blogTitleFont} ${noMargin}`}>{blog.subtitle}</p>
+          </div>
+        </Row>
+
+        {blog.blogItems.map((blogItem) => (
+          <BlogItem
+            className={blogItemMargin}
+            title={blogItem.title}
+            date={blogItem.date}
+            minutes={blogItem.minutes}
+            subtitle={blogItem.subtitle}
+            blogPost={blogItem.blogPost}
+            key={blogItem.title}
+          />
+        ))}
+        <HorizontalRuler isDark={isDark} />
+      </div>
+      <div className={footerStyle}>
+        <BlogFooter content={footer} isDark={isDark} />
       </div>
     </div>
   );
