@@ -8,6 +8,9 @@ import {
   showHelpText,
   mediaCarousel,
   darkMediaCarousel,
+  imageMargin,
+  multipleImage,
+  multipleImageIOS,
 } from "../stylesheets/components/MediaCarousel.module.sass";
 
 const mediaCarouselText = require("../data/mediaCarousel");
@@ -47,7 +50,7 @@ const MediaCarousel = ({ folder, images, isDark }) => {
       <div
         align="center"
         className={`${horizontalOverflow} ${isDark ? darkMediaCarousel : null} ${mediaCarousel} ${
-          hasMultipleImagesAndiOS() ? "pt-3 pb-0 mt-3 mb-1" : "py-3 my-3"
+          hasMultipleImagesAndiOS() ? multipleImageIOS : multipleImage
         }`}
       >
         {imageLoaded
@@ -55,7 +58,7 @@ const MediaCarousel = ({ folder, images, isDark }) => {
               imageRelativeLink.endsWith(".mp4") ? (
                 // eslint-disable-next-line jsx-a11y/media-has-caption
                 <video
-                  className={`${autoSizeImage} ${index > 0 && "ml-1"}`}
+                  className={`${autoSizeImage} ${index > 0 && imageMargin}`}
                   loop
                   autoPlay
                   playsInline
@@ -68,7 +71,7 @@ const MediaCarousel = ({ folder, images, isDark }) => {
               ) : (
                 <img
                   src={imageRelativeLink}
-                  className={`${autoSizeImage} ${index > 0 && "ml-1"}`}
+                  className={`${autoSizeImage} ${index > 0 && imageMargin}`}
                   alt={imageRelativeLink}
                   key={imageRelativeLink}
                 />
@@ -77,9 +80,7 @@ const MediaCarousel = ({ folder, images, isDark }) => {
           : null}
       </div>
       {hasMultipleImagesAndiOS() ? (
-        <span className={`d-flex justify-content-center pb-3 ${showHelpText}`}>
-          {mediaCarouselText.mediaCarouselHelpText}
-        </span>
+        <span className={showHelpText}>{mediaCarouselText.mediaCarouselHelpText}</span>
       ) : null}
     </>
   );
