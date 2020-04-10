@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
 import { Redirect, useParams } from "react-router-dom";
-import { blogPost, blogPostBackground, blogPostDark } from "../stylesheets/BlogPost.module.sass";
+import {
+  blogPost,
+  blogPostBackground,
+  blogPostDark,
+  blogPostMargins,
+  blogPostNavbarMargin,
+  footerStyle,
+} from "../stylesheets/BlogPost.module.sass";
 import MediaCarousel from "../components/MediaCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
-import signatureImage from "../data/images/signature.svg";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Util/HorizontalRuler";
 import LoadingIndicator from "../components/Util/LoadingIndicator";
@@ -44,39 +50,43 @@ const BlogPost = () => {
   return redirect ? (
     <Redirect to="/404" />
   ) : (
-    <div className={`${isDark ? blogPostDark : null} py-4 ${blogPostBackground}`}>
-      <div className={blogPost}>
-        <BlogNavbar
-          button1Text={blogNavbar.goBackLabel}
-          button1Link={blogNavbar.blogLink}
-          button2Text={blogNavbar.homeLabel}
-          button2Link={blogNavbar.homeLink}
-          className="py-lg-5 pb-4 pt-2"
-          isDark={isDark}
-          setIsDark={setIsDark}
-        />
+    <div className={`${isDark ? blogPostDark : null} ${blogPostMargins} ${blogPostBackground}`}>
+      <div>
+        <div className={blogPost}>
+          <BlogNavbar
+            button1Text={blogNavbar.goBackLabel}
+            button1Link={blogNavbar.blogLink}
+            button2Text={blogNavbar.homeLabel}
+            button2Link={blogNavbar.homeLink}
+            className={blogPostNavbarMargin}
+            isDark={isDark}
+            setIsDark={setIsDark}
+          />
 
-        {post === "" ? (
-          <LoadingIndicator isDark={isDark} />
-        ) : (
-          <Markdown
-            options={{
-              overrides: {
-                MediaCarousel: {
-                  component: MediaCarousel,
-                  props: {
-                    isDark,
+          {post === "" ? (
+            <LoadingIndicator isDark={isDark} />
+          ) : (
+            <Markdown
+              options={{
+                overrides: {
+                  MediaCarousel: {
+                    component: MediaCarousel,
+                    props: {
+                      isDark,
+                    },
                   },
                 },
-              },
-            }}
-          >
-            {post}
-          </Markdown>
-        )}
+              }}
+            >
+              {post}
+            </Markdown>
+          )}
 
-        <HorizontalRuler isDark={isDark} />
-        <BlogFooter content={footer} signatureImage={signatureImage} isDark={isDark} />
+          <HorizontalRuler isDark={isDark} />
+        </div>
+        <div className={footerStyle}>
+          <BlogFooter content={footer} isDark={isDark} />
+        </div>
       </div>
     </div>
   );

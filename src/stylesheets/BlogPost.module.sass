@@ -1,12 +1,11 @@
 @import "../utils/animationTimer"
 @import "../utils/variables"
+@import "../utils/widthPicker"
 
 .blogPost
   max-width: $blog-width
-  margin-left: auto
-  margin-right: auto
-  padding-left: 20px
-  padding-right: 20px
+  margin-left: 20px
+  margin-right: 20px
   p
     font-size: 16px
   h1
@@ -54,6 +53,21 @@
   min-height: 100vh
   background-color: #fff
   transition: background-color $colorTransitionDuration
+
+.blogPostMargins
+  display: flex
+  justify-content: center
+  padding-top: 70px
+  +screen(small)
+    padding-top: 30px
+
+.blogPostNavbarMargin
+  margin-bottom: 50px
+  +screen(small)
+    margin-bottom: 40px
+
+.footerStyle
+  padding-bottom: 20px
 
 .blogPostDark
   color: #FFF
