@@ -8,6 +8,7 @@ import {
   footerName,
   footerList,
   footerLinks,
+  signature,
 } from "../../stylesheets/components/Footer/Footer.module.sass";
 
 import SocialMediaBar from "./SocialMediaBar";
@@ -17,15 +18,10 @@ const footer = require("../../data/footer");
 
 const Footer = () => {
   return (
-    <footer className="col-md-12 px-0 pt-md-2">
+    <footer className="px-0 pt-md-2">
       <Row>
         <div className={`col-md-6 ${lineSeparator} pr-md-5 pb-2 pb-md-3 pb-md-0 mx-3 mx-md-0`}>
-          <p
-            className={`${leftText} ${footerLightText}
-             h-100 d-flex justify-content-center flex-column text-center text-md-right`}
-          >
-            {footer.leftText}
-          </p>
+          <p className={`${leftText} ${footerLightText}`}>{footer.leftText}</p>
         </div>
 
         <div className="pl-md-5 col-md-6 my-auto text-center text-md-left pt-3 pt-md-0">
@@ -47,8 +43,8 @@ const Footer = () => {
         </div>
       </Row>
 
-      <Signature className="mt-4 mb-2" isDark />
-      <p className={`text-center mb-0 ${footerDarkText}`}>{footer.date}</p>
+      <Signature className={signature} isDark />
+      <p className={footerDarkText}>{footer.date}</p>
     </footer>
   );
 };
