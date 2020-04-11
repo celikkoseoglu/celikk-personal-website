@@ -1,5 +1,24 @@
+@import "../../../utils/widthPicker"
+
 .socialMediaButtonBackground
   background: #a3a3a3
 
 .socialMediaButtonBackgroundDark
   background: #444
+
+.footerStyle
+  text-align: center
+  display: flex
+  justify-content: space-around
+  +screen(small)
+    flex-flow: column-reverse
+
+.title
+  +screen(small)
+    padding-top: 15px
+
+.socialMediaBar
+  margin-top: auto
+  margin-bottom: auto
+  padding-left: 0
+  padding-right: 0

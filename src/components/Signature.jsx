@@ -9,7 +9,7 @@ const Signature = ({ isDark, className }) => {
     <img
       src={SignatureImage}
       alt="signature"
-      className={`w-100 ${signature} ${isDark ? darkSignature : null} ${className}`}
+      className={`${signature} ${isDark ? darkSignature : null} ${className}`}
     />
   );
 };
