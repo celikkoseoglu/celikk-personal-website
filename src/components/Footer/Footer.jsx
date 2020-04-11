@@ -1,6 +1,7 @@
 import React from "react";
 import Row from "../Util/Row";
 import {
+  footerStyle,
   footerDarkText,
   footerLightText,
   leftText,
@@ -9,6 +10,11 @@ import {
   footerList,
   footerLinks,
   signature,
+  footerLeft,
+  footerRight,
+  footerListDescription,
+  footerListContainer,
+  footerLocation
 } from "../../stylesheets/components/Footer/Footer.module.sass";
 
 import SocialMediaBar from "./SocialMediaBar";
@@ -18,19 +24,19 @@ const footer = require("../../data/footer");
 
 const Footer = () => {
   return (
-    <footer className="px-0 pt-md-2">
+    <footer className={footerStyle}>
       <Row>
-        <div className={`col-md-6 ${lineSeparator} pr-md-5 pb-2 pb-md-3 pb-md-0 mx-3 mx-md-0`}>
+        <div className={`${footerLeft} ${lineSeparator}`}>
           <p className={`${leftText} ${footerLightText}`}>{footer.leftText}</p>
         </div>
 
-        <div className="pl-md-5 col-md-6 my-auto text-center text-md-left pt-3 pt-md-0">
-          <p className={`${footerLightText} ${footerName} mb-1`}>{footer.title}</p>
-          <p className={`${footerLightText} mb-3`}>{footer.location}</p>
+        <div className={`${footerRight}`}>
+          <p className={`${footerLightText} ${footerName}`}>{footer.title}</p>
+          <p className={`${footerLightText} ${footerLocation}`}>{footer.location}</p>
           <SocialMediaBar socialMediaLinks={footer.socialMediaLinks} />
-          <div className="pt-4">
-            <p className={`mb-2 ${footerLightText}`}>{footer.linkText}</p>
-            <ul className={`pl-md-2 pl-0 ${footerLightText} ${footerList} mb-0`}>
+          <div className={footerListContainer}>
+            <p className={`${footerListDescription} ${footerLightText}`}>{footer.linkText}</p>
+            <ul className={`${footerLightText} ${footerList}`}>
               {footer.links.map((link, index) => (
                 <li key={link} className={footerLinks}>
                   <a href={link} className={footerDarkText}>
