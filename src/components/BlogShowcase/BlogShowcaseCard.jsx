@@ -4,6 +4,7 @@ import {
   square,
   montserrat,
   timestampStyle,
+  subtitleStyle,
   titleStyle,
   description,
 } from "../../stylesheets/components/BlogShowcase/BlogShowcaseCard.module.sass";
@@ -16,7 +17,7 @@ const BlogShowcaseCard = ({ title, subtitle, timestamp, minutes, blogPost, class
       <UnstyledLink to={`${BLOG_LINK}${blogPost}`}>
         <div className={description}>
           <h6 className={`${montserrat} ${titleStyle}`}>{title}</h6>
-          <p>{subtitle}</p>
+          <p className={subtitleStyle}>{subtitle}</p>
         </div>
         <p className={`${timestampStyle} ${montserrat}`}>
           {timestamp} - {minutes} read
