@@ -12,7 +12,9 @@ import {
   whiteLink,
   navbarToggle,
   navbarButton,
+  navbarContainer,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
+import Row from "../Util/Row";
 
 const NavigationBar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
@@ -33,22 +35,20 @@ const NavigationBar = ({ content }) => {
   });
 
   return (
-    <Navbar
+    <nav
       className={`${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}
-      fixed="top"
-      expand="md"
     >
-      <Container>
+      <Container className={navbarContainer}>
         <NavbarItem
           title={content.heroTitle}
           reference={content.heroReference}
           href={content.heroLink}
           className={brand}
         />
-        <Navbar.Toggle className={navbarToggle} aria-controls="basic-navbar-nav">
+        <button className={navbarToggle} aria-controls="basic-navbar-nav">
           <span className={navbarButton} />
-        </Navbar.Toggle>
-        <Navbar.Collapse>
+        </button>
+        <Row>
           <Nav className="mr-auto" />
           {content.items.map((item) => (
             <NavbarItem
@@ -59,9 +59,9 @@ const NavigationBar = ({ content }) => {
               key={item.title}
             />
           ))}
-        </Navbar.Collapse>
+        </Row>
       </Container>
-    </Navbar>
+    </nav>
   );
 };
 
