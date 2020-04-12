@@ -34,9 +34,7 @@ const NavigationBar = ({ content }) => {
 
   return (
     <Navbar
-      className={`navbar fixed-top navbar-expand-md ${customNavbar} ${
-        navbarExpanded ? topNavExpand : topNavCollapse
-      }`}
+      className={`${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}
       fixed="top"
       expand="md"
     >
