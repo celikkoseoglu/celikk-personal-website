@@ -8,7 +8,12 @@ Tools Used: `A pentalobe screwdriver`, `A brush`
 
 After 6 years with a Late 2013 Retina MacBook Pro 15", I finally bought a 16" MacBook Pro in December 2019. I got it mainly for the 8 core processor and Thunderbolt 3.
 
-After using it for about 4 months, I've started noticing major slowdowns. If I pushed the CPU for longer than 10 minutes while hooked up to an external monitor, I would start getting very heavy throttling on the CPU. While rendering videos, the CPU would even throttle down to 1GHz on all cores. There was something wrong, and I had to find it!
+After using it for about 4 months, I've started noticing major slowdowns. If I pushed the CPU for longer 
+than 10 minutes while hooked up to an external monitor, I would start getting very heavy throttling on the
+ CPU. While rendering videos, the CPU would even throttle down to 1GHz on all cores. There was something
+  wrong, and I had to find it!
+  
+<MediaCarousel folder="throttlingMacBook" images="throttling.png"/>
 
 At first, I thought it could be dust accumulating around the fans, but how can a 4 month old laptop get so much dust that it would throttle this badly? It couldn't have been dust. The laptop was too new to get that much dust in it. I've used my previous 2013 MacBook Pro 15" in the same room everyday for more than 6 months. It was clean inside when I opened it.
 
