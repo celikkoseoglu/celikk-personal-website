@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import NavbarItem from "./NavbarItem";
 import {
@@ -13,8 +11,9 @@ import {
   navbarToggle,
   navbarButton,
   navbarContainer,
+  mobileNavbar,
+  navbarLinks,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
-import Row from "../Util/Row";
 
 const NavigationBar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
@@ -35,21 +34,20 @@ const NavigationBar = ({ content }) => {
   });
 
   return (
-    <nav
-      className={`${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}
-    >
+    <nav className={`${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}>
       <Container className={navbarContainer}>
-        <NavbarItem
-          title={content.heroTitle}
-          reference={content.heroReference}
-          href={content.heroLink}
-          className={brand}
-        />
-        <button className={navbarToggle} aria-controls="basic-navbar-nav">
-          <span className={navbarButton} />
-        </button>
-        <Row>
-          <Nav className="mr-auto" />
+        <div className={mobileNavbar}>
+          <NavbarItem
+            title={content.heroTitle}
+            reference={content.heroReference}
+            href={content.heroLink}
+            className={brand}
+          />
+          <button className={navbarToggle} aria-controls="basic-navbar-nav">
+            <span className={navbarButton} />
+          </button>
+        </div>
+        <div className={navbarLinks}>
           {content.items.map((item) => (
             <NavbarItem
               title={item.title}
@@ -59,7 +57,7 @@ const NavigationBar = ({ content }) => {
               key={item.title}
             />
           ))}
-        </Row>
+        </div>
       </Container>
     </nav>
   );

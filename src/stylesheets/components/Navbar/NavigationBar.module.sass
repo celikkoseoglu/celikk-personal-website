@@ -57,6 +57,9 @@ $navbar-color: rgba(29, 61, 119, $transparency)
 
 .navbarToggle
   background: $brandColor
+  width: 45px
+  height: 35px
+  border-radius: 3px
   +screen(greaterThanMedium)
     display: none
 
@@ -72,3 +75,15 @@ $navbar-color: rgba(29, 61, 119, $transparency)
   display: flex
   align-items: center
   justify-content: space-between
+  +screen(lessThanMedium)
+    display: block
+
+.mobileNavbar
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.navbarLinks
+  display: flex
+  +screen(lessThanMedium)
+    display: block
