@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
 import NavbarItem from "./NavbarItem";
 import {
   customNavbar,
@@ -12,10 +9,17 @@ import {
   whiteLink,
   navbarToggle,
   navbarButton,
+  navbarContainer,
+  mobileNavbar,
+  navbarLinks,
+  mobileNavbarLinksCollapsed,
+  mobileNavbarLinksExpanded,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
+import Container from "../Util/Container";
 
 const NavigationBar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
+  const [mobileNavbarCollapsed, setMobileNavbarCollapsed] = useState(true);
 
   function handleScroll() {
     if (window.pageYOffset > 50 && navbarExpanded) {
@@ -33,23 +37,28 @@ const NavigationBar = ({ content }) => {
   });
 
   return (
-    <Navbar
-      className={`${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}
-      fixed="top"
-      expand="md"
-    >
-      <Container>
-        <NavbarItem
-          title={content.heroTitle}
-          reference={content.heroReference}
-          href={content.heroLink}
-          className={brand}
-        />
-        <Navbar.Toggle className={navbarToggle} aria-controls="basic-navbar-nav">
-          <span className={navbarButton} />
-        </Navbar.Toggle>
-        <Navbar.Collapse>
-          <Nav className="mr-auto" />
+    <nav className={`${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}>
+      <Container className={navbarContainer}>
+        <div className={mobileNavbar}>
+          <NavbarItem
+            title={content.heroTitle}
+            reference={content.heroReference}
+            href={content.heroLink}
+            className={brand}
+          />
+          <button
+            onClick={(_) => setMobileNavbarCollapsed(!mobileNavbarCollapsed)}
+            className={navbarToggle}
+            aria-controls="basic-navbar-nav"
+          >
+            <span className={navbarButton} />
+          </button>
+        </div>
+        <div
+          className={`${navbarLinks} ${
+            mobileNavbarCollapsed ? mobileNavbarLinksCollapsed : mobileNavbarLinksExpanded
+          }`}
+        >
           {content.items.map((item) => (
             <NavbarItem
               title={item.title}
@@ -59,9 +68,9 @@ const NavigationBar = ({ content }) => {
               key={item.title}
             />
           ))}
-        </Navbar.Collapse>
+        </div>
       </Container>
-    </Navbar>
+    </nav>
   );
 };
 

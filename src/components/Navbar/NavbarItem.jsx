@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-scroll";
 import UnstyledLink from "../Util/UnstyledLink";
+import { navLink } from "../../stylesheets/components/Navbar/NavbarItem.module.sass"
 
 const NavbarItem = ({ title, reference, href, className }) => {
   if (reference != null) {
     return (
       <Link
-        className={`${className} page-scroll nav-link`}
+        className={`${className} page-scroll ${navLink}`}
         to={reference}
         smooth
         offset={-50}
@@ -20,7 +21,7 @@ const NavbarItem = ({ title, reference, href, className }) => {
     );
   }
   return (
-    <UnstyledLink className={`${className} nav-link`} to={href}>
+    <UnstyledLink className={`${className} ${navLink}`} to={href}>
       {title}
     </UnstyledLink>
   );

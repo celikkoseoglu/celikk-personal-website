@@ -5,15 +5,13 @@ $brandColor: #fed136
 $navbar-color: rgba(29, 61, 119, $transparency)
 
 .topNavExpand
+  padding-top: 5px
+  padding-bottom: 5px
   +screen(lessThanMedium)
-    padding-top: 5px
-    padding-bottom: 5px
     background: $navbar-color
     backdrop-filter: blur(5px)
 
 .topNavCollapse
-  padding-top: 3px
-  padding-bottom: 3px
   background: $navbar-color
   backdrop-filter: blur(3px)
 
@@ -22,6 +20,9 @@ $navbar-color: rgba(29, 61, 119, $transparency)
   -webkit-transition: background .3s ease .1s, padding .5s ease
   -moz-transition: background .3s ease .1s, padding .5s ease
   transition: background .3s ease .1s, padding .5s ease
+  position: fixed
+  width: 100%
+  z-index: 1000
 
 .whiteLink
   color: #fff
@@ -56,6 +57,11 @@ $navbar-color: rgba(29, 61, 119, $transparency)
 
 .navbarToggle
   background: $brandColor
+  width: 45px
+  height: 35px
+  border-radius: 3px
+  +screen(greaterThanMedium)
+    display: none
 
 .navbarButton
   background-image: url("../../../data/images/hamburger.svg")
@@ -64,3 +70,31 @@ $navbar-color: rgba(29, 61, 119, $transparency)
   height: 1.3em
   vertical-align: middle
   background-size: 100% 100%
+  font-size: 20px
+
+.navbarContainer
+  display: flex
+  align-items: center
+  justify-content: space-between
+  +screen(lessThanMedium)
+    display: block
+
+.mobileNavbar
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.navbarLinks
+  display: flex
+  transition: max-height .2s ease-in-out
+  overflow: hidden
+  +screen(lessThanMedium)
+    display: block
+
+.mobileNavbarLinksCollapsed
+  +screen(lessThanMedium)
+    max-height: 0
+
+.mobileNavbarLinksExpanded
+  +screen(lessThanMedium)
+    max-height: 150px
