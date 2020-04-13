@@ -6,6 +6,13 @@
   "subtitle": "I write some stuff in here",
   "blogItems": [
     {
+      "title": "The Curious Case of a Throttling 16\" MacBook Pro",
+      "date": "13.04.2020",
+      "minutes": "5 min",
+      "subtitle": "Reviews said this laptop had better thermals compared to the previous generation. Mine had great thermals too, up until today.",
+      "blogPost": "throttlingMacBook"
+    },
+    {
       "title": "iOS vs Android - Why I Choose One Over the Other",
       "date": "17.03.2020",
       "minutes": "20 min",
