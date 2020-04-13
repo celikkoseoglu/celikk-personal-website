@@ -70,6 +70,7 @@ $navbar-color: rgba(29, 61, 119, $transparency)
   height: 1.3em
   vertical-align: middle
   background-size: 100% 100%
+  font-size: 20px
 
 .navbarContainer
   display: flex
@@ -85,11 +86,15 @@ $navbar-color: rgba(29, 61, 119, $transparency)
 
 .navbarLinks
   display: flex
-  transition: max-height 2s ease-in-out
+  transition: max-height .2s ease-in-out
+  overflow: hidden
   +screen(lessThanMedium)
     display: block
 
 .mobileNavbarLinksCollapsed
   +screen(lessThanMedium)
     max-height: 0
-    overflow: hidden
+
+.mobileNavbarLinksExpanded
+  +screen(lessThanMedium)
+    max-height: 150px

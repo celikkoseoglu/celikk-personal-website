@@ -13,6 +13,7 @@ import {
   mobileNavbar,
   navbarLinks,
   mobileNavbarLinksCollapsed,
+  mobileNavbarLinksExpanded,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
 import Container from "../Util/Container";
 
@@ -54,7 +55,9 @@ const NavigationBar = ({ content }) => {
           </button>
         </div>
         <div
-          className={`${navbarLinks} ${mobileNavbarCollapsed ? mobileNavbarLinksCollapsed : null}`}
+          className={`${navbarLinks} ${
+            mobileNavbarCollapsed ? mobileNavbarLinksCollapsed : mobileNavbarLinksExpanded
+          }`}
         >
           {content.items.map((item) => (
             <NavbarItem
