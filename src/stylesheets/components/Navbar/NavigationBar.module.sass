@@ -85,5 +85,11 @@ $navbar-color: rgba(29, 61, 119, $transparency)
 
 .navbarLinks
   display: flex
+  transition: max-height 2s ease-in-out
   +screen(lessThanMedium)
     display: block
+
+.mobileNavbarLinksCollapsed
+  +screen(lessThanMedium)
+    max-height: 0
+    overflow: hidden

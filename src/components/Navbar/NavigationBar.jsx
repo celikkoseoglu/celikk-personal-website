@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Container from "react-bootstrap/Container";
 import NavbarItem from "./NavbarItem";
 import {
   customNavbar,
@@ -13,10 +12,13 @@ import {
   navbarContainer,
   mobileNavbar,
   navbarLinks,
+  mobileNavbarLinksCollapsed,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
+import Container from "../Util/Container";
 
 const NavigationBar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
+  const [mobileNavbarCollapsed, setMobileNavbarCollapsed] = useState(true);
 
   function handleScroll() {
     if (window.pageYOffset > 50 && navbarExpanded) {
@@ -43,11 +45,17 @@ const NavigationBar = ({ content }) => {
             href={content.heroLink}
             className={brand}
           />
-          <button className={navbarToggle} aria-controls="basic-navbar-nav">
+          <button
+            onClick={(_) => setMobileNavbarCollapsed(!mobileNavbarCollapsed)}
+            className={navbarToggle}
+            aria-controls="basic-navbar-nav"
+          >
             <span className={navbarButton} />
           </button>
         </div>
-        <div className={navbarLinks}>
+        <div
+          className={`${navbarLinks} ${mobileNavbarCollapsed ? mobileNavbarLinksCollapsed : null}`}
+        >
           {content.items.map((item) => (
             <NavbarItem
               title={item.title}
