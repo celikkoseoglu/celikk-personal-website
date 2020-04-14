@@ -50,6 +50,7 @@ const NavigationBar = ({ content }) => {
             onClick={(_) => setMobileNavbarCollapsed(!mobileNavbarCollapsed)}
             className={navbarToggle}
             aria-controls="basic-navbar-nav"
+            type="button"
           >
             <span className={navbarButton} />
           </button>
