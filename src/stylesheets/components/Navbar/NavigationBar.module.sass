@@ -1,18 +1,19 @@
 @import "../../../utils/widthPicker"
 
 $transparency: 0.85
-$brandColor: #fed136
+$brandColor: #ff5b00
 $navbar-color: rgba(27, 27, 27, $transparency)
 
 .topNavExpand
   padding-top: 5px
   padding-bottom: 5px
 
+.topNavCollapse
+  backdrop-filter: blur(5px)
+
 .customNavbar
   color: #fff
-  -webkit-transition: background .3s ease .1s, padding .5s ease
-  -moz-transition: background .3s ease .1s, padding .5s ease
-  transition: background .3s ease .1s, padding .5s ease
+  transition: background .2s ease .1s, padding .5s ease
   position: fixed
   width: 100%
   z-index: 1000
@@ -37,7 +38,7 @@ $navbar-color: rgba(27, 27, 27, $transparency)
   font-family: 'Montserrat-Regular', sans-serif
   font-size: 1.5em
   &:hover
-    color: #fe9b00
+    color: #ff5b00
     -webkit-transition: color .3s ease-in-out
     -moz-transition: color .3s ease-in-out
     transition: color .3s ease-in-out

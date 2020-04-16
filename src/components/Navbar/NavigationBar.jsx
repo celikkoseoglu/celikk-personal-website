@@ -4,6 +4,7 @@ import NavbarItem from "./NavbarItem";
 import {
   customNavbar,
   topNavExpand,
+  topNavCollapse,
   brand,
   whiteLink,
   navbarToggle,
@@ -55,7 +56,7 @@ const NavigationBar = ({ content }) => {
               backdropFilter: `blur(${transparency * 5}px)`,
             }
       }
-      className={`${customNavbar} ${navbarExpanded ? topNavExpand : null}`}
+      className={`${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}
     >
       <Container className={navbarContainer}>
         <div className={mobileNavbar}>
