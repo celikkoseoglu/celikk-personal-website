@@ -1,8 +1,5 @@
 @import "../../utils/widthPicker"
 
-$transparency: 0.98
-$box-color: rgba(29, 61, 119, $transparency)
-
 .introHeadingStyle
   font-weight: 700
   font-size: 75px
@@ -12,6 +9,8 @@ $box-color: rgba(29, 61, 119, $transparency)
   +screen(lessThanMedium)
     font-size: 50px
     margin-bottom: 20px
+    line-height: 52px
+    font-weight: 100
 
 .introLeadInStyle
   font-size: 40px
@@ -19,7 +18,7 @@ $box-color: rgba(29, 61, 119, $transparency)
   margin-bottom: 70px
   +screen(lessThanMedium)
     font-size: 22px
-    line-height: 22px
+    line-height: 26px
     margin-bottom: 30px
 
 .introFont
@@ -37,13 +36,12 @@ $box-color: rgba(29, 61, 119, $transparency)
   border: 2px solid #fff
   width: 140px
   font-weight: 700
-  text-shadow: 0 0 30px #969696
+  text-shadow: 0 0 30px #707070
   line-height: 1.4em
   color: #F5F5F5
   transition: color 0.3s, border 0.3s
   text-decoration: none
-  +screen(lessThanMedium)
-    background: $box-color
+  backdrop-filter: blur(20px)
   &:hover
     border: 2px solid #ff5b00
     color: #ff5b00
