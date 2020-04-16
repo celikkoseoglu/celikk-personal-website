@@ -22,7 +22,7 @@ const aboutMe = require("../../data/aboutMe");
 
 const AboutMe = ({ id }) => {
   const profileImage = folders.aboutMeImages[0];
-  const profileImageTiny = folders.tinyHeroImages[1];
+  const profileImageTiny = folders.aboutMeImages[1];
 
   return (
     <Section id={id}>
