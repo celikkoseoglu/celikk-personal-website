@@ -1,19 +1,12 @@
 @import "../../../utils/widthPicker"
 
-$transparency: 0.95
+$transparency: 0.85
 $brandColor: #fed136
-$navbar-color: rgba(29, 61, 119, $transparency)
+$navbar-color: rgba(27, 27, 27, $transparency)
 
 .topNavExpand
   padding-top: 5px
   padding-bottom: 5px
-  +screen(lessThanMedium)
-    background: $navbar-color
-    backdrop-filter: blur(5px)
-
-.topNavCollapse
-  background: $navbar-color
-  backdrop-filter: blur(3px)
 
 .customNavbar
   color: #fff
@@ -56,7 +49,7 @@ $navbar-color: rgba(29, 61, 119, $transparency)
     font-size: 2em
 
 .navbarToggle
-  background: $brandColor
+  background-color: transparent
   width: 45px
   height: 35px
   border-radius: 4px

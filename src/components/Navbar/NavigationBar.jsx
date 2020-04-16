@@ -4,7 +4,6 @@ import NavbarItem from "./NavbarItem";
 import {
   customNavbar,
   topNavExpand,
-  topNavCollapse,
   brand,
   whiteLink,
   navbarToggle,
@@ -20,12 +19,19 @@ import Container from "../Util/Container";
 const NavigationBar = ({ content }) => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
   const [mobileNavbarCollapsed, setMobileNavbarCollapsed] = useState(true);
+  const [transparency, setTransparency] = useState(0.0);
 
   function handleScroll() {
     if (window.pageYOffset > 50 && navbarExpanded) {
       setNavbarExpanded(false);
     } else if (window.pageYOffset < 50 && !navbarExpanded) {
       setNavbarExpanded(true);
+    }
+
+    if (window.pageYOffset > 500) {
+      setTransparency(1);
+    } else {
+      setTransparency(window.pageYOffset / 500.0);
     }
   }
 
@@ -37,7 +43,20 @@ const NavigationBar = ({ content }) => {
   });
 
   return (
-    <nav className={`${customNavbar} ${navbarExpanded ? topNavExpand : topNavCollapse}`}>
+    <nav
+      style={
+        mobileNavbarCollapsed
+          ? {
+              backgroundColor: `rgba(27, 27, 27, ${transparency * 0.85})`,
+              backdropFilter: `blur(${transparency * 5}px)`,
+            }
+          : {
+              backgroundColor: `rgba(27, 27, 27, 0.85)`,
+              backdropFilter: `blur(${transparency * 5}px)`,
+            }
+      }
+      className={`${customNavbar} ${navbarExpanded ? topNavExpand : null}`}
+    >
       <Container className={navbarContainer}>
         <div className={mobileNavbar}>
           <NavbarItem
