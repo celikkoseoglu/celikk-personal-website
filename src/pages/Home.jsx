@@ -15,7 +15,6 @@ import Skills from "../components/Section/Skills";
 import BlogShowcase from "../components/Section/BlogShowcase";
 import Landing from "../components/Section/Landing";
 
-const navbar = require("../data/navbar");
 const content = require("../data/content");
 
 const Home = () => {
@@ -29,7 +28,7 @@ const Home = () => {
 
   return (
     <>
-      <NavigationBar content={navbar} />
+      <NavigationBar />
       <Landing id={content.landingReference} arrowAnimationReference={content.aboutMeReference} />
       <AboutMe id={content.aboutMeReference} />
       {horizontalRuler}

@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React, {useEffect, useState} from "react";
 import NavbarItem from "./NavbarItem";
 import {
-  customNavbar,
-  topNavExpand,
-  topNavCollapse,
   brand,
-  whiteLink,
-  navbarToggle,
-  navbarButton,
-  navbarContainer,
+  customNavbar,
   mobileNavbar,
-  navbarLinks,
   mobileNavbarLinksCollapsed,
   mobileNavbarLinksExpanded,
+  navbarButton,
+  navbarContainer,
+  navbarLinks,
+  navbarToggle,
+  topNavCollapse,
+  topNavExpand,
+  whiteLink,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
 import Container from "../Util/Container";
 
-const NavigationBar = ({ content }) => {
+const content = require("../../data/navbar");
+
+const NavigationBar = () => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);
   const [mobileNavbarCollapsed, setMobileNavbarCollapsed] = useState(true);
   const [transparency, setTransparency] = useState(0.0);
@@ -62,7 +63,7 @@ const NavigationBar = ({ content }) => {
         <div className={mobileNavbar}>
           <NavbarItem
             title={content.heroTitle}
-            reference={content.heroReference}
+            reference={content.landingReference}
             href={content.heroLink}
             className={brand}
           />
@@ -93,21 +94,6 @@ const NavigationBar = ({ content }) => {
       </Container>
     </nav>
   );
-};
-
-NavigationBar.propTypes = {
-  content: PropTypes.shape({
-    heroTitle: PropTypes.string.isRequired,
-    heroReference: PropTypes.string,
-    heroLink: PropTypes.string,
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        reference: PropTypes.string,
-        href: PropTypes.string,
-      })
-    ),
-  }).isRequired,
 };
 
 export default NavigationBar;

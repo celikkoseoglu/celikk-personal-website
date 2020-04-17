@@ -5,12 +5,13 @@ import {
   thickDark,
   light,
   thickLight,
+  clearBorder
 } from "../../stylesheets/components/Util/HorizontalRuler.module.sass";
 
 const HorizontalRuler = ({ isDark, isThick, className }) => {
   return (
     <hr
-      className={`${className} ${
+      className={`${className} ${clearBorder} ${
         // eslint-disable-next-line no-nested-ternary
         isDark ? (isThick ? thickDark : dark) : isThick ? thickLight : light
       }`}

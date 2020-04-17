@@ -9,6 +9,7 @@ import {
   blogPostMargins,
   blogPostNavbarMargin,
   footerStyle,
+  width
 } from "../stylesheets/BlogPost.module.sass";
 import MediaCarousel from "../components/MediaCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
@@ -51,7 +52,7 @@ const BlogPost = () => {
     <Redirect to="/404" />
   ) : (
     <div className={`${isDark ? blogPostDark : null} ${blogPostMargins} ${blogPostBackground}`}>
-      <div>
+      <div className={width}>
         <div className={blogPost}>
           <BlogNavbar
             button1Text={blogNavbar.goBackLabel}
