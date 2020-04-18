@@ -36,9 +36,7 @@ const NavigationBar = () => {
       setTransparency(window.pageYOffset / 500.0);
     }
 
-    if (!mobileNavbarCollapsed) {
-      setMobileNavbarCollapsed(true);
-    }
+    setMobileNavbarCollapsed(true);
   }
 
   useEffect(() => {
