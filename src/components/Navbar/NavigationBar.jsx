@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import NavbarItem from "./NavbarItem";
 import {
   brand,
@@ -6,7 +6,6 @@ import {
   mobileNavbar,
   mobileNavbarLinksCollapsed,
   mobileNavbarLinksExpanded,
-  navbarButton,
   navbarContainer,
   navbarLinks,
   navbarToggle,
@@ -15,6 +14,7 @@ import {
   whiteLink,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
 import Container from "../Util/Container";
+import NavbarToggle from "../NavbarToggle";
 
 const content = require("../../data/navbar");
 
@@ -34,6 +34,10 @@ const NavigationBar = () => {
       setTransparency(1);
     } else {
       setTransparency(window.pageYOffset / 500.0);
+    }
+
+    if (!mobileNavbarCollapsed) {
+      setMobileNavbarCollapsed(true);
     }
   }
 
@@ -67,14 +71,11 @@ const NavigationBar = () => {
             href={content.heroLink}
             className={brand}
           />
-          <button
-            onClick={(_) => setMobileNavbarCollapsed(!mobileNavbarCollapsed)}
+          <NavbarToggle
+            onClickMethod={setMobileNavbarCollapsed}
+            collapsed={mobileNavbarCollapsed}
             className={navbarToggle}
-            aria-controls="basic-navbar-nav"
-            type="button"
-          >
-            <span className={navbarButton} />
-          </button>
+          />
         </div>
         <div
           className={`${navbarLinks} ${

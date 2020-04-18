@@ -1,0 +1,34 @@
+$transitionDuration: .5s
+
+.navbarToggle
+  background: transparent
+  outline: none
+  border: none
+  height: 40px
+  width: 46px
+
+
+.navbarToggle:focus
+  .line
+    background: #dedede
+
+.line
+  display: block
+  width: 22px
+  height: 2px
+  background: #fff
+  border-radius: 4px
+  margin-top: 6px
+  margin-bottom: 6px
+  margin-left: auto
+  transition: transform $transitionDuration, margin $transitionDuration, background $transitionDuration
+
+.line1
+  transform: rotateZ(45deg)
+  margin-top: -2px
+  margin-bottom: -2px
+
+.line2
+  transform: rotateZ(-45deg)
+  margin-top: -2px
+  margin-bottom: -2px
