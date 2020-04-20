@@ -1,6 +1,7 @@
 import React from "react";
 import ProgressiveImage from "react-progressive-image";
 import PropTypes from "prop-types";
+import Markdown from "markdown-to-jsx";
 import Heading from "../Heading";
 import {
   description,
@@ -9,7 +10,6 @@ import {
   heading,
   titleRow,
   descriptionRow,
-  listItemStyle,
   listPadding,
 } from "../../stylesheets/components/Section/AboutMe.module.sass";
 import HorizontalRuler from "../Util/HorizontalRuler";
@@ -34,13 +34,9 @@ const AboutMe = ({ id }) => {
         <Row className={`${descriptionRow}`}>
           <div className={description}>
             <p>{aboutMe.descriptionHead}</p>
-            <ul className={listPadding}>
-              {aboutMe.items.map((item) => (
-                <li key={item} className={listItemStyle}>
-                  {item}
-                </li>
-              ))}
-            </ul>
+
+            <Markdown className={listPadding}>{aboutMe.items.join("\n")}</Markdown>
+
             <p>{aboutMe.descriptionTail}</p>
           </div>
           <ProgressiveImage src={profileImage} placeholder={profileImageTiny}>

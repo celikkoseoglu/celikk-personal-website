@@ -49,12 +49,14 @@
 
 .listPadding
   padding: 0
-
-.listItemStyle
-  list-style: none
-
-.listItemStyle::before
-  content: "\003E"
-  display: inline-block
-  font-size: 16px
-  width: 1em
+  li
+    list-style: none
+  li::before
+    content: "\003E"
+    display: inline-block
+    font-size: 16px
+    width: 1em
+  li a
+    color: #4b5357
+    text-decoration: underline
+    text-decoration-style: dotted
