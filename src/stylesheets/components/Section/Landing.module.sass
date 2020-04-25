@@ -16,9 +16,9 @@
   transition: .5s background-image ease-in-out
   color: #fff
   +screen(greaterThanMedium)
-    height: 100vh
+    height: 100vh // fallback for unsupported browsers
     height: var(--windowInnerHeight, 100vh)
-    //min-height: 665px
+    min-height: 665px
 
 .arrowMargin
   margin-top: -170px
