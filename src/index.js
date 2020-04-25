@@ -1,3 +1,4 @@
+import "react-app-polyfill/ie11"; // required for IE11
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
@@ -9,6 +10,11 @@ import { BLOG_LINK } from "./utils/Constants.utils";
 
 const CV = lazy(() => import("./pages/CV"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+
+// eslint-disable-next-line no-extend-native
+String.prototype.endsWith = function (suffix) { // required for IE11
+  return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
 
 ReactDOM.render(
   <BrowserRouter>
