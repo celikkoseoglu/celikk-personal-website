@@ -45,6 +45,7 @@ const ArrowAnimation = ({ className, reference }) => {
               calcMode="spline"
               keySplines={EASE_IN_OUT_BEZIER_SPLINES}
               keyTimes="0;1"
+              keyPoints="0;1" // required for Firefox. See: https://bugzilla.mozilla.org/show_bug.cgi?id=1105912
             >
               <mpath xlinkHref="#linePath" />
             </animateMotion>
@@ -89,12 +90,12 @@ const ArrowAnimation = ({ className, reference }) => {
 
 ArrowAnimation.propTypes = {
   className: PropTypes.string,
-  reference: PropTypes.string
+  reference: PropTypes.string,
 };
 
 ArrowAnimation.defaultProps = {
   className: null,
-  reference: null
+  reference: null,
 };
 
 export default ArrowAnimation;
