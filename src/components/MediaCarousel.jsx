@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import PropTypes from "prop-types";
 import { isWebpSupported } from "react-image-webp/dist/utils";
 import {
@@ -12,6 +11,7 @@ import {
   multipleImage,
   multipleImageIOS,
 } from "../stylesheets/components/MediaCarousel.module.sass";
+import { iOS } from "../utils/Constants.utils";
 
 const mediaCarouselText = require("../data/mediaCarousel");
 
@@ -26,8 +26,6 @@ const getImageLinkWithExtension = (imageLink) => {
 const MediaCarousel = ({ folder, images, isDark }) => {
   // detect if the user is coming from an iOS device and show help text instead of scroll bar
   // because mobile safari doesn't show scroll bars
-  const iOS =
-    !!window.navigator.userAgent.match(/iPad/i) || !!window.navigator.userAgent.match(/iPhone/i);
 
   const [imageLoaded, setImageLoaded] = useState([]);
 
