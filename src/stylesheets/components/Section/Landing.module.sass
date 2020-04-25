@@ -17,14 +17,19 @@
   color: #fff
   +screen(greaterThanMedium)
     height: 100vh
-    min-height: 750px
+    height: var(--windowInnerHeight, 100vh)
+    //min-height: 665px
 
 .arrowMargin
-  margin-top: -190px
+  margin-top: -170px
+  +screen(greaterThanExtraLarge)
+    margin-top: -190px
   +screen(lessThanMedium)
     margin-top: -130px
 
 .arrowSize
-  height: 140px
+  height: 130px
+  +screen(greaterThanExtraLarge)
+    height: 140px
   +screen(lessThanMedium)
     height: 110px

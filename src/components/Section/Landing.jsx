@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import ProgressiveImage from "react-progressive-image";
 import {
@@ -11,6 +11,7 @@ import Container from "../Util/Container";
 import ArrowAnimation from "../Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../../utils/FileManager.utils";
 import Hero from "../Hero";
+import { iPad } from "../../utils/Constants.utils";
 
 const hero = require("../../data/hero");
 
@@ -18,7 +19,33 @@ const randomLandingImageNumber = getRandomInt(folders.heroImages.length);
 const landingImageUrl = folders.heroImages[randomLandingImageNumber];
 const tinyLandingImageUrl = folders.tinyHeroImages[randomLandingImageNumber];
 
+let windowInnerWidth = 0;
+
 const Landing = ({ id, arrowAnimationReference }) => {
+  const handleResize = () => {
+    const currentWindowInnerWidth = window.innerWidth;
+    if (currentWindowInnerWidth !== windowInnerWidth) {
+      windowInnerWidth = currentWindowInnerWidth;
+      const windowInnerHeight = window.innerHeight;
+      document.documentElement.style.setProperty("--windowInnerHeight", `${windowInnerHeight}px`);
+    }
+  };
+
+  if (iPad) {
+    handleResize();
+  }
+
+  useEffect(() => {
+    if (iPad) {
+      window.addEventListener("resize", handleResize);
+    }
+    return () => {
+      if (iPad) {
+        window.removeEventListener("resize", handleResize);
+      }
+    };
+  });
+
   return (
     <ProgressiveImage src={landingImageUrl} placeholder={tinyLandingImageUrl}>
       {(src) => (
@@ -47,7 +74,6 @@ const Landing = ({ id, arrowAnimationReference }) => {
     </ProgressiveImage>
   );
 };
-
 Landing.propTypes = {
   id: PropTypes.string.isRequired,
   arrowAnimationReference: PropTypes.string.isRequired,
