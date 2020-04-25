@@ -15,6 +15,7 @@ import {
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
 import Container from "../Util/Container";
 import NavbarToggle from "../NavbarToggle";
+import { debounce, throttle } from "../../utils/Limitors";
 
 const content = require("../../data/navbar");
 
@@ -24,9 +25,9 @@ const NavigationBar = () => {
   const [transparency, setTransparency] = useState(0.0);
 
   function handleScroll() {
-    if (window.pageYOffset > 50 && navbarExpanded) {
+    if (window.pageYOffset > 50) {
       setNavbarExpanded(false);
-    } else if (window.pageYOffset < 50 && !navbarExpanded) {
+    } else if (window.pageYOffset < 50) {
       setNavbarExpanded(true);
     }
 
@@ -40,9 +41,9 @@ const NavigationBar = () => {
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
+    window.addEventListener("scroll", throttle(debounce(handleScroll)));
+    return () => window.removeEventListener("scroll", throttle(debounce(handleScroll)));
+  }, []);
 
   return (
     <nav

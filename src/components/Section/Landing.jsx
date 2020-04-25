@@ -12,6 +12,7 @@ import ArrowAnimation from "../Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../../utils/FileManager.utils";
 import Hero from "../Hero";
 import { iPad } from "../../utils/Constants.utils";
+import {debounce} from "../../utils/Limitors";
 
 const hero = require("../../data/hero");
 
@@ -37,11 +38,11 @@ const Landing = ({ id, arrowAnimationReference }) => {
 
   useEffect(() => {
     if (iPad) {
-      window.addEventListener("resize", handleResize);
+      window.addEventListener("resize", debounce(handleResize));
     }
     return () => {
       if (iPad) {
-        window.removeEventListener("resize", handleResize);
+        window.removeEventListener("resize", debounce(handleResize));
       }
     };
   });
