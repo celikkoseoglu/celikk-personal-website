@@ -9,7 +9,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import "./index.sass";
 import { BLOG_LINK } from "./utils/Constants.utils";
-import firebaseConfig from "../firebaseConfig";
+import firebaseConfig from "./firebaseConfig";
 
 const CV = lazy(() => import("./pages/CV"));
 const NotFound = lazy(() => import("./pages/NotFound"));

@@ -1,5 +1,5 @@
 #firebase API config
-firebaseConfig.js
+src/firebaseConfig.js
 
 # dependencies
 /node_modules
