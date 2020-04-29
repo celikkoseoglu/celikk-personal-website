@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "7.14.2",
     "local-storage-fallback": "4.1.1",
     "markdown-to-jsx": "6.11.1",
     "node-sass": "4.14.0",

@@ -6,7 +6,8 @@
   ],
   "plugins": [
     "react",
-    "prettier"
+    "prettier",
+    "react-hooks"
   ],
   "rules": {
     "react/jsx-filename-extension": [
