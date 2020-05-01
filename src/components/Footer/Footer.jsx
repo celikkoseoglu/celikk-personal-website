@@ -14,13 +14,18 @@ import {
   footerRight,
   footerListDescription,
   footerListContainer,
-  footerLocation
+  footerLocation,
+  footerGithubStats,
+  footerGithubStatsLink,
+  footerGithubStatsDiv,
 } from "../../stylesheets/components/Footer/Footer.module.sass";
 
 import SocialMediaBar from "./SocialMediaBar";
 import Signature from "../Signature";
+import GithubStatistics from "../GithubStatistics";
 
 const footer = require("../../data/footer");
+const githubStats = require("../../data/githubStats");
 
 const Footer = () => {
   return (
@@ -50,7 +55,16 @@ const Footer = () => {
       </Row>
 
       <Signature className={signature} isDark />
-      <p className={footerDarkText}>{footer.date}</p>
+
+      <div className={footerGithubStatsDiv}>
+        <a href={footer.githubLink} className={footerGithubStatsLink}>
+          <GithubStatistics
+            className={`${footerDarkText} ${footerGithubStats}`}
+            repo={githubStats.repo}
+            username={githubStats.username}
+          />
+        </a>
+      </div>
     </footer>
   );
 };
