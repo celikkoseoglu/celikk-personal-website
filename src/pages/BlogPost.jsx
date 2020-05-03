@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { Redirect, useParams } from "react-router-dom";
 import {
-  blogPost,
+  blogPostStyle,
   blogPostBackground,
   blogPostDark,
   blogPostMargins,
@@ -37,6 +37,7 @@ const BlogPost = () => {
   }
 
   useEffect(() => {
+    document.title = `${footer.title} - ${blogPostFileName}`;
     if (!redirect) {
       console.log("called useEffect");
       firebaseAnalytics.logEvent(`${blogPostFileName}_visited`);
@@ -57,7 +58,7 @@ const BlogPost = () => {
   ) : (
     <div className={`${isDark ? blogPostDark : null} ${blogPostMargins} ${blogPostBackground}`}>
       <div className={width}>
-        <div className={blogPost}>
+        <div className={blogPostStyle}>
           <BlogNavbar
             button1Text={blogNavbar.goBackLabel}
             button1Link={blogNavbar.blogLink}

@@ -31,6 +31,7 @@ const Blog = () => {
 
   useEffect(() => {
     firebaseAnalytics.logEvent("blog_visited");
+    document.title = blog.pageTitle;
   });
 
   return (

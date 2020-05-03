@@ -29,6 +29,7 @@ const Home = () => {
 
   useEffect(() => {
     firebaseAnalytics.logEvent("homepage_visited");
+    document.title = content.pageTitle;
   });
 
   return (
