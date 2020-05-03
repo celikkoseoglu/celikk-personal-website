@@ -1,8 +1,8 @@
 @import "../utils/widthPicker"
 
 .notFound
-  height: 100%
-  width: 100%
+  min-height: 100%
+  min-width: 100%
   position: absolute
   display: flex
   align-items: center
@@ -10,6 +10,7 @@
   text-align: center
   font-family: Avenir-Roman, sans-serif
   background: #FCFCFC
+  padding-bottom: 20px
 
   @supports (-webkit-text-stroke: 2px black)
     h1
@@ -37,3 +38,6 @@
   &:hover
     border: 1px solid #ff5b00
     color: #ff5b00
+
+.noMargin
+  margin: 0
