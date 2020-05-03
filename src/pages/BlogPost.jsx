@@ -9,7 +9,7 @@ import {
   blogPostMargins,
   blogPostNavbarMargin,
   footerStyle,
-  width
+  width,
 } from "../stylesheets/BlogPost.module.sass";
 import MediaCarousel from "../components/MediaCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
@@ -17,6 +17,7 @@ import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Util/HorizontalRuler";
 import LoadingIndicator from "../components/Util/LoadingIndicator";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
+import { firebaseAnalytics } from "../firebaseConfig";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
@@ -38,6 +39,8 @@ const BlogPost = () => {
 
   useEffect(() => {
     if (!redirect) {
+      firebaseAnalytics.logEvent(`${blogPostFileName}_visited`);
+
       window.scrollTo(0, 0);
       storage.setItem("theme", isDark.toString());
 
@@ -45,8 +48,10 @@ const BlogPost = () => {
         .then((res) => res.text())
         .then((response) => setPost(response))
         .catch((err) => setPost(err));
+    } else {
+      firebaseAnalytics.logEvent(`redirected_to_404_${blogPostFileName}`);
     }
-  }, [isDark, hashedBlogFileLink, redirect]);
+  }, [isDark, hashedBlogFileLink, redirect, blogPostFileName]);
 
   return redirect ? (
     <Redirect to="/404" />

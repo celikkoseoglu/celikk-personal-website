@@ -19,6 +19,7 @@ import { getInitialTheme } from "../utils/FileManager.utils";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Util/HorizontalRuler";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
+import { firebaseAnalytics } from "../firebaseConfig";
 
 const blog = require("../data/blog");
 const footer = require("../data/footer");
@@ -30,6 +31,7 @@ const Blog = () => {
   const [isDark, setIsDark] = useState(getInitialTheme());
 
   useEffect(() => {
+    firebaseAnalytics.logEvent("blog_visited");
     storage.setItem("theme", isDark.toString());
   }, [isDark]);
 

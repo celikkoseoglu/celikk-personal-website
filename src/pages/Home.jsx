@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "../components/Util/Container";
 import NavigationBar from "../components/Navbar/NavigationBar";
 import {
@@ -14,6 +14,7 @@ import Projects from "../components/Section/Projects";
 import Skills from "../components/Section/Skills";
 import BlogShowcase from "../components/Section/BlogShowcase";
 import Landing from "../components/Section/Landing";
+import { firebaseAnalytics } from "../firebaseConfig";
 
 const content = require("../data/content");
 
@@ -25,6 +26,10 @@ const Home = () => {
       </Container>
     </div>
   );
+
+  useEffect(() => {
+    firebaseAnalytics.logEvent("homepage_visited");
+  });
 
   return (
     <>

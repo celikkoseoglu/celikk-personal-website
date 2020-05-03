@@ -1,6 +1,4 @@
 import "react-app-polyfill/ie11"; // required for IE11
-import * as firebase from "firebase/app";
-import "firebase/analytics";
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
@@ -9,7 +7,6 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import "./index.sass";
 import { BLOG_LINK } from "./utils/Constants.utils";
-import firebaseConfig from "./firebaseConfig";
 
 const CV = lazy(() => import("./pages/CV"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -19,9 +16,6 @@ String.prototype.endsWith = function (suffix) {
   // required for IE11
   return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
-
-firebase.initializeApp(firebaseConfig);
-firebase.analytics().logEvent("website_visited");
 
 ReactDOM.render(
   <BrowserRouter>
