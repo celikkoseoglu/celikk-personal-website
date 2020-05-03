@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import storage from "local-storage-fallback";
 import Markdown from "markdown-to-jsx";
 import { Redirect, useParams } from "react-router-dom";
 import {
@@ -39,10 +38,10 @@ const BlogPost = () => {
 
   useEffect(() => {
     if (!redirect) {
+      console.log("called useEffect");
       firebaseAnalytics.logEvent(`${blogPostFileName}_visited`);
 
       window.scrollTo(0, 0);
-      storage.setItem("theme", isDark.toString());
 
       fetch(`/static/media/${hashedBlogFileLink}`)
         .then((res) => res.text())
@@ -51,7 +50,7 @@ const BlogPost = () => {
     } else {
       firebaseAnalytics.logEvent(`redirected_to_404_${blogPostFileName}`);
     }
-  }, [isDark, hashedBlogFileLink, redirect, blogPostFileName]);
+  }, [hashedBlogFileLink, redirect, blogPostFileName]);
 
   return redirect ? (
     <Redirect to="/404" />

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import storage from "local-storage-fallback";
 import BlogItem from "../components/BlogItem";
 import Row from "../components/Util/Row";
 import {
@@ -32,8 +31,7 @@ const Blog = () => {
 
   useEffect(() => {
     firebaseAnalytics.logEvent("blog_visited");
-    storage.setItem("theme", isDark.toString());
-  }, [isDark]);
+  });
 
   return (
     <div className={`${background} ${isDark ? blogDark : null}`}>

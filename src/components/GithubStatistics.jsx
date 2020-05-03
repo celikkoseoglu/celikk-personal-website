@@ -35,7 +35,7 @@ const GithubStatistics = ({ username, repo, className }) => {
 
 GithubStatistics.propTypes = {
   username: PropTypes.string.isRequired,
-  repo: PropTypes.bool.isRequired,
+  repo: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 
