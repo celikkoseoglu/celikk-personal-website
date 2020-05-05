@@ -1,6 +1,6 @@
 # Reduce Your React Bundle Size by Importing Only the Required Favicons.
 
-### Introducing React-Icons. A node dependency that allows you to select import icons instead of the whole favicon css
+### Introducing React-Icons. A node dependency that allows you to select import icons instead of the whole favicon css.
 
 ######January 03, 2020 - 5 min read
 
