@@ -1,17 +1,17 @@
 $animation-duration: .15s
 
-.blogTitle
+.blogItemLink
+  h4, h6, p
+    transition: color $animation-duration ease
   &:hover h4
-    transition: color $animation-duration ease
-    color: #ff5b00
+    color: #002757
+  &:hover h6,  &:hover p
+    color: #003c85
 
-.blogTitle h4
-  transition: color $animation-duration ease
-
-.blogSubtitle
-  &:hover h6
-    transition: color $animation-duration ease
-    color: #ff8800
-
-.blogSubtitle h6
-  transition: color $animation-duration ease
+.blogItemLinkDark
+  h4, h6, p
+    color: #fff
+  &:hover h4
+    color: #a2c1eb
+  &:hover h6,  &:hover p
+    color: #7998c2

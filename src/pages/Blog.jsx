@@ -8,7 +8,7 @@ import {
   blogDark,
   blogStyle,
   circularImage,
-  vericalCenter,
+  verticalCenter,
   noMargin,
   blogItemMargin,
   blogNavbarMargin,
@@ -35,7 +35,7 @@ const Blog = () => {
   });
 
   return (
-    <div className={`${background} ${isDark ? blogDark : null}`}>
+    <div className={`${background} ${isDark && blogDark}`}>
       <div className={`${blogStyle}`}>
         <BlogNavbar
           button1Text={blog.name}
@@ -45,7 +45,7 @@ const Blog = () => {
           isDark={isDark}
           setIsDark={setIsDark}
         />
-        <Row className={`${blogItemMargin} ${vericalCenter}`}>
+        <Row className={`${blogItemMargin} ${verticalCenter}`}>
           <div>
             <img
               className={`${circularImage} ${profilePicture}`}
@@ -67,6 +67,7 @@ const Blog = () => {
             minutes={blogItem.minutes}
             subtitle={blogItem.subtitle}
             blogPost={blogItem.blogPost}
+            isDark={isDark}
             key={blogItem.title}
           />
         ))}
