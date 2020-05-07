@@ -25,7 +25,7 @@ Then I thought maybe I had a  bad thermal paste application coming from the fact
 
 Even though there isn't much dust elsewhere on the laptop, a perfect circle of dust formed on the tip of the fan blades, blocking almost all of the airflow. I've opened plenty of MacBooks in the past, but I've never seen this kind of dust formation before. It might be related with the new fan blade design on the 16" MacBook Pro. Maybe this design is more susceptible to dust formation.
 
-I picked up a brush and cleaned it off. Put the cover and the screws back in. Problem solved. No more throtlting.
+I picked up a brush and cleaned it off. Put the cover and the screws back in. Problem solved. No more throttling.
 
 Moral of the story is: 
 
