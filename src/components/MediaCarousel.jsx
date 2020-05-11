@@ -23,24 +23,30 @@ const getImageLinkWithExtension = (imageLink) => {
   return imageLink;
 };
 
+const imageLinkWithExtension = (folder, imageFileName) => {
+  return `data/images/blog/${folder}/${getImageLinkWithExtension(imageFileName)}`;
+};
+
 const MediaCarousel = ({ folder, images, isDark }) => {
+  const imageFileNames = images.split(",");
+  const [imageLoaded, setImageLoaded] = useState(new Array(imageFileNames.length));
+
   // detect if the user is coming from an iOS device and show help text instead of scroll bar
   // because mobile safari doesn't show scroll bars
-
-  const [imageLoaded, setImageLoaded] = useState([]);
-
   const hasMultipleImagesAndiOS = () => {
     return iOS && imageLoaded.length > 1;
   };
   useEffect(() => {
-    const imageLinkWithExtension = (imageFileName) => {
-      return `data/images/blog/${folder}/${getImageLinkWithExtension(imageFileName)}`;
-    };
-    images.split(",").map((imageFileName) =>
-      import(`../${imageLinkWithExtension(imageFileName)}`).then((imageLink) => {
-        setImageLoaded((oldArray) => [...oldArray, imageLink.default]);
+    imageFileNames.map((imageFileName, index) =>
+      import(`../${imageLinkWithExtension(folder, imageFileName)}`).then((imageLink) => {
+        setImageLoaded((oldArray) => {
+          const prev = [...oldArray];
+          prev[index] = imageLink.default;
+          return prev;
+        });
       })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [folder, images]);
 
   return (
@@ -53,7 +59,7 @@ const MediaCarousel = ({ folder, images, isDark }) => {
       >
         {imageLoaded
           ? imageLoaded.map((imageRelativeLink, index) =>
-              imageRelativeLink.endsWith(".mp4") ? (
+              imageRelativeLink !== undefined && imageRelativeLink.endsWith(".mp4") ? (
                 // eslint-disable-next-line jsx-a11y/media-has-caption
                 <video
                   className={`${autoSizeImage} ${index > 0 && imageMargin}`}
