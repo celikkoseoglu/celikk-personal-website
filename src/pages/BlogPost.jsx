@@ -39,7 +39,6 @@ const BlogPost = () => {
   useEffect(() => {
     document.title = `${footer.title} - ${blogPostFileName}`;
     if (!redirect) {
-      console.log("called useEffect");
       firebaseAnalytics.logEvent(`${blogPostFileName}_visited`);
 
       window.scrollTo(0, 0);
