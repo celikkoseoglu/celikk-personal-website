@@ -1,20 +1,75 @@
-# Personal Website with React
+<h1 align="center">
+  CK
+</h1>
+<h2 align="center">
+  celikk.me - personal website
+</h2>
+<p align="center">
+  My new personal website <a href="https://celikk.me" target="_blank">celikk.me</a> built using React from scratch. Hosted on <a href="https://firebase.google.com/docs/hosting" target="_blank">Firebase</a>.
+</p>
 
-https://celikk.me
+![collage](https://i.ibb.co/3h4ZyFq/collage.png)
 
-After several years of service, it was time to deprecate my [old website](https://github.com/celikkoseoglu/personalwebsite) and build a new one. It was showing it's age and was difficult to maintain compared to a modern website built using modern tools.
+## 🛠 Development Setup
 
-So, I've stated this project to port everything over from my previous website into a React project. I didn't know any react at the beginning, and I still don't know a lot but this project is a great opportunity for me to learn.
+1. Install dependencies
 
-For now, this will be the main source of my Personal Website for some time (probably until something else replaces React in the future). I will be making small changes from time to time and with every change, this repo will be updated.
+   ```sh
+   npm install
+   ```
 
-#### But most importantly,
+2. Start the development server
 
-I have been doing streams while I work on this project. If you want to see my learning process, join the discussion. Give me recommendations on what/how to do.
+   ```sh
+   npm start
+   ```
+
+## 🚀 Deployment
+
+I use Firebase for hosting, but this project is platform agnostic. Feel free to use other hosting platforms.
+
+1. Generate a full static production build
+
+   ```sh
+   npm run-script build
+   ```
+
+2. Install Firebase
+   ```sh
+   npm install -g firebase-tools
+   ```
+   
+3. Login with Firebase
+
+   ```sh
+   firebase login
+   ```
+
+4. Link with Firebase Project
+
+   ```sh
+   firebase use --add
+   ```
+
+5. Deploy using Firebase
+
+   ```sh
+   firebase deploy
+   ```
+
+## ❓ If you don't understand how a certain part works;
+
+Watch how I implemented it. If you want to see my learning process, join the discussion. Give me recommendations on what/how to do.
 
 - [YouTube Playlist](https://www.youtube.com/watch?v=2sxI11_lxSg&list=PLNkfllcUq3AkdeD4Aqp_Z2AIGyyF00_d8&index=39)
 - [Twitch](https://www.twitch.tv/celikkoseoglu)
 
-#### Current Status of Kanban Board
+## 🚨 Forking this repo and copying code
 
-![Kanban Board](https://i.ibb.co/NnxYqVF/kanban-board.jpg)
+I encourage you to do it. Let me know if you do. Also feel free to create pull requests if you think you've made an improvement.
+
+If you copied the whole thing, giving some credit would be nice but I can't force you to do it.
+
+<hr/>
+
+[Previous Personal Website](https://github.com/celikkoseoglu/personalwebsite)
