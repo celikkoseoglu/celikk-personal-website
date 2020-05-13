@@ -1,6 +1,7 @@
 @import "../utils/animationTimer"
 @import "../utils/variables"
 @import "../utils/widthPicker"
+@import "../utils/blogPalette"
 
 .blogPostStyle
   max-width: $blog-width
@@ -15,37 +16,33 @@
     font-weight: bolder
   h6
     margin-bottom: 30px
-    color: #A9A9A9
+    color: $grey
   code
-    color: #000080
-    -webkit-transition: color $colorTransitionDuration linear
-    -moz-transition: color $colorTransitionDuration linear
+    color: $dark-blue
     transition: color $colorTransitionDuration linear
     transition-delay: $transitionDelay
   pre
-    background: #dfdfdf
+    background: $pale-grey
     padding: 10px
     -webkit-transition: $backgroundTransition
     -moz-transition: $backgroundTransition
     transition: $backgroundTransition
     transition-delay: $transitionDelay
   blockquote
-    background: #f9f9f9
-    border-left: 10px solid #ccc
+    background: $pale-grey
+    border-left: 10px solid $light-grey
     margin: 1.5em 0
     padding: 0.5em 10px
-    -webkit-transition: background-color $colorTransitionDuration linear
-    -moz-transition: background-color $colorTransitionDuration linear
     transition: background-color $colorTransitionDuration linear
   blockquote:before
-    color: #ccc
+    color: $light-grey
     content: open-quote
     font-size: 4em
     line-height: 0.1em
     margin-right: 0.25em
     vertical-align: -0.28em
   blockquote:after
-    color: #ccc
+    color: $light-grey
     content: close-quote
     font-size: 4em
     line-height: 0.8em
@@ -61,9 +58,18 @@
     font-size: 16px
     width: 1em
 
+.blogPostDarkStyle
+  code
+    color: $sky-blue
+  pre
+    background: $shade-black
+  blockquote
+    background: $shade-black
+    border-left: 10px solid $shade-black
+
 .blogPostBackground
   min-height: 100vh
-  background-color: #fff
+  background-color: $white
   transition: background-color $colorTransitionDuration
 
 .blogPostMargins
@@ -78,23 +84,16 @@
   +screen(small)
     margin-bottom: 40px
 
+.blogPostDark
+  color: $white
+  background-color: $midnight-black
+
 .footerStyle
   max-width: $blog-width
   padding-bottom: 20px
   padding-top: 10px
   margin-left: auto
   margin-right: auto
-
-.blogPostDark
-  color: #FFF
-  background-color: #111
-  code
-    color: #87a5cf
-  pre
-    background: #222
-  blockquote
-    background: #333
-    border-left: 10px solid #222
 
 .width
   width: 100%

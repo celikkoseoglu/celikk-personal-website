@@ -1,17 +1,19 @@
+@import "../../utils/blogPalette"
+
 $animation-duration: .15s
 
 .blogItemLink
   h4, h6, p
     transition: color $animation-duration ease
   &:hover h4
-    color: #002757
+    color: $dark-blue
   &:hover h6,  &:hover p
-    color: #003c85
+    color: $dark-blue
 
 .blogItemLinkDark
   h4, h6, p
-    color: #fff
+    color: $white
   &:hover h4
-    color: #a2c1eb
+    color: $sky-blue
   &:hover h6,  &:hover p
-    color: #7998c2
+    color: $light-blue

@@ -3,6 +3,7 @@ import Markdown from "markdown-to-jsx";
 import { Redirect, useParams } from "react-router-dom";
 import {
   blogPostStyle,
+  blogPostDarkStyle,
   blogPostBackground,
   blogPostDark,
   blogPostMargins,
@@ -57,7 +58,7 @@ const BlogPost = () => {
   ) : (
     <div className={`${isDark ? blogPostDark : null} ${blogPostMargins} ${blogPostBackground}`}>
       <div className={width}>
-        <div className={blogPostStyle}>
+        <div className={`${blogPostStyle} ${isDark && blogPostDarkStyle}`}>
           <BlogNavbar
             button1Text={blogNavbar.goBackLabel}
             button1Link={blogNavbar.blogLink}

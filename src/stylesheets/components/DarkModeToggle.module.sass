@@ -1,3 +1,5 @@
+@import "../../utils/blogPalette"
+
 $transitionDuration: .5s
 
 .darkModeToggle
@@ -21,19 +23,19 @@ $transitionDuration: .5s
   outline: 0
 
 .sun
-  background: #000
+  background: $black
   .crescent
     transform: scale(1)
-    background: #fff
+    background: $white
 
 .sun:focus
-  background: #333
+  background: $shade-black
 
 .moon
-  background: #fff
+  background: $white
   .crescent
     transform: scale(0)
-    background: #111
+    background: $midnight-black
 
 .moon:focus
-  background: #DDD
+  background: $light-grey
