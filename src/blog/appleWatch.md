@@ -189,7 +189,7 @@ I am very glad that we have this technology on our wrists now. It is yet another
 
 Moral of the story is: 
 
-#### Wearing a smartwatch has never been more accessible and great as before!
+#### Wearing a smartwatch is more accessible and exciting than ever before!
 
 I wonder what's next in terns of smart wearables. Glasses? Rings?
 
