@@ -1,7 +1,7 @@
 @import "../../../utils/widthPicker"
+@import "../../../utils/homePalette"
 
 $transparency: 0.85
-$brandColor: #ff5b00
 $navbar-color: rgba(27, 27, 27, $transparency)
 
 .topNavExpand
@@ -12,36 +12,31 @@ $navbar-color: rgba(27, 27, 27, $transparency)
   backdrop-filter: blur(5px)
 
 .customNavbar
-  color: #fff
   transition: background .2s ease .1s, padding .5s ease
   position: fixed
   width: 100%
   z-index: 1000
 
 .whiteLink
-  color: #fff
+  color: $pale-grey
   font-family: 'Montserrat-Regular', sans-serif
   font-weight: 100
+  transition: color .3s ease-in-out
   +screen(small)
     padding-left: 2px
   &:hover
-    color: $brandColor
-    -webkit-transition: color .3s ease-in-out
-    -moz-transition: color .3s ease-in-out
-    transition: color .3s ease-in-out
+    color: $white
 
 .brand
   // this allows for more space on the NavBar on a small
   // screen like portrait iPad so items don't wrap to the next line
   padding-right: 0
-  color: #fff
+  color: $pale-grey
   font-family: 'Montserrat-Regular', sans-serif
   font-size: 1.5em
+  transition: color .3s ease-in-out
   &:hover
-    color: #ff5b00
-    -webkit-transition: color .3s ease-in-out
-    -moz-transition: color .3s ease-in-out
-    transition: color .3s ease-in-out
+    color: $white
   +screen(small)
     padding-left: 0
   +screen(large)
