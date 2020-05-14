@@ -1,3 +1,5 @@
+@import "../../../utils/homePalette"
+
 .socialMediaButton
   text-align: center
   display: block
@@ -7,34 +9,34 @@
   border-radius: 100%
   font-size: 18px
   line-height: 40px
-  color: #fff
+  color: $white
   transition: background-color .2s, transform 0.2s
   margin: 0
   background: #444
   &:hover
     transform: scale(1.075)
-    color: #fff
+    color: $white
   &:active
     transform: scale(1.025)
 
 .twitter
   &:hover, &:focus, &:active
-    background-color: #55ACEE
+    background-color: $twitter
 .facebook
   &:hover, &:focus, &:active
-    background-color: #3B5998
+    background-color: $facebook
 .linkedin
   &:hover, &:focus, &:active
-    background-color: #007BB5
+    background-color: $linkedin
 .github
   &:hover, &:focus, &:active
-    background-color: #000000
+    background-color: $github
 .instagram
   &:hover, &:focus, &:active
-    background-color: #C13584
+    background-color: $instagram
 .mail
   &:hover, &:focus, &:active
-    background-color: #DDDDDD
+    background-color: $mail
 
 .noVerticalMargin
   margin-top: 0
