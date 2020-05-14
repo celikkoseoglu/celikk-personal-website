@@ -1,27 +1,27 @@
+@import "../../../utils/homePalette"
+
 .square
   width: 230px
-  border: 1px solid #979797
+  border: 1px solid $grey
   border-radius: 5px
-  -webkit-box-shadow: 6px 6px 0 0 #C8C8C8
-  box-shadow: 6px 6px 0 0 #C8C8C8
-  transition: box-shadow 0.1s, transform 0.1s, color 0.1s
+  box-shadow: 6px 6px 0 0 $light-grey
+  transition: box-shadow 0.1s, transform 0.1s
   text-align: center
   padding: 8px
   margin-top: 20px
   margin-left: auto
   margin-right: auto
   &:hover
-    color: #3d3d3d
-    -webkit-box-shadow: 8px 8px 0 0 #C8C8C8
-    box-shadow: 8px 8px 0 0 #C8C8C8
+    -webkit-box-shadow: 8px 8px 0 0 $light-grey
+    box-shadow: 8px 8px 0 0 $light-grey
     transform: scale(1.01)
   &:active
     transform: scale(1.005)
-    -webkit-box-shadow: 7px 7px 0 0 #C8C8C8
-    box-shadow: 7px 7px 0 0 #C8C8C8
+    -webkit-box-shadow: 7px 7px 0 0 $light-grey
+    box-shadow: 7px 7px 0 0 $light-grey
 
 .textColor
-  color: #696969
+  color: $shade-black
 
 .montserrat
   font-family: 'Montserrat-Regular', sans-serif

@@ -1,25 +1,26 @@
 @import "../../../utils/widthPicker"
+@import "../../../utils/homePalette"
 
 .square
   height: 230px
   width: 230px
   margin: 30px
   padding: 15px
-  border: 1px solid #979797
+  border: 1px solid $dark-grey
   border-radius: 5px
-  -webkit-box-shadow: 6px 6px 0 0 #C8C8C8
-  box-shadow: 6px 6px 0 0 #C8C8C8
+  -webkit-box-shadow: 6px 6px 0 0 $light-grey
+  box-shadow: 6px 6px 0 0 $light-grey
   +screen(small)
-    -webkit-box-shadow: 5px 5px 0 0 #C8C8C8
-    box-shadow: 5px 5px 0 0 #C8C8C8
+    -webkit-box-shadow: 5px 5px 0 0 $light-grey
+    box-shadow: 5px 5px 0 0 $light-grey
   transition: box-shadow 0.1s, transform 0.1s
   &:hover
-    -webkit-box-shadow: 8px 8px 0 0 #C8C8C8
-    box-shadow: 8px 8px 0 0 #C8C8C8
+    -webkit-box-shadow: 8px 8px 0 0 $light-grey
+    box-shadow: 8px 8px 0 0 $light-grey
     transform: scale(1.01)
     +screen(small)
-      -webkit-box-shadow: 7px 7px 0 0 #C8C8C8
-      box-shadow: 7px 7px 0 0 #C8C8C8
+      -webkit-box-shadow: 7px 7px 0 0 $light-grey
+      box-shadow: 7px 7px 0 0 $light-grey
       transform: scale(1.005)
   +screen(small)
     height: auto
@@ -38,7 +39,7 @@
 
 .timestampStyle
   font-size: 13px
-  color: #696969
+  color: $dark-grey
   margin-bottom: 0
   margin-top: 0
 
