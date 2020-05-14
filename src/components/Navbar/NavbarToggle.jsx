@@ -6,7 +6,7 @@ import {
   line1,
   line2,
   navbarToggle,
-} from "../stylesheets/components/NavbarToggle.module.sass";
+} from "../../stylesheets/components/Navbar/NavbarToggle.module.sass";
 
 const NavbarToggle = ({ collapsed, onClickMethod, className }) => {
   return (

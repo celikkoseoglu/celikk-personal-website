@@ -14,7 +14,7 @@ import {
   whiteLink,
 } from "../../stylesheets/components/Navbar/NavigationBar.module.sass";
 import Container from "../Util/Container";
-import NavbarToggle from "../NavbarToggle";
+import NavbarToggle from "./NavbarToggle";
 import { debounce, throttle } from "../../utils/Limitors";
 
 const content = require("../../data/navbar");
