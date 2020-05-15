@@ -1,4 +1,5 @@
 @import "../../../utils/animationTimer"
+@import "../../../utils/colorPalette"
 
 .spinner
   border-radius: 50%
@@ -12,11 +13,15 @@
   transition: border $colorTransitionDuration linear
 
 .light
-  border: 12px solid #a3a3a3
-  border-top: 12px solid #000080
+  border-left: 12px solid $grey
+  border-right: 12px solid $grey
+  border-bottom: 12px solid $grey
+  border-top: 12px solid $dark-blue
 .dark
-  border: 12px solid #444
-  border-top: 12px solid #87a5cf
+  border-left: 12px solid $oxidised-silver
+  border-right: 12px solid $oxidised-silver
+  border-bottom: 12px solid $oxidised-silver
+  border-top: 12px solid $light-blue
 
 @-webkit-keyframes spin
   0%
