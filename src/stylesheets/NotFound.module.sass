@@ -1,4 +1,5 @@
 @import "../utils/widthPicker"
+@import "../utils/colorPalette"
 
 .notFoundStyle
   min-height: 100%
@@ -9,13 +10,13 @@
   justify-content: center
   text-align: center
   font-family: Avenir-Roman, sans-serif
-  background: #FCFCFC
+  background: $off-white
   padding-bottom: 20px
 
-  @supports (-webkit-text-stroke: 2px black)
+  @supports (-webkit-text-stroke: 2px $black)
     h1
-      -webkit-text-stroke: 2px black
-      -webkit-text-fill-color: white
+      -webkit-text-stroke: 2px $black
+      -webkit-text-fill-color: $white
   h1
     font-size: 130px
     margin-bottom: 0
@@ -29,15 +30,15 @@
       font-size: 16px
 
 .customButton
-  border: 1px solid #000
+  border: 1px solid $black
   width: 100px
-  color: #000
+  color: $black
   margin-left: 20px
   margin-right: 20px
   margin-top: 20px
   &:hover
-    border: 1px solid #ff5b00
-    color: #ff5b00
+    border: 1px solid $dark-blue
+    color: $dark-blue
 
 .noMargin
   margin: 0
