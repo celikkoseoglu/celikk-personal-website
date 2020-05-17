@@ -7,6 +7,13 @@
   "pageTitle": "Çelik Köseoğlu - Blog",
   "blogItems": [
     {
+      "title": "Airpods Pro - the end of wired earphones",
+      "date": "17.05.2020",
+      "minutes": "10 min",
+      "subtitle": "Earphones have come a long way. It's about time we forget about the headphone jack.",
+      "blogPost": "airpodsPro"
+    },
+    {
       "title": "What is an Apple Watch useful for?",
       "date": "11.05.2020",
       "minutes": "12 min",
