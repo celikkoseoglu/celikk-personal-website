@@ -165,7 +165,7 @@ However, considering there are no alternatives with all of these features on the
 
 #### 9) Spy Mode
 
-AirPods come with an accessibility `feature` that will allow you to transmit your sound
+AirPods come with an accessibility "feature" that will allow you to transmit your sound
  from your iPhone's microphone directly into your ears. You can basically put your
   iPhone in another room in your flat, and listen to what's going on in that room.
    [Here](https://knowtechie.com/how-to-airpod-listening-device/)

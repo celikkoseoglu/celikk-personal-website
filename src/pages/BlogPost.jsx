@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import { Redirect, useParams } from "react-router-dom";
 import {
+  blogContainer,
   blogPostStyle,
   blogPostDarkStyle,
   blogPostBackground,
@@ -58,7 +59,7 @@ const BlogPost = () => {
   ) : (
     <div className={`${isDark ? blogPostDark : null} ${blogPostMargins} ${blogPostBackground}`}>
       <div className={width}>
-        <div className={`${blogPostStyle} ${isDark && blogPostDarkStyle}`}>
+        <div className={`${blogContainer}`}>
           <BlogNavbar
             button1Text={blogNavbar.goBackLabel}
             button1Link={blogNavbar.blogLink}
@@ -73,6 +74,7 @@ const BlogPost = () => {
             <LoadingIndicator isDark={isDark} />
           ) : (
             <Markdown
+              className={`${blogPostStyle} ${isDark && blogPostDarkStyle}`}
               options={{
                 overrides: {
                   MediaCarousel: {
