@@ -1,4 +1,5 @@
 import "react-app-polyfill/ie11"; // required for IE11
+import "react-app-polyfill/stable"; // required for IE11
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
