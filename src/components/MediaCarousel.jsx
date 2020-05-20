@@ -3,17 +3,13 @@ import PropTypes from "prop-types";
 import { isWebpSupported } from "react-image-webp/dist/utils";
 import {
   autoSizeImage,
-  horizontalOverflow,
-  showHelpText,
-  mediaCarousel,
+  autoSizeMultipleImage,
   darkMediaCarousel,
+  horizontalOverflow,
   imageMargin,
+  mediaCarousel,
   multipleImage,
-  multipleImageIOS,
 } from "../stylesheets/components/MediaCarousel.module.sass";
-import { iOS } from "../utils/Constants.utils";
-
-const mediaCarouselText = require("../data/mediaCarousel");
 
 const IS_WEBP_SUPPORTED = isWebpSupported();
 const getImageLinkWithExtension = (imageLink) => {
@@ -33,9 +29,6 @@ const MediaCarousel = ({ folder, images, isDark }) => {
 
   // detect if the user is coming from an iOS device and show help text instead of scroll bar
   // because mobile safari doesn't show scroll bars
-  const hasMultipleImagesAndiOS = () => {
-    return iOS && imageLoaded.length > 1;
-  };
   useEffect(() => {
     imageFileNames.map((imageFileName, index) =>
       import(`../${imageLinkWithExtension(folder, imageFileName)}`).then((imageLink) => {
@@ -54,7 +47,7 @@ const MediaCarousel = ({ folder, images, isDark }) => {
       <div
         align="center"
         className={`${horizontalOverflow} ${isDark ? darkMediaCarousel : null} ${mediaCarousel} ${
-          hasMultipleImagesAndiOS() ? multipleImageIOS : multipleImage
+          imageLoaded.length > 1 && multipleImage
         }`}
       >
         {imageLoaded
@@ -62,7 +55,9 @@ const MediaCarousel = ({ folder, images, isDark }) => {
               imageRelativeLink !== undefined && imageRelativeLink.endsWith(".mp4") ? (
                 // eslint-disable-next-line jsx-a11y/media-has-caption
                 <video
-                  className={`${autoSizeImage} ${index > 0 && imageMargin}`}
+                  className={`${autoSizeImage} ${imageLoaded.length > 1 && autoSizeMultipleImage} ${
+                    index > 0 && imageMargin
+                  }`}
                   loop
                   autoPlay
                   playsInline
@@ -75,7 +70,9 @@ const MediaCarousel = ({ folder, images, isDark }) => {
               ) : (
                 <img
                   src={imageRelativeLink}
-                  className={`${autoSizeImage} ${index > 0 && imageMargin}`}
+                  className={`${autoSizeImage} ${imageLoaded.length > 1 && autoSizeMultipleImage} ${
+                    index > 0 && imageMargin
+                  }`}
                   alt={imageRelativeLink}
                   key={imageRelativeLink}
                 />
@@ -83,9 +80,6 @@ const MediaCarousel = ({ folder, images, isDark }) => {
             )
           : null}
       </div>
-      {hasMultipleImagesAndiOS() ? (
-        <span className={showHelpText}>{mediaCarouselText.mediaCarouselHelpText}</span>
-      ) : null}
     </>
   );
 };
