@@ -23,9 +23,7 @@ const blogShowcase = require("../../data/blogShowcase");
 const BlogShowcase = ({ id }) => {
   return (
     <Section id={id}>
-      <Container>
-        <Heading text={blogShowcase.latestBlogPostsTitle} />
-      </Container>
+      <Heading marginBottom text={blogShowcase.latestBlogPostsTitle} />
       <Container className={blogShowcaseContainer}>
         <Row className={blogPostCardsRow}>
           {retrieveLatestBlogPosts(blog).map((blogItem, index) => (

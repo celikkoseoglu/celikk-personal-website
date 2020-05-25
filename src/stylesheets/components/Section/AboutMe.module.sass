@@ -3,12 +3,12 @@
 
 .description
   width: 660px
-  +screen(greaterThanLarge)
+  +screen(greaterThanMedium)
     margin-right: 30px
   +screen(extraLarge)
     width: 550px
   +screen(large)
-    width: 470px
+    width: 410px
   +screen(small)
     width: 100%
 
@@ -26,9 +26,23 @@
   &:hover
     filter: grayscale(0%)
 
+.ruler
+  flex-grow: 1
+  margin-left: 30px
+  +screen(small)
+    margin-left: 10px
+
 .heading
   margin-bottom: 0
   margin-left: 0
+
+.titleRow
+  margin-bottom: 50px
+  align-items: center
+  +screen(small)
+    margin-bottom: 10px
+  +screen(large)
+    margin-bottom: 35px
 
 .descriptionRow
   justify-content: space-between
