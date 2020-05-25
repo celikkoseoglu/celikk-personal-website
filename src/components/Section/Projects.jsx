@@ -8,13 +8,16 @@ import {
 } from "../../stylesheets/components/Section/Projects.module.sass";
 import Heading from "../Heading";
 import ProjectCard from "../ProjectCard";
+import Container from "../Util/Container";
 
 const projects = require("../../data/projects");
 
 const Projects = ({ id }) => {
   return (
     <Section id={id}>
-      <Heading text={projects.projectsTitle} />
+      <Container>
+        <Heading text={projects.projectsTitle} />
+      </Container>
       <div className={projectsDiv}>
         <Row className={projectsRow}>
           {projects.projectList.map((project) => (

@@ -3,13 +3,25 @@
 .title
   font-size: 40px
   font-weight: normal
-  text-align: center
   +screen(small)
-    text-align: left
-    margin-left: 15px
     margin-right: 15px
 
-.headingMargin
-  margin-bottom: 35px
-  +screen(lessThanMedium)
-    margin-bottom: 10px
+.ruler
+  flex-grow: 1
+  margin-left: 30px
+  +screen(small)
+    margin-left: 10px
+
+.titleRow
+  padding-bottom: 50px
+  padding-top: 50px
+  align-items: center
+  +screen(small)
+    padding-bottom: 10px
+    padding-top: 10px
+  +screen(medium)
+    padding-top: 20px
+    padding-bottom: 10px
+  +screen(large)
+    padding-top: 35px
+    padding-bottom: 35px

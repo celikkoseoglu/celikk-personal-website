@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {
-  sectionPadding,
   sectionBackground,
 } from "../../stylesheets/components/Util/Section.module.sass";
 
 const Section = ({ id, className, children }) => {
   return (
-    <section id={id} className={`${sectionBackground} ${sectionPadding} ${className}`}>
+    <section id={id} className={`${sectionBackground} ${className}`}>
       {children}
     </section>
   );

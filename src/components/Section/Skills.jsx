@@ -4,13 +4,16 @@ import Section from "../Util/Section";
 import { noMarginBottom } from "../../stylesheets/components/Section/Skills.module.sass";
 import Heading from "../Heading";
 import SkillCard from "../SkillCard";
+import Container from "../Util/Container";
 
 const personalSkills = require("../../data/personalSkills");
 
 const Skills = ({ id }) => {
   return (
     <Section id={id}>
-      <Heading className={noMarginBottom} text={personalSkills.skillsTitle} />
+      <Container>
+        <Heading className={noMarginBottom} text={personalSkills.skillsTitle} />
+      </Container>
       {personalSkills.skillList.map((personalSkill) => (
         <SkillCard
           imageLink={personalSkill.imageLink}
