@@ -1,4 +1,10 @@
 import React, { useEffect, useState } from "react";
+
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
+import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
+
 import Markdown from "markdown-to-jsx";
 import { Redirect, useParams } from "react-router-dom";
 import {
@@ -22,6 +28,9 @@ import { firebaseAnalytics } from "../firebaseConfig";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
+
+SyntaxHighlighter.registerLanguage("jsx", jsx);
+SyntaxHighlighter.registerLanguage("bash", bash);
 
 const BlogPost = () => {
   const [post, setPost] = useState("");
@@ -81,6 +90,12 @@ const BlogPost = () => {
                     component: MediaCarousel,
                     props: {
                       isDark,
+                    },
+                  },
+                  SyntaxHighlighter: {
+                    component: SyntaxHighlighter,
+                    props: {
+                      style: isDark ? atomDark : prism,
                     },
                   },
                 },

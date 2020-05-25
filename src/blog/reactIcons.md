@@ -12,37 +12,33 @@ size about 30KBs without doing any major work at all.
 
 Before React-Icons, we used to import the whole favicon css into our component as below:
 
-```javascript
+ <SyntaxHighlighter language="javascript">
 import React from "react";
 import "font-awesome/css/font-awesome.min.css";
-
 const FaviconComponent = () => {
-  return <p className="fa fa-twitter" />;
+  return &lt;p className="fa fa-twitter" />;
 };
-
 export default FaviconComponent;
-```
+</SyntaxHighlighter>
 
 Instead of doing this, you can specify which icons to import using React-Icons. To install the package dependency,
  run the following command in your terminal:
 
-```
+ <SyntaxHighlighter language="bash">
 npm install react-icons --save
-```
+</SyntaxHighlighter>
 
 This is how the code looks now. You just import the required icon using an import statement, then use it just like you would use
 a regular component.
 
-```javascript
+ <SyntaxHighlighter language="javascript">
 import React from "react";
 import { FaTwitter } from "react-icons/fa";
-
 const FaviconComponent = () => {
-  return <FaTwitter />;
+  return &lt;FaTwitter />;
 };
-
 export default FaviconComponent;
-```
+</SyntaxHighlighter>
 
 If you want to explore which icons are available in the favicon library, you can go and browse node_modules/react-icons/fa/index.js.
 You will find a bunch of icons there with their respective names. Or there is a more visual guide available in here: https://fontawesome.com/icons
