@@ -1,8 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import UnstyledLink from "./Util/UnstyledLink";
-import { blogItemLink, blogItemLinkDark } from "../stylesheets/components/BlogItem.module.sass";
-import { BLOG_LINK } from "../utils/Constants.utils";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
+import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
+import UnstyledLink from "../Util/UnstyledLink";
+import {
+  blogItemLink,
+  blogItemLinkDark,
+} from "../../stylesheets/components/Blog/BlogItem.module.sass";
+import { BLOG_LINK } from "../../utils/Constants.utils";
+
+SyntaxHighlighter.registerLanguage("jsx", jsx);
+SyntaxHighlighter.registerLanguage("bash", bash);
 
 const BlogItem = ({ className, title, date, minutes, subtitle, blogPost, isDark }) => {
   return (

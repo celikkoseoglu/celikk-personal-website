@@ -1,0 +1,68 @@
+@import "../../../utils/colorPalette"
+@import "../../../utils/animationTimer"
+
+.blogPostStyle
+  p
+    font-size: 16px
+  h1
+    margin-bottom: 30px
+    font-weight: bolder
+  h6
+    margin-bottom: 30px
+    color: $grey
+  code
+    color: $dark-blue
+    transition: color $colorTransitionDuration linear
+    transition-delay: $transitionDelay
+  pre
+    background: $pale-grey
+    padding: 10px
+    -webkit-transition: $backgroundTransition
+    -moz-transition: $backgroundTransition
+    transition: $backgroundTransition
+    transition-delay: $transitionDelay
+  blockquote
+    background: $pale-grey
+    border-left: 10px solid $light-grey
+    margin: 1.5em 0
+    padding: 0.5em 10px
+    transition: background-color $colorTransitionDuration linear
+    p
+      margin-top: 0
+      margin-bottom: 10px
+  blockquote:before
+    color: $light-grey
+    content: open-quote
+    font-size: 4em
+    line-height: 0.1em
+    margin-right: 0.25em
+    vertical-align: -0.28em
+  blockquote:after
+    color: $light-grey
+    content: close-quote
+    font-size: 4em
+    line-height: 0.8em
+    float: right
+  ul
+    padding: 0
+    li
+      list-style: none
+      font-size: 16px
+    li::before
+      content: "\003E"
+      display: inline-block
+      font-size: 16px
+      width: 1em
+
+.blogPostDarkStyle
+  a
+    color: $sky-blue
+    &:hover
+      color: $blue
+  code
+    color: $sky-blue
+  pre
+    background: $space-grey
+  blockquote
+    background: $space-black
+    border-left: 10px solid $dark-grey

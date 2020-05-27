@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BlogItem from "../components/BlogItem";
+import BlogItem from "../components/Blog/BlogItem";
 import Row from "../components/Util/Row";
 import {
   profilePicture,

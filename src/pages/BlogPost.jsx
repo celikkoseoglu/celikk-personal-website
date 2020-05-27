@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
-
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
-import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
-import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
-
-import Markdown from "markdown-to-jsx";
 import { Redirect, useParams } from "react-router-dom";
 import {
   blogContainer,
-  blogPostStyle,
-  blogPostDarkStyle,
   blogPostBackground,
   blogPostDark,
   blogPostMargins,
@@ -18,19 +9,16 @@ import {
   footerStyle,
   width,
 } from "../stylesheets/BlogPost.module.sass";
-import MediaCarousel from "../components/MediaCarousel";
 import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Util/HorizontalRuler";
 import LoadingIndicator from "../components/Util/LoadingIndicator";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 import { firebaseAnalytics } from "../firebaseConfig";
+import BlogPostMarkdown from "../components/Blog/BlogPostMarkdown";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
-
-SyntaxHighlighter.registerLanguage("jsx", jsx);
-SyntaxHighlighter.registerLanguage("bash", bash);
 
 const BlogPost = () => {
   const [post, setPost] = useState("");
@@ -82,27 +70,7 @@ const BlogPost = () => {
           {post === "" ? (
             <LoadingIndicator isDark={isDark} />
           ) : (
-            <Markdown
-              className={`${blogPostStyle} ${isDark && blogPostDarkStyle}`}
-              options={{
-                overrides: {
-                  MediaCarousel: {
-                    component: MediaCarousel,
-                    props: {
-                      isDark,
-                    },
-                  },
-                  SyntaxHighlighter: {
-                    component: SyntaxHighlighter,
-                    props: {
-                      style: isDark ? atomDark : prism,
-                    },
-                  },
-                },
-              }}
-            >
-              {post}
-            </Markdown>
+            <BlogPostMarkdown content={post} isDark={isDark} />
           )}
 
           <HorizontalRuler isDark={isDark} />
