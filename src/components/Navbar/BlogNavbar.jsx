@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import {
   noMargin,
+  titleFont,
+  titleShadow,
+  titleShadowDark,
   navbarFlex,
   centerDarkModeToggle,
   button1,
@@ -23,7 +26,9 @@ const BlogNavbar = ({
     return link ? (
       <CustomButton isDark={isDark} text={text} to={link} />
     ) : (
-      <h1 className={noMargin}>{text}</h1>
+      <h1 className={`${noMargin} ${titleFont} ${isDark ? titleShadowDark : titleShadow}`}>
+        {text}
+      </h1>
     );
   };
 
