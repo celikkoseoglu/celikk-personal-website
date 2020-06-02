@@ -1,3 +1,5 @@
+<MetaDecorator description="Introducing React-Icons. A node dependency that allows you to select import icons instead of the whole favicon css." title="CK - Reduce Your React Bundle Size by Importing Only the Required Favicons" />
+
 # Reduce Your React Bundle Size by Importing Only the Required Favicons.
 
 ### Introducing React-Icons. A node dependency that allows you to select import icons instead of the whole favicon css.

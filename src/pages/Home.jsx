@@ -15,6 +15,7 @@ import Skills from "../components/Section/Skills";
 import BlogShowcase from "../components/Section/BlogShowcase";
 import Landing from "../components/Section/Landing";
 import { firebaseAnalytics } from "../firebaseConfig";
+import MetaDecorator from "../components/Util/MetaDecorator";
 
 const content = require("../data/content");
 
@@ -29,11 +30,11 @@ const Home = () => {
 
   useEffect(() => {
     firebaseAnalytics.logEvent("homepage_visited");
-    document.title = content.pageTitle;
   });
 
   return (
     <>
+      <MetaDecorator description={content.pageDescription} title={content.pageTitle} />
       <NavigationBar />
       <Landing id={content.landingReference} arrowAnimationReference={content.aboutMeReference} />
       <AboutMe id={content.aboutMeReference} />

@@ -1,3 +1,5 @@
+<MetaDecorator description="Getting downloads on a non-existent platform" title="CK - PhotoSec" />
+
 # PhotoSec - First app that allows you to hide pictures on Windows Phone
 
 ### Getting downloads on a non-existent platform

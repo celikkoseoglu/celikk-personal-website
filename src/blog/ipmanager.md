@@ -1,3 +1,5 @@
+<MetaDecorator description="Coming back to C# after a long break" title="CK - IPManager" />
+
 # IPManager - Switch Between DHCP and Static IP Easily
 
 ### Coming back to C# after a long break

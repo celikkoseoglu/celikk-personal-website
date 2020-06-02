@@ -1,3 +1,5 @@
+<MetaDecorator description="This is how my story begins." title="CK - QNote" />
+
 # QNote - The most lightweight note taking app
 
 ### This is how my story begins.

@@ -1,3 +1,5 @@
+<MetaDecorator description="Earphones have come a long way. It's about time we forget about the headphone jack." title="CK - AirPods Pro" />
+
 # Airpods Pro - the end of wired earphones
 
 ### Earphones have come a long way. It's about time we forget about the headphone jack.

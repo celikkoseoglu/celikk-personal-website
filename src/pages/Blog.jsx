@@ -19,6 +19,7 @@ import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Util/HorizontalRuler";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 import { firebaseAnalytics } from "../firebaseConfig";
+import MetaDecorator from "../components/Util/MetaDecorator";
 
 const blog = require("../data/blog");
 const footer = require("../data/footer");
@@ -31,11 +32,11 @@ const Blog = () => {
 
   useEffect(() => {
     firebaseAnalytics.logEvent("blog_visited");
-    document.title = blog.pageTitle;
   });
 
   return (
     <div className={`${background} ${isDark && blogDark}`}>
+      <MetaDecorator description={blog.pageDescription} title={blog.pageTitle}/>
       <div className={`${blogStyle}`}>
         <BlogNavbar
           button1Text={blog.name}

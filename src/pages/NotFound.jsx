@@ -3,17 +3,18 @@ import "../index.sass";
 import CustomButton from "../components/CustomButton";
 import { notFoundStyle, customButton, noMargin } from "../stylesheets/NotFound.module.sass";
 import { firebaseAnalytics } from "../firebaseConfig";
+import MetaDecorator from "../components/Util/MetaDecorator";
 
 const notFound = require("../data/notFound");
 
 const NotFound = () => {
   useEffect(() => {
-    document.title = notFound.pageTitle;
     firebaseAnalytics.logEvent("404_visited");
   });
 
   return (
     <div className={notFoundStyle}>
+      <MetaDecorator description={notFound.pageDescription} title={notFound.pageTitle} />
       <div>
         <h1 className={noMargin}>{notFound.notFoundMessage}</h1>
         <p>The page you’re looking for is not there</p>

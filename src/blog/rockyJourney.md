@@ -1,4 +1,6 @@
-# ROCKY JOURNEY
+<MetaDecorator description="Flappy bird on an 8x8 LED Matrix" title="CK - Rocky Journey" />
+
+# Rocky Journey
 
 #### Flappy bird on an 8x8 LED Matrix
 

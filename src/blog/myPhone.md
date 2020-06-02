@@ -1,4 +1,6 @@
-# Which Phones I've Used and Why.
+<MetaDecorator description="The story of how I was an iPhone, Windows Phone and an Android user at different times." title="CK - Which Phones I've Used and Why" />
+
+# Which Phones I've Used and Why
 
 #### The story of how I was an iPhone, Windows Phone and an Android user at different times.
 

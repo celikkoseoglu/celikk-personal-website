@@ -1,3 +1,5 @@
+<MetaDecorator description="I've used one generation of devices from each platform in order. Let's compare them and decide which one is better for me." title="CK - iOS vs Android" />
+
 # iOS vs Android - Why I Choose One Over the Other
 
 ### I've used one generation of devices from each platform in order. Let's compare them and decide which one is better for me.

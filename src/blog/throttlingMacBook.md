@@ -1,3 +1,5 @@
+<MetaDecorator description="Reviews said this laptop had better thermals compared to the previous generation. Mine had great thermals too, up until today." title="CK - Throttling MacBook Pro 16" />
+
 # The Curious Case of a Throttling 16" MacBook Pro
 
 ### Reviews said this laptop had better thermals compared to the previous generation. Mine had great thermals too, up until today.

@@ -1,3 +1,5 @@
+<MetaDecorator description="There is no programming pill. It takes time." title="CK - Personal Website - This Time with React" />
+
 # Personal Website - This Time with React
 
 #### There is no programming pill. It takes time.

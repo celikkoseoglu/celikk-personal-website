@@ -36,10 +36,8 @@ const BlogPost = () => {
   }
 
   useEffect(() => {
-    document.title = `${footer.title} - ${blogPostFileName}`;
     if (!redirect) {
       firebaseAnalytics.logEvent(`${blogPostFileName}_visited`);
-
       window.scrollTo(0, 0);
 
       fetch(`/static/media/${hashedBlogFileLink}`)
