@@ -18,6 +18,7 @@
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.1",
     "react-scroll": "1.7.16",
+    "react-snap": "^1.23.0",
     "react-syntax-highlighter": "^12.2.1"
   },
   "devDependencies": {
@@ -36,7 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint src -c .eslintrc.json --ext js,jsx"
+    "lint": "eslint src -c .eslintrc.json --ext js,jsx",
+    "postbuild": "react-snap"
   },
   "browserslist": {
     "production": [

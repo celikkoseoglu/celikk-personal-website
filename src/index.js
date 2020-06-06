@@ -1,7 +1,7 @@
 import "react-app-polyfill/ie11"; // required for IE11
 import "react-app-polyfill/stable"; // required for IE11
 import React, { Suspense, lazy } from "react";
-import ReactDOM from "react-dom";
+import { hydrate, render } from "react-dom";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
@@ -12,7 +12,7 @@ import { BLOG_LINK } from "./utils/Constants.utils";
 const CV = lazy(() => import("./pages/CV"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-ReactDOM.render(
+const APP = (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Home} />
@@ -26,6 +26,12 @@ ReactDOM.render(
         </Switch>
       </Suspense>
     </Switch>
-  </BrowserRouter>,
-  document.getElementById("root")
+  </BrowserRouter>
 );
+
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(APP, rootElement);
+} else {
+  render(APP, rootElement);
+}
