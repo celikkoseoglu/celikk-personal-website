@@ -29,7 +29,20 @@ const Landing = ({ id, arrowAnimationReference }) => {
      image loading. Until react-snap provides an `exclude` option, deferring the rendering of
      this component seems to be the simplest solution.
    */
-  const [innerHTML, setInnerHTML] = useState(<header id={id} className={`${heroBackground}`} />);
+  const basicPrerender = (
+    <header id={id} className={`${heroBackground}`}>
+      <Container className={heroContainer}>
+        <Hero
+          introHeading={hero.introHeading}
+          introLeadIn={hero.introLeadIn}
+          resumeButtonText={hero.resumeButtonText}
+          resumeLink={hero.resumeButtonLink}
+        />
+      </Container>
+    </header>
+  );
+
+  const [innerHTML, setInnerHTML] = useState(basicPrerender);
 
   const handleResize = () => {
     const currentWindowInnerWidth = window.innerWidth;
@@ -77,7 +90,7 @@ const Landing = ({ id, arrowAnimationReference }) => {
           )}
         </ProgressiveImage>
       ) : (
-        <header id={id} className={`${heroBackground}`} />
+        basicPrerender
       )
     );
 
