@@ -1,5 +1,4 @@
 import React from "react";
-import ProgressiveImage from "react-progressive-image";
 import PropTypes from "prop-types";
 import Markdown from "markdown-to-jsx";
 import Heading from "../Heading";
@@ -16,14 +15,11 @@ import HorizontalRuler from "../Util/HorizontalRuler";
 import Section from "../Util/Section";
 import Container from "../Util/Container";
 import Row from "../Util/Row";
-import { folders } from "../../utils/FileManager.utils";
+import ProfileImage from "../../data/images/aboutMe/celik.jpg";
 
 const aboutMe = require("../../data/aboutMe");
 
 const AboutMe = ({ id }) => {
-  const profileImage = folders.aboutMeImages[0];
-  const profileImageTiny = folders.aboutMeImages[1];
-
   return (
     <Section id={id}>
       <Container>
@@ -39,9 +35,7 @@ const AboutMe = ({ id }) => {
 
             <p>{aboutMe.descriptionTail}</p>
           </div>
-          <ProgressiveImage src={profileImage} placeholder={profileImageTiny}>
-            {(src) => <img className={image} alt={aboutMe.portraitAlt} src={src} />}
-          </ProgressiveImage>
+          <img className={image} alt={aboutMe.portraitAlt} src={ProfileImage} />
         </Row>
       </Container>
     </Section>

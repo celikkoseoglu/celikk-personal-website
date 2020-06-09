@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import ProgressiveImage from "react-progressive-image";
 import {
@@ -12,7 +12,8 @@ import ArrowAnimation from "../Animations/ArrowAnimation";
 import { folders, getRandomInt } from "../../utils/FileManager.utils";
 import Hero from "../Hero";
 import { iPad } from "../../utils/Constants.utils";
-import {debounce} from "../../utils/Limitors";
+import { debounce } from "../../utils/Limitors";
+import { isPrerendering } from "../../utils/ReactSnapHelper";
 
 const hero = require("../../data/hero");
 
@@ -23,6 +24,13 @@ const tinyLandingImageUrl = folders.tinyHeroImages[randomLandingImageNumber];
 let windowInnerWidth = 0;
 
 const Landing = ({ id, arrowAnimationReference }) => {
+  /* the rendering of this component needs to be deferred because react-snap tries to take a
+     snapshot of the progressive image before the final image loads. This breaks progressive
+     image loading. Until react-snap provides an `exclude` option, deferring the rendering of
+     this component seems to be the simplest solution.
+   */
+  const [innerHTML, setInnerHTML] = useState(<header id={id} className={`${heroBackground}`} />);
+
   const handleResize = () => {
     const currentWindowInnerWidth = window.innerWidth;
     if (currentWindowInnerWidth !== windowInnerWidth) {
@@ -40,40 +48,47 @@ const Landing = ({ id, arrowAnimationReference }) => {
     if (iPad) {
       window.addEventListener("resize", debounce(handleResize));
     }
+
+    setInnerHTML(
+      !isPrerendering() ? (
+        <ProgressiveImage src={landingImageUrl} placeholder={tinyLandingImageUrl}>
+          {(src) => (
+            <header
+              id={id}
+              style={{
+                backgroundImage: `url(${src})`,
+              }}
+              className={`${heroBackground}`}
+            >
+              <Container className={heroContainer}>
+                <Hero
+                  introHeading={hero.introHeading}
+                  introLeadIn={hero.introLeadIn}
+                  resumeButtonText={hero.resumeButtonText}
+                  resumeLink={hero.resumeButtonLink}
+                />
+              </Container>
+
+              <ArrowAnimation
+                className={`${arrowMargin} ${arrowSize}`}
+                reference={arrowAnimationReference}
+              />
+            </header>
+          )}
+        </ProgressiveImage>
+      ) : (
+        <header id={id} className={`${heroBackground}`} />
+      )
+    );
+
     return () => {
       if (iPad) {
         window.removeEventListener("resize", debounce(handleResize));
       }
     };
-  });
+  }, []);
 
-  return (
-    <ProgressiveImage src={landingImageUrl} placeholder={tinyLandingImageUrl}>
-      {(src) => (
-        <header
-          id={id}
-          style={{
-            backgroundImage: `url(${src})`,
-          }}
-          className={`${heroBackground}`}
-        >
-          <Container className={heroContainer}>
-            <Hero
-              introHeading={hero.introHeading}
-              introLeadIn={hero.introLeadIn}
-              resumeButtonText={hero.resumeButtonText}
-              resumeLink={hero.resumeButtonLink}
-            />
-          </Container>
-
-          <ArrowAnimation
-            className={`${arrowMargin} ${arrowSize}`}
-            reference={arrowAnimationReference}
-          />
-        </header>
-      )}
-    </ProgressiveImage>
-  );
+  return innerHTML;
 };
 Landing.propTypes = {
   id: PropTypes.string.isRequired,
