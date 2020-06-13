@@ -18,6 +18,7 @@ const MetaDecorator = ({ title, description, imageUrl, imageAlt }) => {
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image:alt" content={imageAlt} />
+      <meta name="twitter:site" content={metaDecorator.twitterUsername} />
     </Helmet>
   );
 };
