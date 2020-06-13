@@ -16,6 +16,7 @@ import BlogShowcase from "../components/Section/BlogShowcase";
 import Landing from "../components/Section/Landing";
 import { firebaseAnalytics } from "../firebaseConfig";
 import MetaDecorator from "../components/Util/MetaDecorator";
+import metaThumbnail from "../data/images/meta/home.png";
 
 const content = require("../data/content");
 
@@ -34,7 +35,12 @@ const Home = () => {
 
   return (
     <>
-      <MetaDecorator description={content.pageDescription} title={content.pageTitle} />
+      <MetaDecorator
+        description={content.pageDescription}
+        title={content.pageTitle}
+        imageUrl={metaThumbnail}
+        imageAlt={content.metaImageAlt}
+      />
       <NavigationBar />
       <Landing id={content.landingReference} arrowAnimationReference={content.aboutMeReference} />
       <AboutMe id={content.aboutMeReference} />

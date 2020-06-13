@@ -20,6 +20,7 @@ import HorizontalRuler from "../components/Util/HorizontalRuler";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 import { firebaseAnalytics } from "../firebaseConfig";
 import MetaDecorator from "../components/Util/MetaDecorator";
+import metaThumbnail from "../data/images/meta/blog.png";
 
 const blog = require("../data/blog");
 const footer = require("../data/footer");
@@ -36,7 +37,12 @@ const Blog = () => {
 
   return (
     <div className={`${background} ${isDark && blogDark}`}>
-      <MetaDecorator description={blog.pageDescription} title={blog.pageTitle}/>
+      <MetaDecorator
+        description={blog.pageDescription}
+        title={blog.pageTitle}
+        imageUrl={metaThumbnail}
+        imageAlt={blog.metaImageAlt}
+      />
       <div className={`${blogStyle}`}>
         <BlogNavbar
           button1Text={blog.name}

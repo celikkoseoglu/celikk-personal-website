@@ -4,6 +4,7 @@ import Skill from "../components/CV/Skill";
 import Container from "../components/Util/Container";
 import Row from "../components/Util/Row";
 import MetaDecorator from "../components/Util/MetaDecorator";
+import metaThumbnail from "../data/images/meta/cv.png";
 
 const experiences = require("../data/resume/experiences");
 const resumeSkills = require("../data/resume/skills");
@@ -15,6 +16,8 @@ const CV = () => {
       <MetaDecorator
         description={interactiveResume.pageDescription}
         title={interactiveResume.pageTitle}
+        imageUrl={metaThumbnail}
+        imageAlt={interactiveResume.metaImageAlt}
       />
       <Row>
         <div>

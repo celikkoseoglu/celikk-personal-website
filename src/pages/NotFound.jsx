@@ -4,6 +4,7 @@ import CustomButton from "../components/CustomButton";
 import { notFoundStyle, customButton, noMargin } from "../stylesheets/NotFound.module.sass";
 import { firebaseAnalytics } from "../firebaseConfig";
 import MetaDecorator from "../components/Util/MetaDecorator";
+import metaThumbnail from "../data/images/meta/notFound.png";
 
 const notFound = require("../data/notFound");
 
@@ -14,7 +15,12 @@ const NotFound = () => {
 
   return (
     <div className={notFoundStyle}>
-      <MetaDecorator description={notFound.pageDescription} title={notFound.pageTitle} />
+      <MetaDecorator
+        description={notFound.pageDescription}
+        title={notFound.pageTitle}
+        imageUrl={metaThumbnail}
+        imageAlt={notFound.metaImageAlt}
+      />
       <div>
         <h1 className={noMargin}>{notFound.notFoundMessage}</h1>
         <p>The page you’re looking for is not there</p>
