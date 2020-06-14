@@ -5,10 +5,10 @@ import { atomDark, prism } from "react-syntax-highlighter/dist/cjs/styles/prism"
 import Markdown from "markdown-to-jsx";
 import MediaCarousel from "../MediaCarousel";
 import {
-  blogPostStyle,
   blogPostDarkStyle,
+  blogPostStyle,
 } from "../../stylesheets/components/Blog/BlogPostMarkdown.module.sass";
-import MetaDecorator from "../Util/MetaDecorator";
+import BlogMetaDecorator from "../Util/BlogMetaDecorator";
 
 const BlogPostMarkdown = ({ isDark, content }) => {
   return (
@@ -28,8 +28,8 @@ const BlogPostMarkdown = ({ isDark, content }) => {
               style: isDark ? atomDark : prism,
             },
           },
-          MetaDecorator: {
-            component: MetaDecorator,
+          BlogMetaDecorator: {
+            component: BlogMetaDecorator,
           },
         },
       }}

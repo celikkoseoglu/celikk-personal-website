@@ -1,4 +1,4 @@
-<MetaDecorator description="What's in lunch today? Ah, here is my notification!" title="CK - Today's Meal in Marmara" />
+<BlogMetaDecorator folder="marmara" image="marmaraMockup.png" imageAlt="user interface mockup for the Marmara app, drawn by hand" description="What's in lunch today? Ah, here is my notification!" title="CK - Today's Meal in Marmara" />
 
 # Today's Meal in Marmara
 

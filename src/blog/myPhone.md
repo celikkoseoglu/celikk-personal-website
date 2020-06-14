@@ -1,4 +1,4 @@
-<MetaDecorator description="The story of how I was an iPhone, Windows Phone and an Android user at different times." title="CK - Which Phones I've Used and Why" />
+<BlogMetaDecorator folder="myPhone" image="beforeAndAfterIPhone.png" imageAlt="a picture of phones available on the market, before and after the iPhone launch" description="The story of how I was an iPhone, Windows Phone and an Android user at different times." title="CK - Which Phones I've Used and Why" />
 
 # Which Phones I've Used and Why
 

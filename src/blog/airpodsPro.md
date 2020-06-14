@@ -1,4 +1,4 @@
-<MetaDecorator description="Earphones have come a long way. It's about time we forget about the headphone jack." title="CK - AirPods Pro" />
+<BlogMetaDecorator folder="airpodsPro" image="case3.jpg" imageAlt="AirPods Pro and Charging Case close up" description="Earphones have come a long way. It's about time we forget about the headphone jack." title="CK - AirPods Pro" />
 
 # Airpods Pro - the end of wired earphones
 

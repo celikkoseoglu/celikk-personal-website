@@ -99,6 +99,7 @@ const Landing = ({ id, arrowAnimationReference }) => {
         window.removeEventListener("resize", debounce(handleResize));
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return innerHTML;

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { isWebpSupported } from "react-image-webp/dist/utils";
 import {
   autoSizeImage,
   autoSizeMultipleImage,
@@ -10,8 +9,8 @@ import {
   mediaCarousel,
   multipleImage,
 } from "../stylesheets/components/MediaCarousel.module.sass";
+import {IS_WEBP_SUPPORTED} from "../utils/Constants.utils";
 
-const IS_WEBP_SUPPORTED = isWebpSupported();
 const getImageLinkWithExtension = (imageLink) => {
   if (IS_WEBP_SUPPORTED && imageLink.endsWith(".png")) {
     return `${imageLink.substring(0, imageLink.length - 4)}.webp`;

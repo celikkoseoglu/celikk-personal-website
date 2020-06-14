@@ -1,4 +1,4 @@
-<MetaDecorator description="Getting downloads on a non-existent platform" title="CK - PhotoSec" />
+<BlogMetaDecorator folder="photoSec" image="appIcon.png" imageAlt="App icon for PhotoSec" description="Getting downloads on a non-existent platform" title="CK - PhotoSec" />
 
 # PhotoSec - First app that allows you to hide pictures on Windows Phone
 

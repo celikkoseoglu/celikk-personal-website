@@ -1,4 +1,4 @@
-<MetaDecorator description="For years, I resisted to pay fashion accessory prices for a tech gadget. Now that Apple removed the fashion tax, let's give it a try." title="CK - What is an Apple Watch useful for?" />
+<BlogMetaDecorator folder="appleWatch" image="versusSkagen1.jpg" imageAlt="an apple watch next to two Skagen watches" description="For years, I resisted to pay fashion accessory prices for a tech gadget. Now that Apple removed the fashion tax, let's give it a try." title="CK - What is an Apple Watch useful for?" />
 
 # What is an Apple Watch useful for?
 
