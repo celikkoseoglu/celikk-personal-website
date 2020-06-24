@@ -8,8 +8,8 @@ import {
   imageMargin,
   mediaCarousel,
   multipleImage,
-} from "../stylesheets/components/MediaCarousel.module.sass";
-import {IS_WEBP_SUPPORTED} from "../utils/Constants.utils";
+} from "../../stylesheets/components/Blog/MediaCarousel.module.sass";
+import {IS_WEBP_SUPPORTED} from "../../utils/Constants.utils";
 
 const getImageLinkWithExtension = (imageLink) => {
   if (IS_WEBP_SUPPORTED && imageLink.endsWith(".png")) {
@@ -30,7 +30,7 @@ const MediaCarousel = ({ folder, images, isDark }) => {
   // because mobile safari doesn't show scroll bars
   useEffect(() => {
     imageFileNames.map((imageFileName, index) =>
-      import(`../${imageLinkWithExtension(folder, imageFileName)}`).then((imageLink) => {
+      import(`../../${imageLinkWithExtension(folder, imageFileName)}`).then((imageLink) => {
         setImageLoaded((oldArray) => {
           const prev = [...oldArray];
           prev[index] = imageLink.default;

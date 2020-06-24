@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark, prism } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Markdown from "markdown-to-jsx";
-import MediaCarousel from "../MediaCarousel";
+import MediaCarousel from "./MediaCarousel";
 import {
   blogPostDarkStyle,
   blogPostStyle,
