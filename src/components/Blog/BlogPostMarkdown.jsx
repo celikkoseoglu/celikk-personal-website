@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark, prism } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Markdown from "markdown-to-jsx";
 import MediaCarousel from "./MediaCarousel";
 import {
@@ -9,6 +7,7 @@ import {
   blogPostStyle,
 } from "../../stylesheets/components/Blog/BlogPostMarkdown.module.sass";
 import BlogMetaDecorator from "../Util/BlogMetaDecorator";
+import Code from "./Code";
 
 const BlogPostMarkdown = ({ isDark, content }) => {
   return (
@@ -22,10 +21,10 @@ const BlogPostMarkdown = ({ isDark, content }) => {
               isDark,
             },
           },
-          SyntaxHighlighter: {
-            component: SyntaxHighlighter,
+          Code: {
+            component: Code,
             props: {
-              style: isDark ? atomDark : prism,
+              isDark,
             },
           },
           BlogMetaDecorator: {

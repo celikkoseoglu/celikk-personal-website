@@ -1,0 +1,29 @@
+@import "../../../utils/colorPalette"
+@import "../../../utils/animationTimer"
+
+.parentDiv
+  position: relative
+
+.copyButton
+  position: absolute
+  right: 11px
+  top: 11px
+  font-size: 18px
+  transition: color $colorTransitionDuration
+  background: transparent
+  border: none transparent // none is required for IE11 Support
+  color: $black
+  button
+    border: none transparent // none is required for IE11 Support
+  &:focus
+    outline: 0
+    color: $light-blue
+  &:hover
+    color: $blue
+
+.copyButtonDark
+  color: $white
+  &:focus
+    color: $dark-blue
+  &:hover
+    color: $light-blue
