@@ -1,13 +1,16 @@
 @import "../../../utils/colorPalette"
 @import "../../../utils/animationTimer"
+@import "../../../utils/widthPicker"
 
 .parentDiv
   position: relative
 
 .copyButton
   position: absolute
-  right: 11px
-  top: 11px
+  right: 5px
+  top: 5px
+  padding: 6px // padding is set to different default values for Chrome and Safari
+  margin: 0 // margin is set to different default values for Chrome and Safari
   font-size: 18px
   transition: color $colorTransitionDuration
   background: transparent
@@ -20,6 +23,8 @@
     color: $light-blue
   &:hover
     color: $blue
+  +screen(small)
+    display: none
 
 .copyButtonDark
   color: $white
@@ -27,3 +32,4 @@
     color: $dark-blue
   &:hover
     color: $light-blue
+
