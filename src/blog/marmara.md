@@ -27,7 +27,7 @@ This was my opportunity. I was going to extract the food menu from Marmara's web
 and then send it as a notification to the people who installed my app!
 
 I made the initial mockups and started prototyping, but uni was taking too much time. I never got
-to complete this project. Then I got very busy in my senior year with [LodeStar](lodestarapp.com).
+to complete this project. Then I got very busy in my senior year with [LodeStar](https://www.lodestarapp.com).
 This project got swept under the carpet, and never became a reality. Here is what I planned it to look like:
 
  <MediaCarousel folder="marmara" images="marmaraMockup.png"/>
