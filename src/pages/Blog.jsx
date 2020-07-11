@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
+import NoSSR from "react-no-ssr";
 import BlogItem from "../components/Blog/BlogItem";
 import Row from "../components/Util/Row";
 import {
-  profilePicture,
   background,
-  blogTitleFont,
   blogDark,
-  blogStyle,
-  circularImage,
-  verticalCenter,
-  noMargin,
   blogItemMargin,
   blogNavbarMargin,
+  blogStyle,
+  blogTitleFont,
+  circularImage,
   footerStyle,
+  noMargin,
+  profilePicture,
+  verticalCenter,
 } from "../stylesheets/Blog.module.sass";
 import { getInitialTheme } from "../utils/FileManager.utils";
 import BlogFooter from "../components/Footer/BlogFooter";
@@ -35,7 +36,20 @@ const Blog = () => {
     firebaseAnalytics.logEvent("blog_visited");
   });
 
-  return (
+  const noSSRContent = blog.blogItems.map((blogItem) => (
+    <BlogItem
+      className={blogItemMargin}
+      title={blogItem.title}
+      date={blogItem.date}
+      minutes={blogItem.minutes}
+      subtitle={blogItem.subtitle}
+      blogPost={blogItem.blogPost}
+      isDark={isDark}
+      key={blogItem.title}
+    />
+  ));
+
+  const content = (
     <div className={`${background} ${isDark && blogDark}`}>
       <MetaDecorator
         description={blog.pageDescription}
@@ -78,6 +92,7 @@ const Blog = () => {
             key={blogItem.title}
           />
         ))}
+
         <HorizontalRuler isDark={isDark} />
       </div>
       <div className={footerStyle}>
@@ -85,6 +100,8 @@ const Blog = () => {
       </div>
     </div>
   );
+
+  return <NoSSR onSSR={noSSRContent}>{content}</NoSSR>;
 };
 
 export default Blog;

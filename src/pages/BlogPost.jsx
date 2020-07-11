@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import NoSSR from "react-no-ssr";
 import { Redirect, useParams } from "react-router-dom";
 import {
   blogContainer,
@@ -49,9 +50,9 @@ const BlogPost = () => {
     }
   }, [hashedBlogFileLink, redirect, blogPostFileName]);
 
-  return redirect ? (
-    <Redirect to="/404" />
-  ) : (
+  const noSSRContent = <BlogPostMarkdown content={post} isDark={isDark} />;
+
+  const content = (
     <div className={`${isDark ? blogPostDark : null} ${blogPostMargins} ${blogPostBackground}`}>
       <div className={width}>
         <div className={`${blogContainer}`}>
@@ -79,6 +80,8 @@ const BlogPost = () => {
       </div>
     </div>
   );
+
+  return redirect ? <Redirect to="/404" /> : <NoSSR onSSR={noSSRContent}>{content}</NoSSR>;
 };
 
 export default BlogPost;
