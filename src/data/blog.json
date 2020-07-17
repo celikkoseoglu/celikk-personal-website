@@ -9,6 +9,13 @@
   "metaImageAlt": "The image contains the logo of this website. Next to that, it says blog with capital letters in Montserrat font.",
   "blogItems": [
     {
+      "title": "Tips on Effective CV Design and Writing",
+      "date": "20.07.2020",
+      "minutes": "10 min",
+      "subtitle": "Some companies receive hundreds of applications per day. How can you increase the chances of your CV getting noticed?",
+      "blogPost": "effectiveCV"
+    },
+    {
       "title": "Airpods Pro - the end of wired earphones",
       "date": "17.05.2020",
       "minutes": "10 min",
