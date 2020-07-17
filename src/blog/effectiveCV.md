@@ -68,7 +68,7 @@ If you're a software engineer, then you probably know English and you're not goi
 
 As long you have intermediate English skills, then you'll probably get the engineering job. Recruiters do not care about your mother tongue and it can potentially be used to identify your country of origin (some companies come to the conclusion that they don't want to sponsor a visa before interviewing you because you're from the X part of the world).
 
-#### 6. Make sure you have 1 tech and 1 non-tech hobby listed
+#### 6. Make sure you have one tech and one non-tech hobby listed
 
 If your CV gets chosen, the recruiter will reach over by phone or email to talk about the next steps. Before the technical on-site interview, there will be an ice-breaker, face-to-face chat between you and your recruiter. The goal of this is to make you feel relaxed and decrease your anxiety. This is when they will ask you about your hobbies. 
 
