@@ -30,11 +30,11 @@ If you're an engineer with several years of experience, maybe it's time to remov
 
 Don't be afraid to remove job descriptions and other irrelevant information. Do not try to cram everything in a single page by reducing the font size or line spacing. Remember, this is a single page leaflet of yourself for the purpose of **getting past a recruiter**. Once you secure an on-site interview, your CV doesn't matter anymore. You can **talk** about your previous experiences during your on-site interview (if anyone asks).
 
-Now relax, and shake down the weight of your past, clean everything you can.
+Now relax, and let go of the weight of your past, clean everything you can.
 
 #### 3. Get to the point.
 
-When the recruiter is reading your CV, they have to be impressed about what you've done so they don't immediatelly bin your CV. Don't be vague nor underestimate yourself. No need to be humble about your fascinating achievements.
+When the recruiter is reading your CV, they have to be impressed about what you've done so they don't immediately bin your CV. Don't be vague nor underestimate yourself. No need to be humble about your fascinating achievements.
 
 I have 2 great examples to share:
 
