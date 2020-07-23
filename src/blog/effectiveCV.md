@@ -101,3 +101,5 @@ If you execute all of these steps correctly, then you're very likely to get invi
 Moral of the story is:
 
 ####Use your CV as an advertisement, not a biography.
+
+You are as good as you market yourself.
