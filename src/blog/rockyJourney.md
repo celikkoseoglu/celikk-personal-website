@@ -47,3 +47,5 @@ the reports don't match the code.
 Moral of the story is:
 
 ####A solution that works is better than no solution.
+
+Solve the problem first, optimize later. One step at a time.

@@ -47,5 +47,7 @@ You will find a bunch of icons there with their respective names. Or there is a 
 
 Moral of the story is:
 
-Efficiency and speed matter. [People sent space probes to Pluto with a PS1 processor](https://www.theverge.com/2015/1/15/7551365/playstation-cpu-powers-new-horizons-pluto-probe). 
+####Efficiency and speed matter. 
+
+[People sent space probes to Pluto with a PS1 processor](https://www.theverge.com/2015/1/15/7551365/playstation-cpu-powers-new-horizons-pluto-probe). 
 You have access to multiples of times faster hardware now. Why would we need to wait more than 5 seconds for a website to load?

@@ -356,3 +356,5 @@ One day in the future, I will definitely switch back to Android (or the next big
 Moral of the story is:
 
 ####Change is good. It keeps you fresh and up to date!
+
+Now go make a change and learn from it.

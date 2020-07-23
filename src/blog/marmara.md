@@ -43,3 +43,5 @@ His work seems cool. If you're reading this, keep up the good work!
 Moral of the story is:
 
 ####Even though you never get to complete a project, you can discover cool new GitHub repos.
+
+Like the [repo for this website.](https://github.com/celikkoseoglu/celikk-personal-website)
