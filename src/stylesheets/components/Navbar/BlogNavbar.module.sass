@@ -6,8 +6,14 @@
 
 .titleFont
   font-family: "Montserrat", sans-serif
-  font-weight: 600
+  font-weight: 500
   transition: text-shadow $colorTransitionDuration
+
+.defaultCursor
+  cursor: default
+
+.pointerCursor
+  cursor: pointer
 
 .titleShadow
   text-shadow: -2px 2px 0px $smoke-grey
@@ -24,12 +30,30 @@
   display: flex
   align-items: center
   justify-content: center
-  width: 33.33%
 
-.button1
-  width: 33.33%
-
-.button2
+.brandingContainer
   display: flex
-  justify-content: flex-end
-  width: 33.33%
+
+.branding
+  height: 42px
+  border-right: 2px solid $black
+  transition: border-right $colorTransitionDuration
+  padding-top: 2px
+  margin-top: 4px
+  margin-right: 16px
+  padding-right: 16px
+
+.brandingDark
+  border-right: 2px solid $white
+
+.blogLinkBranding
+  color: $dark-blue
+  text-shadow: -2px 2px 0px $light-blue
+  &:hover
+    color: $dark-blue
+
+.blogLinkBrandingDark
+  color: $light-blue
+  text-shadow: -2px 2px 0px $dark-blue
+  &:hover
+    color: $light-blue

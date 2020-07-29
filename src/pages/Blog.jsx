@@ -59,9 +59,8 @@ const Blog = () => {
       />
       <div className={`${blogStyle}`}>
         <BlogNavbar
-          button1Text={blog.name}
-          button2Text={blogNavbar.homeLabel}
-          button2Link={blogNavbar.homeLink}
+          button1Text={blogNavbar.blogBranding}
+          brandingLink={blogNavbar.homeLink}
           className={blogNavbarMargin}
           isDark={isDark}
           setIsDark={setIsDark}

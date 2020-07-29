@@ -7,58 +7,72 @@ import {
   titleShadowDark,
   navbarFlex,
   centerDarkModeToggle,
-  button1,
-  button2,
+  brandingContainer,
+  branding,
+  brandingDark,
+  blogLinkBranding,
+  blogLinkBrandingDark,
+  defaultCursor,
+  pointerCursor,
 } from "../../stylesheets/components/Navbar/BlogNavbar.module.sass";
-import CustomButton from "../CustomButton";
 import DarkModeToggle from "../DarkModeToggle";
 
-const BlogNavbar = ({
-  button1Text,
-  button1Link,
-  button2Text,
-  button2Link,
-  className,
-  isDark,
-  setIsDark,
-}) => {
+import BrandingLight from "../../data/images/blog-branding-light.svg";
+import BrandingDark from "../../data/images/blog-branding-dark.svg";
+import UnstyledLink from "../Util/UnstyledLink";
+
+const BlogNavbar = ({ button1Text, button1Link, brandingLink, className, isDark, setIsDark }) => {
+  const header = (
+    <h1 className={`${noMargin} ${titleFont}`}>
+      {button1Text}
+    </h1>
+  );
+
   const getTitleOrButton = (text, link) => {
     return link ? (
-      <CustomButton isDark={isDark} text={text} to={link} />
+      <UnstyledLink
+        className={`${isDark ? blogLinkBrandingDark : blogLinkBranding} ${pointerCursor}`}
+        to={link}
+      >
+        {header}
+      </UnstyledLink>
     ) : (
-      <h1 className={`${noMargin} ${titleFont} ${isDark ? titleShadowDark : titleShadow}`}>
-        {text}
-      </h1>
+      <span className={`${defaultCursor} ${isDark ? titleShadowDark : titleShadow}`}>{header}</span>
     );
   };
 
   return (
     <div className={`${navbarFlex} ${className}`}>
-      <div className={button1}>{getTitleOrButton(button1Text, button1Link, isDark)}</div>
+      <div className={brandingContainer}>
+        <UnstyledLink to={brandingLink}>
+          <img
+            className={`${branding} ${isDark && brandingDark}`}
+            alt="branding-logo"
+            src={isDark ? BrandingDark : BrandingLight}
+          />
+        </UnstyledLink>
+
+        {getTitleOrButton(button1Text, button1Link, isDark)}
+      </div>
       <div className={centerDarkModeToggle}>
         <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
       </div>
-      <div className={button2}>{getTitleOrButton(button2Text, button2Link, isDark)}</div>
     </div>
   );
 };
 
 BlogNavbar.propTypes = {
-  button1Text: PropTypes.string,
+  button1Text: PropTypes.string.isRequired,
   button1Link: PropTypes.string,
-  button2Text: PropTypes.string,
-  button2Link: PropTypes.string,
+  brandingLink: PropTypes.string.isRequired,
   className: PropTypes.string,
   isDark: PropTypes.bool.isRequired,
   setIsDark: PropTypes.func.isRequired,
 };
 
 BlogNavbar.defaultProps = {
-  button1Text: null,
-  button1Link: null,
-  button2Text: null,
-  button2Link: null,
   className: null,
+  button1Link: null,
 };
 
 export default BlogNavbar;

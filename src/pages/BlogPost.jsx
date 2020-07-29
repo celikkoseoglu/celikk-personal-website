@@ -57,10 +57,9 @@ const BlogPost = () => {
       <div className={width}>
         <div className={`${blogContainer}`}>
           <BlogNavbar
-            button1Text={blogNavbar.goBackLabel}
+            button1Text={blogNavbar.blogBranding}
             button1Link={blogNavbar.blogLink}
-            button2Text={blogNavbar.homeLabel}
-            button2Link={blogNavbar.homeLink}
+            brandingLink={blogNavbar.homeLink}
             className={blogPostNavbarMargin}
             isDark={isDark}
             setIsDark={setIsDark}

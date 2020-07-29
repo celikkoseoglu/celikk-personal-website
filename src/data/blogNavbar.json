@@ -1,6 +1,5 @@
 {
-  "goBackLabel": "← Blog",
+  "blogBranding": "BLOG",
   "blogLink": "/blog",
-  "homeLabel": "Home",
   "homeLink": "/"
 }
