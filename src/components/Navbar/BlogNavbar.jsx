@@ -6,7 +6,7 @@ import {
   titleShadow,
   titleShadowDark,
   navbarFlex,
-  centerDarkModeToggle,
+  darkModeToggle,
   brandingContainer,
   branding,
   brandingDark,
@@ -16,17 +16,13 @@ import {
   pointerCursor,
 } from "../../stylesheets/components/Navbar/BlogNavbar.module.sass";
 import DarkModeToggle from "../DarkModeToggle";
+import UnstyledLink from "../Util/UnstyledLink";
 
 import BrandingLight from "../../data/images/blog-branding-light.svg";
 import BrandingDark from "../../data/images/blog-branding-dark.svg";
-import UnstyledLink from "../Util/UnstyledLink";
 
-const BlogNavbar = ({ button1Text, button1Link, brandingLink, className, isDark, setIsDark }) => {
-  const header = (
-    <h1 className={`${noMargin} ${titleFont}`}>
-      {button1Text}
-    </h1>
-  );
+const BlogNavbar = ({ headerText, headerLink, brandingLink, isDark, setIsDark, className }) => {
+  const header = <h1 className={`${noMargin} ${titleFont}`}>{headerText}</h1>;
 
   const getTitleOrButton = (text, link) => {
     return link ? (
@@ -52,9 +48,9 @@ const BlogNavbar = ({ button1Text, button1Link, brandingLink, className, isDark,
           />
         </UnstyledLink>
 
-        {getTitleOrButton(button1Text, button1Link, isDark)}
+        {getTitleOrButton(headerText, headerLink, isDark)}
       </div>
-      <div className={centerDarkModeToggle}>
+      <div className={darkModeToggle}>
         <DarkModeToggle onClickMethod={setIsDark} isDark={isDark} setIsDark={setIsDark} />
       </div>
     </div>
@@ -62,17 +58,17 @@ const BlogNavbar = ({ button1Text, button1Link, brandingLink, className, isDark,
 };
 
 BlogNavbar.propTypes = {
-  button1Text: PropTypes.string.isRequired,
-  button1Link: PropTypes.string,
+  headerText: PropTypes.string.isRequired,
+  headerLink: PropTypes.string,
   brandingLink: PropTypes.string.isRequired,
-  className: PropTypes.string,
   isDark: PropTypes.bool.isRequired,
   setIsDark: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 BlogNavbar.defaultProps = {
+  headerLink: null,
   className: null,
-  button1Link: null,
 };
 
 export default BlogNavbar;

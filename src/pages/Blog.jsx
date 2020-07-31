@@ -59,7 +59,7 @@ const Blog = () => {
       />
       <div className={`${blogStyle}`}>
         <BlogNavbar
-          button1Text={blogNavbar.blogBranding}
+          headerText={blogNavbar.blogBranding}
           brandingLink={blogNavbar.homeLink}
           className={blogNavbarMargin}
           isDark={isDark}

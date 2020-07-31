@@ -57,8 +57,8 @@ const BlogPost = () => {
       <div className={width}>
         <div className={`${blogContainer}`}>
           <BlogNavbar
-            button1Text={blogNavbar.blogBranding}
-            button1Link={blogNavbar.blogLink}
+            headerText={blogNavbar.blogBranding}
+            headerLink={blogNavbar.blogLink}
             brandingLink={blogNavbar.homeLink}
             className={blogPostNavbarMargin}
             isDark={isDark}
