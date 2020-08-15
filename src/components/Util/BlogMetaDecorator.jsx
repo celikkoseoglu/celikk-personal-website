@@ -6,7 +6,7 @@ const BlogMetaDecorator = ({ title, description, image, imageAlt, folder }) => {
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    import(`../../data/images/blog/${folder}/${image}`).then((imageLink) => {
+    import(`../../data/images/blogPost/${folder}/${image}`).then((imageLink) => {
       setUrl(imageLink.default);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

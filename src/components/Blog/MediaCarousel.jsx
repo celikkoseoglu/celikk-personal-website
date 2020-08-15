@@ -19,7 +19,7 @@ const getImageLinkWithExtension = (imageLink) => {
 };
 
 const imageLinkWithExtension = (folder, imageFileName) => {
-  return `data/images/blog/${folder}/${getImageLinkWithExtension(imageFileName)}`;
+  return `data/images/blogPost/${folder}/${getImageLinkWithExtension(imageFileName)}`;
 };
 
 const MediaCarousel = ({ folder, images, isDark }) => {
