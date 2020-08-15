@@ -18,8 +18,8 @@ import {
 import DarkModeToggle from "../DarkModeToggle";
 import UnstyledLink from "../Util/UnstyledLink";
 
-import BrandingLight from "../../data/images/blog-branding-light.svg";
-import BrandingDark from "../../data/images/blog-branding-dark.svg";
+import BrandingLight from "../../data/images/blog/blog-branding-light.svg";
+import BrandingDark from "../../data/images/blog/blog-branding-dark.svg";
 
 const BlogNavbar = ({ headerText, headerLink, brandingLink, isDark, setIsDark, className }) => {
   const header = <h1 className={`${noMargin} ${titleFont}`}>{headerText}</h1>;
