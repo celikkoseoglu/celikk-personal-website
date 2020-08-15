@@ -9,6 +9,7 @@ import {
   blogNavbarMargin,
   blogStyle,
   blogTitleFont,
+  blogSubtitleFont,
   circularImage,
   footerStyle,
   noMargin,
@@ -75,7 +76,7 @@ const Blog = () => {
           </div>
           <div>
             <p className={`${blogTitleFont} ${noMargin}`}>{blog.title}</p>
-            <p className={`${blogTitleFont} ${noMargin}`}>{blog.subtitle}</p>
+            <p className={`${blogSubtitleFont} ${noMargin}`}>{blog.subtitle}</p>
           </div>
         </Row>
 
