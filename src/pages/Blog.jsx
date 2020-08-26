@@ -24,6 +24,8 @@ import { firebaseAnalytics } from "../firebaseConfig";
 import MetaDecorator from "../components/Util/MetaDecorator";
 import metaThumbnail from "../data/images/meta/blog.png";
 
+import profilePictureImage from "../data/images/blog/PP.jpg";
+
 const blog = require("../data/blog");
 const footer = require("../data/footer");
 const blogNavbar = require("../data/blogNavbar");
@@ -70,7 +72,7 @@ const Blog = () => {
           <div>
             <img
               className={`${circularImage} ${profilePicture}`}
-              src={`${blog.imageLink}`}
+              src={`${profilePictureImage}`}
               alt={blog.imageAlt}
             />
           </div>
