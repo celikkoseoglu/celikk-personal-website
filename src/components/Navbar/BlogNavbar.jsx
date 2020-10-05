@@ -17,9 +17,7 @@ import {
 } from "../../stylesheets/components/Navbar/BlogNavbar.module.sass";
 import DarkModeToggle from "../DarkModeToggle";
 import UnstyledLink from "../Util/UnstyledLink";
-
-import BrandingLight from "../../data/images/blog/blog-branding-light.svg";
-import BrandingDark from "../../data/images/blog/blog-branding-dark.svg";
+import BlogBrandingLogo from "../Animations/BlogBrandingLogo";
 
 const BlogNavbar = ({ headerText, headerLink, brandingLink, isDark, setIsDark, className }) => {
   const header = <h1 className={`${noMargin} ${titleFont}`}>{headerText}</h1>;
@@ -41,11 +39,7 @@ const BlogNavbar = ({ headerText, headerLink, brandingLink, isDark, setIsDark, c
     <div className={`${navbarFlex} ${className}`}>
       <div className={brandingContainer}>
         <UnstyledLink to={brandingLink}>
-          <img
-            className={`${branding} ${isDark && brandingDark}`}
-            alt="branding-logo"
-            src={isDark ? BrandingDark : BrandingLight}
-          />
+          <BlogBrandingLogo className={`${branding} ${isDark && brandingDark}`} isDark={isDark} />
         </UnstyledLink>
 
         {getTitleOrButton(headerText, headerLink, isDark)}
