@@ -1,16 +1,20 @@
 @import "../../../utils/colorPalette"
 
+$shadow-offset: 6px
+$shadow-margin: 8px
+
 .square
   width: 230px
   border: 1px solid $grey
   border-radius: 5px
-  box-shadow: 6px 6px 0 0 $smoke-grey
+  box-shadow: $shadow-offset $shadow-offset 0 0 $smoke-grey
   transition: box-shadow 0.1s, transform 0.1s
   text-align: center
   padding: 8px
   margin-top: 20px
   margin-left: auto
   margin-right: auto
+  margin-block-end: 0
   &:hover
     -webkit-box-shadow: 8px 8px 0 0 $smoke-grey
     box-shadow: 8px 8px 0 0 $smoke-grey
@@ -26,3 +30,6 @@
 .montserrat
   font-family: 'Montserrat', sans-serif
   font-weight: 600
+
+.shadowMargin
+  padding-bottom: $shadow-margin
