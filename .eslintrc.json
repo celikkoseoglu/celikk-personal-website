@@ -21,7 +21,9 @@
     ],
     "prettier/prettier": "warn",
     "react-hooks/rules-of-hooks": "error",
+    "import/prefer-default-export": "warn",
     "react-hooks/exhaustive-deps": "warn",
+    "no-unused-vars": "warn",
     "max-len": [
       "warn",
       100
