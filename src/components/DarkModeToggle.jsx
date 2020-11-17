@@ -11,8 +11,8 @@ import {
 const onClickWrapper = (onClickMethod, isDark, event) => {
   const customEventState = {
     isDark,
-    pageX: event.pageX,
-    pageY: event.pageY,
+    pageX: event.clientX,
+    pageY: event.clientY,
   };
 
   const darkModeToggledEvent = new CustomEvent("darkModeToggled", { detail: customEventState });
