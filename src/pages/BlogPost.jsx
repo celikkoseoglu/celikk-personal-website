@@ -3,9 +3,8 @@ import NoSSR from "react-no-ssr";
 import { Redirect, useParams } from "react-router-dom";
 import {
   blogContainer,
-  blogPostBackground,
   blogPostDark,
-  blogPostMargins,
+  blogPostBody,
   blogPostNavbarMargin,
   footerStyle,
   width,
@@ -17,6 +16,7 @@ import LoadingIndicator from "../components/Util/LoadingIndicator";
 import BlogNavbar from "../components/Navbar/BlogNavbar";
 import { firebaseAnalytics } from "../firebaseConfig";
 import BlogPostMarkdown from "../components/Blog/BlogPostMarkdown";
+import GrowingCircleAnimation from "../components/Animations/GrowingCircleAnimation";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
@@ -53,7 +53,8 @@ const BlogPost = () => {
   const noSSRContent = <BlogPostMarkdown content={post} isDark={isDark} />;
 
   const content = (
-    <div className={`${isDark ? blogPostDark : null} ${blogPostMargins} ${blogPostBackground}`}>
+    <div className={`${isDark && blogPostDark} ${blogPostBody}`}>
+      <GrowingCircleAnimation isDark={isDark}/>
       <div className={width}>
         <div className={`${blogContainer}`}>
           <BlogNavbar

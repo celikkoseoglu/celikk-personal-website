@@ -8,9 +8,17 @@ import {
   crescent,
 } from "../stylesheets/components/DarkModeToggle.module.sass";
 
-const onClickWrapper = (onClickMethod, isDark) => {
+const onClickWrapper = (onClickMethod, isDark, event) => {
+  const customEventState = {
+    isDark,
+    pageX: event.pageX,
+    pageY: event.pageY,
+  };
+
+  const darkModeToggledEvent = new CustomEvent("darkModeToggled", { detail: customEventState });
   onClickMethod(isDark);
   storage.setItem("theme", isDark.toString());
+  dispatchEvent(darkModeToggledEvent);
 };
 
 const DarkModeToggle = ({ isDark, onClickMethod }) => {
@@ -18,7 +26,7 @@ const DarkModeToggle = ({ isDark, onClickMethod }) => {
     <button
       type="button"
       aria-label="Dark Mode Toggle"
-      onClick={(_) => onClickWrapper(onClickMethod, !isDark)}
+      onClick={(event) => onClickWrapper(onClickMethod, !isDark, event)}
       className={`${isDark ? moon : sun} ${darkModeToggle}`}
     >
       <div className={crescent} />

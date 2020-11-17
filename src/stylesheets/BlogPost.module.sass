@@ -9,18 +9,15 @@
   margin-right: auto
   padding-left: 15px
   padding-right: 15px
-
-.blogPostBackground
-  min-height: 100vh
-  background-color: $white
-  transition: background-color $colorTransitionDuration
-
-.blogPostMargins
-  display: flex
-  justify-content: center
   padding-top: 70px
   +screen(small)
     padding-top: 30px
+
+.blogPostBody
+  display: flex
+  justify-content: center
+  transition: color $colorTransitionDuration
+  min-height: 100vh
 
 .blogPostNavbarMargin
   margin-bottom: 50px
@@ -29,7 +26,6 @@
 
 .blogPostDark
   color: $white
-  background-color: $midnight-black
 
 .footerStyle
   max-width: $blog-width

@@ -25,6 +25,7 @@ import MetaDecorator from "../components/Util/MetaDecorator";
 import metaThumbnail from "../data/images/meta/blog.png";
 
 import profilePictureImage from "../data/images/blog/PP.jpg";
+import GrowingCircleAnimation from "../components/Animations/GrowingCircleAnimation";
 
 const blog = require("../data/blog");
 const footer = require("../data/footer");
@@ -60,6 +61,7 @@ const Blog = () => {
         imageUrl={metaThumbnail}
         imageAlt={blog.metaImageAlt}
       />
+      <GrowingCircleAnimation isDark={isDark}/>
       <div className={`${blogStyle}`}>
         <BlogNavbar
           headerText={blogNavbar.blogBranding}
