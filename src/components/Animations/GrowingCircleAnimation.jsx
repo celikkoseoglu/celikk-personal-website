@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { size } from "../../stylesheets/components/Animations/GrowingCircleAnimation.module.sass";
 
-const ANIM_DURATION_CONSTANT = 500000;
+const ANIM_DURATION_CONSTANT = 50000;
+const RADIUS_INCREASE_CONSTANT = 1600;
 
 const colors = {
   white: "#FFF",
@@ -10,7 +11,7 @@ const colors = {
 };
 
 const getExponentialRadius = (frame) => {
-  return frame ** 3.5 * 0.005;
+  return frame ** 2 * 0.01;
 };
 
 const canvasState = {
@@ -43,11 +44,14 @@ const GrowingCircleAnimation = ({ isDark }) => {
   }
 
   const getMaxRadius = () => {
-    return Math.max(ctx.canvas.width * 0.75, ctx.canvas.height * 0.75);
+    return Math.max(ctx.canvas.width * 0.75, ctx.canvas.height * 1.25);
   };
 
-  const getRadiusCoefficient = (timePastInMills, maxRadius) => {
-    return (1 - (ANIM_DURATION_CONSTANT - timePastInMills) / ANIM_DURATION_CONSTANT) * maxRadius;
+  const getRadiusCoefficient = (timePastInMills) => {
+    return (
+      (1 - (ANIM_DURATION_CONSTANT - timePastInMills) / ANIM_DURATION_CONSTANT) *
+      RADIUS_INCREASE_CONSTANT
+    );
   };
 
   const draw = (radius) => {
@@ -69,10 +73,10 @@ const GrowingCircleAnimation = ({ isDark }) => {
       } else {
         canvasState.currentAnimationTime += Date.now() - startTimeInMills;
       }
-      const radius = getRadiusCoefficient(Math.max(0, canvasState.currentAnimationTime), maxRadius);
+      const radius = getRadiusCoefficient(Math.max(0, canvasState.currentAnimationTime));
       draw(radius);
       canvasState.currentAnimationFrame = window.requestAnimationFrame(render);
-      if (getExponentialRadius(radius) > getMaxRadius() || radius === 0) {
+      if (getExponentialRadius(radius) > maxRadius || radius === 0) {
         window.cancelAnimationFrame(canvasState.currentAnimationFrame);
         canvasState.isAnimating = false;
         canvasState.isReverse = false;
