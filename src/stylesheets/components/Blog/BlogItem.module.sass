@@ -1,13 +1,11 @@
 @import "../../../utils/colorPalette"
-
-$animation-duration: .15s
+@import "../../../utils/animationTimer"
 
 .blogItemLink
   h4, h6, p
-    transition: color $animation-duration ease
-  &:hover h4
-    color: $dark-blue
-  &:hover h6,  &:hover p
+    transition: color $colorTransitionDuration ease
+  &:hover h4, &:hover h6, &:hover p
+    transition: color $hoverColorTransitionDuration ease
     color: $dark-blue
 
 .blogItemLinkDark
