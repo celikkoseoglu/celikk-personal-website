@@ -32,8 +32,6 @@ const footer = require("../data/footer");
 const blogNavbar = require("../data/blogNavbar");
 
 const Blog = () => {
-  window.scrollTo(0, 0);
-
   const [isDark, setIsDark] = useState(getInitialTheme());
 
   useEffect(() => {

@@ -6,6 +6,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import PageNavigationListener from "./utils/PageNavigationListener.utils";
 import "./index.sass";
 import { BLOG_LINK } from "./utils/Constants.utils";
 
@@ -14,6 +15,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const APP = (
   <BrowserRouter>
+    <PageNavigationListener />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path={BLOG_LINK} component={Blog} />
