@@ -73,7 +73,7 @@ const BlogBrandingLogo = ({ className, isDark }) => {
 
 BlogBrandingLogo.propTypes = {
   className: PropTypes.string,
-  isDark: PropTypes.string.isRequired,
+  isDark: PropTypes.bool.isRequired,
 };
 
 BlogBrandingLogo.defaultProps = {

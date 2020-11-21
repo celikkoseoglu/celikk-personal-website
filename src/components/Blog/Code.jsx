@@ -33,7 +33,7 @@ const Code = ({ children, language, isDark }) => {
 };
 
 Code.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.PropTypes.arrayOf(PropTypes.PropTypes.string).isRequired,
   language: PropTypes.string,
   isDark: PropTypes.bool.isRequired,
 };
