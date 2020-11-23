@@ -15,14 +15,16 @@ const mouseState = {
   mouseY: null,
 };
 
+// circle animation state machine
 const m = {
   isDark: null,
   radiusMultiplier: 0,
   maxRadiusMultiplier: 0,
-  ctx: null,
+  ctx: null, // canvas context
   timeAtPreviousDraw: null,
 
   createMachine: (ctx, isDark) => {
+    // populate initial state
     m.ctx = ctx;
     m.isDark = isDark;
     m.maxRadiusMultiplier =
@@ -124,22 +126,19 @@ const resizeCanvas = (context) => {
 
 const GrowingCircleAnimation = ({ isDark }) => {
   const canvasRef = useRef(null);
-  let ctx = null;
-  let stateMachine = null;
-
-  function handleClick(event) {
-    // fill in the mouse coordinates
-    mouseState.mouseX = event.detail.pageX;
-    mouseState.mouseY = event.detail.pageY;
-  }
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d");
     resizeCanvas(ctx);
 
-    stateMachine = m.createMachine(ctx, isDark);
+    function handleClick(event) {
+      // fill in the mouse coordinates
+      mouseState.mouseX = event.detail.pageX;
+      mouseState.mouseY = event.detail.pageY;
+    }
+
+    let stateMachine = m.createMachine(ctx, isDark);
 
     let stateMachineRunner = () => {
       if (stateMachine !== null) {
@@ -166,7 +165,7 @@ const GrowingCircleAnimation = ({ isDark }) => {
       stateMachineRunner = null;
       window.removeEventListener("darkModeToggled", handleClick);
     };
-  }, [handleClick]);
+  }, [isDark]);
 
   return <canvas className={`${size}`} ref={canvasRef} />;
 };
