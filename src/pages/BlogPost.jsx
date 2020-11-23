@@ -54,7 +54,7 @@ const BlogPost = () => {
 
   const content = (
     <div className={`${isDark && blogPostDark} ${blogPostBody}`}>
-      <GrowingCircleAnimation isDark={isDark}/>
+      <GrowingCircleAnimation isDark={isDark} />
       <div className={width}>
         <div className={`${blogContainer}`}>
           <BlogNavbar

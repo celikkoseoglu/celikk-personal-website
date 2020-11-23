@@ -2,26 +2,114 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { size } from "../../stylesheets/components/Animations/GrowingCircleAnimation.module.sass";
 
-const ANIM_DURATION_CONSTANT = 50000;
-const RADIUS_INCREASE_CONSTANT = 1600;
-
-const colors = {
+const COLORS = {
   white: "#FFF",
   midnightBlack: "#111",
 };
 
-const getExponentialRadius = (frame) => {
-  return frame ** 2 * 0.01;
-};
+const RADIUS_GROWTH_PER_MS = 0.027;
+const GROWTH_FUNCTION_EXPONENTIAL = 2.8;
 
-const canvasState = {
-  isAnimating: false,
-  isReverse: false,
-  wasDarkBeforeAnimationStarted: null, // this variable name doesn't make much sense
+const mouseState = {
   mouseX: null,
   mouseY: null,
-  currentAnimationFrame: null,
-  currentAnimationTime: 0,
+};
+
+const m = {
+  isDark: null,
+  radiusMultiplier: 0,
+  maxRadiusMultiplier: 0,
+  ctx: null,
+  timeAtPreviousDraw: null,
+
+  createMachine: (ctx, isDark) => {
+    m.ctx = ctx;
+    m.isDark = isDark;
+    m.maxRadiusMultiplier =
+      Math.max(ctx.canvas.width * 0.75, ctx.canvas.height * 1.5) **
+      (1.0 / GROWTH_FUNCTION_EXPONENTIAL);
+    m.timeAtPreviousDraw = Date.now();
+    return m.start;
+  },
+  start: () => {
+    if (!m.isDark) {
+      return m.canGrowCircle;
+    }
+    return m.canShrinkCircle;
+  },
+
+  canGrowCircle: () => {
+    if (m.radiusMultiplier < m.maxRadiusMultiplier) {
+      return m.growCircle;
+    }
+    return m.verifyCircleBounds;
+  },
+
+  canShrinkCircle: () => {
+    if (m.radiusMultiplier > 0) {
+      return m.shrinkCircle;
+    }
+    return m.verifyCircleBounds;
+  },
+
+  growCircle: () => {
+    m.radiusMultiplier += RADIUS_GROWTH_PER_MS * Math.max(1, Date.now() - m.timeAtPreviousDraw);
+    if (m.radiusMultiplier > m.maxRadiusMultiplier) {
+      m.radiusMultiplier = m.maxRadiusMultiplier;
+    }
+    return m.verifyCircleBounds;
+  },
+
+  shrinkCircle: () => {
+    m.radiusMultiplier -= RADIUS_GROWTH_PER_MS * Math.max(1, Date.now() - m.timeAtPreviousDraw);
+    if (m.radiusMultiplier < 0) {
+      m.radiusMultiplier = 0;
+    }
+    return m.verifyCircleBounds;
+  },
+
+  verifyCircleBounds: () => {
+    if (m.radiusMultiplier <= 0 || m.radiusMultiplier >= m.maxRadiusMultiplier) {
+      // just paint the canvas
+      m.ctx.fillStyle = m.isDark ? COLORS.midnightBlack : COLORS.white;
+      m.ctx.fillRect(0, 0, m.ctx.canvas.width, m.ctx.canvas.height);
+
+      return null; // no next step
+    }
+
+    return m.clearCanvas;
+  },
+
+  clearCanvas: () => {
+    m.ctx.fillStyle = COLORS.midnightBlack;
+    m.ctx.fillRect(0, 0, m.ctx.canvas.width, m.ctx.canvas.height);
+
+    return m.drawCircle;
+  },
+
+  drawCircle: () => {
+    m.ctx.fillStyle = COLORS.white;
+    m.ctx.beginPath();
+    m.ctx.arc(
+      mouseState.mouseX,
+      mouseState.mouseY,
+      m.radiusMultiplier ** GROWTH_FUNCTION_EXPONENTIAL,
+      0,
+      2 * Math.PI
+    );
+    m.ctx.fill();
+    m.timeAtPreviousDraw = Date.now();
+
+    const waitTillAnimationCompletes = new Promise((rtn) => {
+      const writeBackTime = () => {
+        rtn(m.start);
+      };
+
+      window.requestAnimationFrame(writeBackTime); // note the time when we end drawing
+    });
+
+    return waitTillAnimationCompletes;
+  },
 };
 
 const resizeCanvas = (context) => {
@@ -37,70 +125,12 @@ const resizeCanvas = (context) => {
 const GrowingCircleAnimation = ({ isDark }) => {
   const canvasRef = useRef(null);
   let ctx = null;
-
-  function fillCanvas(paintDark) {
-    ctx.fillStyle = paintDark ? colors.midnightBlack : colors.white;
-    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-  }
-
-  const getMaxRadius = () => {
-    return Math.max(ctx.canvas.width * 0.75, ctx.canvas.height * 1.25);
-  };
-
-  const getRadiusCoefficient = (timePastInMills) => {
-    return (
-      (1 - (ANIM_DURATION_CONSTANT - timePastInMills) / ANIM_DURATION_CONSTANT) *
-      RADIUS_INCREASE_CONSTANT
-    );
-  };
-
-  const draw = (radius) => {
-    fillCanvas(canvasState.wasDarkBeforeAnimationStarted);
-
-    ctx.fillStyle = canvasState.wasDarkBeforeAnimationStarted ? colors.white : colors.midnightBlack;
-    ctx.beginPath();
-    ctx.arc(canvasState.mouseX, canvasState.mouseY, getExponentialRadius(radius), 0, 2 * Math.PI);
-    ctx.fill();
-  };
-
-  function startDrawing() {
-    const startTimeInMills = Date.now() - 1; // make sure we don't start from now
-    const maxRadius = getMaxRadius();
-
-    const render = () => {
-      if (canvasState.isReverse) {
-        canvasState.currentAnimationTime -= Date.now() - startTimeInMills;
-      } else {
-        canvasState.currentAnimationTime += Date.now() - startTimeInMills;
-      }
-      const radius = getRadiusCoefficient(Math.max(0, canvasState.currentAnimationTime));
-      draw(radius);
-      canvasState.currentAnimationFrame = window.requestAnimationFrame(render);
-      if (getExponentialRadius(radius) > maxRadius || radius === 0) {
-        window.cancelAnimationFrame(canvasState.currentAnimationFrame);
-        canvasState.isAnimating = false;
-        canvasState.isReverse = false;
-        canvasState.currentAnimationTime = 0;
-        canvasState.wasDarkBeforeAnimationStarted = isDark;
-        fillCanvas(isDark);
-      }
-    };
-    render();
-  }
+  let stateMachine = null;
 
   function handleClick(event) {
-    window.cancelAnimationFrame(canvasState.currentAnimationFrame);
-
     // fill in the mouse coordinates
-    canvasState.mouseX = event.detail.pageX;
-    canvasState.mouseY = event.detail.pageY;
-
-    // next time the component is redrawn, it will know it needs to animate
-    if (canvasState.isAnimating === false) {
-      canvasState.isAnimating = true;
-    } else {
-      canvasState.isReverse = !canvasState.isReverse;
-    }
+    mouseState.mouseX = event.detail.pageX;
+    mouseState.mouseY = event.detail.pageY;
   }
 
   useEffect(() => {
@@ -109,16 +139,31 @@ const GrowingCircleAnimation = ({ isDark }) => {
     ctx = canvas.getContext("2d");
     resizeCanvas(ctx);
 
-    if (!canvasState.isAnimating) {
-      fillCanvas(isDark);
-      canvasState.wasDarkBeforeAnimationStarted = isDark;
-    } else {
-      fillCanvas(canvasState.wasDarkBeforeAnimationStarted);
-      startDrawing();
-    }
+    stateMachine = m.createMachine(ctx, isDark);
+
+    let stateMachineRunner = () => {
+      if (stateMachine !== null) {
+        if (stateMachine instanceof Function) {
+          stateMachine = stateMachine();
+          if (stateMachineRunner !== null) {
+            stateMachineRunner();
+          }
+        } else {
+          stateMachine.then((val) => {
+            stateMachine = val();
+            if (stateMachineRunner !== null) {
+              stateMachineRunner();
+            }
+          });
+        }
+      }
+    };
+
+    stateMachineRunner();
 
     window.addEventListener("darkModeToggled", handleClick);
     return () => {
+      stateMachineRunner = null;
       window.removeEventListener("darkModeToggled", handleClick);
     };
   }, [handleClick]);

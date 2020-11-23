@@ -3,7 +3,7 @@ import NoSSR from "react-no-ssr";
 import BlogItem from "../components/Blog/BlogItem";
 import Row from "../components/Util/Row";
 import {
-  background,
+  fontColorTransition,
   blogDark,
   blogItemMargin,
   blogNavbarMargin,
@@ -52,14 +52,14 @@ const Blog = () => {
   ));
 
   const content = (
-    <div className={`${background} ${isDark && blogDark}`}>
+    <div className={`${isDark && blogDark}`}>
       <MetaDecorator
         description={blog.pageDescription}
         title={blog.pageTitle}
         imageUrl={metaThumbnail}
         imageAlt={blog.metaImageAlt}
       />
-      <GrowingCircleAnimation isDark={isDark}/>
+      <GrowingCircleAnimation isDark={isDark} />
       <div className={`${blogStyle}`}>
         <BlogNavbar
           headerText={blogNavbar.blogBranding}
@@ -77,8 +77,10 @@ const Blog = () => {
             />
           </div>
           <div>
-            <p className={`${blogTitleFont} ${noMargin}`}>{blog.title}</p>
-            <p className={`${blogSubtitleFont} ${noMargin}`}>{blog.subtitle}</p>
+            <p className={`${blogTitleFont} ${noMargin} ${fontColorTransition}`}>{blog.title}</p>
+            <p className={`${blogSubtitleFont} ${noMargin} ${fontColorTransition}`}>
+              {blog.subtitle}
+            </p>
           </div>
         </Row>
 

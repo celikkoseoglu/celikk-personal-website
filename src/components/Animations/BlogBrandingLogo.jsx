@@ -5,6 +5,7 @@ import {
   darkStroke,
   lightFill,
   darkFill,
+  colorTransition,
 } from "../../stylesheets/components/Animations/BlogBrandingLogo.module.sass";
 
 const DRAW_IN_TIME = 0.5;
@@ -22,7 +23,7 @@ const BlogBrandingLogo = ({ className, isDark }) => {
       version="1.1"
     >
       <path
-        className={isDark ? darkFill : lightFill}
+        className={`${isDark ? darkFill : lightFill} ${colorTransition}`}
         d="M446.7,696.8c-86,24-172.1,24-258.5,0.7c23.9-11.2,63.2-25.8,113.5-28.5C368.7,665.4,420.5,684.8,446.7,696.8z"
         opacity="0"
       >
@@ -39,7 +40,7 @@ const BlogBrandingLogo = ({ className, isDark }) => {
       <path
         id="linePath"
         fill="transparent"
-        className={isDark ? darkStroke : lightStroke}
+        className={`${isDark ? darkStroke : lightStroke} ${colorTransition}`}
         strokeWidth="103"
         strokeDasharray="1170"
         d="M472.8,104.3c-21.6-16.1-79.8-51.9-157-51.9c-145.3,0-263.2,117.8-263.2,263.2c0,159.2,144.4,259.3,263.2,263.2
