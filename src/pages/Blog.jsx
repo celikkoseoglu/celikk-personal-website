@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import NoSSR from "react-no-ssr";
 import BlogItem from "../components/Blog/BlogItem";
 import Row from "../components/Util/Row";
@@ -34,9 +34,7 @@ const blogNavbar = require("../data/blogNavbar");
 const Blog = () => {
   const [isDark, setIsDark] = useState(getInitialTheme());
 
-  useEffect(() => {
-    firebaseAnalytics.logEvent("blog_visited");
-  });
+  firebaseAnalytics.logEvent("blog_visited");
 
   const noSSRContent = blog.blogItems.map((blogItem) => (
     <BlogItem
@@ -52,7 +50,7 @@ const Blog = () => {
   ));
 
   const content = (
-    <div className={`${isDark && blogDark}`}>
+    <div>
       <MetaDecorator
         description={blog.pageDescription}
         title={blog.pageTitle}
@@ -76,7 +74,7 @@ const Blog = () => {
               alt={blog.imageAlt}
             />
           </div>
-          <div>
+          <div className={`${isDark && blogDark}`}>
             <p className={`${blogTitleFont} ${noMargin} ${fontColorTransition}`}>{blog.title}</p>
             <p className={`${blogSubtitleFont} ${noMargin} ${fontColorTransition}`}>
               {blog.subtitle}

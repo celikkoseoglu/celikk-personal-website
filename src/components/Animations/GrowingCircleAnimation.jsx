@@ -1,36 +1,104 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import { size } from "../../stylesheets/components/Animations/GrowingCircleAnimation.module.sass";
+import { debounce, throttle } from "../../utils/Limitors";
 
 const COLORS = {
   white: "#FFF",
   midnightBlack: "#111",
 };
 
-const RADIUS_GROWTH_PER_MS = 0.027;
-const GROWTH_FUNCTION_EXPONENTIAL = 2.8;
+function getWidth() {
+  return Math.max(
+    document.body.scrollWidth,
+    document.documentElement.scrollWidth,
+    document.body.offsetWidth,
+    document.documentElement.offsetWidth,
+    document.documentElement.clientWidth
+  );
+}
 
-const mouseState = {
-  mouseX: null,
-  mouseY: null,
+function getHeight() {
+  return Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.documentElement.clientHeight
+  );
+}
+
+const RADIUS_GROWTH_PER_MS = 0.025;
+const GROWTH_FUNCTION_EXPONENTIAL = 2.9;
+
+const circleCenterCoordinates = {
+  x: null,
+  y: null,
+
+  resetMouseState: () => {
+    circleCenterCoordinates.x = null;
+    circleCenterCoordinates.y = null;
+  },
 };
 
 // circle animation state machine
 const m = {
-  isDark: null,
-  radiusMultiplier: 0,
-  maxRadiusMultiplier: 0,
   ctx: null, // canvas context
+  isDark: null,
+  radiusMultiplier: null,
+  maxRadiusMultiplier: null,
   timeAtPreviousDraw: null,
+  height: null,
+  width: null,
 
-  createMachine: (ctx, isDark) => {
-    // populate initial state
+  resetState: (ctx, isDark) => {
     m.ctx = ctx;
     m.isDark = isDark;
+    m.radiusMultiplier = null;
+    m.maxRadiusMultiplier = null;
+    m.timeAtPreviousDraw = null;
+
+    return null; // no next step - end of state machine
+  },
+
+  createMachine: (ctx, isDark) => {
+    m.ctx = ctx;
+    m.isDark = isDark;
+    m.height = getHeight();
+    m.width = getWidth();
+
+    const { width, height } = m.ctx.canvas.getBoundingClientRect();
+    if (m.ctx.canvas.width !== width || m.ctx.canvas.height !== height) {
+      const { devicePixelRatio: originalRatio = 1 } = window;
+      // we don't need such a high resolution for this type of animation. Plus it makes the edges
+      // of the circle look blurred, which looks nicer. Also improves performance a lot on slow GPUs
+      const lowerResolutionRatio = originalRatio * 0.5;
+      m.ctx.canvas.width = width * lowerResolutionRatio;
+      m.ctx.canvas.height = height * lowerResolutionRatio;
+      m.ctx.scale(lowerResolutionRatio, lowerResolutionRatio);
+    }
+
     m.maxRadiusMultiplier =
-      Math.max(ctx.canvas.width * 0.75, ctx.canvas.height * 1.5) **
-      (1.0 / GROWTH_FUNCTION_EXPONENTIAL);
+      Math.max(m.width * 0.75, m.height * 1.5) ** (1.0 / GROWTH_FUNCTION_EXPONENTIAL);
     m.timeAtPreviousDraw = Date.now();
+
+    // iOS page zoom doesn't trigger resize event handler. If user switches to light mode on smaller
+    // zoom and then changes zoom factor back to something bigger, radiusMultiplier will be greater
+    // than maxRadiusMultiplier. verifyCircleBounds will think the anim is complete and return null
+    if (m.radiusMultiplier > m.maxRadiusMultiplier) {
+      m.radiusMultiplier = m.maxRadiusMultiplier;
+    }
+
+    if (circleCenterCoordinates.x == null || circleCenterCoordinates.y == null) {
+      if (isDark) {
+        m.radiusMultiplier = 0;
+      } else {
+        m.radiusMultiplier = m.maxRadiusMultiplier;
+      }
+
+      return m.verifyCircleBounds;
+    }
+
     return m.start;
   },
   start: () => {
@@ -72,20 +140,18 @@ const m = {
 
   verifyCircleBounds: () => {
     if (m.radiusMultiplier <= 0 || m.radiusMultiplier >= m.maxRadiusMultiplier) {
-      // just paint the canvas
+      // just paint the canvas - no more circle drawing is necessary. We're at the limit
       m.ctx.fillStyle = m.isDark ? COLORS.midnightBlack : COLORS.white;
-      m.ctx.fillRect(0, 0, m.ctx.canvas.width, m.ctx.canvas.height);
+      m.ctx.fillRect(0, 0, m.width, m.height);
 
-      return null; // no next step
+      return null; // no next step - end of state machine
     }
 
     return m.clearCanvas;
   },
 
   clearCanvas: () => {
-    m.ctx.fillStyle = COLORS.midnightBlack;
-    m.ctx.fillRect(0, 0, m.ctx.canvas.width, m.ctx.canvas.height);
-
+    m.ctx.clearRect(0, 0, m.width, m.height);
     return m.drawCircle;
   },
 
@@ -93,8 +159,8 @@ const m = {
     m.ctx.fillStyle = COLORS.white;
     m.ctx.beginPath();
     m.ctx.arc(
-      mouseState.mouseX,
-      mouseState.mouseY,
+      circleCenterCoordinates.x,
+      circleCenterCoordinates.y,
       m.radiusMultiplier ** GROWTH_FUNCTION_EXPONENTIAL,
       0,
       2 * Math.PI
@@ -102,26 +168,16 @@ const m = {
     m.ctx.fill();
     m.timeAtPreviousDraw = Date.now();
 
-    const waitTillAnimationCompletes = new Promise((rtn) => {
+    return new Promise((rtn) => {
       const writeBackTime = () => {
         rtn(m.start);
       };
 
-      window.requestAnimationFrame(writeBackTime); // note the time when we end drawing
+      // Note the time when we end drawing. This will be used to determine how much time has passed
+      // since last draw. Circle growth is based on time delta, not CPU performance
+      window.requestAnimationFrame(writeBackTime);
     });
-
-    return waitTillAnimationCompletes;
   },
-};
-
-const resizeCanvas = (context) => {
-  const { width, height } = context.canvas.getBoundingClientRect();
-  if (context.canvas.width !== width || context.canvas.height !== height) {
-    const { devicePixelRatio: ratio = 1 } = window;
-    context.canvas.width = width * ratio;
-    context.canvas.height = height * ratio;
-    context.scale(ratio, ratio);
-  }
 };
 
 const GrowingCircleAnimation = ({ isDark }) => {
@@ -130,29 +186,25 @@ const GrowingCircleAnimation = ({ isDark }) => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    resizeCanvas(ctx);
 
-    function handleClick(event) {
-      // fill in the mouse coordinates
-      mouseState.mouseX = event.detail.pageX;
-      mouseState.mouseY = event.detail.pageY;
-    }
+    const handleClick = (event) => {
+      // fill in the mouse coordinates when we receive a click so we know the center of the circle
+      circleCenterCoordinates.x = event.detail.x;
+      circleCenterCoordinates.y = event.detail.y;
+    };
 
     let stateMachine = m.createMachine(ctx, isDark);
+    let isStateMachinePowered = true;
 
-    let stateMachineRunner = () => {
-      if (stateMachine !== null) {
+    const stateMachineRunner = () => {
+      if (stateMachine !== null && isStateMachinePowered) {
         if (stateMachine instanceof Function) {
           stateMachine = stateMachine();
-          if (stateMachineRunner !== null) {
-            stateMachineRunner();
-          }
+          stateMachineRunner();
         } else {
           stateMachine.then((val) => {
             stateMachine = val();
-            if (stateMachineRunner !== null) {
-              stateMachineRunner();
-            }
+            stateMachineRunner();
           });
         }
       }
@@ -160,10 +212,19 @@ const GrowingCircleAnimation = ({ isDark }) => {
 
     stateMachineRunner();
 
+    const handleResize = () => {
+      circleCenterCoordinates.resetMouseState();
+      m.resetState(isDark);
+      stateMachine = m.createMachine(ctx, isDark);
+      stateMachineRunner();
+    };
+
     window.addEventListener("darkModeToggled", handleClick);
+    window.addEventListener("resize", throttle(debounce(handleResize)), false);
     return () => {
-      stateMachineRunner = null;
+      isStateMachinePowered = false;
       window.removeEventListener("darkModeToggled", handleClick);
+      window.removeEventListener("resize", throttle(debounce(handleResize)), false);
     };
   }, [isDark]);
 

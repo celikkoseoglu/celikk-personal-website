@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import {
   noMargin,
   titleFont,
-  titleShadow,
-  titleShadowDark,
+  title,
+  titleDark,
   navbarFlex,
   darkModeToggle,
   brandingContainer,
@@ -31,7 +31,7 @@ const BlogNavbar = ({ headerText, headerLink, brandingLink, isDark, setIsDark, c
         {header}
       </UnstyledLink>
     ) : (
-      <span className={`${defaultCursor} ${isDark ? titleShadowDark : titleShadow}`}>{header}</span>
+      <span className={`${defaultCursor} ${isDark ? titleDark : title}`}>{header}</span>
     );
   };
 
