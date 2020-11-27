@@ -7,6 +7,13 @@
   "metaImageAlt": "The image contains the logo of this website. Next to that, it says blog with capital letters in Montserrat font.",
   "blogItems": [
     {
+      "title": "GitHub Stats Scraper - showcase repositories on your website",
+      "date": "27.11.2020",
+      "minutes": "10 min",
+      "subtitle": "Your personal website is the perfect place to showcase your projects. Why don't you display some GitHub stats on there?",
+      "blogPost": "githubStatsScraper"
+    },
+    {
       "title": "Tips on Effective CV Design and Writing",
       "date": "17.07.2020",
       "minutes": "10 min",

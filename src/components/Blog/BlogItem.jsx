@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
+import sass from "react-syntax-highlighter/dist/cjs/languages/prism/sass";
 import UnstyledLink from "../Util/UnstyledLink";
 import {
   blogItemLink,
@@ -12,6 +13,7 @@ import { BLOG_LINK } from "../../utils/Constants.utils";
 
 SyntaxHighlighter.registerLanguage("jsx", jsx);
 SyntaxHighlighter.registerLanguage("bash", bash);
+SyntaxHighlighter.registerLanguage("sass", sass);
 
 const BlogItem = ({ className, title, date, minutes, subtitle, blogPost, isDark }) => {
   return (
