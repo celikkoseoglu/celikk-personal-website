@@ -7,6 +7,7 @@ import {
   socialMediaButtonBackgroundDark,
   footerStyle,
   title,
+  darkTitle,
   socialMediaBar,
 } from "../../stylesheets/components/Footer/BlogFooter.module.sass";
 
@@ -16,7 +17,7 @@ const BlogFooter = ({ isDark }) => {
   return (
     <footer className={footerStyle}>
       <div className={title}>
-        <span>{footer.title}</span>
+        <span className={isDark && darkTitle}>{footer.title}</span>
         <Signature isDark={isDark} />
       </div>
       <div className={socialMediaBar}>
