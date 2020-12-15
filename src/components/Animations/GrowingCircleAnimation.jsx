@@ -8,6 +8,9 @@ const COLORS = {
   midnightBlack: "#111",
 };
 
+const RADIUS_GROWTH_PER_MS = 0.025;
+const GROWTH_FUNCTION_EXPONENTIAL = 2.9;
+
 function getWidth() {
   return Math.max(
     document.body.scrollWidth,
@@ -27,9 +30,6 @@ function getHeight() {
     document.documentElement.clientHeight
   );
 }
-
-const RADIUS_GROWTH_PER_MS = 0.025;
-const GROWTH_FUNCTION_EXPONENTIAL = 2.9;
 
 const circleCenterCoordinates = {
   x: null,
@@ -103,23 +103,9 @@ const m = {
   },
   start: () => {
     if (!m.isDark) {
-      return m.canGrowCircle;
-    }
-    return m.canShrinkCircle;
-  },
-
-  canGrowCircle: () => {
-    if (m.radiusMultiplier < m.maxRadiusMultiplier) {
       return m.growCircle;
     }
-    return m.verifyCircleBounds;
-  },
-
-  canShrinkCircle: () => {
-    if (m.radiusMultiplier > 0) {
-      return m.shrinkCircle;
-    }
-    return m.verifyCircleBounds;
+    return m.shrinkCircle;
   },
 
   growCircle: () => {
@@ -147,10 +133,7 @@ const m = {
       return null; // no next step - end of state machine
     }
 
-    return m.clearCanvas;
-  },
-
-  clearCanvas: () => {
+    // clear canvas before drawing the next circle
     m.ctx.clearRect(0, 0, m.width, m.height);
     return m.drawCircle;
   },
@@ -166,16 +149,16 @@ const m = {
       2 * Math.PI
     );
     m.ctx.fill();
+
+    // Note the time when we start drawing. This will be used to determine how much time has passed
+    // since last draw. Circle growth is based on time delta, not CPU performance
     m.timeAtPreviousDraw = Date.now();
 
     return new Promise((rtn) => {
-      const writeBackTime = () => {
+      const returnAfterAnimating = () => {
         rtn(m.start);
       };
-
-      // Note the time when we end drawing. This will be used to determine how much time has passed
-      // since last draw. Circle growth is based on time delta, not CPU performance
-      window.requestAnimationFrame(writeBackTime);
+      window.requestAnimationFrame(returnAfterAnimating);
     });
   },
 };
