@@ -30,10 +30,10 @@ const onClickWrapper = (onClickMethod, isDark, event) => {
     y: (deviceZoomRatio > 1 ? offsetTop : elemRect.top) + elemRect.height / 2,
   };
 
-  const darkModeToggledEvent = new CustomEvent("darkModeToggled", { detail: customEventState });
+  const darkModeToggleEvent = new CustomEvent("darkModeToggle", { detail: customEventState });
   onClickMethod(isDark);
   storage.setItem("theme", isDark.toString());
-  dispatchEvent(darkModeToggledEvent);
+  dispatchEvent(darkModeToggleEvent);
 };
 
 const DarkModeToggle = ({ isDark, onClickMethod }) => {

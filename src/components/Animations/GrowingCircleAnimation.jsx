@@ -202,11 +202,11 @@ const GrowingCircleAnimation = ({ isDark }) => {
       stateMachineRunner();
     };
 
-    window.addEventListener("darkModeToggled", handleClick);
+    window.addEventListener("darkModeToggle", handleClick);
     window.addEventListener("resize", throttle(debounce(handleResize)), false);
     return () => {
       isStateMachinePowered = false;
-      window.removeEventListener("darkModeToggled", handleClick);
+      window.removeEventListener("darkModeToggle", handleClick);
       window.removeEventListener("resize", throttle(debounce(handleResize)), false);
     };
   }, [isDark]);
