@@ -17,7 +17,7 @@ const BlogFooter = ({ isDark }) => {
   return (
     <footer className={footerStyle}>
       <div className={title}>
-        <span className={isDark && darkTitle}>{footer.title}</span>
+        <span className={isDark ? darkTitle : null}>{footer.title}</span>
         <Signature isDark={isDark} />
       </div>
       <div className={socialMediaBar}>
