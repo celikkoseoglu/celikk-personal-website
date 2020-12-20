@@ -7,6 +7,13 @@
   "metaImageAlt": "The image contains the logo of this website. Next to that, it says blog with capital letters in Montserrat font.",
   "blogItems": [
     {
+      "title": "Creating a Simple Yet Complicated Dark Mode Animation",
+      "date": "20.12.2020",
+      "minutes": "30 min",
+      "subtitle": "A dark mode toggle animation should have some personality. Here's my take on a unique dark mode transition animation.",
+      "blogPost": "darkModeAnimation"
+    },
+    {
       "title": "GitHub Stats Scraper - showcase repositories on your website",
       "date": "27.11.2020",
       "minutes": "10 min",

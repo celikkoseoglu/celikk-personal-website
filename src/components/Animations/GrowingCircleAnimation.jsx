@@ -67,6 +67,7 @@ const m = {
     m.height = getHeight();
     m.width = getWidth();
 
+    // adjust canvas pixel ratio (resolution)
     const { width, height } = m.ctx.canvas.getBoundingClientRect();
     if (m.ctx.canvas.width !== width || m.ctx.canvas.height !== height) {
       const { devicePixelRatio: originalRatio = 1 } = window;
@@ -83,25 +84,22 @@ const m = {
     m.timeAtPreviousDraw = Date.now();
 
     // iOS page zoom doesn't trigger resize event handler. If user switches to light mode on smaller
-    // zoom and then changes zoom factor back to something bigger, radiusMultiplier will be greater
-    // than maxRadiusMultiplier. verifyCircleBounds will think the anim is complete and return null
+    // screen scale and then changes scaling factor back to something bigger, radiusMultiplier
+    // will be greater than maxRadiusMultiplier. verifyCircleBounds will think the anim is complete
+    // and return null
     if (m.radiusMultiplier > m.maxRadiusMultiplier) {
       m.radiusMultiplier = m.maxRadiusMultiplier;
     }
 
     // if mouse coordinates are not set, there should be no animation. Skip the whole thing
     if (circleCenterCoordinates.x == null || circleCenterCoordinates.y == null) {
-      m.maxRadiusMultiplier = isDark ? 0 : m.maxRadiusMultiplier;
-      return m.verifyCircleBounds;
+      m.radiusMultiplier = isDark ? 0 : m.maxRadiusMultiplier;
     }
 
     return m.start;
   },
   start: () => {
-    if (!m.isDark) {
-      return m.growCircle;
-    }
-    return m.shrinkCircle;
+    return m.isDark ? m.shrinkCircle : m.growCircle;
   },
 
   growCircle: () => {
