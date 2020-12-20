@@ -18,7 +18,7 @@ In very basic terms, this animation is just a HTML canvas that draws a shrinking
 
 ####1) What kind of animation do I want?
 
- <MediaCarousel folder="darkModeAnimation" images="circleAnimationIllustration.svg"/>
+ <MediaCarousel folder="darkModeAnimation" images="circleAnimationIllustration.jpg"/>
 
 **a.** When I click on the moon icon, the website should start drawing a circle that continuously shrinks until radius
  is zero. The center of the circle should be the moon icon.
