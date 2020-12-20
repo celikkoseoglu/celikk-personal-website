@@ -383,7 +383,7 @@ A finite state machine can be used to drive
  this animation. If you think about it, we have two main states. `IsDark`, or `!IsDark`. Following that, we always have
   a shrinking or a growing circle. This is the machine diagram I managed to come up with:
   
-   <MediaCarousel folder="darkModeAnimation" images="state_machine_diagram.svg"/>
+   <MediaCarousel folder="darkModeAnimation" images="state_machine_diagram.png"/>
 
 When we land on the page with the canvas, we need to initialise the canvas driver state machine. Right after the
  initialisation, we kick off the machine. The state machine either keep shrinking or growing the circle depending on
