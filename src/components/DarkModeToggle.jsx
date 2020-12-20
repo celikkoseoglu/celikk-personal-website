@@ -22,7 +22,6 @@ const onClickWrapper = (onClickMethod, isDark, event) => {
   const deviceZoomRatio = document.documentElement.clientWidth / window.innerWidth;
 
   const customEventState = {
-    isDark,
     x: offsetLeft + elemRect.width / 2,
     // if the user is pinch zoomed in, then use the pinch zoom coordinate detection logic,
     // otherwise, use the distance of the icon from the top of the page. For some reason

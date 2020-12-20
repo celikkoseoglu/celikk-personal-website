@@ -89,13 +89,9 @@ const m = {
       m.radiusMultiplier = m.maxRadiusMultiplier;
     }
 
+    // if mouse coordinates are not set, there should be no animation. Skip the whole thing
     if (circleCenterCoordinates.x == null || circleCenterCoordinates.y == null) {
-      if (isDark) {
-        m.radiusMultiplier = 0;
-      } else {
-        m.radiusMultiplier = m.maxRadiusMultiplier;
-      }
-
+      m.maxRadiusMultiplier = isDark ? 0 : m.maxRadiusMultiplier;
       return m.verifyCircleBounds;
     }
 
@@ -110,17 +106,11 @@ const m = {
 
   growCircle: () => {
     m.radiusMultiplier += RADIUS_GROWTH_PER_MS * Math.max(1, Date.now() - m.timeAtPreviousDraw);
-    if (m.radiusMultiplier > m.maxRadiusMultiplier) {
-      m.radiusMultiplier = m.maxRadiusMultiplier;
-    }
     return m.verifyCircleBounds;
   },
 
   shrinkCircle: () => {
     m.radiusMultiplier -= RADIUS_GROWTH_PER_MS * Math.max(1, Date.now() - m.timeAtPreviousDraw);
-    if (m.radiusMultiplier < 0) {
-      m.radiusMultiplier = 0;
-    }
     return m.verifyCircleBounds;
   },
 
@@ -129,6 +119,9 @@ const m = {
       // just paint the canvas - no more circle drawing is necessary. We're at the limit
       m.ctx.fillStyle = m.isDark ? COLORS.midnightBlack : COLORS.white;
       m.ctx.fillRect(0, 0, m.width, m.height);
+
+      // reset radius multiplier values in case we've overshot (got negative value when shrinking)
+      m.radiusMultiplier = m.isDark ? 0 : m.maxRadiusMultiplier;
 
       return null; // no next step - end of state machine
     }
