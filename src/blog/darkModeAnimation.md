@@ -242,14 +242,14 @@ So knowing when to stop when shrinking the circle is simple. When the radius rea
 **2.** Maximum radius for given window width and height - We're going to use this to figure out the maximum value that the
  exponential growth function can take.
 
-For the first item, `document.documentElement.clientHeight` and `document.documentElement.clientWidth` can be used. 
+For the first item, `window.innerHeight` and `window.innerWidth` can be used. 
  For the second item, we can reverse the exponential function and get the maximum value our actual radius can take before
   the exponential operation.
  
 <Code language="javascript">
-const clientHeight = document.documentElement.clientHeight;
-const clientWidth = document.documentElement.clientWidth;
-const maxRadiusMultiplier = Math.pow(Math.max(m.width, m.height), (1.0&nbsp;/&nbsp;GROWTH\_FUNCTION\_EXPONENTIAL));</Code>
+const innerHeight = window.innerHeight;
+const innerWidth = window.innerWidth;
+const maxRadiusMultiplier = Math.pow(Math.max(innerWidth, innerHeight), (1.0&nbsp;/&nbsp;GROWTH\_FUNCTION\_EXPONENTIAL));</Code>
 
 When animating, the current radiusMultiplier can be compared with the maxRadiusMultipler. If we're past maxRadiusMultiplier,
  then it's time to stop animating.

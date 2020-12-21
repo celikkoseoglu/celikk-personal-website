@@ -46,10 +46,17 @@ const m = {
   createMachine: (ctx, isDark) => {
     m.ctx = ctx;
     m.isDark = isDark;
-    m.height = document.documentElement.clientHeight;
-    m.width = document.documentElement.clientWidth;
+    m.height = window.innerHeight;
+    m.width = window.innerWidth;
     m.maxRadiusMultiplier = Math.max(m.width, m.height) ** (1.0 / GROWTH_FUNCTION_EXPONENTIAL);
     m.timeAtPreviousDraw = Date.now();
+
+    // set page body background color before starting the animation. iOS 14 safari bottom bar does
+    // not play nicely when scrolling down. When the bottom bar disappears as you scroll down, it
+    // first fill the view with the body color, and then the canvas colour. Also, Twitter app's
+    // webview does not readjust window.innerHeight after the bottom bar disappears, leaving the
+    // bottom part of the website dark. Consider removing this if/when Safari fixes itself.
+    document.body.style.backgroundColor = m.isDark ? COLORS.midnightBlack : COLORS.white;
 
     // adjust canvas pixel ratio (resolution)
     const { width, height } = m.ctx.canvas.getBoundingClientRect();
