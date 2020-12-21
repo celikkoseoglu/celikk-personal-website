@@ -242,34 +242,14 @@ So knowing when to stop when shrinking the circle is simple. When the radius rea
 **2.** Maximum radius for given window width and height - We're going to use this to figure out the maximum value that the
  exponential growth function can take.
 
-For the first item, we can use the answer from [this StackOverflow post](https://stackoverflow.com/questions/1038727/how-to-get-browser-width-using-javascript-code/30475061).
-
-<Code language="javascript">
-function getWidth() {
-  return Math.max(
-    document.body.scrollWidth,
-    document.documentElement.scrollWidth,
-    document.body.offsetWidth,
-    document.documentElement.offsetWidth,
-    document.documentElement.clientWidth
-  );
-}
-&nbsp;
-function getHeight() {
-  return Math.max(
-    document.body.scrollHeight,
-    document.documentElement.scrollHeight,
-    document.body.offsetHeight,
-    document.documentElement.offsetHeight,
-    document.documentElement.clientHeight
-  );
-}</Code>
-
-For the second item, we can reverse the exponential function and get the maximum value our actual radius can take before
- the exponential operation.
+For the first item, `document.documentElement.clientHeight` and `document.documentElement.clientWidth` can be used. 
+ For the second item, we can reverse the exponential function and get the maximum value our actual radius can take before
+  the exponential operation.
  
 <Code language="javascript">
-const maxRadiusMultiplier = Math.max(getWidth(), getHeight())&nbsp;**&nbsp;(1.0&nbsp;/&nbsp;GROWTH_FUNCTION_EXPONENTIAL);</Code>
+const clientHeight = document.documentElement.clientHeight;
+const clientWidth = document.documentElement.clientWidth;
+const maxRadiusMultiplier = Math.pow(Math.max(m.width, m.height), (1.0&nbsp;/&nbsp;GROWTH\_FUNCTION\_EXPONENTIAL));</Code>
 
 When animating, the current radiusMultiplier can be compared with the maxRadiusMultipler. If we're past maxRadiusMultiplier,
  then it's time to stop animating.
