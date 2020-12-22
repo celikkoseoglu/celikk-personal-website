@@ -247,9 +247,9 @@ For the first item, `window.innerHeight` and `window.innerWidth` can be used.
   the exponential operation.
  
 <Code language="javascript">
-const innerHeight = window.innerHeight;
-const innerWidth = window.innerWidth;
-const maxRadiusMultiplier = Math.pow(Math.max(innerWidth, innerHeight), (1.0&nbsp;/&nbsp;GROWTH\_FUNCTION\_EXPONENTIAL));</Code>
+const screenHeight = window.screen.height;
+const screenWidth = window.screen.height;
+const maxRadiusMultiplier = Math.pow(Math.max(screenWidth, screenHeight), (1.0&nbsp;/&nbsp;GROWTH\_FUNCTION\_EXPONENTIAL));</Code>
 
 When animating, the current radiusMultiplier can be compared with the maxRadiusMultipler. If we're past maxRadiusMultiplier,
  then it's time to stop animating.

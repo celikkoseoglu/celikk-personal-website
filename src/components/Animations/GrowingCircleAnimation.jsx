@@ -46,8 +46,8 @@ const m = {
   createMachine: (ctx, isDark) => {
     m.ctx = ctx;
     m.isDark = isDark;
-    m.height = window.innerHeight;
-    m.width = window.innerWidth;
+    m.height = window.screen.height;
+    m.width = window.screen.width;
     m.maxRadiusMultiplier = Math.max(m.width, m.height) ** (1.0 / GROWTH_FUNCTION_EXPONENTIAL);
     m.timeAtPreviousDraw = Date.now();
 
