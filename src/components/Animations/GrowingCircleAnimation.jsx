@@ -46,8 +46,9 @@ const m = {
   createMachine: (ctx, isDark) => {
     m.ctx = ctx;
     m.isDark = isDark;
-    m.height = window.screen.height;
-    m.width = window.screen.width;
+    // window.screen.height and width are not reliable on iPad Safari. Use window.inner instead.
+    m.height = Math.max(window.screen.height, window.innerHeight);
+    m.width = Math.max(window.screen.width, window.innerWidth);
     m.maxRadiusMultiplier = Math.max(m.width, m.height) ** (1.0 / GROWTH_FUNCTION_EXPONENTIAL);
     m.timeAtPreviousDraw = Date.now();
 
