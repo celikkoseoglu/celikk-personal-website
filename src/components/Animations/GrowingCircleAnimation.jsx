@@ -10,7 +10,7 @@ const COLORS = {
 
 const RADIUS_GROWTH_PER_MS = 0.025;
 const GROWTH_FUNCTION_EXPONENTIAL = 2.9;
-// we don't need such a high resolution for this type of animation. Plus a lower resolution makes
+// We don't need such a high resolution for this type of animation. Plus a lower resolution makes
 // the edges of the circle look blurred, which looks nicer. Improves performance a lot on slow GPUs
 const PIXEL_SCALING_FACTOR = 0.5;
 
@@ -33,15 +33,6 @@ const m = {
   timeAtPreviousDraw: null,
   height: null,
   width: null,
-
-  resetState: (isDark) => {
-    m.isDark = isDark;
-    m.radiusMultiplier = null;
-    m.maxRadiusMultiplier = null;
-    m.timeAtPreviousDraw = null;
-
-    return null; // no next step - end of state machine
-  },
 
   createMachine: (ctx, isDark) => {
     m.ctx = ctx;
@@ -69,7 +60,8 @@ const m = {
       m.ctx.scale(lowerResolutionRatio, lowerResolutionRatio);
     }
 
-    // if mouse coordinates are not set, there should be no animation. Skip the whole thing
+    // If mouse coordinates are not set, there should be no animation. Skip the whole thing.
+    // This also skips the animation when the window is resized because we remove the mouse coords.
     if (circleCenterCoordinates.x == null || circleCenterCoordinates.y == null) {
       m.radiusMultiplier = isDark ? 0 : m.maxRadiusMultiplier;
     }
@@ -166,7 +158,6 @@ const GrowingCircleAnimation = ({ isDark }) => {
 
     const handleResize = () => {
       circleCenterCoordinates.resetMouseState();
-      m.resetState(isDark);
       stateMachine = m.createMachine(ctx, isDark);
       stateMachineRunner();
     };
