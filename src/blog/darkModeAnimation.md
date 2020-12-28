@@ -90,22 +90,22 @@ import React, {useEffect, useRef} from "react";
 const GrowingCircleCanvas = () => {
   const canvasRef = useRef(null);
 &nbsp;
-  const draw = (ctx, frameCount) => {
+  const draw = (ctx, radius) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = \"#FFF";
+    ctx.fillStyle = \"#00F";
     ctx.beginPath();
-    ctx.arc(50, 100, frameCount, 0, 2 *&nbsp;Math.PI);
+    ctx.arc(50, 100, radius, 0, 2 *&nbsp;Math.PI);
     ctx.fill();
   };
 &nbsp;
   useEffect(() => {
     const context = canvasRef.current.getContext("2d");
-    let frameCount = 0;
+    let radius = 0;
     let animationFrameId;
 &nbsp;
     const render = () => {
-      frameCount += 0.05;
-      draw(context, frameCount);
+      radius += 0.05;
+      draw(context, radius);
       animationFrameId = window.requestAnimationFrame(render);
     };
     render();
@@ -175,17 +175,17 @@ const GrowingCircleCanvasTime = () => {
   const RADIUS\_INCREASE\_PER_MS = 0.05;
   let timeAtPreviousDraw = Date.now();
 &nbsp;
-  const draw = (ctx, frameCount) => {
+  const draw = (ctx, radius) => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.fillStyle = "#FFF";
     ctx.beginPath();
-    ctx.arc(50, 100, frameCount, 0, 2 *&nbsp;Math.PI);
+    ctx.arc(50, 100, radius, 0, 2 *&nbsp;Math.PI);
     ctx.fill();
   };
 &nbsp;
   useEffect(() => {
     const context = canvasRef.current.getContext("2d");
-    let frameCount = 0;
+    let radius = 0;
     let animationFrameId;
 &nbsp;
     const render = () => {
@@ -195,9 +195,9 @@ const GrowingCircleCanvasTime = () => {
       // previous and current frame is less than 1ms. Math.max() ensures that we
       // still grow the circle even if the computer is super fast.
       const timePastSinceLastDraw = Math.max(1, timePastSincePreviousDraw);
-      frameCount += RADIUS\_INCREASE\_PER\_MS&nbsp;*&nbsp;timePastSinceLastDraw;
+      radius += RADIUS\_INCREASE\_PER\_MS&nbsp;*&nbsp;timePastSinceLastDraw;
       timeAtPreviousDraw = timeAtRenderStart;
-      draw(context, frameCount);
+      draw(context, radius);
       animationFrameId = window.requestAnimationFrame(render);
     };
     render();
@@ -251,7 +251,7 @@ const screenHeight = window.screen.height;
 const screenWidth = window.screen.height;
 const maxRadiusMultiplier = Math.pow(Math.max(screenWidth, screenHeight), (1.0&nbsp;/&nbsp;GROWTH\_FUNCTION\_EXPONENTIAL));</Code>
 
-When animating, the current radiusMultiplier can be compared with the maxRadiusMultipler. If we're past maxRadiusMultiplier,
+When animating, the current radiusMultiplier can be compared with the maxRadiusMultiplier. If we're past maxRadiusMultiplier,
  then it's time to stop animating.
 
 ####9) Using canvas as page background
@@ -277,7 +277,7 @@ The canvas we have currently draws growing circle on render but how do we start 
 This is where I'm going to define my CustomEvent. A custom event is very similar to a MouseEvent or ResizeEvent or any
  other event you've probably come across when working with browser event listeners in JavaScript. A CustomEvent allows
   you to fire events at any given point in your code. This event can be caught by an event listener attached to another
-   component in your codebase. For my usecase, I'm going to create a custom event in DarkModeToggle component. This
+   component in your codebase. For my use-case, I'm going to create a custom event in DarkModeToggle component. This
     component houses the button that the user clicks to toggle dark mode. When the button is clicked, DarkModeToggle
      component is going to fire an event. This event will be caught by my canvas component.
      
@@ -328,7 +328,6 @@ const onClickWrapper = (onClickMethod, isDark, event) => {
   const offsetLeft = elemRect.left&nbsp;-&nbsp;bodyRect.left;
 &nbsp;
   const customEventState = { // custom object to wrap event data
-    isDark,
     x: offsetLeft&nbsp;+&nbsp;elemRect.width&nbsp;/&nbsp;2, // center coordinates of the dark mode toggle on the x-axis
     y: elemRect.top&nbsp;+&nbsp;elemRect.height&nbsp;/&nbsp;2, // center coordinates of the dark mode toggle on the y-axis
   };
