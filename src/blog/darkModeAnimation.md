@@ -11,7 +11,8 @@ wrong, there is nothing wrong with a simple color transition. It just doesn't fe
  web use the same thing. So, here is my take on it. I'll first explain everything in a YouTube video, and then try to
   provide more details in text.
 
-** YouTube video in the making. Check back later. **
+- [Part 1 - Introduction and Basic Concepts](https://www.youtube.com/watch?v=oIHuvg38qLE)
+- [Part 2 - Implementation](https://www.youtube.com/watch?v=dgXbpUxdv8I)
 
 In very basic terms, this animation is just a HTML canvas that draws a shrinking circle. The circle shrinks or grows
  in size depending on if we want dark mode enabled or not. Plus, it integrates nicely with React's component states.
