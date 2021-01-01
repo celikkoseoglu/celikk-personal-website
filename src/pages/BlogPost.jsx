@@ -9,7 +9,7 @@ import {
   footerStyle,
   width,
 } from "../stylesheets/BlogPost.module.sass";
-import { folders, getInitialTheme, mapFileNameToId } from "../utils/FileManager.utils";
+import { getInitialTheme } from "../utils/FileManager.utils";
 import BlogFooter from "../components/Footer/BlogFooter";
 import HorizontalRuler from "../components/Util/HorizontalRuler";
 import LoadingIndicator from "../components/Util/LoadingIndicator";
@@ -31,7 +31,8 @@ const BlogPost = () => {
 
   let hashedBlogFileLink;
   try {
-    hashedBlogFileLink = mapFileNameToId(blogPostFileName, folders.blogFiles);
+    // eslint-disable-next-line global-require,import/no-dynamic-require
+    hashedBlogFileLink = require(`../blog/${blogPostFileName}.md`);
   } catch {
     redirect = true;
   }
@@ -39,9 +40,8 @@ const BlogPost = () => {
   useEffect(() => {
     if (!redirect) {
       firebaseAnalytics.logEvent(`${blogPostFileName}_visited`);
-      window.scrollTo(0, 0);
 
-      fetch(`/static/media/${hashedBlogFileLink}`)
+      fetch(hashedBlogFileLink)
         .then((res) => res.text())
         .then((response) => setPost(response))
         .catch((err) => setPost(err));
@@ -49,6 +49,10 @@ const BlogPost = () => {
       firebaseAnalytics.logEvent(`redirected_to_404_${blogPostFileName}`);
     }
   }, [hashedBlogFileLink, redirect, blogPostFileName]);
+
+  if (redirect) {
+    return <Redirect to="/404" />;
+  }
 
   const noSSRContent = <BlogPostMarkdown content={post} isDark={isDark} />;
 
@@ -81,7 +85,7 @@ const BlogPost = () => {
     </div>
   );
 
-  return redirect ? <Redirect to="/404" /> : <NoSSR onSSR={noSSRContent}>{content}</NoSSR>;
+  return <NoSSR onSSR={noSSRContent}>{content}</NoSSR>;
 };
 
 export default BlogPost;
