@@ -6,7 +6,6 @@ import {
   blogPostDarkStyle,
   blogPostStyle,
 } from "../../stylesheets/components/Blog/BlogPostMarkdown.module.sass";
-import BlogMetaDecorator from "../Util/BlogMetaDecorator";
 import Code from "./Code";
 
 const BlogPostMarkdown = ({ isDark, content }) => {
@@ -26,9 +25,6 @@ const BlogPostMarkdown = ({ isDark, content }) => {
             props: {
               isDark,
             },
-          },
-          BlogMetaDecorator: {
-            component: BlogMetaDecorator,
           },
         },
       }}

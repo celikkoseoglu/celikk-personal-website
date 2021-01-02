@@ -1,5 +1,3 @@
-<BlogMetaDecorator folder="rockyJourney" image="rockyJourneyObstacles.png" imageAlt="Rocky Journey project logo" description="Flappy bird on an 8x8 LED Matrix" title="CK - Rocky Journey" />
-
 # Rocky Journey
 
 #### Flappy bird on an 8x8 LED Matrix

@@ -1,5 +1,3 @@
-<BlogMetaDecorator folder="appleWatch" image="versusSkagen1.jpg" imageAlt="an apple watch next to two Skagen watches" description="For years, I resisted to pay fashion accessory prices for a tech gadget. Now that Apple removed the fashion tax, let's give it a try." title="CK - What is an Apple Watch useful for?" />
-
 # What is an Apple Watch useful for?
 
 ### For years, I resisted to pay [fashion accessory prices](https://www.theverge.com/2015/3/9/8162455/apple-watch-price-release-date-2015) for a tech gadget. Now that Apple removed the fashion tax, let's give it a try.

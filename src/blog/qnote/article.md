@@ -1,5 +1,3 @@
-<BlogMetaDecorator folder="qnote" image="qnoteStartupScreen.png" imageAlt="Startup screen of the note taking app QNote" description="This is how my story begins." title="CK - QNote" />
-
 # QNote - The most lightweight note taking app
 
 ### This is how my story begins.

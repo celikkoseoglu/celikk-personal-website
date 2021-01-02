@@ -1,5 +1,3 @@
-<BlogMetaDecorator folder="photoSec" image="appIcon.png" imageAlt="App icon for PhotoSec" description="Getting downloads on a non-existent platform" title="CK - PhotoSec" />
-
 # PhotoSec - First app that allows you to hide pictures on Windows Phone
 
 ### Getting downloads on a non-existent platform
@@ -25,7 +23,7 @@ Was Available For: `Windows Phone`
  around 3-5 downloads per day. It was the first app that allowed to hide pictures on a Windows Phone. Here are some initial
   screenshots with a the app logo:
 
- <MediaCarousel folder="photoSec" images="appIcon.png,screenshot1.png,screenshot3.png"/>
+ <MediaCarousel folder="photosec" images="appIcon.png,screenshot1.png,screenshot3.png"/>
  
  It had the following description in the store:
  
@@ -35,27 +33,27 @@ Was Available For: `Windows Phone`
 
 And here is one of my tweets from around that time:
 
- <MediaCarousel folder="photoSec" images="photoSecTweet.png"/>
+ <MediaCarousel folder="photosec" images="photoSecTweet.png"/>
  
 As time passed, the number of downloads were increasing. I started getting competitors but fortunately, they were all paid
 applications whereas PhotoSec was free. So, people couldn't complain. I've kept on updating it with nice features. I've
 finally added image thumbnail support and invested quite a lot of time into the UI design. Here is a screenshot showcasing
 the thumbnail functionality:
 
- <MediaCarousel folder="photoSec" images="screenshot2.png"/>
+ <MediaCarousel folder="photosec" images="screenshot2.png"/>
 
 One day, I remember talking with a very tech-savvy friend of mine. I was telling him about PhotoSec and he gave
 me the greatest idea. This is an app that hides pictures right? What if someone forces you to unlock it? Imagine if there was
 this fake image directory inside the app that opens when you enter a fake password. Basically, you have two passwords. One opens
 a directory and the other one opens another directory. It sounded great. It was easy to implement as well so I did it.
 
- <MediaCarousel folder="photoSec" images="screenshot4.png,screenshot5.png,screenshot6.png"/>
+ <MediaCarousel folder="photosec" images="screenshot4.png,screenshot5.png,screenshot6.png"/>
 
 A week later, download numbers started increasing by a huge margin. I was getting around 70-90 downloads per day. It became
 the 38th most downloaded app on the Windows Phone store. I know that there were not many apps available in the store but
 it was fine if you think about I did it with very little programming knowledge as a 16 year old.
 
- <MediaCarousel folder="photoSec" images="photoSecDownloads.png"/>
+ <MediaCarousel folder="photosec" images="photoSecDownloads.png"/>
 
 Couple months after this success, I know what I wanted to do for a career. I knew I was interested into computers but
 this time, I wanted to make the computer itself. The only way to do that was to go to Silicon Valley. I had to get there.

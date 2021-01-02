@@ -1,5 +1,3 @@
-<BlogMetaDecorator folder="darkModeAnimation" image="circleAnimationIllustration.jpg" imageAlt="A circle growing outward from the center of the moon icon" description="A dark mode toggle animation should have some personality. Here's my take on a unique dark mode transition animation." title="CK - Creating a Simple Yet Complicated Dark Mode Animation" />
-
 # Creating a Simple Yet Complicated Dark Mode Animation
 
 ###  A dark mode toggle animation should have some personality. Here's my take on a unique dark mode transition animation.
