@@ -4,11 +4,18 @@ import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark, prism } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaRegCopy, FaRegClipboard } from "react-icons/fa";
+import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
+import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
+import sass from "react-syntax-highlighter/dist/cjs/languages/prism/sass";
 import {
   parentDiv,
   copyButton,
   copyButtonDark,
 } from "../../stylesheets/components/Blog/Code.module.sass";
+
+SyntaxHighlighter.registerLanguage("jsx", jsx);
+SyntaxHighlighter.registerLanguage("bash", bash);
+SyntaxHighlighter.registerLanguage("sass", sass);
 
 const Code = ({ children, language, isDark }) => {
   const [isCopied, setIsCopied] = useState(false);
