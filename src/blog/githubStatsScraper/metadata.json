@@ -1,6 +1,0 @@
-{
-  "image": "githubStatsScraper.jpg",
-  "imageAlt": "An image showing GitHub star and fork icons. It says 20 next to stars, 3 next to forks",
-  "description": "Pull github statistics from a particular repo and display them on your website",
-  "title": "CK - GitHub Stats Scraper"
-}

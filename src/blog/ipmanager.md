@@ -1,3 +1,5 @@
+<BlogMetaDecorator folder="ipmanager" image="ipmanagerUpdate.png" imageAlt="a screenshot of IPManager app" description="Switching between DHCP and static IP when you switch networks in Windows" title="CK - IPManager" />
+
 # IPManager - Switch Between DHCP and Static IP Easily
 
 ### Coming back to C# after a long break

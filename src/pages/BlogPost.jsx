@@ -17,7 +17,6 @@ import BlogNavbar from "../components/Navbar/BlogNavbar";
 import { firebaseAnalytics } from "../firebaseConfig";
 import BlogPostMarkdown from "../components/Blog/BlogPostMarkdown";
 import GrowingCircleAnimation from "../components/Animations/GrowingCircleAnimation";
-import BlogMetaDecorator from "../components/Util/BlogMetaDecorator";
 
 const blogNavbar = require("../data/blogNavbar");
 const footer = require("../data/footer");
@@ -31,12 +30,10 @@ const BlogPost = () => {
   let redirect = false;
 
   let hashedBlogFileLink;
-  let metadata;
   try {
     // eslint-disable-next-line global-require,import/no-dynamic-require
-    hashedBlogFileLink = require(`../blog/${blogPostFileName}/article.md`);
+    hashedBlogFileLink = require(`../blog/${blogPostFileName}.md`);
     // eslint-disable-next-line global-require,import/no-dynamic-require
-    metadata = require(`../blog/${blogPostFileName}/metadata`);
   } catch {
     redirect = true;
   }
@@ -58,17 +55,12 @@ const BlogPost = () => {
     return <Redirect to="/404" />;
   }
 
-  const noSSRContent = <BlogPostMarkdown content={post} isDark={isDark} />;
+  const noSSRContent = (
+    <BlogPostMarkdown content={post} isDark={isDark} />
+  );
 
   const content = (
     <div className={`${isDark && blogPostDark} ${blogPostBody}`}>
-      <BlogMetaDecorator
-        image={metadata.image}
-        description={metadata.description}
-        imageAlt={metadata.imageAlt}
-        title={metadata.title}
-        folder={blogPostFileName}
-      />
       <GrowingCircleAnimation isDark={isDark} />
       <div className={width}>
         <div className={`${blogContainer}`}>
@@ -84,7 +76,7 @@ const BlogPost = () => {
           {post === "" ? (
             <LoadingIndicator isDark={isDark} />
           ) : (
-            <BlogPostMarkdown content={post} isDark={isDark} />
+            <BlogPostMarkdown content={post} isDark={isDark} fileName={blogPostFileName} />
           )}
 
           <HorizontalRuler isDark={isDark} />

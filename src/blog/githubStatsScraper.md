@@ -1,3 +1,5 @@
+<BlogMetaDecorator folder="githubStatsScraper" image="githubStatsScraper.jpg" imageAlt="An image showing GitHub star and fork icons. It says 20 next to stars, 3 next to forks" description="Pull github statistics from a particular repo and display them on your website" title="CK - GitHub Stats Scraper" />
+
 # GitHub Stats Scraper - showcase repositories on your website
 
 ### Your personal website is the perfect place to showcase your projects. Why don't you display some GitHub stats on there?
