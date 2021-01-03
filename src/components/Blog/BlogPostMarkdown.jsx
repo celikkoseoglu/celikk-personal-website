@@ -12,11 +12,10 @@ import BlogMetaDecorator from "../Util/BlogMetaDecorator";
 const blogCache = new Map();
 
 const retrieveCompiledBlogPostFromCache = (blogPostFileName, isDark, postContent) => {
-  // don't cache react-snap SSR passª
+  // don't cache react-snap SSR pass
   if (postContent === "") return null;
 
   const cachedItem = blogCache.get(blogPostFileName + isDark);
-
   if (cachedItem === undefined) {
     const cachedVar = compiler(postContent, {
       overrides: {
