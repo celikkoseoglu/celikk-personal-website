@@ -65,7 +65,6 @@ const NavigationBar = () => {
           <NavbarItem
             title={content.heroTitle}
             reference={content.landingReference}
-            href={content.heroLink}
             className={brand}
           />
           <NavbarToggle
