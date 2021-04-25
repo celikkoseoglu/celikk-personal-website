@@ -37,3 +37,11 @@ if (rootElement.hasChildNodes()) {
 } else {
   render(APP, rootElement);
 }
+
+const prefersColorSchemeWatcher = window.matchMedia("(prefers-color-scheme: dark)");
+
+prefersColorSchemeWatcher.addEventListener("change", () => {
+  const favicon = document.querySelector('link[rel="icon"]');
+  favicon.href = null;
+  favicon.href = "/favicon.svg";
+});
