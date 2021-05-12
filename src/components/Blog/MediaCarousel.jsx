@@ -27,7 +27,7 @@ const MediaCarousel = ({ folder, images, isDark }) => {
       // eslint-disable-next-line global-require,import/no-dynamic-require
       require(`../../data/images/blogPost/${folder}/${getImageLinkWithExtension(
         imageFileNames[i]
-      )}`)
+      )}`).default
     );
   }
 

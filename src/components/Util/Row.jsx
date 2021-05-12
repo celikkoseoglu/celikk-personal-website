@@ -2,9 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { row } from "../../stylesheets/components/Util/Row.module.sass";
 
-const Row = ({ className, children }) => {
-  return <div className={`${className} ${row}`}>{children}</div>;
-};
+const Row = ({ className, children }) => <div className={`${className} ${row}`}>{children}</div>;
 
 Row.propTypes = {
   children: PropTypes.node,

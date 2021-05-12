@@ -20,31 +20,29 @@ import { BLOG_LINK } from "../../utils/Constants.utils";
 const blog = require("../../data/blog");
 const blogShowcase = require("../../data/blogShowcase");
 
-const BlogShowcase = ({ id }) => {
-  return (
-    <Section id={id}>
-      <Heading marginBottom text={blogShowcase.latestBlogPostsTitle} />
-      <Container className={blogShowcaseContainer}>
-        <Row className={blogPostCardsRow}>
-          {retrieveLatestBlogPosts(blog).map((blogItem, index) => (
-            <BlogShowcaseCard
-              timestamp={blogItem.date}
-              minutes={blogItem.minutes}
-              blogPost={blogItem.blogPost}
-              title={blogItem.title}
-              subtitle={blogItem.subtitle}
-              className={
-                index >= NUMBER_OF_LATEST_BLOG_CARDS_TO_RENDER_ON_MOBILE ? blogShowcaseCard : null
-              }
-              key={blogItem.title}
-            />
-          ))}
-        </Row>
-        <BlogShowcaseButton link={BLOG_LINK} text={blogShowcase.viewAllBlogPostsButton} />
-      </Container>
-    </Section>
-  );
-};
+const BlogShowcase = ({ id }) => (
+  <Section id={id}>
+    <Heading marginBottom text={blogShowcase.latestBlogPostsTitle} />
+    <Container className={blogShowcaseContainer}>
+      <Row className={blogPostCardsRow}>
+        {retrieveLatestBlogPosts(blog).map((blogItem, index) => (
+          <BlogShowcaseCard
+            timestamp={blogItem.date}
+            minutes={blogItem.minutes}
+            blogPost={blogItem.blogPost}
+            title={blogItem.title}
+            subtitle={blogItem.subtitle}
+            className={
+              index >= NUMBER_OF_LATEST_BLOG_CARDS_TO_RENDER_ON_MOBILE ? blogShowcaseCard : null
+            }
+            key={blogItem.title}
+          />
+        ))}
+      </Row>
+      <BlogShowcaseButton link={BLOG_LINK} text={blogShowcase.viewAllBlogPostsButton} />
+    </Container>
+  </Section>
+);
 
 BlogShowcase.propTypes = {
   id: PropTypes.string.isRequired,

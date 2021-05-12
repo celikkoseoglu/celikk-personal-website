@@ -5,19 +5,17 @@ import {
   thickDark,
   light,
   thickLight,
-  clearBorder
+  clearBorder,
 } from "../../stylesheets/components/Util/HorizontalRuler.module.sass";
 
-const HorizontalRuler = ({ isDark, isThick, className }) => {
-  return (
-    <hr
-      className={`${className} ${clearBorder} ${
-        // eslint-disable-next-line no-nested-ternary
-        isDark ? (isThick ? thickDark : dark) : isThick ? thickLight : light
-      }`}
-    />
-  );
-};
+const HorizontalRuler = ({ isDark, isThick, className }) => (
+  <hr
+    className={`${className} ${clearBorder} ${
+      // eslint-disable-next-line no-nested-ternary
+      isDark ? (isThick ? thickDark : dark) : isThick ? thickLight : light
+    }`}
+  />
+);
 
 HorizontalRuler.propTypes = {
   isDark: PropTypes.bool,

@@ -43,13 +43,11 @@ const retrieveCompiledBlogPostFromCache = (blogPostFileName, isDark, postContent
   return cachedItem;
 };
 
-const BlogPostMarkdown = ({ isDark, content, fileName }) => {
-  return (
-    <div className={`${blogPostStyle} ${isDark && blogPostDarkStyle}`}>
-      {retrieveCompiledBlogPostFromCache(fileName, isDark, content)}
-    </div>
-  );
-};
+const BlogPostMarkdown = ({ isDark, content, fileName }) => (
+  <div className={`${blogPostStyle} ${isDark && blogPostDarkStyle}`}>
+    {retrieveCompiledBlogPostFromCache(fileName, isDark, content)}
+  </div>
+);
 
 BlogPostMarkdown.propTypes = {
   content: PropTypes.string.isRequired,

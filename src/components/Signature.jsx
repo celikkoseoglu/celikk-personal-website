@@ -4,15 +4,13 @@ import { signature, darkSignature } from "../stylesheets/components/Signature.mo
 
 import SignatureImage from "../data/images/signature.svg";
 
-const Signature = ({ isDark, className }) => {
-  return (
-    <img
-      src={SignatureImage}
-      alt="signature"
-      className={`${signature} ${isDark ? darkSignature : null} ${className}`}
-    />
-  );
-};
+const Signature = ({ isDark, className }) => (
+  <img
+    src={SignatureImage}
+    alt="signature"
+    className={`${signature} ${isDark ? darkSignature : null} ${className}`}
+  />
+);
 
 Signature.propTypes = {
   isDark: PropTypes.bool,

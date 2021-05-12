@@ -7,17 +7,15 @@ import {
 } from "../stylesheets/components/CustomButton.module.sass";
 import UnstyledLink from "./Util/UnstyledLink";
 
-const CustomButton = ({ text, to, href, isDark, className }) => {
-  return (
-    <UnstyledLink
-      to={to}
-      href={href}
-      className={`${textCenter} ${customButton} ${className} ${isDark ? customButtonDark : null}`}
-    >
-      {text}
-    </UnstyledLink>
-  );
-};
+const CustomButton = ({ text, to, href, isDark, className }) => (
+  <UnstyledLink
+    to={to}
+    href={href}
+    className={`${textCenter} ${customButton} ${className} ${isDark ? customButtonDark : null}`}
+  >
+    {text}
+  </UnstyledLink>
+);
 
 CustomButton.propTypes = {
   text: PropTypes.string.isRequired,

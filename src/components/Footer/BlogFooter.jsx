@@ -13,22 +13,20 @@ import {
 
 const footer = require("../../data/footer");
 
-const BlogFooter = ({ isDark }) => {
-  return (
-    <footer className={footerStyle}>
-      <div className={title}>
-        <span className={isDark ? darkTitle : null}>{footer.title}</span>
-        <Signature isDark={isDark} />
-      </div>
-      <div className={socialMediaBar}>
-        <SocialMediaBar
-          socialMediaLinks={footer.socialMediaLinks}
-          buttonBackground={isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground}
-        />
-      </div>
-    </footer>
-  );
-};
+const BlogFooter = ({ isDark }) => (
+  <footer className={footerStyle}>
+    <div className={title}>
+      <span className={isDark ? darkTitle : null}>{footer.title}</span>
+      <Signature isDark={isDark} />
+    </div>
+    <div className={socialMediaBar}>
+      <SocialMediaBar
+        socialMediaLinks={footer.socialMediaLinks}
+        buttonBackground={isDark ? socialMediaButtonBackgroundDark : socialMediaButtonBackground}
+      />
+    </div>
+  </footer>
+);
 
 BlogFooter.propTypes = {
   isDark: PropTypes.bool,

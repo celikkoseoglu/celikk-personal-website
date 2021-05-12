@@ -7,21 +7,19 @@ import SkillCard from "../SkillCard";
 
 const personalSkills = require("../../data/personalSkills");
 
-const Skills = ({ id }) => {
-  return (
-    <Section id={id}>
-      <Heading className={noMarginBottom} text={personalSkills.skillsTitle} />
-      {personalSkills.skillList.map((personalSkill) => (
-        <SkillCard
-          imageLink={personalSkill.imageLink}
-          imageAlt={personalSkill.imageAlt}
-          text={personalSkill.text}
-          key={personalSkill.imageAlt}
-        />
-      ))}
-    </Section>
-  );
-};
+const Skills = ({ id }) => (
+  <Section id={id}>
+    <Heading className={noMarginBottom} text={personalSkills.skillsTitle} />
+    {personalSkills.skillList.map((personalSkill) => (
+      <SkillCard
+        imageLink={personalSkill.imageLink}
+        imageAlt={personalSkill.imageAlt}
+        text={personalSkill.text}
+        key={personalSkill.imageAlt}
+      />
+    ))}
+  </Section>
+);
 
 Skills.propTypes = {
   id: PropTypes.string.isRequired,

@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { container, padding } from "../../stylesheets/components/Util/Container.module.sass";
 
-const Container = ({ className, children, noPadding }) => {
-  return <div className={`${className} ${container} ${!noPadding && padding}`}>{children}</div>;
-};
+const Container = ({ className, children, noPadding }) => (
+  <div className={`${className} ${container} ${!noPadding && padding}`}>{children}</div>
+);
 
 Container.propTypes = {
   children: PropTypes.node,

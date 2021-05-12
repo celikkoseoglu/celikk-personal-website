@@ -22,8 +22,8 @@ import BlogBrandingLogo from "../Animations/BlogBrandingLogo";
 const BlogNavbar = ({ headerText, headerLink, brandingLink, isDark, setIsDark, className }) => {
   const header = <h1 className={`${noMargin} ${titleFont}`}>{headerText}</h1>;
 
-  const getTitleOrButton = (text, link) => {
-    return link ? (
+  const getTitleOrButton = (text, link) =>
+    link ? (
       <UnstyledLink
         className={`${isDark ? blogLinkBrandingDark : blogLinkBranding} ${pointerCursor}`}
         to={link}
@@ -33,7 +33,6 @@ const BlogNavbar = ({ headerText, headerLink, brandingLink, isDark, setIsDark, c
     ) : (
       <span className={`${defaultCursor} ${isDark ? titleDark : title}`}>{header}</span>
     );
-  };
 
   return (
     <div className={`${navbarFlex} ${className}`}>

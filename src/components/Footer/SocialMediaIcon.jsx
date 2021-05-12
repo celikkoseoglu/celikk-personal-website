@@ -2,15 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { inlineListItem } from "../../stylesheets/components/Footer/SocialMediaIcon.module.sass";
 
-const SocialMediaIcon = ({ className, children, link, ariaLabel }) => {
-  return (
-    <li className={inlineListItem}>
-      <a className={className} href={link} aria-label={ariaLabel}>
-        {children}
-      </a>
-    </li>
-  );
-};
+const SocialMediaIcon = ({ className, children, link, ariaLabel }) => (
+  <li className={inlineListItem}>
+    <a className={className} href={link} aria-label={ariaLabel}>
+      {children}
+    </a>
+  </li>
+);
 
 SocialMediaIcon.propTypes = {
   className: PropTypes.string,

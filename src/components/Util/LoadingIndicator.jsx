@@ -3,19 +3,17 @@ import PropTypes from "prop-types";
 import {
   spinner,
   light,
-  dark
+  dark,
 } from "../../stylesheets/components/Util/LoadingIndicator.module.sass";
 
-const LoadingIndicator = ({ isDark }) => {
-  return <div className={`${spinner} ${isDark ? dark : light}`} />;
-};
+const LoadingIndicator = ({ isDark }) => <div className={`${spinner} ${isDark ? dark : light}`} />;
 
 LoadingIndicator.propTypes = {
-  isDark: PropTypes.bool
+  isDark: PropTypes.bool,
 };
 
 LoadingIndicator.defaultProps = {
-  isDark: null
+  isDark: null,
 };
 
 export default LoadingIndicator;

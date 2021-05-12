@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Bulletpoint = ({ bulletPoint }) => {
-  return <li>{bulletPoint}</li>;
-};
+const Bulletpoint = ({ bulletPoint }) => <li>{bulletPoint}</li>;
 
 Bulletpoint.propTypes = {
-  bulletPoint: PropTypes.string
+  bulletPoint: PropTypes.string,
 };
 
 Bulletpoint.defaultProps = {
-  bulletPoint: null
+  bulletPoint: null,
 };
 
 export default Bulletpoint;

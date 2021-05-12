@@ -64,7 +64,7 @@ const Landing = ({ id, arrowAnimationReference }) => {
 
     setInnerHTML(
       !isPrerendering() ? (
-        <ProgressiveImage src={landingImageUrl} placeholder={tinyLandingImageUrl}>
+        <ProgressiveImage src={landingImageUrl.default} placeholder={tinyLandingImageUrl.default}>
           {(src) => (
             <header
               id={id}

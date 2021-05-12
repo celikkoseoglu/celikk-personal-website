@@ -6,7 +6,7 @@
     "firebase": "8.6.0",
     "local-storage-fallback": "4.1.2",
     "markdown-to-jsx": "7.1.2",
-    "node-sass": "4.14.1",
+    "node-sass": "6.0.0",
     "prop-types": "15.7.2",
     "react": "17.0.2",
     "react-app-polyfill": "2.0.0",
@@ -18,21 +18,21 @@
     "react-no-ssr": "1.1.0",
     "react-progressive-image": "0.6.0",
     "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.4",
+    "react-scripts": "4.0.3",
     "react-scroll": "1.8.2",
     "react-snap": "1.23.0",
     "react-syntax-highlighter": "15.4.3"
   },
   "devDependencies": {
-    "eslint": "6.8.0",
+    "eslint": "7.26.0",
     "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "6.15.0",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-react": "7.23.2",
     "eslint-plugin-react-hooks": "4.2.0",
-    "prettier": "2.2.1"
+    "prettier": "2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

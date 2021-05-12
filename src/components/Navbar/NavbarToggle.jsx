@@ -8,19 +8,17 @@ import {
   navbarToggle,
 } from "../../stylesheets/components/Navbar/NavbarToggle.module.sass";
 
-const NavbarToggle = ({ collapsed, onClickMethod, className }) => {
-  return (
-    <button
-      type="button"
-      aria-label="Navbar Toggle"
-      onClick={(_) => onClickMethod(!collapsed)}
-      className={`${className} ${navbarToggle}`}
-    >
-      <span className={`${line} ${!collapsed && line1}`} />
-      <span className={`${line} ${!collapsed && line2}`} />
-    </button>
-  );
-};
+const NavbarToggle = ({ collapsed, onClickMethod, className }) => (
+  <button
+    type="button"
+    aria-label="Navbar Toggle"
+    onClick={(_) => onClickMethod(!collapsed)}
+    className={`${className} ${navbarToggle}`}
+  >
+    <span className={`${line} ${!collapsed && line1}`} />
+    <span className={`${line} ${!collapsed && line2}`} />
+  </button>
+);
 
 NavbarToggle.propTypes = {
   collapsed: PropTypes.bool.isRequired,

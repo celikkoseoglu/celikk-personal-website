@@ -11,28 +11,26 @@ import ProjectCard from "../ProjectCard";
 
 const projects = require("../../data/projects");
 
-const Projects = ({ id }) => {
-  return (
-    <Section id={id}>
-      <Heading text={projects.projectsTitle} />
-      <div className={projectsDiv}>
-        <Row className={projectsRow}>
-          {projects.projectList.map((project) => (
-            <ProjectCard
-              imageLink={project.imageLink}
-              imageAlt={project.imageAlt}
-              title={project.title}
-              subtitle={project.subtitle}
-              text={project.text}
-              blogPost={project.blogPost}
-              key={project.title}
-            />
-          ))}
-        </Row>
-      </div>
-    </Section>
-  );
-};
+const Projects = ({ id }) => (
+  <Section id={id}>
+    <Heading text={projects.projectsTitle} />
+    <div className={projectsDiv}>
+      <Row className={projectsRow}>
+        {projects.projectList.map((project) => (
+          <ProjectCard
+            imageLink={project.imageLink}
+            imageAlt={project.imageAlt}
+            title={project.title}
+            subtitle={project.subtitle}
+            text={project.text}
+            blogPost={project.blogPost}
+            key={project.title}
+          />
+        ))}
+      </Row>
+    </div>
+  </Section>
+);
 
 Projects.propTypes = {
   id: PropTypes.string.isRequired,

@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { title, headingMargin } from "../stylesheets/components/Heading.module.sass";
 
-const Heading = ({ text, className, marginBottom }) => {
-  return <h2 className={`${title} ${className} ${marginBottom ? headingMargin : null}`}>{text}</h2>;
-};
+const Heading = ({ text, className, marginBottom }) => (
+  <h2 className={`${title} ${className} ${marginBottom ? headingMargin : null}`}>{text}</h2>
+);
 
 Heading.propTypes = {
   text: PropTypes.string,

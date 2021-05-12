@@ -10,33 +10,31 @@ const experiences = require("../data/resume/experiences");
 const resumeSkills = require("../data/resume/skills");
 const interactiveResume = require("../data/resume/interactiveResume");
 
-const CV = () => {
-  return (
-    <Container>
-      <MetaDecorator
-        description={interactiveResume.pageDescription}
-        title={interactiveResume.pageTitle}
-        imageUrl={metaThumbnail}
-        imageAlt={interactiveResume.metaImageAlt}
-      />
-      <Row>
-        <div>
-          {resumeSkills.map((skill) => (
-            <Skill header={skill.header} content={skill.content} />
-          ))}
-        </div>
-        <div>
-          {experiences.map((experience) => (
-            <Experience
-              companyName={experience.companyName}
-              description={experience.description}
-              bulletPoints={experience.bulletPoints}
-            />
-          ))}
-        </div>
-      </Row>
-    </Container>
-  );
-};
+const CV = () => (
+  <Container>
+    <MetaDecorator
+      description={interactiveResume.pageDescription}
+      title={interactiveResume.pageTitle}
+      imageUrl={metaThumbnail}
+      imageAlt={interactiveResume.metaImageAlt}
+    />
+    <Row>
+      <div>
+        {resumeSkills.map((skill) => (
+          <Skill header={skill.header} content={skill.content} />
+        ))}
+      </div>
+      <div>
+        {experiences.map((experience) => (
+          <Experience
+            companyName={experience.companyName}
+            description={experience.description}
+            bulletPoints={experience.bulletPoints}
+          />
+        ))}
+      </div>
+    </Row>
+  </Container>
+);
 
 export default CV;

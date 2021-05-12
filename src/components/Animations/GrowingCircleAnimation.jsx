@@ -68,9 +68,7 @@ const m = {
 
     return m.start;
   },
-  start: () => {
-    return m.isDark ? m.shrinkCircle : m.growCircle;
-  },
+  start: () => (m.isDark ? m.shrinkCircle : m.growCircle),
 
   growCircle: () => {
     m.radiusMultiplier += RADIUS_GROWTH_PER_MS * Math.max(1, Date.now() - m.timeAtPreviousDraw);

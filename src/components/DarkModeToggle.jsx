@@ -35,18 +35,16 @@ const onClickWrapper = (onClickMethod, isDark, event) => {
   dispatchEvent(darkModeToggleEvent);
 };
 
-const DarkModeToggle = ({ isDark, onClickMethod }) => {
-  return (
-    <button
-      type="button"
-      aria-label="Dark Mode Toggle"
-      onClick={(event) => onClickWrapper(onClickMethod, !isDark, event)}
-      className={`${isDark ? moon : sun} ${darkModeToggle}`}
-    >
-      <div className={crescent} />
-    </button>
-  );
-};
+const DarkModeToggle = ({ isDark, onClickMethod }) => (
+  <button
+    type="button"
+    aria-label="Dark Mode Toggle"
+    onClick={(event) => onClickWrapper(onClickMethod, !isDark, event)}
+    className={`${isDark ? moon : sun} ${darkModeToggle}`}
+  >
+    <div className={crescent} />
+  </button>
+);
 
 DarkModeToggle.propTypes = {
   isDark: PropTypes.bool.isRequired,

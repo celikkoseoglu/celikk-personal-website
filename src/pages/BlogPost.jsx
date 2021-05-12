@@ -42,7 +42,7 @@ const BlogPost = () => {
     if (!redirect) {
       firebaseAnalytics.logEvent(`${blogPostFileName}_visited`);
 
-      fetch(hashedBlogFileLink)
+      fetch(hashedBlogFileLink.default)
         .then((res) => res.text())
         .then((response) => setPost(response))
         .catch((err) => setPost(err));
@@ -55,9 +55,7 @@ const BlogPost = () => {
     return <Redirect to="/404" />;
   }
 
-  const noSSRContent = (
-    <BlogPostMarkdown content={post} isDark={isDark} />
-  );
+  const noSSRContent = <BlogPostMarkdown content={post} isDark={isDark} />;
 
   const content = (
     <div className={`${isDark && blogPostDark} ${blogPostBody}`}>

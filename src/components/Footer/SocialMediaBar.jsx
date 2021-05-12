@@ -21,56 +21,54 @@ import {
   inlineList,
 } from "../../stylesheets/components/Footer/SocialMediaBar.module.sass";
 
-const SocialMediaBar = ({ socialMediaLinks, buttonBackground }) => {
-  return (
-    <>
-      <ul className={`${inlineList} ${noVerticalMargin}`}>
-        <SocialMediaIcon
-          className={`${twitter} ${socialMediaButton} ${buttonBackground}`}
-          link={socialMediaLinks.twitterLink}
-          ariaLabel={socialMediaLinks.twitterAriaLabel}
-        >
-          <FaTwitter />
-        </SocialMediaIcon>
-        <SocialMediaIcon
-          className={`${facebook} ${socialMediaButton} ${buttonBackground}`}
-          link={socialMediaLinks.facebookLink}
-          ariaLabel={socialMediaLinks.facebookAriaLabel}
-        >
-          <FaFacebookF />
-        </SocialMediaIcon>
-        <SocialMediaIcon
-          className={`${linkedin} ${socialMediaButton} ${buttonBackground}`}
-          link={socialMediaLinks.linkedinLink}
-          ariaLabel={socialMediaLinks.linkedinAriaLabel}
-        >
-          <FaLinkedinIn />
-        </SocialMediaIcon>
-        <SocialMediaIcon
-          className={`${github} ${socialMediaButton} ${buttonBackground}`}
-          link={socialMediaLinks.githubLink}
-          ariaLabel={socialMediaLinks.githubAriaLabel}
-        >
-          <FaGithub />
-        </SocialMediaIcon>
-        <SocialMediaIcon
-          className={`${instagram} ${socialMediaButton} ${buttonBackground}`}
-          link={socialMediaLinks.instagramLink}
-          ariaLabel={socialMediaLinks.instagramAriaLabel}
-        >
-          <FaInstagram />
-        </SocialMediaIcon>
-        <SocialMediaIcon
-          className={`${mail} ${socialMediaButton} ${buttonBackground}`}
-          link={socialMediaLinks.emailLink}
-          ariaLabel={socialMediaLinks.emailAriaLabel}
-        >
-          <FaEnvelope />
-        </SocialMediaIcon>
-      </ul>
-    </>
-  );
-};
+const SocialMediaBar = ({ socialMediaLinks, buttonBackground }) => (
+  <>
+    <ul className={`${inlineList} ${noVerticalMargin}`}>
+      <SocialMediaIcon
+        className={`${twitter} ${socialMediaButton} ${buttonBackground}`}
+        link={socialMediaLinks.twitterLink}
+        ariaLabel={socialMediaLinks.twitterAriaLabel}
+      >
+        <FaTwitter />
+      </SocialMediaIcon>
+      <SocialMediaIcon
+        className={`${facebook} ${socialMediaButton} ${buttonBackground}`}
+        link={socialMediaLinks.facebookLink}
+        ariaLabel={socialMediaLinks.facebookAriaLabel}
+      >
+        <FaFacebookF />
+      </SocialMediaIcon>
+      <SocialMediaIcon
+        className={`${linkedin} ${socialMediaButton} ${buttonBackground}`}
+        link={socialMediaLinks.linkedinLink}
+        ariaLabel={socialMediaLinks.linkedinAriaLabel}
+      >
+        <FaLinkedinIn />
+      </SocialMediaIcon>
+      <SocialMediaIcon
+        className={`${github} ${socialMediaButton} ${buttonBackground}`}
+        link={socialMediaLinks.githubLink}
+        ariaLabel={socialMediaLinks.githubAriaLabel}
+      >
+        <FaGithub />
+      </SocialMediaIcon>
+      <SocialMediaIcon
+        className={`${instagram} ${socialMediaButton} ${buttonBackground}`}
+        link={socialMediaLinks.instagramLink}
+        ariaLabel={socialMediaLinks.instagramAriaLabel}
+      >
+        <FaInstagram />
+      </SocialMediaIcon>
+      <SocialMediaIcon
+        className={`${mail} ${socialMediaButton} ${buttonBackground}`}
+        link={socialMediaLinks.emailLink}
+        ariaLabel={socialMediaLinks.emailAriaLabel}
+      >
+        <FaEnvelope />
+      </SocialMediaIcon>
+    </ul>
+  </>
+);
 
 SocialMediaBar.propTypes = {
   socialMediaLinks: PropTypes.shape({

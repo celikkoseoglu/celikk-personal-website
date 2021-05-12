@@ -5,24 +5,22 @@ import {
   blogItemLink,
   blogItemLinkDark,
 } from "../../stylesheets/components/Blog/BlogItem.module.sass";
-import {BLOG_LINK} from "../../utils/Constants.utils";
+import { BLOG_LINK } from "../../utils/Constants.utils";
 
-const BlogItem = ({ className, title, date, minutes, subtitle, blogPost, isDark }) => {
-  return (
-    <div className={className}>
-      <UnstyledLink
-        to={`${BLOG_LINK}${blogPost}`}
-        className={`${blogItemLink} ${isDark && blogItemLinkDark}`}
-      >
-        <h4>{title}</h4>
-        <h6>
-          {date} - {minutes}
-        </h6>
-        <p>{subtitle}</p>
-      </UnstyledLink>
-    </div>
-  );
-};
+const BlogItem = ({ className, title, date, minutes, subtitle, blogPost, isDark }) => (
+  <div className={className}>
+    <UnstyledLink
+      to={`${BLOG_LINK}${blogPost}`}
+      className={`${blogItemLink} ${isDark && blogItemLinkDark}`}
+    >
+      <h4>{title}</h4>
+      <h6>
+        {date} - {minutes}
+      </h6>
+      <p>{subtitle}</p>
+    </UnstyledLink>
+  </div>
+);
 
 BlogItem.propTypes = {
   className: PropTypes.string.isRequired,

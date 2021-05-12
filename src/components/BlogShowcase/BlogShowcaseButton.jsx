@@ -8,15 +8,13 @@ import {
 } from "../../stylesheets/components/BlogShowcase/BlogShowcaseButton.module.sass";
 import UnstyledLink from "../Util/UnstyledLink";
 
-const BlogShowcaseButton = ({ link, text, className }) => {
-  return (
-    <div className={shadowMargin}>
-      <UnstyledLink to={link}>
-        <p className={`${className} ${montserrat} ${square} ${textColor}`}>{text}</p>
-      </UnstyledLink>
-    </div>
-  );
-};
+const BlogShowcaseButton = ({ link, text, className }) => (
+  <div className={shadowMargin}>
+    <UnstyledLink to={link}>
+      <p className={`${className} ${montserrat} ${square} ${textColor}`}>{text}</p>
+    </UnstyledLink>
+  </div>
+);
 
 BlogShowcaseButton.propTypes = {
   link: PropTypes.string.isRequired,
