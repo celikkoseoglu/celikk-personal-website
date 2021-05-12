@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "firebase": "8.4.1",
+    "firebase": "8.6.0",
     "local-storage-fallback": "4.1.2",
     "markdown-to-jsx": "7.1.2",
     "node-sass": "4.14.1",
