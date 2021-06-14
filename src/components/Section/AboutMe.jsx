@@ -17,7 +17,7 @@ import Container from "../Util/Container";
 import Row from "../Util/Row";
 import ProfileImage from "../../data/images/aboutMe/celik.jpg";
 
-const aboutMe = require("../../data/aboutMe");
+const aboutMe = require("../../data/aboutMe.json");
 
 const AboutMe = ({ id }) => (
   <Section id={id}>

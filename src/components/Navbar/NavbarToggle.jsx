@@ -12,7 +12,7 @@ const NavbarToggle = ({ collapsed, onClickMethod, className }) => (
   <button
     type="button"
     aria-label="Navbar Toggle"
-    onClick={(_) => onClickMethod(!collapsed)}
+    onClick={() => onClickMethod(!collapsed)}
     className={`${className} ${navbarToggle}`}
   >
     <span className={`${line} ${!collapsed && line1}`} />

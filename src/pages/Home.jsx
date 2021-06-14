@@ -18,7 +18,7 @@ import { firebaseAnalytics } from "../firebaseConfig";
 import MetaDecorator from "../components/Util/MetaDecorator";
 import metaThumbnail from "../data/images/meta/home.png";
 
-const content = require("../data/content");
+const content = require("../data/content.json");
 
 const Home = () => {
   const horizontalRuler = (

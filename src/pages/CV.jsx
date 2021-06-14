@@ -6,9 +6,9 @@ import Row from "../components/Util/Row";
 import MetaDecorator from "../components/Util/MetaDecorator";
 import metaThumbnail from "../data/images/meta/cv.png";
 
-const experiences = require("../data/resume/experiences");
-const resumeSkills = require("../data/resume/skills");
-const interactiveResume = require("../data/resume/interactiveResume");
+const experiences = require("../data/resume/experiences.json");
+const resumeSkills = require("../data/resume/skills.json");
+const interactiveResume = require("../data/resume/interactiveResume.json");
 
 const CV = () => (
   <Container>

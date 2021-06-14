@@ -27,9 +27,9 @@ import metaThumbnail from "../data/images/meta/blog.png";
 import profilePictureImage from "../data/images/blog/PP.jpg";
 import GrowingCircleAnimation from "../components/Animations/GrowingCircleAnimation";
 
-const blog = require("../data/blog");
-const footer = require("../data/footer");
-const blogNavbar = require("../data/blogNavbar");
+const blog = require("../data/blog.json");
+const footer = require("../data/footer.json");
+const blogNavbar = require("../data/blogNavbar.json");
 
 const Blog = () => {
   const [isDark, setIsDark] = useState(getInitialTheme());

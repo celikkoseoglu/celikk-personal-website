@@ -24,8 +24,8 @@ import SocialMediaBar from "./SocialMediaBar";
 import Signature from "../Signature";
 import GithubStatistics from "../GithubStatistics";
 
-const footer = require("../../data/footer");
-const githubStats = require("../../data/githubStats");
+const footer = require("../../data/footer.json");
+const githubStats = require("../../data/githubStats.json");
 
 const Footer = () => (
   <footer className={footerStyle}>

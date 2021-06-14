@@ -11,7 +11,7 @@ import {
   socialMediaBar,
 } from "../../stylesheets/components/Footer/BlogFooter.module.sass";
 
-const footer = require("../../data/footer");
+const footer = require("../../data/footer.json");
 
 const BlogFooter = ({ isDark }) => (
   <footer className={footerStyle}>

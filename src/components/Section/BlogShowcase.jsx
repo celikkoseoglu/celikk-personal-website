@@ -17,8 +17,8 @@ import BlogShowcaseCard from "../BlogShowcase/BlogShowcaseCard";
 import BlogShowcaseButton from "../BlogShowcase/BlogShowcaseButton";
 import { BLOG_LINK } from "../../utils/Constants.utils";
 
-const blog = require("../../data/blog");
-const blogShowcase = require("../../data/blogShowcase");
+const blog = require("../../data/blog.json");
+const blogShowcase = require("../../data/blogShowcase.json");
 
 const BlogShowcase = ({ id }) => (
   <Section id={id}>

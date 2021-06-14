@@ -9,7 +9,7 @@ import {
 import Heading from "../Heading";
 import ProjectCard from "../ProjectCard";
 
-const projects = require("../../data/projects");
+const projects = require("../../data/projects.json");
 
 const Projects = ({ id }) => (
   <Section id={id}>

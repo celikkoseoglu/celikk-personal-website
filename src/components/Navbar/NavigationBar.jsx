@@ -17,7 +17,7 @@ import Container from "../Util/Container";
 import NavbarToggle from "./NavbarToggle";
 import { debounce, throttle } from "../../utils/Limitors";
 
-const content = require("../../data/navbar");
+const content = require("../../data/navbar.json");
 
 const NavigationBar = () => {
   const [navbarExpanded, setNavbarExpanded] = useState(true);

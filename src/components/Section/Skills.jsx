@@ -5,7 +5,7 @@ import { noMarginBottom } from "../../stylesheets/components/Section/Skills.modu
 import Heading from "../Heading";
 import SkillCard from "../SkillCard";
 
-const personalSkills = require("../../data/personalSkills");
+const personalSkills = require("../../data/personalSkills.json");
 
 const Skills = ({ id }) => (
   <Section id={id}>

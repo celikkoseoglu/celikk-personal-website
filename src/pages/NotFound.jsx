@@ -6,7 +6,7 @@ import { firebaseAnalytics } from "../firebaseConfig";
 import MetaDecorator from "../components/Util/MetaDecorator";
 import metaThumbnail from "../data/images/meta/notFound.png";
 
-const notFound = require("../data/notFound");
+const notFound = require("../data/notFound.json");
 
 const NotFound = () => {
   useEffect(() => {

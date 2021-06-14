@@ -15,7 +15,7 @@ import { iPad } from "../../utils/Constants.utils";
 import { debounce } from "../../utils/Limitors";
 import { isPrerendering } from "../../utils/ReactSnapHelper";
 
-const hero = require("../../data/hero");
+const hero = require("../../data/hero.json");
 
 const randomLandingImageNumber = getRandomInt(folders.heroImages.length);
 const landingImageUrl = folders.heroImages[randomLandingImageNumber];

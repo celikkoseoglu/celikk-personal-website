@@ -18,6 +18,7 @@ const GithubStatistics = ({ username, repo, className }) => {
           forks_count: json.forks_count,
         });
       })
+      // eslint-disable-next-line no-console
       .catch((e) => console.log(`Error while calling GitHub API: ${e}`));
   }, [username, repo]);
 

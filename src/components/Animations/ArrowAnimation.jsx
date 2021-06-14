@@ -44,8 +44,9 @@ const ArrowAnimation = ({ className, reference }) => {
               fill="freeze"
               calcMode="spline"
               keySplines={EASE_IN_OUT_BEZIER_SPLINES}
+              keyPoints="0;1"
+              // required for Firefox. See: https://bugzilla.mozilla.org/show_bug.cgi?id=1105912
               keyTimes="0;1"
-              keyPoints="0;1" // required for Firefox. See: https://bugzilla.mozilla.org/show_bug.cgi?id=1105912
             >
               <mpath xlinkHref="#linePath" />
             </animateMotion>
@@ -57,9 +58,10 @@ const ArrowAnimation = ({ className, reference }) => {
             stroke="#fff"
             strokeWidth="3.5"
             strokeDasharray="280"
-            d="M24.1,18.6c3.2-8.1,9.6-13,15.8-12.6c6.2,0.4,12.4,6.3,12.9,12.4c1.5,15.3-33.1,20.9-36.3,44.4
-	c-0.8,6.2,0.4,14.1,5.2,20.4c1,1.3,6.7,8.8,17.2,10.4c10.7,1.6,20.6-3.8,26-11.3c1.5-2.1,7.1-9.8,4.6-18.9
-	c-1.6-5.6-6.5-12.6-13.7-13c-5.7-0.4-9.8,3.5-10.3,3.9c-4.9,4.9-4.8,12-4.7,20.2c0.1,7.7,0.2,18.9,0.3,35"
+            d="M24.1,18.6c3.2-8.1,9.6-13,15.8-12.6c6.2,0.4,12.4,6.3,12.9,12.4c1.5,15.3-33.1,
+            20.9-36.3,44.4c-0.8,6.2,0.4,14.1,5.2,20.4c1,1.3,6.7,8.8,17.2,10.4c10.7,1.6,20.6-3.8,
+            26-11.3c1.5-2.1,7.1-9.8,4.6-18.9c-1.6-5.6-6.5-12.6-13.7-13c-5.7-0.4-9.8,3.5-10.3,
+            3.9c-4.9,4.9-4.8,12-4.7,20.2c0.1,7.7,0.2,18.9,0.3,35"
           >
             <animate
               attributeName="stroke-dashoffset"
