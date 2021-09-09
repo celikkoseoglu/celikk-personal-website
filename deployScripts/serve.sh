@@ -1,2 +1,2 @@
-npm run-script build
+yarn build
 firebase serve

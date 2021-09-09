@@ -15,13 +15,13 @@
 1. Install dependencies
 
    ```sh
-   npm install
+   yarn install
    ```
 
 2. Start the development server
 
    ```sh
-   npm start
+   yarn start
    ```
 
 ## 🚀 Deployment
@@ -31,12 +31,12 @@ I use Firebase for hosting, but this project is platform agnostic. Feel free to 
 1. Generate a full static production build
 
    ```sh
-   npm run-script build
+   yarn run-script build
    ```
 
 2. Install Firebase
    ```sh
-   npm install -g firebase-tools
+   yarn install -g firebase-tools
    ```
    
 3. Login with Firebase
