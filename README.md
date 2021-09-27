@@ -1,3 +1,9 @@
+# Deprecation Warning
+
+This project is deprecated since 27.09.2021. Please refer to https://github.com/celikkoseoglu/celikk-personal-website-nextjs to see my latest Personal Website project.
+
+<hr>
+
 <h1 align="center">
   CK
 </h1>
