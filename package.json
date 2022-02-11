@@ -6,7 +6,7 @@
     "firebase": "8.6.7",
     "local-storage-fallback": "4.1.2",
     "markdown-to-jsx": "7.1.6",
-    "node-sass": "6.0.1",
+    "node-sass": "7.0.0",
     "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-app-polyfill": "3.0.0",
